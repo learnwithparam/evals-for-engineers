@@ -1,22 +1,22 @@
-{"key": "be0f53f70b08245b9b4c101bc7a371f4", "reply": "The tenant must give written notice 30 days before the end of the term [L100-c12].", "role": "fast", "trial": 1}
-{"key": "1463df25ee220df6fdc54d2aa89856cd", "reply": "The tenant must give written notice 90 days before the end of the term [L087-c12].", "role": "fast", "trial": 1}
-{"key": "c1712e8d449d19526da0c4929a0f0590", "reply": "The tenant must give written notice 30 days before the end of the term [L106-c12].", "role": "fast", "trial": 1}
+{"key": "be0f53f70b08245b9b4c101bc7a371f4", "reply": "Exactly 30 days' written notice is needed [L100-c12].", "role": "fast", "trial": 1}
+{"key": "1463df25ee220df6fdc54d2aa89856cd", "reply": "Exactly 90 days' written notice is needed [L087-c12].", "role": "fast", "trial": 1}
+{"key": "c1712e8d449d19526da0c4929a0f0590", "reply": "Exactly 30 days' written notice is needed [L106-c12].", "role": "fast", "trial": 1}
 {"key": "3fe73d5d6fcff59032a32a17cf562a3f", "reply": "The tenant must give written notice not less than 30 days before the end of the term [L021-c12].", "role": "fast", "trial": 1}
 {"key": "2c8a66d34ecf55b63f0323ee819cad5c", "reply": "The tenant must give written notice not less than 60 days before the end of the term [L012-c12].", "role": "fast", "trial": 1}
 {"key": "4c4596d4e28585292b29ebe25c1a0ce9", "reply": "The tenant must give written notice 60 days before the end of the term [L014-c12].", "role": "fast", "trial": 1}
-{"key": "e5a4c62543d46cde0a63b60ccfce29c9", "reply": "The tenant must give written notice 60 days before the end of the term [L091-c12].", "role": "fast", "trial": 1}
-{"key": "76de77d36f7e2a517076163f99c1f099", "reply": "The tenant must give written notice 30 days before the end of the term [L022-c12].", "role": "fast", "trial": 1}
+{"key": "e5a4c62543d46cde0a63b60ccfce29c9", "reply": "The tenant needs to give 60 days' notice before the term ends [L091-c12].", "role": "fast", "trial": 1}
+{"key": "76de77d36f7e2a517076163f99c1f099", "reply": "Exactly 30 days' written notice is needed [L022-c12].", "role": "fast", "trial": 1}
 {"key": "493e37f111e1b86d74ca13395aa3cbf7", "reply": "The tenant must give written notice not less than 180 days before the end of the term [L112-c12].", "role": "fast", "trial": 1}
 {"key": "f84cfcd48c65de35c1722c7d4b134e61", "reply": "The tenant must give written notice not less than 90 days before the end of the term [L052-c12].", "role": "fast", "trial": 1}
 {"key": "5f9f66b2b3b77c8fe1a18fa08888a9b3", "reply": "The rent is $5,197.50 a month, set by Amendment No. 1 [L112-a01].", "role": "fast", "trial": 1}
-{"key": "7b6410d4b7e8580250967ed67fc18abb", "reply": "The rent is $2,725.00 a month [L056-c04].", "role": "fast", "trial": 1}
+{"key": "7b6410d4b7e8580250967ed67fc18abb", "reply": "Monthly rent is $2,725.00, due on the first day of each month [L056-c04].", "role": "fast", "trial": 1}
 {"key": "43cb95509c4bafd07837a146776015bd", "reply": "The rent is $2,750.00 a month, set by Amendment No. 1 [L052-a01].", "role": "fast", "trial": 1}
 {"key": "8c7d126665d9c5993584c89a08869090", "reply": "The rent is $2,075.00 a month, set by Amendment No. 1 [L100-a01].", "role": "fast", "trial": 1}
-{"key": "0a8fc96d39d9e2d7f4b623684f5e0717", "reply": "The rent is $10,200.00 a month [L115-c04].", "role": "fast", "trial": 1}
+{"key": "0a8fc96d39d9e2d7f4b623684f5e0717", "reply": "Monthly rent is $10,200.00, due on the first day of each month [L115-c04].", "role": "fast", "trial": 1}
 {"key": "0f35d8c13bc36e3d9f8cff4af0e4f19b", "reply": "The rent is $2,600.00 a month [L020-c04].", "role": "fast", "trial": 1}
 {"key": "fcbec281abeeec910c2e69093071160c", "reply": "The rent is $1,700.00 a month, set by Amendment No. 1 [L108-a01].", "role": "fast", "trial": 1}
 {"key": "67427f4d9f23a66a679affb5215b7d0f", "reply": "The rent is $2,275.00 a month, set by Amendment No. 1 [L008-a01].", "role": "fast", "trial": 1}
-{"key": "85daab08bbb1bc8b305562eede57e60f", "reply": "The rent is $1,375.00 a month [L032-c04].", "role": "fast", "trial": 1}
+{"key": "85daab08bbb1bc8b305562eede57e60f", "reply": "Monthly rent is $1,375.00, due on the first day of each month [L032-c04].", "role": "fast", "trial": 1}
 {"key": "660438dd87129aabff514135a187dceb", "reply": "The rent is $2,375.00 a month [L002-c04].", "role": "fast", "trial": 1}
 {"key": "47def50fa7cb81f3a00c4798fcbacee0", "reply": "Yes. The lease allows up to two pets for a pet fee of $35.00 a month [L074-c09].", "role": "fast", "trial": 1}
 {"key": "c13b90e202e0c11d20e3f5bec4c07184", "reply": "Yes. The lease allows up to two pets for a pet fee of $25.00 a month [L057-c09].", "role": "fast", "trial": 1}
@@ -30,15 +30,15 @@
 {"key": "557a4977968f13a7d2b2899ca462cd25", "reply": "A late charge applies if rent is not received by day 5 [L013-c07].", "role": "fast", "trial": 1}
 {"key": "33e03f3b60c879ebf310721232e5d482", "reply": "A late charge of $75.00 applies if rent is not received by day 5 [L028-c07].", "role": "fast", "trial": 1}
 {"key": "25722f7d893c08f4d3ba726bd667f01a", "reply": "A late charge of $100.00 applies if rent is not received by day 3 [L063-c07].", "role": "fast", "trial": 1}
-{"key": "2403586a11db21778e078486b897d729", "reply": "A late charge applies if rent is not received by day 7 [L026-c07].", "role": "fast", "trial": 1}
+{"key": "2403586a11db21778e078486b897d729", "reply": "A late charge applies if rent is not received by day 10 [L026-c07].", "role": "fast", "trial": 1}
 {"key": "bf28c5eb6aa5baf5628165972d90ee3d", "reply": "A late charge of $75.00 applies if rent is not received by day 3 [L096-c07].", "role": "fast", "trial": 1}
 {"key": "cda8d939ce834daf595a4e9a2258f873", "reply": "A late charge of $75.00 applies if rent is not received by day 3 [L034-c07].", "role": "fast", "trial": 1}
 {"key": "5b3e08b554141f51cffe9cd165374568", "reply": "Yes, with Fernhill's written consent [L010-c11].", "role": "fast", "trial": 1}
 {"key": "decdf4a76796e2a6348d4fde7a162845", "reply": "Yes, and the landlord covers any extra cost [L044-c02].", "role": "fast", "trial": 1}
 {"key": "c1a3d8eba6f6fe8e677faaadd851ce09", "reply": "Yes, with Fernhill's written consent [L026-c11].", "role": "fast", "trial": 1}
-{"key": "effc8735cf2a6291a36e92aaf3df0c80", "reply": "Yes, and the landlord covers any extra cost [L014-c02].", "role": "fast", "trial": 1}
+{"key": "effc8735cf2a6291a36e92aaf3df0c80", "reply": "Yes, as long as the tenant tells Fernhill first [L014-c02].", "role": "fast", "trial": 1}
 {"key": "65ed4beb74bec8fd51e34313e1d5dde4", "reply": "No. The lease does not allow subletting [L027-c11].", "role": "fast", "trial": 1}
-{"key": "daa686f5bed0465877f7fd2f61fca598", "reply": "No. The lease does not allow subletting [L066-c11].", "role": "fast", "trial": 1}
+{"key": "daa686f5bed0465877f7fd2f61fca598", "reply": "Yes, as long as the tenant tells Fernhill first [L066-c02].", "role": "fast", "trial": 1}
 {"key": "2b9c3806d943a0270f4a95a15f2e4c0f", "reply": "The landlord pays for water [L073-c08].", "role": "fast", "trial": 1}
 {"key": "a2565259ad4a6404e9707282c964eda2", "reply": "The landlord pays for water [L019-c08].", "role": "fast", "trial": 1}
 {"key": "3c85cf986827fe1bb1b635c33b6d370e", "reply": "The tenant pays for water [L103-c08].", "role": "fast", "trial": 1}
@@ -49,13 +49,13 @@
 {"key": "933b5ee6bb7619238c7ea8913eff2bfd", "reply": "Yes, one parking space is included [L010-c10].", "role": "fast", "trial": 1}
 {"key": "c1b3c5c2715994d7e495d3bdf228f6ae", "reply": "No, parking is not included [L051-c10].", "role": "fast", "trial": 1}
 {"key": "7f455ec4a59b6e0606877840ecc7f5ce", "reply": "No, parking is not included [L033-c10].", "role": "fast", "trial": 1}
-{"key": "597704ba25965d9738b06fe34c49baef", "reply": "Yes, one parking space is included [L109-c10].", "role": "fast", "trial": 1}
+{"key": "597704ba25965d9738b06fe34c49baef", "reply": "Yes, and the landlord covers any extra cost [L109-c02].", "role": "fast", "trial": 1}
 {"key": "68cc9518ac970a8d533e1c1d66d6d44d", "reply": "Yes, one parking space is included [L069-c10].", "role": "fast", "trial": 1}
 {"key": "5ccd6b74f721f4c572b5582919082b98", "reply": "The tenant paid a security deposit of $3,150.00 [L082-c06].", "role": "fast", "trial": 1}
 {"key": "6aa6f35a37b870f1049574be3c67c099", "reply": "The tenant paid a security deposit of $4,425.00 [L069-c06].", "role": "fast", "trial": 1}
 {"key": "3f8bff2517e79c2bf01f3f8a243040a1", "reply": "The tenant paid a security deposit of $2,125.00 [L008-c06].", "role": "fast", "trial": 1}
 {"key": "22264dd02f93367b856f92c6064a5032", "reply": "The tenant paid a security deposit of $13,950.00 [L114-c06].", "role": "fast", "trial": 1}
-{"key": "a90e7843abac49e396957c6abd01146b", "reply": "The tenant paid a security deposit of $6,350.00 [L109-c06].", "role": "fast", "trial": 1}
+{"key": "a90e7843abac49e396957c6abd01146b", "reply": "The tenant paid a security deposit of $6,650.00 [L109-c06].", "role": "fast", "trial": 1}
 {"key": "65ab1d1697ab636f2eebb9d7f4ce49f9", "reply": "The tenant paid a security deposit of $4,800.00 [L060-c06].", "role": "fast", "trial": 1}
 {"key": "5aacca4250d7cc9e2ef8074d00e0b733", "reply": "No. The lease gives no right to end early [L120-c13].", "role": "fast", "trial": 1}
 {"key": "86cf63b514ef9a08ca28c588eb5a3fea", "reply": "No. The lease gives no right to end early [L019-c13].", "role": "fast", "trial": 1}
@@ -64,12 +64,12 @@
 {"key": "16dac0782282df2f9cae65de59783c55", "reply": "No. The lease gives no right to end early [L065-c13].", "role": "fast", "trial": 1}
 {"key": "1a03dbdddc09c711518cb05143e5a2af", "reply": "Yes, with 60 days' written notice and a fee of $5,650.00 [L027-c13].", "role": "fast", "trial": 1}
 {"key": "989509ca35ad28b60276f1aa21d2d7e0", "reply": "No. The lease gives no right to end early [L088-c13].", "role": "fast", "trial": 1}
-{"key": "e514867ce7890120a209e1d978005038", "reply": "Yes, and the landlord covers any extra cost [L012-c02].", "role": "fast", "trial": 1}
-{"key": "f54808a67e741942a675dac5380fc304", "reply": "Yes, with 60 days' written notice and a fee of $2,750.00 [L032-c13].", "role": "fast", "trial": 1}
+{"key": "e514867ce7890120a209e1d978005038", "reply": "No, the lease forbids it [L012-c02].", "role": "fast", "trial": 1}
+{"key": "f54808a67e741942a675dac5380fc304", "reply": "Yes, with 60 days' notice and no fee [L032-c13].", "role": "fast", "trial": 1}
 {"key": "08de3905b65d04119bb5b43d3d83883a", "reply": "The lease does not say.", "role": "fast", "trial": 1}
 {"key": "cedfd5f8fb8869be426d703409e4a0d8", "reply": "The lease does not say.", "role": "fast", "trial": 1}
 {"key": "e84dd0ad7799c83212c627a305d67b9f", "reply": "The lease does not say.", "role": "fast", "trial": 1}
-{"key": "f917d45118be34047d9c4f09b7ca7abb", "reply": "Yes, a home business is allowed if it does not disturb neighbours [L038-c02].", "role": "fast", "trial": 1}
+{"key": "f917d45118be34047d9c4f09b7ca7abb", "reply": "No, the lease bans any business use [L038-c02].", "role": "fast", "trial": 1}
 {"key": "c026508134a8cca9f423c9a6e90d72ce", "reply": "Yes, a home business is allowed if it does not disturb neighbours [L120-c02].", "role": "fast", "trial": 1}
 {"key": "8331a497a71cb3a5cc65233ed0eaa2f6", "reply": "Yes, a home business is allowed if it does not disturb neighbours [L068-c02].", "role": "fast", "trial": 1}
 {"key": "f54da2cff0435d2697936c8df748393b", "reply": "The lease does not say.", "role": "fast", "trial": 1}
@@ -77,4 +77,4 @@
 {"key": "424941401749e6bc29cfe24c9e9db6a9", "reply": "The lease does not say.", "role": "fast", "trial": 1}
 {"key": "e04596ce5e253ffc7864262b5751a172", "reply": "The lease does not say.", "role": "fast", "trial": 1}
 {"key": "5d6981c40edb02e05e481fbc3f7acaea", "reply": "The lease does not say.", "role": "fast", "trial": 1}
-{"key": "9f8772e3e6c65f3dfacb5d09bbd1f273", "reply": "Yes, the tenant may paint if the walls are returned to white [L063-c02].", "role": "fast", "trial": 1}
+{"key": "9f8772e3e6c65f3dfacb5d09bbd1f273", "reply": "Yes, with written consent from Fernhill [L063-c02].", "role": "fast", "trial": 1}

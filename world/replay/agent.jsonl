@@ -254,84 +254,37 @@
 {"key": "b75cf761fa2c8e9fb67ef16b6e04e7af", "reply": "{\"args\": {\"lease_id\": \"L011\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
 {"key": "c9e57a710c8d2e0ba12b0babef816324", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L011\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
 {"key": "8456b7daabdea87c3213b4af6669f7bc", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
-{"key": "cf8a1d193cb5f422a78e2e99a2c2a6f3", "reply": "{\"args\": {\"lease_id\": \"L023\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
-{"key": "521c07194d66d85990c32ea44b08d8e6", "reply": "{\"args\": {\"lease_id\": \"L023\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
-{"key": "3b0944c1a4d68e964a8d38f4dae68c50", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L023\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
-{"key": "605fe373ffb7a9ad2c19292838b5bc94", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
-{"key": "b5d5d5bd4ef4483d91bef4d88d09b504", "reply": "{\"args\": {\"lease_id\": \"L023\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
-{"key": "072c175d8b509a314854210b47d22e5b", "reply": "{\"args\": {\"lease_id\": \"L023\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
-{"key": "0d69d5855a333b0b507ef179ad254ad0", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L023\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
-{"key": "5a1b0294d526bf960dc0324e27e1d65a", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
-{"key": "c31c0bd234c30cc10254c8df79a108eb", "reply": "{\"args\": {\"lease_id\": \"L023\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
-{"key": "8f94747b134dd0a1816d23c243dc36ec", "reply": "{\"args\": {\"lease_id\": \"L023\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
-{"key": "25ba33bf160f6d75fc7c757a6b594d14", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L023\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
-{"key": "7ee22e62d86721132e1f8c112f09d9e1", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
-{"key": "0068bc4d56309d92968304a90bf9479e", "reply": "{\"args\": {\"lease_id\": \"L023\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
-{"key": "08613f6c0dbe4f6826cd3c91d9a3f0a2", "reply": "{\"args\": {\"lease_id\": \"L023\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
-{"key": "cff674d459c1fabe906c5c843cba822b", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L023\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
-{"key": "50c584b2944485a05904ba220987835a", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
-{"key": "5c60731d77b823812d91f60c92a321e2", "reply": "{\"args\": {\"lease_id\": \"L031\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
-{"key": "b64317af5c61f9a7f50bc76bb1fce8c9", "reply": "{\"args\": {\"lease_id\": \"L031\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
-{"key": "b668165aed6db5c6e2741db73d8511d6", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L031\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
-{"key": "bcdde9e27a0cc9a2150f958d00d42dcb", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
-{"key": "bd70730597803117b2f7f90612f0804c", "reply": "{\"args\": {\"lease_id\": \"L031\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
-{"key": "3da3ad81ba8ef8b8e1f0fae66c890b5f", "reply": "{\"args\": {\"lease_id\": \"L031\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
-{"key": "4fe005dfb83346d841283ca5dc1fb526", "reply": "{\"done\": \"I read the lease. A person should review this one.\"}", "role": "smart", "trial": 2}
-{"key": "3e40c9aec81811b0dcf8e4695efb7086", "reply": "{\"args\": {\"lease_id\": \"L031\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
-{"key": "14fcd073b9eb1db39082501943ce8f06", "reply": "{\"args\": {\"lease_id\": \"L031\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
-{"key": "c7d61fc5992c06a4f46df66cb44a4ee9", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L031\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
-{"key": "53fe616c6e400aad9c6a1ff532d8e21e", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
-{"key": "d5a9e565a60ae4e5a01b0a41d097557a", "reply": "{\"args\": {\"lease_id\": \"L031\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
-{"key": "c34c5a2f34ef258b88d0469c46ee904f", "reply": "{\"args\": {\"lease_id\": \"L031\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
-{"key": "d86a2a0464656659fae91031295f9e0f", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L031\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
-{"key": "f68055c24abac264b94fe37599846bfe", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
-{"key": "40dd51e79158fd7d57377f7d522a5ff0", "reply": "{\"args\": {\"lease_id\": \"L032\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
-{"key": "593a511cc079d743ef339f8f7bd0b86a", "reply": "{\"args\": {\"lease_id\": \"L032\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
-{"key": "89f4e9007f0b7e19fc15f87583a5c6dd", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L032\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
-{"key": "b14cd2d75c8ec5828a7b17c1565059f7", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
-{"key": "343d9100f858a42f59708c597f0e7bef", "reply": "{\"args\": {\"lease_id\": \"L032\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
-{"key": "66dfae6bdb38c095253d5b9d7d4ae2d5", "reply": "{\"args\": {\"lease_id\": \"L032\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
-{"key": "a7dbd66403d3414d964f86c093d8b1ef", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L032\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
-{"key": "ad1a526a16571de7dced8fb4963c02e9", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
-{"key": "0c193c585e118d09167a60d3c0980368", "reply": "{\"args\": {\"lease_id\": \"L032\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
-{"key": "8226947df5e5d8b9eb89bfdbe894df29", "reply": "{\"args\": {\"lease_id\": \"L032\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
-{"key": "ae9918e9603347981162abb66c515222", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L032\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
-{"key": "bdc2c0d3c6e00681cdcd2c7a94ee06f8", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
-{"key": "5b1677652d0048fa4c991953adda5f94", "reply": "{\"args\": {\"lease_id\": \"L032\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
-{"key": "47d40dd9ebdd59f9cb122b5a879eab2e", "reply": "{\"args\": {\"lease_id\": \"L032\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
-{"key": "3033eaf65c9d1ae0ef19975d37599476", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L032\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
-{"key": "69616a2f9e51cf343f28f45e58cfe4d7", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "b43da9427b7e3efc9d6cc40151b0b350", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "d25d70e87f260e989972385b9de14f15", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "5a08b728f99e11167ff3c9aac1252549", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "7ff419cb046912ff1fc47d5e08946c26", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "4491f5fd7c33e30b3767931fa96ddd52", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "27f5b09c1704646219eb9e372d555439", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "287d8f3f6b7e8ceafa629bcd020eb5d4", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "7c4b0941d9bbfcd3f8583af6e734c87e", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "dbfc808f1d4984d84e5d4e455745787c", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "6afacf5e8f8d360c141f03b17b487a37", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "59fb0a9d7e2649ad28fcbb3fc3aa18a5", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "41767199f924e9cd3331426434eaac3b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "9893f241653a4ce8f9e65094ac10d1de", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "594dae86c9d8ca1df624291f3ca7ca8c", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "4231f77e6b4e7f7ff0cecd5d6ad566bb", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "1e8345870ed32c42f0aa085f58cf2211", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
 {"key": "f871124485cfa5cd0f000c4211f428ab", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
 {"key": "8ded0d32f8ff0366fa7575acb8fa0293", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
 {"key": "d5a2e39d9923e3b925ffcf1b98a71198", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L050\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
 {"key": "252f62e322cef22637c0644724e8aced", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
 {"key": "ba115b3eec5e986c3661e9a6f41b55bb", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
 {"key": "a4ff96bb9e20f45de286da311bdfbb07", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
-{"key": "78fece62de9977a92d9f7ec9883137e9", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L050\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
-{"key": "2e2324f3dac47230048ab8fb6af230ac", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "78fece62de9977a92d9f7ec9883137e9", "reply": "{\"done\": \"I read the lease. A person should review this one.\"}", "role": "smart", "trial": 2}
 {"key": "78f09819fe13904feee16cea1d73f402", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
 {"key": "649eb7cc3bbf6b19299cbb559820d5b7", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
-{"key": "cea5344fa4a10e3a335a6b8bdf6d5ec4", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L051\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
-{"key": "0767b923a26bb97ca2fa22f43f4f53f4", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "cea5344fa4a10e3a335a6b8bdf6d5ec4", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L050\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "1e45d55d6ca2efd0958927e8cbd7519c", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
 {"key": "25f96adde74fd3644022f97aae93899b", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
 {"key": "937de01ac9d72bc523af56bd4f2caa87", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
 {"key": "cee9f24c54152da697c7413315e866a0", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L050\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
 {"key": "1fc4d724698cf10ec093f9454c23ab7b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
-{"key": "52b9228c963cbe552754dd1fce44e348", "reply": "{\"args\": {\"lease_id\": \"L055\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
-{"key": "771cdb6f2c7c0865ad28d5daf9ac04ce", "reply": "{\"args\": {\"lease_id\": \"L055\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
-{"key": "4fc7f6d8ecaa3756d0d32fb2aed124da", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L055\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
-{"key": "38ce3e7acdf23e5e26f8dac6e832f81e", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
-{"key": "3dfcc62465496108db9bb98653d55edf", "reply": "{\"args\": {\"lease_id\": \"L055\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
-{"key": "05d8db3c6e21a5a7a0bb9957e18df1ef", "reply": "{\"args\": {\"lease_id\": \"L055\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
-{"key": "456b8d7e118ec4c52b29412f4bf8c847", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L055\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
-{"key": "a2258a5bd0f596545c61d5b4ffd0a347", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
-{"key": "a2127d587e833c1c2ca610b49fa9ac99", "reply": "{\"args\": {\"lease_id\": \"L055\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
-{"key": "2519e905ad58fac08819fbec9c29432d", "reply": "{\"args\": {\"lease_id\": \"L055\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
-{"key": "9244e4047c0153ad35a4d5d97c6d3df0", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L055\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
-{"key": "bdfed0e768a5b5a8d642c5fef1192e3b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
-{"key": "2e8f1d132915b05f739382cf1ebb025c", "reply": "{\"args\": {\"lease_id\": \"L055\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
-{"key": "118f544ea1d9235c3dcb701aadc8efae", "reply": "{\"args\": {\"lease_id\": \"L055\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
-{"key": "81a8671076bc452e89ef3ed4b8e0cd6d", "reply": "{\"done\": \"I read the lease. A person should review this one.\"}", "role": "smart", "trial": 4}
 {"key": "f32c9b8872ea38a47ae546c1f908b132", "reply": "{\"args\": {\"lease_id\": \"L071\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
 {"key": "bbbca1ff78ed7350837c2be98dd8e674", "reply": "{\"args\": {\"lease_id\": \"L071\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
 {"key": "5c692ff48d91d32a6ef416afeb6e5d89", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L071\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
@@ -348,3 +301,50 @@
 {"key": "827dde04012d3962b33c100af2b2089f", "reply": "{\"args\": {\"lease_id\": \"L071\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
 {"key": "d70650421b75d27887c2065d4694956a", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L071\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
 {"key": "7d8460f03818c0b701cca94098cd9ef6", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "fa525eaa4e61f9d10193ffacd5aab1e5", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "a44c8510cfc77e9a55fd76d938dbb8d0", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "5d65da95b00c662350c4c2782b9afa5c", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L077\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "71b3edf102936898c5ccf65deaf67fba", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "edbd9af5b2e98486034c880027e0f778", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "5a3d4abee1935772ee9689204c649757", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "92330c1677d0521379fd4096c136252a", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L077\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "3147193a6d2985baa1b8a3f5f8981df0", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "2da73bda87964836a9e788e09226b72c", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "81346ce3857207504cc9abe9c9d9b928", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "a36a04ee2047b7b18e91f0eb80c846a9", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L078\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "eeea5e8c15362a3e72c3b05ac6b58967", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "39e1b8e4281f377229a9726dbfd16114", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "0107129e36a3c7b5b589084f68035180", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "db673c4e75545a0956f81f0c5d1d975a", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L077\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "aed436ef8a34e560acba5699554fc55b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "d2d941f71b5fa1d7994e904d23b06cd1", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "41e7574f34838b02e9dbb2816ec48976", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "0ba74ac28ef2e4a2d4d46ef28d6fb9fe", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L091\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "c6d3d8d6f203893f0b1af66ba1f2088c", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "af71554e57ae7275d9ae26cb50ee77ae", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "431e3b974974744e5cc11e26c85a2011", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "8bac13f8eeffed16d5924860f4fd67c9", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L091\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "dd8036b0c9cff4a9123b633e05ff7340", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "4770e345adbd77f1bce5b63f8fb91692", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "a853622bc861895ea687373a48730e50", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "54cb4863ade9dd33bc52dd05e5b4a82e", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L091\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "0a9a5cddf08ec7dbfd6a55d27c9918d5", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "bffc18e6a03f013bfd014f234a2d267b", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "2ad7754a35a618928c709e8ac11a2659", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "415934155a203770f2569b7e76d6c167", "reply": "{\"done\": \"I read the lease. A person should review this one.\"}", "role": "smart", "trial": 4}
+{"key": "e8e6df2695dd18c80f41f908895e4093", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "30adefe2cda163e160839133d99c3095", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "2db2a4106d16ff57c77f54a7b744519c", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "77058c86dd9bccc2be8d9d917d04f376", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "08cd748aad79301942abdbec131eadc8", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "f2ea2de914231f27210f5ff08f3fba59", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "de70a38d39506a4f19e79e8be9543ff6", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "e92eb6248317729633631b7375e514d0", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "c1f211dc5d9575aa1e0653031d72fe71", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "027ae307a1adf54c0c33c778992dc222", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "75572ae96eb6c4ab02ba887efb9c941d", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "fddb1935ad725be53271bccc31b37e26", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "fdb313cbc958be361803a22969cf4df0", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "99eb210697501d08373d77c106527579", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "f02dcfbff7640c8265da1e78e3489391", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "d3473b0b671ac9344947fd33b178e6e4", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}

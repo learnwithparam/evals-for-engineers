@@ -287,7 +287,7 @@ def abstract_with_faults(m, k, rng, lease_faults, noise=1.0):
     if k["late_fee"]["kind"] == "percent" and rng.random() < 0.5:
         a["late_fee"] = {"kind": "flat", "value": k["late_fee"]["value"] * 100}
         modes.append("late-fee-percent-as-dollars")
-    if m["pet_deposit"] and rng.random() < 0.2 * noise:
+    if m["pet_deposit"] and rng.random() < 0.2:
         a["deposit"] = k["deposit"] + m["pet_deposit"]
         modes.append("deposit-includes-pet-deposit")
     return a, modes
@@ -356,25 +356,35 @@ def bad_answer(kind, m, k, rng, retrieved):
     c = lambda x: f"[{m['id']}-{x}]"
     if kind in ("business", "paint"):
         cid = retrieved[0].split("-")[1]
-        claim = ("Yes, a home business is allowed if it does not disturb neighbours" if kind == "business"
-                 else "Yes, the tenant may paint if the walls are returned to white")
+        claim = rng.choice(["Yes, a home business is allowed if it does not disturb neighbours",
+                            "Yes, a home office is fine but no customers may visit",
+                            "No, the lease bans any business use"] if kind == "business" else
+                           ["Yes, the tenant may paint if the walls are returned to white",
+                            "Yes, with written consent from Fernhill",
+                            "No, the lease bans any decorating"])
         return f"{claim} {c(cid)}.", 5
     if kind == "renewal" and m["notice_phrase"] == "not_less_than":
-        return f"The tenant must give written notice {k['renewal_notice_days']} days before the end of the term {c('c12')}.", 3
+        return rng.choice([f"The tenant must give written notice {k['renewal_notice_days']} days before the end of the term {c('c12')}.",
+                           f"Exactly {k['renewal_notice_days']} days' written notice is needed {c('c12')}.",
+                           f"The tenant needs to give {k['renewal_notice_days']} days' notice before the term ends {c('c12')}."]), 3
     if kind == "rent" and m["amendment"]:
-        return f"The rent is {usd(m['original_rent'])} a month {c('c04')}.", 0
+        return rng.choice([f"The rent is {usd(m['original_rent'])} a month {c('c04')}.",
+                           f"Monthly rent is {usd(m['original_rent'])}, due on the first day of each month {c('c04')}."]), 0
     if kind == "late":
-        return (f"A late charge applies if rent is not received by day {k['late_fee_after_day'] + 2} "
+        return (f"A late charge applies if rent is not received by day {k['late_fee_after_day'] + rng.choice([1, 2, 5])} "
                 f"{c('c07')}."), 0
     if kind == "sublet" and k["sublet_allowed"]:
         return f"Yes, the tenant may sublet freely {c('c11')}.", 0
     if kind == "deposit":
-        return f"The tenant paid a security deposit of {usd(k['deposit'] + 50000)} {c('c06')}.", 0
+        return f"The tenant paid a security deposit of {usd(k['deposit'] + rng.choice([30000, 50000, 75000]))} {c('c06')}.", 0
     if kind == "pets" and k["pets_allowed"]:
         return f"Yes. The lease allows pets with no extra fee {c('c09')}.", 0
     if kind == "early" and k["early_termination_fee"]:
-        return f"Yes, with 30 days' notice and no fee {c('c13')}.", 0
-    return f"Yes, and the landlord covers any extra cost {c(retrieved[0].split('-')[1])}.", 0
+        return rng.choice([f"Yes, with 30 days' notice and no fee {c('c13')}.",
+                           f"Yes, with 60 days' notice and no fee {c('c13')}."]), 0
+    return rng.choice([f"Yes, and the landlord covers any extra cost {c(retrieved[0].split('-')[1])}.",
+                       f"Yes, as long as the tenant tells Fernhill first {c(retrieved[0].split('-')[1])}.",
+                       f"No, the lease forbids it {c(retrieved[0].split('-')[1])}."]), 0
 
 
 def desk_run(q, m, k, rng, release="live", new_template=False):
@@ -396,7 +406,7 @@ def desk_run(q, m, k, rng, release="live", new_template=False):
         answer, grounded = lease_desk.ABSTAIN, True
     else:
         p_bad = 0.75 if new_template else (0.6 if (kind == "renewal" and m["notice_phrase"] == "not_less_than")
-                                           else 0.45 if (kind == "rent" and m["amendment"]) else 0.12)
+                                           else 0.5 if (kind == "rent" and m["amendment"]) else 0.2)
         if rng.random() < p_bad:
             answer, fault = bad_answer(kind, m, k, rng, retrieved)
             grounded = False
@@ -632,8 +642,13 @@ def main():
     truth_by = {t["trace_id"]: t for t in desk_truth}
 
     # Dana's grounded labels: 60 pass and 60 fail, split train 20, dev 50, test 50.
-    passes = [d["trace_id"] for d in desk if truth_by[d["trace_id"]]["grounded"]]
-    fails = [d["trace_id"] for d in desk if not truth_by[d["trace_id"]]["grounded"]]
+    # Dana labels each distinct answer once, so a repeated run never sits in two splits.
+    distinct = {}
+    for d in desk:
+        distinct.setdefault((d["question_id"], d["answer"]), d["trace_id"])
+    uniq = sorted(distinct.values())
+    passes = [t for t in uniq if truth_by[t]["grounded"]]
+    fails = [t for t in uniq if not truth_by[t]["grounded"]]
     rng.shuffle(passes)
     rng.shuffle(fails)
     assert len(fails) >= 60, f"only {len(fails)} ungrounded runs; raise the fault rates"
@@ -651,19 +666,34 @@ def main():
     paths.write_jsonl(paths.LABELS / "lease_desk_truth.jsonl", desk_truth)
 
     # The finished judge's recorded verdicts: TPR 0.92 and TNR 0.88 on test, near that elsewhere.
+    by_content = {}
+
+    def content(i):
+        d = desk_by.get(i) or prod_by[i]
+        return (d["question"], d["answer"], tuple(d["cited"]))
+
     def verdicts_for(ids, tpr_miss, tnr_miss, seed):
+        """Flip a set share of verdicts. The same prompt always gets the same verdict, as at temperature 0."""
         r = random.Random(seed)
+        done = {i: by_content[content(i)] for i in ids if content(i) in by_content}
+        ids = [i for i in ids if i not in done]
         pos = [i for i in ids if truth_by_all[i]["grounded"]]
         neg = [i for i in ids if not truth_by_all[i]["grounded"]]
         flip = set(r.sample(pos, tpr_miss) if isinstance(tpr_miss, int) else [i for i in pos if r.random() < tpr_miss])
         flip |= set(r.sample(neg, tnr_miss) if isinstance(tnr_miss, int) else [i for i in neg if r.random() < tnr_miss])
-        out = {}
+        out = dict(done)
         for i in ids:
+            if content(i) in by_content:
+                out[i] = by_content[content(i)]
+                continue
             v = "pass" if truth_by_all[i]["grounded"] else "fail"
             out[i] = ("fail" if v == "pass" else "pass") if i in flip else v
+            by_content[content(i)] = out[i]
         return out
 
     truth_by_all = dict(truth_by)
+    desk_by = {d["trace_id"]: d for d in desk}
+    prod_by = {}
     verdict = {}
     verdict.update(verdicts_for([i for i, s in split.items() if s == "test"], 2, 3, 11))
     verdict.update(verdicts_for([i for i, s in split.items() if s == "dev"], 2, 3, 12))
@@ -703,6 +733,7 @@ def main():
                          "cited": run["cited"]})
             truth_by_all[rid] = {"trace_id": rid, "grounded": run["grounded"], "fault": run["fault"],
                                  "abstained": run["abstained"], "should_abstain": run["should_abstain"]}
+    prod_by.update({p["trace_id"]: p for p in prod})
     verdict.update(verdicts_for([p["trace_id"] for p in prod], 0.08, 0.12, 15))
     for p in prod:
         record_judge(p, verdict[p["trace_id"]])
