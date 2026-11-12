@@ -56,6 +56,10 @@ def words(d: date) -> str:
     return f"{d.day} {MONTHS[d.month - 1]} {d.year}"
 
 
+def nth(n: int) -> str:
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
 def usd(c: int) -> str:
     return f"${c / 100:,.2f}"
 
@@ -201,7 +205,7 @@ def lease_text(m, k):
                                       f"deposit rules that apply to the Premises.")
     late = k["late_fee"]
     fee = f"{late['value']}% of the overdue amount" if late["kind"] == "percent" else usd(late["value"])
-    clause("c07", "Late charges", f"If rent is not received by day {k['late_fee_after_day']} of the month, Tenant "
+    clause("c07", "Late charges", f"If rent is not received by the {nth(k['late_fee_after_day'])} of the month, Tenant "
                                   f"shall pay a late charge of {fee}.")
     if k["utilities_included"]:
         clause("c08", "Utilities", f"Landlord pays for {' and '.join(k['utilities_included'])}. Tenant pays for all "
@@ -329,7 +333,7 @@ def good_answer(kind, m, k, cite):
     if kind == "late":
         late = k["late_fee"]
         fee = f"{late['value']}% of the overdue amount" if late["kind"] == "percent" else usd(late["value"])
-        return f"A late charge of {fee} applies if rent is not received by day {k['late_fee_after_day']} {c('c07')}."
+        return f"A late charge of {fee} applies if rent is not received by the {nth(k['late_fee_after_day'])} {c('c07')}."
     if kind == "sublet":
         if k["sublet_allowed"]:
             return f"Yes, with Fernhill's written consent {c('c11')}."
@@ -371,7 +375,7 @@ def bad_answer(kind, m, k, rng, retrieved):
         return rng.choice([f"The rent is {usd(m['original_rent'])} a month {c('c04')}.",
                            f"Monthly rent is {usd(m['original_rent'])}, due on the first day of each month {c('c04')}."]), 0
     if kind == "late":
-        return (f"A late charge applies if rent is not received by day {k['late_fee_after_day'] + rng.choice([1, 2, 5])} "
+        return (f"A late charge applies if rent is not received by the {nth(k['late_fee_after_day'] + rng.choice([1, 2, 5]))} "
                 f"{c('c07')}."), 0
     if kind == "sublet" and k["sublet_allowed"]:
         return f"Yes, the tenant may sublet freely {c('c11')}.", 0

@@ -1,0 +1,36 @@
+{
+  "n": 40,
+  "top_mode": "amended-rent-missed",
+  "modes": {
+    "amended-rent-missed": {
+      "count": 4,
+      "rate": 0.1,
+      "decision": "judge"
+    },
+    "rent-step-dropped": {
+      "count": 3,
+      "rate": 0.075,
+      "decision": "judge"
+    },
+    "notice-days-wrong-clause": {
+      "count": 3,
+      "rate": 0.075,
+      "decision": "judge"
+    },
+    "utilities-incomplete": {
+      "count": 1,
+      "rate": 0.025,
+      "decision": "judge"
+    },
+    "late-fee-percent-as-dollars": {
+      "count": 4,
+      "rate": 0.1,
+      "decision": "judge"
+    },
+    "deposit-includes-pet-deposit": {
+      "count": 3,
+      "rate": 0.075,
+      "decision": "judge"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+modes:
+  - name: amended-rent-missed
+    definition: The abstract keeps the rent from the original lease and ignores a later amendment.
+    examples: [abs-0026, abs-0027, abs-0028]
+  - name: rent-step-dropped
+    definition: The abstract has no rent steps although the lease raises the rent during the term.
+    examples: [abs-0102, abs-0276, abs-0296]
+  - name: notice-days-wrong-clause
+    definition: The renewal notice days come from another clause, not the renewal clause.
+    examples: [abs-0024, abs-0068, abs-0226]
+  - name: utilities-incomplete
+    definition: The abstract leaves out a utility that the landlord pays for.
+    examples: [abs-0039]
+  - name: late-fee-percent-as-dollars
+    definition: A late fee written as a percent is recorded as a flat dollar amount.
+    examples: [abs-0276, abs-0290, abs-0296]
+  - name: deposit-includes-pet-deposit
+    definition: The security deposit adds in the separate one-time pet deposit.
+    examples: [abs-0051, abs-0057, abs-0073]

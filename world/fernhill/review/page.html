@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernhill trace review</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d2321;--mute:#5d6662;--line:#dcd9d0;--pass:#1f7a4d;--fail:#b3261e;--defer:#8a6d00;--accent:#2f5d50}
+@media (prefers-color-scheme:dark){:root{--bg:#141816;--card:#1d2321;--ink:#e8ece9;--mute:#9aa49f;--line:#323a36;--pass:#4cc38a;--fail:#ff8a80;--defer:#e0c050;--accent:#8fc9b5}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+header{display:flex;gap:16px;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+header b{font-size:16px}.mute{color:var(--mute)}.bar{flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent)}
+main{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px 20px}
+section{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;min-width:0}
+h2{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin:0 0 8px}
+pre{white-space:pre-wrap;font:13px/1.5 ui-monospace,Menlo,monospace;margin:0;max-height:62vh;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}td{padding:4px 6px;border-bottom:1px solid var(--line);vertical-align:top}td:first-child{color:var(--mute);width:42%}
+td code{font:12.5px ui-monospace,Menlo,monospace}
+.keys{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.keys button{font:inherit;padding:8px 14px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.keys button.on.pass{background:var(--pass);color:#fff;border-color:var(--pass)}.keys button.on.fail{background:var(--fail);color:#fff;border-color:var(--fail)}.keys button.on.defer{background:var(--defer);color:#fff;border-color:var(--defer)}
+textarea{width:100%;min-height:80px;margin-top:10px;font:inherit;padding:8px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.meta{font-size:13px;margin-bottom:8px}.tag{display:inline-block;padding:1px 8px;border-radius:10px;border:1px solid var(--line);margin-right:6px;font-size:12px}
+@media (max-width:800px){main{grid-template-columns:1fr}}
+</style></head><body>
+<header><b>Fernhill trace review</b><span class="mute" id="where"></span><div class="bar"><i id="prog"></i></div><span id="count"></span></header>
+<main><section><h2>The signed lease</h2><pre id="lease"></pre></section>
+<section><h2>What the abstractor wrote</h2><div class="meta" id="meta"></div><table id="abs"></table>
+<div class="keys" id="keys"></div><textarea id="note" placeholder="Describe what went wrong, not why. Saved as you type." hidden></textarea>
+<p class="mute" id="help"></p></section></main>
+<script>
+let S, i = 0;
+const $ = (id) => document.getElementById(id);
+const money = (k, v) => (["monthly_rent","deposit","pet_fee","early_termination_fee"].includes(k) && typeof v === "number") ? "$" + (v/100).toLocaleString("en-US",{minimumFractionDigits:2}) : JSON.stringify(v);
+async function load(){ S = await (await fetch("/api/state")).json(); draw(); }
+function post(b){ return fetch("/api/save",{method:"POST",body:JSON.stringify(b)}); }
+function draw(){
+  const it = S.items[i]; if (!it) return;
+  const t = it.trace, done = S.items.filter(x => S.notes_mode ? x.note : (x.mark && x.mark !== "defer")).length;
+  $("where").textContent = S.folder; $("count").textContent = `${i+1} of ${S.items.length} · ${done} done`;
+  $("prog").style.width = (100*done/S.items.length) + "%";
+  $("lease").textContent = it.lease;
+  $("meta").innerHTML = `<span class="tag">${t.trace_id}</span><span class="tag">${t.lease_id}</span><span class="tag">${t.lease_type}</span><span class="tag">amendments: ${t.amendments}</span>`;
+  $("abs").innerHTML = Object.entries(t.output).map(([k,v]) => `<tr><td>${k}</td><td><code>${money(k,v)}</code></td></tr>`).join("");
+  if (S.notes_mode) {
+    $("keys").innerHTML = ""; $("note").hidden = false; $("note").value = it.note; $("note").focus();
+    $("help").textContent = "Notes: one note per failed trace. Tab out of the box, then use the arrow keys to move.";
+  } else {
+    $("note").hidden = true;
+    $("keys").innerHTML = [["1","pass"],["2","fail"],["d","defer"]].map(([k,m]) => `<button class="${m} ${it.mark===m?"on":""}" onclick="mark('${m}')">${k} ${m}</button>`).join("");
+    $("help").textContent = "Keys: 1 pass, 2 fail, d defer, arrows to move. Saved to marks.csv on every key.";
+  }
+}
+async function mark(m){ S.items[i].mark = m; await post({trace_id:S.items[i].trace.trace_id, mark:m}); if (i < S.items.length-1) i++; draw(); }
+let timer; $("note").addEventListener("input", () => { const it = S.items[i]; it.note = $("note").value; clearTimeout(timer); timer = setTimeout(() => post({trace_id:it.trace.trace_id, note:it.note}), 300); });
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "TEXTAREA") return;
+  if (e.key === "ArrowRight") { i = Math.min(i+1, S.items.length-1); draw(); }
+  else if (e.key === "ArrowLeft") { i = Math.max(i-1, 0); draw(); }
+  else if (!S.notes_mode && e.key === "1") mark("pass");
+  else if (!S.notes_mode && e.key === "2") mark("fail");
+  else if (!S.notes_mode && e.key.toLowerCase() === "d") mark("defer");
+});
+load();
+</script></body></html>

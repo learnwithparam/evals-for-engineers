@@ -1,0 +1,17 @@
+trace_id,note
+abs-0024,The model needs to look at the renewal clause instead.
+abs-0026,The prompt should tell the model to read amendments.
+abs-0027,The prompt should tell the model to read amendments.
+abs-0028,The prompt should tell the model to read amendments.
+abs-0037,The prompt should tell the model to read amendments.
+abs-0039,Add a utilities example to the prompt.
+abs-0051,Change the prompt to split the deposits.
+abs-0057,Change the prompt to split the deposits.
+abs-0068,The model needs to look at the renewal clause instead.
+abs-0073,Change the prompt to split the deposits.
+abs-0102,Fix the parser so it handles percentages.
+abs-0226,The model needs to look at the renewal clause instead.
+abs-0276,Fix the parser so it handles percentages.
+abs-0290,The schema should have a percent type.
+abs-0296,Fix the parser so it handles percentages.
+abs-0300,The schema should have a percent type.

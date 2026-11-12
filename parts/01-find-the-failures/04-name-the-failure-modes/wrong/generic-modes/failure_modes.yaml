@@ -1,0 +1,13 @@
+modes:
+  - name: hallucination
+    definition: The abstract has a hallucination problem.
+    examples: [abs-0024, abs-0026]
+  - name: inaccuracy
+    definition: The abstract has a inaccuracy problem.
+    examples: [abs-0051, abs-0057]
+  - name: formatting
+    definition: The abstract has a formatting problem.
+    examples: [abs-0039, abs-0276]
+  - name: other
+    definition: Any other problem with the abstract.
+    examples: [abs-0024]
