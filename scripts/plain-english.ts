@@ -11,7 +11,8 @@ import { ROOT } from "./structure";
 const DEFAULT_READING_GRADE = 8;
 const LONGEST_SENTENCE = 25;
 
-const SKIPPED_FOLDERS = new Set(["node_modules", ".git", ".venv", "recordings", "research"]);
+// world/data holds the world's generated leases: legal text the course reads, not pages it teaches.
+const SKIPPED_FOLDERS = new Set(["node_modules", ".git", ".venv", "recordings", "research", "data"]);
 
 // Pages for the people who build the course, not for learners.
 const AUTHOR_PAGES = new Set(["STANDARD.md", "SPEC.md", "PARTS.md"]);
