@@ -2,7 +2,9 @@
 
 ## The problem
 
-The abstractor has written 300 lease abstracts into the system of record. Dana knows of two wrong rent letters, but nobody knows how many abstracts are wrong or in what way. Reading all 300 is too slow. Reading the first 40 is worse: they come from the same few leases, and shops and amended leases, where mistakes cost most, would barely show up.
+A trace is the record of one run of a system: what went in, what came out, and each step between. The abstractor has 300 traces. Each one wrote a lease abstract into the system of record. Dana knows of two wrong rent letters. Nobody knows how many abstracts are wrong, or in what way.
+
+Reading all 300 traces is too slow. Reading the first 40 is worse. They come from only 18 leases, and they hold no commercial lease at all. Shop leases and amended leases are where mistakes cost most, so you need them in the set you read.
 
 ```mermaid
 flowchart LR
@@ -14,15 +16,25 @@ flowchart LR
 
 ## Your challenge
 
-Finish `sample()` in `sample.py` so it picks 40 traces for review. Cover the risky kinds first: at least 8 traces of amended leases and at least 3 of commercial leases. Fill the rest at random. The same seed must always give the same 40, so a colleague can review the same set.
+Finish `sample()` in `sample.py` so it picks 40 traces for review. Pick the risky kinds first: at least 8 traces of amended leases and at least 3 of commercial leases. Then fill the rest at random. The same seed must always give the same 40, so a colleague can review the same set.
 
-Each line of `world/data/traces/abstractor.jsonl` is one trace. The fields you need are `trace_id`, `lease_type` (`residential` or `commercial`) and `amendments` (a count).
+Each line of `world/data/traces/abstractor.jsonl` is one trace. You need three fields: `trace_id`, `lease_type` (`residential` or `commercial`) and `amendments` (a count).
+
+For example, the first line of the file starts like this:
+
+```
+{"amendments": 0, "building": "Eyot House", "lease_id": "L001", "lease_type": "residential", ...
+```
+
+This trace is for a residential lease with no amendments, so it is not one of the risky kinds. Near its end, the same line holds `"trace_id": "abs-0001"`.
 
 ```bash
 uv run python sample.py --seed 7
 ```
 
 Expect: `Wrote 40 traces to` followed by the path of `sample.jsonl`.
+
+With seed 7, the sample answer picks 14 traces of amended leases and 7 of commercial leases.
 
 ## Done when
 
@@ -50,4 +62,4 @@ The sample answer is in `../solution/sample.py`. Open it after you have tried.
 
 - **Trace**: the record of one run of a system: what went in, what came out, and each step between.
 - **Stratified sample**: a sample that takes a set number from each group first, so small groups are not missed.
-- **Seed**: a number that fixes what a random generator produces, so a run can be repeated exactly.
+- **Seed**: a number that fixes what a random generator produces, so you can repeat a run exactly.

@@ -2,11 +2,15 @@
 
 ## The problem
 
-Dana Mensah, head of lease administration at Fernhill Homes, says owners got two wrong rent letters last month. Nobody can say whether that is 2 in 2,000 abstracts or 2 in 20, or what kinds of mistakes the abstractor makes. Writing evals now would mean guessing which failures to test for.
+Dana Mensah is head of lease administration at Fernhill Homes. She says owners got two wrong rent letters last month. Nobody can say whether that is 2 in 2,000 abstracts or 2 in 20. Nobody can say what kinds of mistakes the abstractor makes. If you write evals now, you have to guess which failures to test for.
+
+In this part you read the abstractor's traces yourself. A trace is the record of one run: what went in, what came out, and each step between. You mark each one pass or fail, write what went wrong, and group those notes into named failure modes. Then you count them.
+
+For example, trace `abs-0026` is for lease L012. Its abstract says the monthly rent is $2,650.00. But Amendment No. 1 of that lease says: "From 1 February 2026, clause c04 is changed: the monthly rent is $2,825.00." You mark the trace `fail` and note what you saw. Later it joins the failure mode `amended-rent-missed`. That mode covers 4 of the 40 traces you review, a rate of 0.1.
 
 ## Why it matters
 
-A number about an LLM system is only as good as the person who looked at the outputs first. Anthropic's engineering team reports that a model scored 42% on a public agent benchmark until they fixed grading bugs and unclear task specs, after which it scored 95% ([Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), Anthropic). The same post advises starting with "20-50 simple tasks drawn from real failures". Langfuse's error analysis guide gives the same order: review the first 30 to 50 traces yourself, describe behaviour without diagnosing it, then group the notes into named categories ([Error analysis for LLM applications](https://github.com/langfuse/langfuse-docs/blob/main/content/guides/cookbook/error-analysis-llm-applications.mdx), Langfuse).
+A number about an LLM system is only as good as the person who looked at the outputs first. Anthropic's engineering team reports that a model scored 42% on a public agent benchmark. After they fixed grading bugs and unclear task specs, it scored 95% ([Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), Anthropic). The same post advises starting with "20-50 simple tasks drawn from real failures". Langfuse's error analysis guide gives the same order. First, review the first 30 to 50 traces yourself. Next, describe behaviour without diagnosing it. Then group the notes into named categories ([Error analysis for LLM applications](https://github.com/langfuse/langfuse-docs/blob/main/content/guides/cookbook/error-analysis-llm-applications.mdx), Langfuse).
 
 This part needs no model key. Everything runs on recorded traces.
 
@@ -30,7 +34,7 @@ flowchart LR
 | `name-the-failure-modes` | 20      | `failure_modes.yaml` and `labels.csv`    | your modes, labels, notes and marks                |
 | `count-the-failures`     | 10      | `rates.json`: rate and decision per mode | your rates, recomputed from your labels            |
 
-Each step starts from the sample answer of the step before it, so you can start at any step.
+Each step starts from the sample answer of the step before it. So you can start at any step.
 
 ## Walkthrough
 
@@ -94,8 +98,8 @@ Expect: `Part find-the-failures is done: 5/5 steps pass.`
 
 ## What you can show
 
-`rates.json` answers Dana's question with numbers: the top failure mode, its rate, and which modes move to a code check in the next part, Check with code.
+`rates.json` answers Dana's question with numbers. It shows the top failure mode, its rate, and which modes move to a code check. The next part, Check with code, builds those checks.
 
 ## Extension
 
-Run your sampler with `--n 100`, review the extra traces, and plot how many new modes each block of 10 traces adds. Langfuse's rule of thumb is to stop when the last 20 traces added no new category.
+Run your sampler with `--n 100` and review the extra traces. Then plot how many new modes each block of 10 traces adds. Langfuse suggests a simple rule: stop when the last 20 traces added no new category.
