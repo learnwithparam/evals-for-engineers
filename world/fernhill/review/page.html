@@ -25,37 +25,159 @@ textarea{width:100%;min-height:80px;margin-top:10px;font:inherit;padding:8px;bor
 <div class="keys" id="keys"></div><textarea id="note" placeholder="Describe what went wrong, not why. Saved as you type." hidden></textarea>
 <p class="mute" id="help"></p></section></main>
 <script>
-let S, i = 0;
-const $ = (id) => document.getElementById(id);
-const money = (k, v) => (["monthly_rent","deposit","pet_fee","early_termination_fee"].includes(k) && typeof v === "number") ? "$" + (v/100).toLocaleString("en-US",{minimumFractionDigits:2}) : JSON.stringify(v);
-async function load(){ S = await (await fetch("/api/state")).json(); draw(); }
-function post(b){ return fetch("/api/save",{method:"POST",body:JSON.stringify(b)}); }
-function draw(){
-  const it = S.items[i]; if (!it) return;
-  const t = it.trace, done = S.items.filter(x => S.notes_mode ? x.note : (x.mark && x.mark !== "defer")).length;
-  $("where").textContent = S.folder; $("count").textContent = `${i+1} of ${S.items.length} · ${done} done`;
-  $("prog").style.width = (100*done/S.items.length) + "%";
-  $("lease").textContent = it.lease;
-  $("meta").innerHTML = `<span class="tag">${t.trace_id}</span><span class="tag">${t.lease_id}</span><span class="tag">${t.lease_type}</span><span class="tag">amendments: ${t.amendments}</span>`;
-  $("abs").innerHTML = Object.entries(t.output).map(([k,v]) => `<tr><td>${k}</td><td><code>${money(k,v)}</code></td></tr>`).join("");
-  if (S.notes_mode) {
-    $("keys").innerHTML = ""; $("note").hidden = false; $("note").value = it.note; $("note").focus();
-    $("help").textContent = "Notes: one note per failed trace. Tab out of the box, then use the arrow keys to move.";
+// The review state from the server, and the position of the trace on screen.
+let state;
+let current = 0;
+
+const MONEY_FIELDS = ["monthly_rent", "deposit", "pet_fee", "early_termination_fee"];
+const MARK_KEYS = [
+  ["1", "pass"],
+  ["2", "fail"],
+  ["d", "defer"],
+];
+
+function element(id) {
+  return document.getElementById(id);
+}
+
+function formatValue(field, value) {
+  if (MONEY_FIELDS.includes(field) && typeof value === "number") {
+    const dollars = (value / 100).toLocaleString("en-US", { minimumFractionDigits: 2 });
+    return `$${dollars}`;
+  }
+  return JSON.stringify(value);
+}
+
+async function load() {
+  const response = await fetch("/api/state");
+  state = await response.json();
+  draw();
+}
+
+// The server reads snake_case keys, so the body is built from pairs, not an object literal.
+function save(item, field, value) {
+  const pairs = [
+    ["trace_id", item.trace.trace_id],
+    [field, value],
+  ];
+  const body = JSON.stringify(Object.fromEntries(pairs));
+  return fetch("/api/save", { method: "POST", body });
+}
+
+function isDone(item) {
+  if (state.notes_mode) {
+    return Boolean(item.note);
+  }
+  return Boolean(item.mark) && item.mark !== "defer";
+}
+
+function drawProgress() {
+  const total = state.items.length;
+  const done = state.items.filter(isDone).length;
+  element("where").textContent = state.folder;
+  element("count").textContent = `${current + 1} of ${total} · ${done} done`;
+  element("prog").style.width = `${(100 * done) / total}%`;
+}
+
+function drawAbstract(item) {
+  const trace = item.trace;
+  element("lease").textContent = item.lease;
+  element("meta").innerHTML = [
+    trace.trace_id,
+    trace.lease_id,
+    trace.lease_type,
+    `amendments: ${trace.amendments}`,
+  ]
+    .map((tag) => `<span class="tag">${tag}</span>`)
+    .join("");
+  const rows = Object.entries(trace.output).map(
+    ([field, value]) =>
+      `<tr><td>${field}</td><td><code>${formatValue(field, value)}</code></td></tr>`,
+  );
+  element("abs").innerHTML = rows.join("");
+}
+
+function drawNoteBox(item) {
+  const noteBox = element("note");
+  element("keys").innerHTML = "";
+  noteBox.hidden = false;
+  noteBox.value = item.note;
+  noteBox.focus();
+  element("help").textContent =
+    "Notes: one note per failed trace. Tab out of the box, then use the arrow keys to move.";
+}
+
+function drawMarkButtons(item) {
+  element("note").hidden = true;
+  const buttons = MARK_KEYS.map(([key, mark]) => {
+    const chosen = item.mark === mark ? "on" : "";
+    return `<button class="${mark} ${chosen}" onclick="setMark('${mark}')">${key} ${mark}</button>`;
+  });
+  element("keys").innerHTML = buttons.join("");
+  element("help").textContent =
+    "Keys: 1 pass, 2 fail, d defer, arrows to move. Saved to marks.csv on every key.";
+}
+
+function draw() {
+  const item = state.items[current];
+  if (!item) {
+    return;
+  }
+  drawProgress();
+  drawAbstract(item);
+  if (state.notes_mode) {
+    drawNoteBox(item);
   } else {
-    $("note").hidden = true;
-    $("keys").innerHTML = [["1","pass"],["2","fail"],["d","defer"]].map(([k,m]) => `<button class="${m} ${it.mark===m?"on":""}" onclick="mark('${m}')">${k} ${m}</button>`).join("");
-    $("help").textContent = "Keys: 1 pass, 2 fail, d defer, arrows to move. Saved to marks.csv on every key.";
+    drawMarkButtons(item);
   }
 }
-async function mark(m){ S.items[i].mark = m; await post({trace_id:S.items[i].trace.trace_id, mark:m}); if (i < S.items.length-1) i++; draw(); }
-let timer; $("note").addEventListener("input", () => { const it = S.items[i]; it.note = $("note").value; clearTimeout(timer); timer = setTimeout(() => post({trace_id:it.trace.trace_id, note:it.note}), 300); });
-document.addEventListener("keydown", (e) => {
-  if (e.target.tagName === "TEXTAREA") return;
-  if (e.key === "ArrowRight") { i = Math.min(i+1, S.items.length-1); draw(); }
-  else if (e.key === "ArrowLeft") { i = Math.max(i-1, 0); draw(); }
-  else if (!S.notes_mode && e.key === "1") mark("pass");
-  else if (!S.notes_mode && e.key === "2") mark("fail");
-  else if (!S.notes_mode && e.key.toLowerCase() === "d") mark("defer");
+
+// Called from the buttons' onclick, so it stays a global function.
+async function setMark(mark) {
+  const item = state.items[current];
+  item.mark = mark;
+  await save(item, "mark", mark);
+  if (current < state.items.length - 1) {
+    current++;
+  }
+  draw();
+}
+
+// Save a note 300 milliseconds after the typing stops, not on every key.
+let noteTimer;
+element("note").addEventListener("input", () => {
+  const item = state.items[current];
+  item.note = element("note").value;
+  clearTimeout(noteTimer);
+  noteTimer = setTimeout(() => save(item, "note", item.note), 300);
 });
+
+function moveBy(step) {
+  current = Math.min(Math.max(current + step, 0), state.items.length - 1);
+  draw();
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.target.tagName === "TEXTAREA") {
+    return;
+  }
+  if (event.key === "ArrowRight") {
+    moveBy(1);
+    return;
+  }
+  if (event.key === "ArrowLeft") {
+    moveBy(-1);
+    return;
+  }
+  if (state.notes_mode) {
+    return;
+  }
+  const pressed = event.key.toLowerCase();
+  const match = MARK_KEYS.find(([key]) => key === pressed);
+  if (match) {
+    setMark(match[1]);
+  }
+});
+
 load();
 </script></body></html>

@@ -6,29 +6,76 @@ from collections import Counter
 
 from .. import leases
 
-STOP = set(
-    ["a", "an", "and", "are", "as", "at", "be", "by", "can", "do", "does", "for", "from", "has", "have", "how", "i", "if", "in", "is", "it", "its", "of", "on", "or", "the", "this", "to", "what", "when", "who", "will", "with"]
-)
+# Words too common to say anything about which clause a question is about.
+STOP_WORDS = {
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "at",
+    "be",
+    "by",
+    "can",
+    "do",
+    "does",
+    "for",
+    "from",
+    "has",
+    "have",
+    "how",
+    "i",
+    "if",
+    "in",
+    "is",
+    "it",
+    "its",
+    "of",
+    "on",
+    "or",
+    "the",
+    "this",
+    "to",
+    "what",
+    "when",
+    "who",
+    "will",
+    "with",
+}
+
+# The two standard BM25 settings: how fast repeats of a word stop adding to the score, and how
+# much a long clause is held back against a short one.
+WORD_REPEAT_LIMIT = 1.2
+LENGTH_WEIGHT = 0.75
 
 
-def tokens(s: str) -> list[str]:
-    return [w for w in re.findall(r"[a-z0-9]+", s.lower()) if w not in STOP]
+def words(text: str) -> list[str]:
+    """The lowercase words and numbers in a text, without the stop words."""
+    all_words = re.findall(r"[a-z0-9]+", text.lower())
+    return [word for word in all_words if word not in STOP_WORDS]
 
 
-def search(lease_id: str, query: str, k: int = 5) -> list[dict]:
-    docs = leases.clauses(lease_id)
-    toks = [tokens(d["heading"] + " " + d["text"]) for d in docs]
-    n, avg = len(docs), sum(len(t) for t in toks) / max(1, len(docs))
-    df = Counter(w for t in toks for w in set(t))
-    q = tokens(query)
+def search(lease_id: str, query: str, how_many: int = 5) -> list[dict]:
+    """The clauses of one lease that best match the query, best first."""
+    clauses = leases.clauses(lease_id)
+    clause_words = [words(clause["heading"] + " " + clause["text"]) for clause in clauses]
+    clause_count = len(clauses)
+    average_length = sum(len(each) for each in clause_words) / max(1, clause_count)
+    # How many clauses each word appears in; a word found in few clauses counts for more.
+    clauses_with_word = Counter(word for each in clause_words for word in set(each))
+    query_words = words(query)
     scored = []
-    for d, t in zip(docs, toks):
-        tf, s = Counter(t), 0.0
-        for w in q:
-            if w not in tf:
+    for clause, its_words in zip(clauses, clause_words, strict=True):
+        times_in_clause, score = Counter(its_words), 0.0
+        length_share = LENGTH_WEIGHT * len(its_words) / average_length
+        length_penalty = WORD_REPEAT_LIMIT * (1 - LENGTH_WEIGHT + length_share)
+        for word in query_words:
+            if word not in times_in_clause:
                 continue
-            idf = math.log(1 + (n - df[w] + 0.5) / (df[w] + 0.5))
-            s += idf * tf[w] * 2.2 / (tf[w] + 1.2 * (0.25 + 0.75 * len(t) / avg))
-        scored.append((s, d))
-    scored.sort(key=lambda x: -x[0])
-    return [d for _, d in scored[:k]]
+            seen = clauses_with_word[word]
+            rarity = math.log(1 + (clause_count - seen + 0.5) / (seen + 0.5))
+            repeats = times_in_clause[word]
+            score += rarity * repeats * (WORD_REPEAT_LIMIT + 1) / (repeats + length_penalty)
+        scored.append((score, clause))
+    scored.sort(key=lambda pair: -pair[0])
+    return [clause for _, clause in scored[:how_many]]

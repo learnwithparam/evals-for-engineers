@@ -1,5 +1,8 @@
-"""The finished system: `uv run fernhill demo` shows one lease end to end; `uv run fernhill report` prints
-the eval report card a learner builds over the course."""
+"""The finished system, end to end.
+
+`uv run fernhill demo` shows one lease going through all three systems.
+`uv run fernhill report` prints the eval report card a learner builds over the course.
+"""
 
 import csv
 import hashlib
@@ -12,141 +15,217 @@ from . import agent_grade, fields, gate, judge, stats
 
 def fingerprint() -> str:
     """Changes when the world's data changes. The orientation check recomputes it."""
-    h = hashlib.sha256()
+    digest = hashlib.sha256()
     for name in ("keys.jsonl", "planted_faults.jsonl"):
-        h.update((paths.DATA / name).read_bytes())
-    return h.hexdigest()[:12]
+        digest.update((paths.DATA / name).read_bytes())
+    return digest.hexdigest()[:12]
 
 
 def _split():
     return json.loads((paths.DATA / "splits.json").read_text())
 
 
-def demo(args: list[str]) -> int:
-    meta = {m["id"]: m for m in leases.leases()}
-    lid = _split()["demo_lease"]
-    if "--lease" in args:
-        lid = args[args.index("--lease") + 1]
-    if lid not in meta:
-        print(f"There is no lease {lid}. Leases run from L001 to L130.")
-        return 1
-    m, key = meta[lid], leases.keys()[lid]
-    print(
-        f"Fernhill demo: lease {lid}, unit {m['unit']} at {m['building']} (provider: {llm.provider()})\n"
-    )
+def _show(field: str, value) -> str:
+    """One abstract value as the demo table prints it: money in dollars, rent steps as a count."""
+    if field in ("monthly_rent", "deposit"):
+        return leases.money(value)
+    if field == "rent_steps":
+        return str(len(value)) + " step(s)"
+    return str(value)
+
+
+def _demo_abstractor(lease_id: str, key: dict) -> bool:
+    """Step 1 of the demo. Returns False when replay has no recorded reply."""
     try:
-        got = abstractor.run(lid)
-    except llm.ReplayMissing as e:
-        print(f"  {e}")
-        return 2
+        abstract = abstractor.run(lease_id)
+    except llm.ReplayMissingError as error:
+        print(f"  {error}")
+        return False
     print("1. Lease abstractor wrote this abstract to the system of record")
     print(f"   {'field':<22} {'abstract':<16} {'the signed lease':<16}")
-    for f, ok in fields.score(got, key).items():
-        if f in leases.CRITICAL or not ok:
-            show = lambda v: (
-                leases.money(v)
-                if f in ("monthly_rent", "deposit")
-                else (str(len(v)) + " step(s)" if f == "rent_steps" else str(v))
-            )
-            print(
-                f"   {f:<22} {show(got.get(f)):<16} {show(key.get(f)):<16} {'ok' if ok else 'WRONG'}"
-            )
-    qs = [q for q in paths.read_jsonl(paths.DATA / "questions.jsonl") if q["lease_id"] == lid]
+    for field, ok in fields.score(abstract, key).items():
+        if field in leases.CRITICAL or not ok:
+            written = _show(field, abstract.get(field))
+            signed = _show(field, key.get(field))
+            verdict = "ok" if ok else "WRONG"
+            print(f"   {field:<22} {written:<16} {signed:<16} {verdict}")
+    return True
+
+
+def _demo_lease_desk(lease_id: str) -> None:
+    questions = paths.read_jsonl(paths.DATA / "questions.jsonl")
+    lease_questions = [question for question in questions if question["lease_id"] == lease_id]
     print("\n2. Lease desk answered a staff question")
-    for q in qs[:1]:
-        r = lease_desk.run(lid, q["question"])
-        print(f"   Q: {q['question']}\n   A: {r['answer']}")
-    tasks = [t for t in paths.read_jsonl(paths.DATA / "agent_tasks.jsonl") if t["lease_id"] == lid]
+    for question in lease_questions[:1]:
+        result = lease_desk.run(lease_id, question["question"])
+        print(f"   Q: {question['question']}\n   A: {result['answer']}")
+
+
+def _demo_agent(lease_id: str) -> None:
+    all_tasks = paths.read_jsonl(paths.DATA / "agent_tasks.jsonl")
+    tasks = [task for task in all_tasks if task["lease_id"] == lease_id]
     print("\n3. Rent review agent")
     if not tasks:
         tasks = paths.read_jsonl(paths.DATA / "agent_tasks.jsonl")[:1]
         print(
-            f"   No lease event on {lid} this month, so here is the agent on lease {tasks[0]['lease_id']}."
+            f"   No lease event on {lease_id} this month, "
+            f"so here is the agent on lease {tasks[0]['lease_id']}."
         )
         print(f"   Task: {tasks[0]['prompt']}")
-    for t in tasks[:1]:
-        res = agent.run(t, db.copy(paths.RUNS / f"demo-{t['id']}.db"))
-        for s in res["steps"]:
-            print(
-                f"   {s['tool']}({', '.join(f'{k}={v}' for k, v in s['args'].items() if k != 'body')})"
-            )
-        print(f"   done: {res['final']}")
+    for task in tasks[:1]:
+        run = agent.run(task, db.copy(paths.RUNS / f"demo-{task['id']}.db"))
+        for step in run["steps"]:
+            # The notice body is long, so the demo leaves it out.
+            shown = [f"{name}={value}" for name, value in step["args"].items() if name != "body"]
+            print(f"   {step['tool']}({', '.join(shown)})")
+        print(f"   done: {run['final']}")
+
+
+def demo(args: list[str]) -> int:
+    lease_by_id = {lease["id"]: lease for lease in leases.leases()}
+    lease_id = _split()["demo_lease"]
+    if "--lease" in args:
+        lease_id = args[args.index("--lease") + 1]
+    if lease_id not in lease_by_id:
+        print(f"There is no lease {lease_id}. Leases run from L001 to L130.")
+        return 1
+    lease, key = lease_by_id[lease_id], leases.keys()[lease_id]
+    print(
+        f"Fernhill demo: lease {lease_id}, unit {lease['unit']} at {lease['building']} "
+        f"(provider: {llm.provider()})\n"
+    )
+    if not _demo_abstractor(lease_id, key):
+        return 2
+    _demo_lease_desk(lease_id)
+    _demo_agent(lease_id)
     print("\nNext: uv run fernhill report")
     return 0
 
 
+def _field_accuracy(split: dict) -> dict:
+    """Field accuracy of the live abstractor on the gate set, with rent on amended leases apart."""
+    keys = leases.keys()
+    lease_by_id = {lease["id"]: lease for lease in leases.leases()}
+    rows = [
+        row
+        for row in gate.load("live")
+        if row["kind"] == "abstract" and row["trial"] == 1 and row["lease_id"] in split["gate"]
+    ]
+    scores = {row["lease_id"]: fields.score(row["output"], keys[row["lease_id"]]) for row in rows}
+    fields_right = sum(sum(score.values()) for score in scores.values())
+    fields_checked = sum(len(score) for score in scores.values())
+    amended = [lease_id for lease_id in scores if lease_by_id[lease_id]["amendments"]]
+    rent_wrong = [lease_id for lease_id in amended if not scores[lease_id]["monthly_rent"]]
+    return {
+        "accuracy": fields_right / fields_checked,
+        "amended": len(amended),
+        "rent_wrong": len(rent_wrong),
+    }
+
+
+class _Judging:
+    """Runs the grounded judge on lease desk traces, reading each lease's clauses once."""
+
+    def __init__(self):
+        self.clauses_by_lease = {}
+
+    def verdict(self, trace: dict) -> str:
+        lease_id = trace["lease_id"]
+        if lease_id not in self.clauses_by_lease:
+            lease_clauses = leases.clauses(lease_id)
+            self.clauses_by_lease[lease_id] = {clause["id"]: clause for clause in lease_clauses}
+        clauses = self.clauses_by_lease[lease_id]
+        cited = [
+            {"id": clause_id, "text": clauses[clause_id]["text"]}
+            for clause_id in trace["cited"]
+            if clause_id in clauses
+        ]
+        return judge.judge(trace["question"], trace["answer"], cited)["verdict"]
+
+
+def _grounded_rate() -> dict:
+    """The judge on unlabelled runs, corrected by its TPR and TNR on held-out labels."""
+    traces = paths.read_jsonl(paths.TRACES / "lease_desk.jsonl")
+    desk = {trace["trace_id"]: trace for trace in traces}
+    with open(paths.LABELS / "grounded.csv") as labels_file:
+        labels = list(csv.DictReader(labels_file))
+    judging = _Judging()
+    test = [
+        (label["label"], judging.verdict(desk[label["trace_id"]]))
+        for label in labels
+        if label["split"] == "test"
+    ]
+    labelled = {label["trace_id"] for label in labels}
+    unlabelled = [
+        judging.verdict(trace) for trace_id, trace in desk.items() if trace_id not in labelled
+    ]
+    tpr, tnr = stats.tpr_tnr(test)
+    observed = sum(verdict == "pass" for verdict in unlabelled) / len(unlabelled)
+    low, high = stats.bootstrap(test, unlabelled)
+    return {
+        "corrected": stats.corrected(observed, tpr, tnr),
+        "low": low,
+        "high": high,
+        "tpr": tpr,
+        "tnr": tnr,
+        "test_labels": len(test),
+    }
+
+
+def _retrieval_recall() -> float:
+    """Recall@5 on the answerable questions: the share of each gold clause set found, averaged."""
+    questions = paths.read_jsonl(paths.DATA / "questions.jsonl")
+    answerable = [question for question in questions if question["answerable"]]
+    total = 0
+    for question in answerable:
+        found = retrieval.search(question["lease_id"], question["question"], 5)
+        found_ids = {clause["id"] for clause in found}
+        gold = set(question["gold"])
+        total += len(gold & found_ids) / len(question["gold"])
+    return total / len(answerable)
+
+
+def _report_lines(split: dict) -> list[str]:
+    fields_part = _field_accuracy(split)
+    grounded = _grounded_rate()
+    recall = _retrieval_recall()
+    # The agent, graded by the end state of a fresh copy of the system of record.
+    graded = agent_grade.run_all()
+    pass_hat_three = agent_grade.pass_hat_k(graded)
+    posted = sum(result["posted"] for result in graded)
+    gate_result = gate.gate("cheaper-model")
+    if gate_result["verdict"] == "block":
+        verdict = "BLOCKED: " + gate_result["reasons"][0]
+    else:
+        verdict = "SHIP"
+    units = db.counts()["units"]
+    eval_corpus = len(leases.keys()) - 10
+    return [
+        "Fernhill eval report, release: live",
+        f"  Abstract fields correct ............ {fields_part['accuracy'] * 100:.1f}%   "
+        f"critical: rent wrong on {fields_part['rent_wrong']} of {fields_part['amended']} "
+        "amended leases",
+        f"  Lease desk grounded (corrected) .... {grounded['corrected'] * 100:.0f}% "
+        f"(95% interval {grounded['low'] * 100:.0f}% to {grounded['high'] * 100:.0f}%)   "
+        f"judge TPR {grounded['tpr']:.2f} TNR {grounded['tnr']:.2f} "
+        f"on {grounded['test_labels']} held-out labels",
+        f"  Retrieval recall@5 ................. {recall:.2f}",
+        f"  Agent outcome pass^3 ............... {pass_hat_three:.2f}   "
+        f"{posted} charge(s) posted without approval",
+        f"  Gate vs cheaper-model .............. {verdict}",
+        f"World: {units:,} units, {eval_corpus} leases in the eval corpus, "
+        f"fingerprint {fingerprint()}",
+    ]
+
+
 def report(args: list[str]) -> int:
     out_path = args[args.index("--out") + 1] if "--out" in args else None
-    split = _split()
-    keys = leases.keys()
-    meta = {m["id"]: m for m in leases.leases()}
-
-    # 1. Field accuracy of the live abstractor on the gate set, critical fields apart.
-    rows = [
-        r
-        for r in gate.load("live")
-        if r["kind"] == "abstract" and r["trial"] == 1 and r["lease_id"] in split["gate"]
-    ]
-    scores = {r["lease_id"]: fields.score(r["output"], keys[r["lease_id"]]) for r in rows}
-    acc = sum(sum(s.values()) for s in scores.values()) / sum(len(s) for s in scores.values())
-    am = [x for x in scores if meta[x]["amendments"]]
-    rent_bad = [x for x in am if not scores[x]["monthly_rent"]]
-
-    # 2. Grounded rate: the judge on unlabelled runs, corrected by its TPR and TNR on held-out labels.
-    desk = {d["trace_id"]: d for d in paths.read_jsonl(paths.TRACES / "lease_desk.jsonl")}
-    labels = list(csv.DictReader(open(paths.LABELS / "grounded.csv")))
-    clauses = {}
-
-    def run_judge(d):
-        if d["lease_id"] not in clauses:
-            clauses[d["lease_id"]] = {c["id"]: c for c in leases.clauses(d["lease_id"])}
-        cited = [
-            {"id": c, "text": clauses[d["lease_id"]][c]["text"]}
-            for c in d["cited"]
-            if c in clauses[d["lease_id"]]
-        ]
-        return judge.judge(d["question"], d["answer"], cited)["verdict"]
-
-    test = [(r["label"], run_judge(desk[r["trace_id"]])) for r in labels if r["split"] == "test"]
-    labelled = {r["trace_id"] for r in labels}
-    unl = [run_judge(d) for t, d in desk.items() if t not in labelled]
-    tpr, tnr = stats.tpr_tnr(test)
-    p_obs = sum(v == "pass" for v in unl) / len(unl)
-    corr = stats.corrected(p_obs, tpr, tnr)
-    lo, hi = stats.bootstrap(test, unl)
-
-    # 3. Retrieval recall@5 on the answerable questions.
-    qs = [q for q in paths.read_jsonl(paths.DATA / "questions.jsonl") if q["answerable"]]
-    rec = sum(
-        len(set(q["gold"]) & {c["id"] for c in retrieval.search(q["lease_id"], q["question"], 5)})
-        / len(q["gold"])
-        for q in qs
-    ) / len(qs)
-
-    # 4. The agent, graded by the end state of a fresh copy of the system of record.
-    graded = agent_grade.run_all()
-    p3 = agent_grade.pass_hat_k(graded)
-    posted = sum(g["posted"] for g in graded)
-
-    # 5. The gate on the cheaper model.
-    g = gate.gate("cheaper-model")
-    verdict = "BLOCKED: " + g["reasons"][0] if g["verdict"] == "block" else "SHIP"
-
-    lines = [
-        "Fernhill eval report, release: live",
-        f"  Abstract fields correct ............ {acc * 100:.1f}%   critical: rent wrong on {len(rent_bad)} of {len(am)} amended leases",
-        f"  Lease desk grounded (corrected) .... {corr * 100:.0f}% (95% interval {lo * 100:.0f}% to {hi * 100:.0f}%)   "
-        f"judge TPR {tpr:.2f} TNR {tnr:.2f} on {len(test)} held-out labels",
-        f"  Retrieval recall@5 ................. {rec:.2f}",
-        f"  Agent outcome pass^3 ............... {p3:.2f}   {posted} charge(s) posted without approval",
-        f"  Gate vs cheaper-model .............. {verdict}",
-        f"World: {db.counts()['units']:,} units, {len(keys) - 10} leases in the eval corpus, fingerprint {fingerprint()}",
-    ]
+    lines = _report_lines(_split())
     text = "\n".join(lines)
     print(text)
     paths.log("reports", {"provider": llm.provider(), "lines": lines})
     if out_path:
-        with open(out_path, "w") as f:
-            f.write(text + "\n")
+        with open(out_path, "w") as out_file:
+            out_file.write(text + "\n")
         print(f"Wrote {out_path}")
     return 0
