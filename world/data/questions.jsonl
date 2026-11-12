@@ -1,0 +1,80 @@
+{"answerable": true, "gold": ["L100-c12"], "id": "q001", "kind": "renewal", "lease_id": "L100", "question": "How much notice does the tenant in unit 8D at Juniper Hall need to give to renew?"}
+{"answerable": true, "gold": ["L087-c12"], "id": "q002", "kind": "renewal", "lease_id": "L087", "question": "How much notice does the tenant in unit 5F at Damson House need to give to renew?"}
+{"answerable": true, "gold": ["L106-c12"], "id": "q003", "kind": "renewal", "lease_id": "L106", "question": "How much notice does the tenant in unit 8E at Larch Gardens need to give to renew?"}
+{"answerable": true, "gold": ["L021-c12"], "id": "q004", "kind": "renewal", "lease_id": "L021", "question": "How much notice does the tenant in unit 4D at Cobble Yard need to give to renew?"}
+{"answerable": true, "gold": ["L012-c12"], "id": "q005", "kind": "renewal", "lease_id": "L012", "question": "How much notice does the tenant in unit 7D at Larch Gardens need to give to renew?"}
+{"answerable": true, "gold": ["L014-c12"], "id": "q006", "kind": "renewal", "lease_id": "L014", "question": "How much notice does the tenant in unit 9E at Juniper Hall need to give to renew?"}
+{"answerable": true, "gold": ["L091-c12"], "id": "q007", "kind": "renewal", "lease_id": "L091", "question": "How much notice does the tenant in unit 10B at Teasel Row need to give to renew?"}
+{"answerable": true, "gold": ["L022-c12"], "id": "q008", "kind": "renewal", "lease_id": "L022", "question": "How much notice does the tenant in unit 8B at Clover Mill need to give to renew?"}
+{"answerable": true, "gold": ["L112-c12"], "id": "q009", "kind": "renewal", "lease_id": "L112", "question": "How much notice does the tenant in unit G2 at Clover Mill need to give to renew?"}
+{"answerable": true, "gold": ["L052-c12"], "id": "q010", "kind": "renewal", "lease_id": "L052", "question": "How much notice does the tenant in unit 3C at Kestrel Way need to give to renew?"}
+{"answerable": true, "gold": ["L112-a01"], "id": "q011", "kind": "rent", "lease_id": "L112", "question": "What is the monthly rent for unit G2 at Clover Mill now?"}
+{"answerable": true, "gold": ["L056-a01"], "id": "q012", "kind": "rent", "lease_id": "L056", "question": "What is the monthly rent for unit 9A at Bramble Works now?"}
+{"answerable": true, "gold": ["L052-a01"], "id": "q013", "kind": "rent", "lease_id": "L052", "question": "What is the monthly rent for unit 3C at Kestrel Way now?"}
+{"answerable": true, "gold": ["L100-a01"], "id": "q014", "kind": "rent", "lease_id": "L100", "question": "What is the monthly rent for unit 8D at Juniper Hall now?"}
+{"answerable": true, "gold": ["L115-a01"], "id": "q015", "kind": "rent", "lease_id": "L115", "question": "What is the monthly rent for unit G3 at Fernhill Arcade now?"}
+{"answerable": true, "gold": ["L020-a01"], "id": "q016", "kind": "rent", "lease_id": "L020", "question": "What is the monthly rent for unit 9D at Cobble Yard now?"}
+{"answerable": true, "gold": ["L108-a01"], "id": "q017", "kind": "rent", "lease_id": "L108", "question": "What is the monthly rent for unit 9B at Rowan Steps now?"}
+{"answerable": true, "gold": ["L008-a01"], "id": "q018", "kind": "rent", "lease_id": "L008", "question": "What is the monthly rent for unit 10C at Dunlin Court now?"}
+{"answerable": true, "gold": ["L032-a01"], "id": "q019", "kind": "rent", "lease_id": "L032", "question": "What is the monthly rent for unit 3F at Ivy Wharf now?"}
+{"answerable": true, "gold": ["L002-c04"], "id": "q020", "kind": "rent", "lease_id": "L002", "question": "What is the monthly rent for unit 1A at Kestrel Way now?"}
+{"answerable": true, "gold": ["L074-c09"], "id": "q021", "kind": "pets", "lease_id": "L074", "question": "Can the tenant in unit 1C at Medlar Place keep a cat?"}
+{"answerable": true, "gold": ["L057-c09"], "id": "q022", "kind": "pets", "lease_id": "L057", "question": "Can the tenant in unit 8D at Granary Wharf keep a cat?"}
+{"answerable": true, "gold": ["L094-c09"], "id": "q023", "kind": "pets", "lease_id": "L094", "question": "Can the tenant in unit 8F at Yarrow House keep a cat?"}
+{"answerable": true, "gold": ["L066-c09"], "id": "q024", "kind": "pets", "lease_id": "L066", "question": "Can the tenant in unit 2B at Medlar Place keep a cat?"}
+{"answerable": true, "gold": ["L043-c09"], "id": "q025", "kind": "pets", "lease_id": "L043", "question": "Can the tenant in unit 3E at Kestrel Way keep a cat?"}
+{"answerable": true, "gold": ["L026-c09"], "id": "q026", "kind": "pets", "lease_id": "L026", "question": "Can the tenant in unit 9C at Elm Terrace keep a cat?"}
+{"answerable": true, "gold": ["L023-c09"], "id": "q027", "kind": "pets", "lease_id": "L023", "question": "Can the tenant in unit 6A at Fennel Mews keep a cat?"}
+{"answerable": true, "gold": ["L105-c09"], "id": "q028", "kind": "pets", "lease_id": "L105", "question": "Can the tenant in unit 7C at Juniper Hall keep a cat?"}
+{"answerable": true, "gold": ["L037-c07"], "id": "q029", "kind": "late", "lease_id": "L037", "question": "When does a late fee apply for unit 6E at Osier Walk, and how much is it?"}
+{"answerable": true, "gold": ["L013-c07"], "id": "q030", "kind": "late", "lease_id": "L013", "question": "When does a late fee apply for unit 5C at Cobble Yard, and how much is it?"}
+{"answerable": true, "gold": ["L028-c07"], "id": "q031", "kind": "late", "lease_id": "L028", "question": "When does a late fee apply for unit 5F at Rowan Steps, and how much is it?"}
+{"answerable": true, "gold": ["L063-c07"], "id": "q032", "kind": "late", "lease_id": "L063", "question": "When does a late fee apply for unit 7E at Teasel Row, and how much is it?"}
+{"answerable": true, "gold": ["L026-c07"], "id": "q033", "kind": "late", "lease_id": "L026", "question": "When does a late fee apply for unit 9C at Elm Terrace, and how much is it?"}
+{"answerable": true, "gold": ["L096-c07"], "id": "q034", "kind": "late", "lease_id": "L096", "question": "When does a late fee apply for unit 8B at Damson House, and how much is it?"}
+{"answerable": true, "gold": ["L034-c07"], "id": "q035", "kind": "late", "lease_id": "L034", "question": "When does a late fee apply for unit 7B at Clover Mill, and how much is it?"}
+{"answerable": true, "gold": ["L010-c11"], "id": "q036", "kind": "sublet", "lease_id": "L010", "question": "Can the tenant in unit 6F at Elm Terrace sublet?"}
+{"answerable": true, "gold": ["L044-c11"], "id": "q037", "kind": "sublet", "lease_id": "L044", "question": "Can the tenant in unit 5B at Willow Bank sublet?"}
+{"answerable": true, "gold": ["L026-c11"], "id": "q038", "kind": "sublet", "lease_id": "L026", "question": "Can the tenant in unit 9C at Elm Terrace sublet?"}
+{"answerable": true, "gold": ["L014-c11"], "id": "q039", "kind": "sublet", "lease_id": "L014", "question": "Can the tenant in unit 9E at Juniper Hall sublet?"}
+{"answerable": true, "gold": ["L027-c11"], "id": "q040", "kind": "sublet", "lease_id": "L027", "question": "Can the tenant in unit 5C at Granary Wharf sublet?"}
+{"answerable": true, "gold": ["L066-c11"], "id": "q041", "kind": "sublet", "lease_id": "L066", "question": "Can the tenant in unit 2B at Medlar Place sublet?"}
+{"answerable": true, "gold": ["L073-c08"], "id": "q042", "kind": "water", "lease_id": "L073", "question": "Who pays for water in unit 3D at Vetch Square?"}
+{"answerable": true, "gold": ["L019-c08"], "id": "q043", "kind": "water", "lease_id": "L019", "question": "Who pays for water in unit 6A at Willow Bank?"}
+{"answerable": true, "gold": ["L103-c08"], "id": "q044", "kind": "water", "lease_id": "L103", "question": "Who pays for water in unit 3D at Ivy Wharf?"}
+{"answerable": true, "gold": ["L094-c08"], "id": "q045", "kind": "water", "lease_id": "L094", "question": "Who pays for water in unit 8F at Yarrow House?"}
+{"answerable": true, "gold": ["L068-c08"], "id": "q046", "kind": "water", "lease_id": "L068", "question": "Who pays for water in unit 3A at Dunlin Court?"}
+{"answerable": true, "gold": ["L017-c08"], "id": "q047", "kind": "water", "lease_id": "L017", "question": "Who pays for water in unit 1B at Ivy Wharf?"}
+{"answerable": true, "gold": ["L064-c10"], "id": "q048", "kind": "parking", "lease_id": "L064", "question": "Does the lease for unit 6A at Medlar Place include parking?"}
+{"answerable": true, "gold": ["L010-c10"], "id": "q049", "kind": "parking", "lease_id": "L010", "question": "Does the lease for unit 6F at Elm Terrace include parking?"}
+{"answerable": true, "gold": ["L051-c10"], "id": "q050", "kind": "parking", "lease_id": "L051", "question": "Does the lease for unit 6F at Osier Walk include parking?"}
+{"answerable": true, "gold": ["L033-c10"], "id": "q051", "kind": "parking", "lease_id": "L033", "question": "Does the lease for unit 9C at Hazel Point include parking?"}
+{"answerable": true, "gold": ["L109-c10"], "id": "q052", "kind": "parking", "lease_id": "L109", "question": "Does the lease for unit 6C at Fennel Mews include parking?"}
+{"answerable": true, "gold": ["L069-c10"], "id": "q053", "kind": "parking", "lease_id": "L069", "question": "Does the lease for unit 7F at Elm Terrace include parking?"}
+{"answerable": true, "gold": ["L082-c06"], "id": "q054", "kind": "deposit", "lease_id": "L082", "question": "What security deposit did the tenant in unit 5D at Fernhill Arcade pay?"}
+{"answerable": true, "gold": ["L069-c06"], "id": "q055", "kind": "deposit", "lease_id": "L069", "question": "What security deposit did the tenant in unit 7F at Elm Terrace pay?"}
+{"answerable": true, "gold": ["L008-c06"], "id": "q056", "kind": "deposit", "lease_id": "L008", "question": "What security deposit did the tenant in unit 10C at Dunlin Court pay?"}
+{"answerable": true, "gold": ["L114-c06"], "id": "q057", "kind": "deposit", "lease_id": "L114", "question": "What security deposit did the tenant in unit G3 at Granary Wharf pay?"}
+{"answerable": true, "gold": ["L109-c06"], "id": "q058", "kind": "deposit", "lease_id": "L109", "question": "What security deposit did the tenant in unit 6C at Fennel Mews pay?"}
+{"answerable": true, "gold": ["L060-c06"], "id": "q059", "kind": "deposit", "lease_id": "L060", "question": "What security deposit did the tenant in unit 2E at Gorse Lane pay?"}
+{"answerable": true, "gold": ["L120-c13"], "id": "q060", "kind": "early", "lease_id": "L120", "question": "Can the tenant in unit G3 at Clover Mill end the lease early?"}
+{"answerable": true, "gold": ["L019-c13"], "id": "q061", "kind": "early", "lease_id": "L019", "question": "Can the tenant in unit 6A at Willow Bank end the lease early?"}
+{"answerable": true, "gold": ["L023-c13"], "id": "q062", "kind": "early", "lease_id": "L023", "question": "Can the tenant in unit 6A at Fennel Mews end the lease early?"}
+{"answerable": true, "gold": ["L061-c13"], "id": "q063", "kind": "early", "lease_id": "L061", "question": "Can the tenant in unit 7D at Birch Court end the lease early?"}
+{"answerable": true, "gold": ["L065-c13"], "id": "q064", "kind": "early", "lease_id": "L065", "question": "Can the tenant in unit 8E at Granary Wharf end the lease early?"}
+{"answerable": true, "gold": ["L027-c13"], "id": "q065", "kind": "early", "lease_id": "L027", "question": "Can the tenant in unit 5C at Granary Wharf end the lease early?"}
+{"answerable": true, "gold": ["L088-c13"], "id": "q066", "kind": "early", "lease_id": "L088", "question": "Can the tenant in unit 5A at Granary Wharf end the lease early?"}
+{"answerable": true, "gold": ["L012-c13"], "id": "q067", "kind": "early", "lease_id": "L012", "question": "Can the tenant in unit 7D at Larch Gardens end the lease early?"}
+{"answerable": true, "gold": ["L032-c13"], "id": "q068", "kind": "early", "lease_id": "L032", "question": "Can the tenant in unit 3F at Ivy Wharf end the lease early?"}
+{"answerable": false, "gold": [], "id": "q069", "kind": "business", "lease_id": "L091", "question": "Can the tenant in unit 10B at Teasel Row run a business from home?"}
+{"answerable": false, "gold": [], "id": "q070", "kind": "business", "lease_id": "L073", "question": "Can the tenant in unit 3D at Vetch Square run a business from home?"}
+{"answerable": false, "gold": [], "id": "q071", "kind": "business", "lease_id": "L085", "question": "Can the tenant in unit 7A at Fennel Mews run a business from home?"}
+{"answerable": false, "gold": [], "id": "q072", "kind": "business", "lease_id": "L038", "question": "Can the tenant in unit 5C at Ivy Wharf run a business from home?"}
+{"answerable": false, "gold": [], "id": "q073", "kind": "business", "lease_id": "L120", "question": "Can the tenant in unit G3 at Clover Mill run a business from home?"}
+{"answerable": false, "gold": [], "id": "q074", "kind": "business", "lease_id": "L068", "question": "Can the tenant in unit 3A at Dunlin Court run a business from home?"}
+{"answerable": false, "gold": [], "id": "q075", "kind": "paint", "lease_id": "L009", "question": "Can the tenant in unit 10D at Dunlin Court paint the walls?"}
+{"answerable": false, "gold": [], "id": "q076", "kind": "paint", "lease_id": "L030", "question": "Can the tenant in unit 3E at Umber Lofts paint the walls?"}
+{"answerable": false, "gold": [], "id": "q077", "kind": "paint", "lease_id": "L028", "question": "Can the tenant in unit 5F at Rowan Steps paint the walls?"}
+{"answerable": false, "gold": [], "id": "q078", "kind": "paint", "lease_id": "L076", "question": "Can the tenant in unit 9E at Plover House paint the walls?"}
+{"answerable": false, "gold": [], "id": "q079", "kind": "paint", "lease_id": "L092", "question": "Can the tenant in unit 10A at Aspen Close paint the walls?"}
+{"answerable": false, "gold": [], "id": "q080", "kind": "paint", "lease_id": "L063", "question": "Can the tenant in unit 7E at Teasel Row paint the walls?"}

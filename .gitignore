@@ -1,2 +1,9 @@
 verify-report.json
 node_modules
+.env
+.venv
+__pycache__/
+*.pyc
+world/fernhill.db
+world/logs/
+world/runs/

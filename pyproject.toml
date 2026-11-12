@@ -1,0 +1,22 @@
+[project]
+name = "fernhill-evals"
+version = "0.1.0"
+description = "Evals for engineers: the Fernhill Homes world, its three LLM systems and the eval report."
+requires-python = ">=3.12"
+dependencies = [
+    "litellm==1.109.1",
+]
+
+[project.scripts]
+world = "fernhill.world:main"
+fernhill = "fernhill.cli:main"
+models = "fernhill.models_cli:main"
+review = "fernhill.review.server:main"
+
+[build-system]
+requires = ["uv_build==0.13.8"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "fernhill"
+module-root = "world"

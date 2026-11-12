@@ -1,0 +1,31 @@
+{"address": "173 Alder Row", "id": "B01", "kind": "residential", "name": "Alder Row", "owner": "Pereira Partners", "units": 59}
+{"address": "61 Birch Court", "id": "B02", "kind": "residential", "name": "Birch Court", "owner": "Pereira Partners", "units": 59}
+{"address": "92 Cobble Yard", "id": "B03", "kind": "residential", "name": "Cobble Yard", "owner": "Tanaka Family Trust", "units": 59}
+{"address": "157 Damson House", "id": "B04", "kind": "residential", "name": "Damson House", "owner": "Sato Family Trust", "units": 60}
+{"address": "7 Elm Terrace", "id": "B05", "kind": "residential", "name": "Elm Terrace", "owner": "Shah Estates", "units": 59}
+{"address": "6 Fennel Mews", "id": "B06", "kind": "residential", "name": "Fennel Mews", "owner": "Shah Partners", "units": 59}
+{"address": "65 Gorse Lane", "id": "B07", "kind": "residential", "name": "Gorse Lane", "owner": "Ruiz Partners", "units": 59}
+{"address": "115 Hazel Point", "id": "B08", "kind": "residential", "name": "Hazel Point", "owner": "Osei Holdings", "units": 60}
+{"address": "4 Ivy Wharf", "id": "B09", "kind": "residential", "name": "Ivy Wharf", "owner": "Fischer Estates", "units": 59}
+{"address": "159 Juniper Hall", "id": "B10", "kind": "residential", "name": "Juniper Hall", "owner": "Moreau Estates", "units": 59}
+{"address": "45 Kestrel Way", "id": "B11", "kind": "residential", "name": "Kestrel Way", "owner": "Fischer Family Trust", "units": 60}
+{"address": "22 Larch Gardens", "id": "B12", "kind": "residential", "name": "Larch Gardens", "owner": "Osei Family Trust", "units": 59}
+{"address": "159 Medlar Place", "id": "B13", "kind": "residential", "name": "Medlar Place", "owner": "Nakamura Estates", "units": 59}
+{"address": "112 Nettle Rise", "id": "B14", "kind": "residential", "name": "Nettle Rise", "owner": "Kowalski Partners", "units": 60}
+{"address": "141 Osier Walk", "id": "B15", "kind": "residential", "name": "Osier Walk", "owner": "Brennan Estates", "units": 59}
+{"address": "133 Plover House", "id": "B16", "kind": "residential", "name": "Plover House", "owner": "Ruiz Estates", "units": 59}
+{"address": "66 Quince Court", "id": "B17", "kind": "residential", "name": "Quince Court", "owner": "Moreau Partners", "units": 60}
+{"address": "107 Rowan Steps", "id": "B18", "kind": "residential", "name": "Rowan Steps", "owner": "Quint Family Trust", "units": 60}
+{"address": "162 Sorrel Yard", "id": "B19", "kind": "residential", "name": "Sorrel Yard", "owner": "Fischer Partners", "units": 59}
+{"address": "160 Teasel Row", "id": "B20", "kind": "residential", "name": "Teasel Row", "owner": "Shah Partners", "units": 60}
+{"address": "91 Umber Lofts", "id": "B21", "kind": "mixed", "name": "Umber Lofts", "owner": "Varga Partners", "units": 60}
+{"address": "96 Vetch Square", "id": "B22", "kind": "residential", "name": "Vetch Square", "owner": "Fischer Estates", "units": 59}
+{"address": "141 Willow Bank", "id": "B23", "kind": "residential", "name": "Willow Bank", "owner": "Quint Partners", "units": 59}
+{"address": "140 Yarrow House", "id": "B24", "kind": "residential", "name": "Yarrow House", "owner": "Varga Family Trust", "units": 60}
+{"address": "91 Aspen Close", "id": "B25", "kind": "residential", "name": "Aspen Close", "owner": "Pereira Holdings", "units": 59}
+{"address": "25 Bramble Works", "id": "B26", "kind": "residential", "name": "Bramble Works", "owner": "Brennan Family Trust", "units": 59}
+{"address": "53 Clover Mill", "id": "B27", "kind": "mixed", "name": "Clover Mill", "owner": "Varga Family Trust", "units": 59}
+{"address": "114 Dunlin Court", "id": "B28", "kind": "residential", "name": "Dunlin Court", "owner": "Sato Partners", "units": 59}
+{"address": "150 Eyot House", "id": "B29", "kind": "residential", "name": "Eyot House", "owner": "Delaney Holdings", "units": 60}
+{"address": "89 Fernhill Arcade", "id": "B30", "kind": "mixed", "name": "Fernhill Arcade", "owner": "Delaney Holdings", "units": 59}
+{"address": "126 Granary Wharf", "id": "B31", "kind": "mixed", "name": "Granary Wharf", "owner": "Shah Partners", "units": 60}
