@@ -20,40 +20,41 @@ RUNS = WORLD / "runs"
 
 def load_env() -> None:
     """Read .env at the repo root into os.environ, without overriding what is already set."""
-    env = ROOT / ".env"
-    if not env.exists():
+    env_file = ROOT / ".env"
+    if not env_file.exists():
         return
-    for line in env.read_text().splitlines():
+    for line in env_file.read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#") or "=" not in line:
             continue
-        k, v = line.split("=", 1)
-        if v.strip():
-            os.environ.setdefault(k.strip(), v.strip())
+        name, value = line.split("=", 1)
+        if value.strip():
+            os.environ.setdefault(name.strip(), value.strip())
 
 
 def config_models():
     """Import config/models.py by path: the one file that names a model."""
-    spec = importlib.util.spec_from_file_location("course_models", ROOT / "config" / "models.py")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+    models_file = ROOT / "config" / "models.py"
+    spec = importlib.util.spec_from_file_location("course_models", models_file)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def read_jsonl(path: Path) -> list[dict]:
-    with open(path) as f:
-        return [json.loads(line) for line in f if line.strip()]
+    with open(path) as file:
+        return [json.loads(line) for line in file if line.strip()]
 
 
 def write_jsonl(path: Path, rows) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w") as f:
-        for r in rows:
-            f.write(json.dumps(r, sort_keys=True) + "\n")
+    with open(path, "w") as file:
+        for row in rows:
+            file.write(json.dumps(row, sort_keys=True) + "\n")
 
 
 def log(name: str, row: dict) -> None:
     """Append one line to world/logs/<name>.jsonl. Checks read these logs, never a model's reply."""
     LOGS.mkdir(parents=True, exist_ok=True)
-    with open(LOGS / f"{name}.jsonl", "a") as f:
-        f.write(json.dumps(row, sort_keys=True) + "\n")
+    with open(LOGS / f"{name}.jsonl", "a") as file:
+        file.write(json.dumps(row, sort_keys=True) + "\n")
