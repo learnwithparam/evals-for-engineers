@@ -12,12 +12,16 @@ import {
 
 test("every planted fault is numbered 1 to 7 and points at something real", () => {
   const traces = abstractorTraces();
-  for (const f of plantedFaults()) {
-    expect(f.fault).toBeGreaterThanOrEqual(1);
-    expect(f.fault).toBeLessThanOrEqual(7);
-    if (f.system === "abstractor" && f.ref.startsWith("abs-")) expect(traces.has(f.ref)).toBe(true);
+  for (const fault of plantedFaults()) {
+    expect(fault.fault).toBeGreaterThanOrEqual(1);
+    expect(fault.fault).toBeLessThanOrEqual(7);
+    // Only abstractor faults that name a trace can be looked up in the recorded traces.
+    if (fault.system === "abstractor" && fault.ref.startsWith("abs-")) {
+      expect(traces.has(fault.ref)).toBe(true);
+    }
   }
-  expect(new Set(plantedFaults().map((f) => f.fault))).toEqual(new Set([1, 2, 3, 4, 5, 6, 7]));
+  const numbers = new Set(plantedFaults().map((fault) => fault.fault));
+  expect(numbers).toEqual(new Set([1, 2, 3, 4, 5, 6, 7]));
 });
 
 test("Dana labels every abstractor trace", () => {
@@ -25,11 +29,12 @@ test("Dana labels every abstractor trace", () => {
 });
 
 test("the golden and gate sets do not overlap", () => {
-  const s = splits();
-  expect(s.golden.filter((x: string) => s.gate.includes(x))).toEqual([]);
+  const { golden, gate } = splits();
+  expect(golden.filter((id) => gate.includes(id))).toEqual([]);
 });
 
 test("the orientation's sample report was made from this world", () => {
-  const r = readFileSync(join(ROOT, "00-orientation/01-meet-fernhill/solution/report.txt"), "utf8");
-  expect(r).toContain(`fingerprint ${fingerprint()}`);
+  const reportPath = join(ROOT, "00-orientation/01-meet-fernhill/solution/report.txt");
+  const report = readFileSync(reportPath, "utf8");
+  expect(report).toContain(`fingerprint ${fingerprint()}`);
 });

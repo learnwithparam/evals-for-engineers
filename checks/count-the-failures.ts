@@ -4,61 +4,85 @@ import type { Rule } from "../scripts/verify";
 import { readCsv, readJson, readYaml } from "./lib/world";
 
 const DECISIONS = ["fix the prompt", "code check", "judge", "monitor"];
-const rates = (d: string) => readJson(join(d, "rates.json"));
-const names = (d: string): string[] =>
-  (readYaml(join(d, "failure_modes.yaml"))?.modes ?? []).map((m: any) => m.name);
-const labels = (d: string) => readCsv(join(d, "labels.csv"));
-const counted = (d: string, m: string) => labels(d).filter((r) => r[m] === "1").length;
+
+// The learner writes rates.json, so every field may be missing or the wrong type.
+type ModeRate = { count?: unknown; rate?: unknown; decision?: unknown };
+type Rates = {
+  n?: unknown;
+  modes?: Record<string, ModeRate | undefined>;
+  [field: string]: unknown;
+};
+type FailureModes = { modes?: { name: string }[] };
+
+const rates = (folder: string) => readJson<Rates>(join(folder, "rates.json"));
+const topMode = (folder: string) => rates(folder).top_mode as string;
+const modeRate = (folder: string, mode: string) => rates(folder).modes?.[mode];
+
+const names = (folder: string): string[] => {
+  const failureModes = readYaml<FailureModes | undefined>(join(folder, "failure_modes.yaml"));
+  return (failureModes?.modes ?? []).map((mode) => mode.name);
+};
+const labels = (folder: string) => readCsv(join(folder, "labels.csv"));
+const counted = (folder: string, mode: string) =>
+  labels(folder).filter((row) => row[mode] === "1").length;
+
+function matchesLabels(folder: string, mode: string): boolean {
+  const entry = modeRate(folder, mode);
+  if (!entry) return false;
+  const count = counted(folder, mode);
+  const rate = count / labels(folder).length;
+  return entry.count === count && Math.abs(Number(entry.rate) - rate) < 0.001;
+}
 
 export default [
   {
     says: "rates.json has n, top_mode and modes",
-    test: (d) =>
-      existsSync(join(d, "rates.json")) &&
-      typeof rates(d).n === "number" &&
-      typeof rates(d).top_mode === "string" &&
-      typeof rates(d).modes === "object",
+    test: (folder) =>
+      existsSync(join(folder, "rates.json")) &&
+      typeof rates(folder).n === "number" &&
+      typeof rates(folder).top_mode === "string" &&
+      typeof rates(folder).modes === "object",
     tryNext: "keep the shape of the starter rates.json and fill it in, or write it from count.py",
   },
   {
     says: "n is the number of reviewed traces in labels.csv",
-    test: (d) => rates(d).n === labels(d).length,
+    test: (folder) => rates(folder).n === labels(folder).length,
     tryNext: "count the rows of labels.csv, not the failed ones",
   },
   {
     says: "every mode has a count and a rate that match labels.csv",
-    test: (d) =>
-      names(d).every((m) => {
-        const e = rates(d).modes?.[m];
-        return (
-          e &&
-          e.count === counted(d, m) &&
-          Math.abs(e.rate - counted(d, m) / labels(d).length) < 0.001
-        );
-      }),
+    test: (folder) => names(folder).every((mode) => matchesLabels(folder, mode)),
     tryNext:
-      "compute the numbers from labels.csv with code: count = the 1s in the column, rate = count / n",
+      "compute the numbers from labels.csv with code: " +
+      "count = the 1s in the column, rate = count / n",
   },
   {
     says: "top_mode has the highest count",
-    test: (d) => {
-      const best = Math.max(...names(d).map((m) => counted(d, m)));
-      return names(d).includes(rates(d).top_mode) && counted(d, rates(d).top_mode) === best;
+    test: (folder) => {
+      const counts = names(folder).map((mode) => counted(folder, mode));
+      const best = Math.max(...counts);
+      const top = topMode(folder);
+      return names(folder).includes(top) && counted(folder, top) === best;
     },
     tryNext: "set top_mode to the mode with the most 1s; if two tie, either is right",
   },
   {
     says: "every mode has a decision: fix the prompt, code check, judge or monitor",
-    test: (d) => names(d).every((m) => DECISIONS.includes(rates(d).modes?.[m]?.decision)),
+    test: (folder) =>
+      names(folder).every((mode) => {
+        const decision = modeRate(folder, mode)?.decision;
+        return DECISIONS.includes(decision as string);
+      }),
     tryNext: "pick one of the four decisions for each mode, spelled as shown",
   },
   {
     says: "rent failures, which have one right answer, go to a code check",
-    test: (d) =>
-      names(d)
-        .filter((m) => /rent/.test(m))
-        .every((m) => rates(d).modes?.[m]?.decision === "code check"),
+    test: (folder) => {
+      const rentModes = names(folder).filter((mode) => /rent/.test(mode));
+      return rentModes.every((mode) => modeRate(folder, mode)?.decision === "code check");
+    },
     tryNext:
-      "a rent value has one right answer in the lease; compare it in code, do not pay a judge to read it",
+      "a rent value has one right answer in the lease; " +
+      "compare it in code, do not pay a judge to read it",
   },
 ] satisfies Rule[];
