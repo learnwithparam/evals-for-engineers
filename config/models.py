@@ -4,10 +4,15 @@ Code asks for a role, never an id: models.fast (cheap, most calls), models.smart
 models.judge (grading). The provider comes from LLM_PROVIDER: replay (default, no key), anthropic,
 openrouter, openai or ollama. Ids were read from the providers' live model lists on the build date.
 """
+
 import os
 
 IDS = {
-    "anthropic": {"fast": "claude-haiku-5-5", "smart": "claude-sonnet-5-5", "judge": "claude-haiku-5-5"},
+    "anthropic": {
+        "fast": "claude-haiku-5-5",
+        "smart": "claude-sonnet-5-5",
+        "judge": "claude-haiku-5-5",
+    },
     "openrouter": {
         "fast": "nvidia/nemotron-3.5-lightning",
         "smart": "anthropic/claude-sonnet-5.5",
@@ -17,8 +22,17 @@ IDS = {
 }
 
 # LiteLLM routes a call by this prefix.
-PREFIX = {"anthropic": "anthropic/", "openrouter": "openrouter/", "openai": "openai/", "ollama": "ollama/"}
-KEY_NAME = {"anthropic": "ANTHROPIC_API_KEY", "openrouter": "OPENROUTER_API_KEY", "openai": "OPENAI_API_KEY"}
+PREFIX = {
+    "anthropic": "anthropic/",
+    "openrouter": "openrouter/",
+    "openai": "openai/",
+    "ollama": "ollama/",
+}
+KEY_NAME = {
+    "anthropic": "ANTHROPIC_API_KEY",
+    "openrouter": "OPENROUTER_API_KEY",
+    "openai": "OPENAI_API_KEY",
+}
 ROLES = ("fast", "smart", "judge")
 PROVIDERS = ("replay", "anthropic", "openrouter", "openai", "ollama")
 
@@ -35,7 +49,9 @@ def model_for(role: str, prov: str | None = None) -> str:
     if prov == "ollama":
         local = os.environ.get("OLLAMA_MODEL", "").strip()
         if not local:
-            raise RuntimeError("LLM_PROVIDER=ollama needs OLLAMA_MODEL in .env (the local model to use).")
+            raise RuntimeError(
+                "LLM_PROVIDER=ollama needs OLLAMA_MODEL in .env (the local model to use)."
+            )
         return PREFIX[prov] + local
     if prov not in IDS:
         raise ValueError(f"LLM_PROVIDER={prov!r} has no models; use one of {', '.join(PROVIDERS)}")

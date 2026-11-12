@@ -32,11 +32,11 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-|---|---|
-| `FAIL every trace with a planted fault is marked fail` | Check rent against the amendment, rent steps against the rent increases clause, and renewal notice days against the renewal clause. |
-| `FAIL your marks agree with Dana's on at least 32 of the 40 traces` | A trace fails when any one field is wrong. Check utilities, the late fee and the deposit too. |
-| `Address already in use` | Another review app is running. Stop it with Ctrl+C, or add `--port 8766`. |
+| What you see                                                        | Fix                                                                                                                                 |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `FAIL every trace with a planted fault is marked fail`              | Check rent against the amendment, rent steps against the rent increases clause, and renewal notice days against the renewal clause. |
+| `FAIL your marks agree with Dana's on at least 32 of the 40 traces` | A trace fails when any one field is wrong. Check utilities, the late fee and the deposit too.                                       |
+| `Address already in use`                                            | Another review app is running. Stop it with Ctrl+C, or add `--port 8766`.                                                           |
 
 ## Words you will use
 

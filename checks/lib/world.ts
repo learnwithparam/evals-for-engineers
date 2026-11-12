@@ -1,8 +1,9 @@
 // Reads the Fernhill world: its data, Dana's labels, the planted faults, the system of record and its logs.
 // A check reads these and the learner's files. It never reads a model's reply to judge it.
+
+import { Database } from "bun:sqlite";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Database } from "bun:sqlite";
 
 export const ROOT = join(import.meta.dir, "..", "..");
 export const DATA = join(ROOT, "world", "data");
@@ -10,24 +11,34 @@ export const LOGS = join(ROOT, "world", "logs");
 export const DB = join(ROOT, "world", "fernhill.db");
 
 export const readJsonl = <T = any>(p: string): T[] =>
-  readFileSync(p, "utf8").split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
+  readFileSync(p, "utf8")
+    .split("\n")
+    .filter((l) => l.trim())
+    .map((l) => JSON.parse(l));
 
 /** A small CSV reader: a header row, commas, and double quotes around fields that hold commas. */
 export function readCsv(p: string): Record<string, string>[] {
   const rows: string[][] = [];
-  let row: string[] = [], cell = "", quoted = false;
+  let row: string[] = [],
+    cell = "",
+    quoted = false;
   const text = readFileSync(p, "utf8").replace(/^﻿/, "");
   for (let i = 0; i < text.length; i++) {
     const c = text[i];
     if (quoted) {
-      if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; }
-      else if (c === '"') quoted = false;
+      if (c === '"' && text[i + 1] === '"') {
+        cell += '"';
+        i++;
+      } else if (c === '"') quoted = false;
       else cell += c;
     } else if (c === '"') quoted = true;
-    else if (c === ",") { row.push(cell); cell = ""; }
-    else if (c === "\n" || c === "\r") {
+    else if (c === ",") {
+      row.push(cell);
+      cell = "";
+    } else if (c === "\n" || c === "\r") {
       if (c === "\r" && text[i + 1] === "\n") i++;
-      row.push(cell); cell = "";
+      row.push(cell);
+      cell = "";
       if (row.some((x) => x.trim() !== "")) rows.push(row);
       row = [];
     } else cell += c;
@@ -40,7 +51,9 @@ export function readCsv(p: string): Record<string, string>[] {
 }
 
 export const csvHeader = (p: string): string[] =>
-  (readFileSync(p, "utf8").replace(/^﻿/, "").split(/\r?\n/)[0] ?? "").split(",").map((h) => h.trim());
+  (readFileSync(p, "utf8").replace(/^﻿/, "").split(/\r?\n/)[0] ?? "")
+    .split(",")
+    .map((h) => h.trim());
 
 export const readYaml = (p: string): any => Bun.YAML.parse(readFileSync(p, "utf8"));
 export const readJson = (p: string): any => JSON.parse(readFileSync(p, "utf8"));
@@ -48,7 +61,9 @@ export const readJson = (p: string): any => JSON.parse(readFileSync(p, "utf8"));
 let _traces: Map<string, any> | undefined;
 /** The 300 recorded abstractor runs, by trace id. */
 export function abstractorTraces(): Map<string, any> {
-  _traces ??= new Map(readJsonl(join(DATA, "traces", "abstractor.jsonl")).map((t) => [t.trace_id, t]));
+  _traces ??= new Map(
+    readJsonl(join(DATA, "traces", "abstractor.jsonl")).map((t) => [t.trace_id, t]),
+  );
   return _traces;
 }
 
@@ -64,16 +79,29 @@ export function danaAbstractor(): Map<string, { verdict: string; modes: string[]
 
 /** The three planted abstractor faults, as the mode Dana gives each. */
 export const PLANTED_MODES: Record<string, { fault: number; words: RegExp; what: string }> = {
-  "amended-rent-missed": { fault: 1, words: /rent|amend/i, what: "the rent misses Amendment No. 1" },
-  "rent-step-dropped": { fault: 2, words: /step|increase|rise|raise|anniversar|escalat/i, what: "a rent step in prose is dropped" },
-  "notice-days-wrong-clause": { fault: 3, words: /notice|renew|days/i, what: "renewal notice days come from another clause" },
+  "amended-rent-missed": {
+    fault: 1,
+    words: /rent|amend/i,
+    what: "the rent misses Amendment No. 1",
+  },
+  "rent-step-dropped": {
+    fault: 2,
+    words: /step|increase|rise|raise|anniversar|escalat/i,
+    what: "a rent step in prose is dropped",
+  },
+  "notice-days-wrong-clause": {
+    fault: 3,
+    words: /notice|renew|days/i,
+    what: "renewal notice days come from another clause",
+  },
 };
 
 /** Trace ids in a list that carry a planted fault, with the mode for each. */
 export function plantedIn(ids: string[]): { id: string; mode: string }[] {
   const dana = danaAbstractor();
   const out: { id: string; mode: string }[] = [];
-  for (const id of ids) for (const m of dana.get(id)?.modes ?? []) if (m in PLANTED_MODES) out.push({ id, mode: m });
+  for (const id of ids)
+    for (const m of dana.get(id)?.modes ?? []) if (m in PLANTED_MODES) out.push({ id, mode: m });
   return out;
 }
 
@@ -93,4 +121,5 @@ export function db(): Database | undefined {
 }
 
 /** Lines from world/logs/<name>.jsonl, written by the finished system and the learner's runs. */
-export const log = (name: string): any[] => (existsSync(join(LOGS, `${name}.jsonl`)) ? readJsonl(join(LOGS, `${name}.jsonl`)) : []);
+export const log = (name: string): any[] =>
+  existsSync(join(LOGS, `${name}.jsonl`)) ? readJsonl(join(LOGS, `${name}.jsonl`)) : [];

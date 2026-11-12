@@ -38,9 +38,9 @@ Expect: `Done. All 6 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-|---|---|
-| `FAIL every mode has a count and a rate that match labels.csv` | Compute the numbers with code, not by eye. The rate divides by all 40 reviewed traces, not by the failures. |
+| What you see                                                          | Fix                                                                                                                     |
+| --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `FAIL every mode has a count and a rate that match labels.csv`        | Compute the numbers with code, not by eye. The rate divides by all 40 reviewed traces, not by the failures.             |
 | `FAIL rent failures, which have one right answer, go to a code check` | A rent value in the lease is either matched or not. Comparing two numbers in code is cheaper and steadier than a judge. |
 
 ## Words you will use

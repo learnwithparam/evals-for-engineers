@@ -21,11 +21,11 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | The check reads |
-|---|---|---|---|
-| `build-the-golden-set` | 15 | `golden.jsonl`: 40 approved abstracts with a `critical_fields` list | the file, against `world/data/keys.jsonl` and `splits.json` (no gate lease) |
-| `write-field-checks` | 20 | `checks.py`: one check per field type, with a pass or fail and a reason | a hidden table of known pass and fail pairs run through your checks, three runs |
-| `check-the-ledger` | 15 | `ledger_check.py`: lease rent schedule against twelve months of charges | its output, against planted faults 4 and 6 and the clean leases |
+| Step                   | Minutes | You produce                                                             | The check reads                                                                 |
+| ---------------------- | ------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `build-the-golden-set` | 15      | `golden.jsonl`: 40 approved abstracts with a `critical_fields` list     | the file, against `world/data/keys.jsonl` and `splits.json` (no gate lease)     |
+| `write-field-checks`   | 20      | `checks.py`: one check per field type, with a pass or fail and a reason | a hidden table of known pass and fail pairs run through your checks, three runs |
+| `check-the-ledger`     | 15      | `ledger_check.py`: lease rent schedule against twelve months of charges | its output, against planted faults 4 and 6 and the clean leases                 |
 
 ## Walkthrough
 

@@ -1,4 +1,5 @@
 """The finished grounded judge: one criterion, pass or fail, critique before verdict."""
+
 import json
 
 from .. import llm
@@ -16,14 +17,19 @@ Reply with JSON only: {"critique": "...", "verdict": "pass" or "fail"}"""
 
 def messages(question: str, answer: str, cited: list[dict]) -> list[dict]:
     ctx = "\n".join(f"[{c['id']}] {c['text']}" for c in cited) or "(no clauses cited)"
-    return [{"role": "system", "content": SYSTEM},
-            {"role": "user", "content": f"Question: {question}\n\nAnswer: {answer}\n\nCited clauses:\n{ctx}"}]
+    return [
+        {"role": "system", "content": SYSTEM},
+        {
+            "role": "user",
+            "content": f"Question: {question}\n\nAnswer: {answer}\n\nCited clauses:\n{ctx}",
+        },
+    ]
 
 
 def judge(question: str, answer: str, cited: list[dict]) -> dict:
     reply = llm.complete("judge", messages(question, answer, cited), system="judge")
     t = reply.text
-    out = json.loads(t[t.find("{"): t.rfind("}") + 1])
+    out = json.loads(t[t.find("{") : t.rfind("}") + 1])
     if out.get("verdict") not in ("pass", "fail"):
         raise ValueError("the judge must reply pass or fail")
     return out

@@ -2,6 +2,7 @@
 
 Run: uv run python count.py
 """
+
 import csv
 import json
 
@@ -15,7 +16,12 @@ decisions = {m: "code check" if "rent" in m or "notice" in m else "fix the promp
 out = {
     "n": len(rows),
     "top_mode": max(counts, key=counts.get),
-    "modes": {m: {"count": counts[m], "rate": round(counts[m] / len(rows), 4), "decision": decisions[m]} for m in modes},
+    "modes": {
+        m: {"count": counts[m], "rate": round(counts[m] / len(rows), 4), "decision": decisions[m]}
+        for m in modes
+    },
 }
 json.dump(out, open("rates.json", "w"), indent=2)
-print(f"Wrote rates.json: top mode {out['top_mode']} at {counts[out['top_mode']]} of {len(rows)} traces")
+print(
+    f"Wrote rates.json: top mode {out['top_mode']} at {counts[out['top_mode']]} of {len(rows)} traces"
+)

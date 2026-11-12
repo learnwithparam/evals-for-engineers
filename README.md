@@ -57,15 +57,15 @@ Dana Mensah, head of lease administration, is the expert. Her labels define "cor
 
 ## Parts
 
-| Part | You produce | Minutes |
-|---|---|---|
-| [Start here](00-orientation/README.md) | the world on your machine and the finished report card | 15 |
-| [Find the failures](parts/01-find-the-failures/README.md) | failure modes and rates from 40 traces you read yourself | 75 |
-| [Check with code](parts/02-check-with-code/README.md) | a golden set, field checks and a ledger cross-check | 50 |
-| [Judge what code cannot](parts/03-judge-what-code-cannot/README.md) | a judge with TPR and TNR on held-out labels, a corrected pass rate | 90 |
-| [Gate the change](parts/04-gate-the-change/README.md) | a gate that blocks critical regressions and fails closed, in CI | 55 |
-| [Watch production](parts/05-watch-production/README.md) | a corrected rate per batch, an alert, new golden cases | 40 |
-| [Evaluate retrieval and the agent](parts/06-evaluate-retrieval-and-agent/README.md) | recall@k, an abstention judge, end-state agent grades | 80 |
+| Part                                                                                | You produce                                                        | Minutes |
+| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- |
+| [Start here](00-orientation/README.md)                                              | the world on your machine and the finished report card             | 15      |
+| [Find the failures](parts/01-find-the-failures/README.md)                           | failure modes and rates from 40 traces you read yourself           | 75      |
+| [Check with code](parts/02-check-with-code/README.md)                               | a golden set, field checks and a ledger cross-check                | 50      |
+| [Judge what code cannot](parts/03-judge-what-code-cannot/README.md)                 | a judge with TPR and TNR on held-out labels, a corrected pass rate | 90      |
+| [Gate the change](parts/04-gate-the-change/README.md)                               | a gate that blocks critical regressions and fails closed, in CI    | 55      |
+| [Watch production](parts/05-watch-production/README.md)                             | a corrected rate per batch, an alert, new golden cases             | 40      |
+| [Evaluate retrieval and the agent](parts/06-evaluate-retrieval-and-agent/README.md) | recall@k, an abstention judge, end-state agent grades              | 80      |
 
 Each step: read `problem/README.md`, do the work in `problem/`, then run `bun run verify <step-name>`. It prints what passed, what failed and what to try next. `bun run verify part <part-name>` checks a whole part. The schedules for one day, four evenings or six sessions are in `schedules.toml`.
 
@@ -79,10 +79,10 @@ Your own copy of this repo, with your failure modes, checks, judge, gate and CI 
 
 ## Read before you start
 
-| Title | Author | Minutes | Why |
-|---|---|---|---|
-| [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) | Anthropic | 25 | The words this course uses (task, trial, grader, pass@k, pass^k) and why a broken grader hides real results |
-| [Error analysis for LLM applications](https://github.com/langfuse/langfuse-docs/blob/main/content/guides/cookbook/error-analysis-llm-applications.mdx) | Langfuse | 13 | Find the failures follows it step by step |
-| [validate-evaluator skill](https://github.com/ai-evals-course/evals-skills/blob/main/skills/validate-evaluator/SKILL.md) | Shreya Shankar, Hamel Husain | 8 | Why judges are measured by TPR and TNR, and kappa is kept for two people |
+| Title                                                                                                                                                  | Author                       | Minutes | Why                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)                                             | Anthropic                    | 25      | The words this course uses (task, trial, grader, pass@k, pass^k) and why a broken grader hides real results |
+| [Error analysis for LLM applications](https://github.com/langfuse/langfuse-docs/blob/main/content/guides/cookbook/error-analysis-llm-applications.mdx) | Langfuse                     | 13      | Find the failures follows it step by step                                                                   |
+| [validate-evaluator skill](https://github.com/ai-evals-course/evals-skills/blob/main/skills/validate-evaluator/SKILL.md)                               | Shreya Shankar, Hamel Husain | 8       | Why judges are measured by TPR and TNR, and kappa is kept for two people                                    |
 
 When something goes wrong, see [troubleshooting](00-orientation/troubleshooting.md).

@@ -2,6 +2,7 @@
 
 Run: uv run python sample.py --seed 7
 """
+
 import argparse
 import json
 import random

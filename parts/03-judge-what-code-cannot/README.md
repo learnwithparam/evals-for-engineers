@@ -21,13 +21,13 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | The check reads |
-|---|---|---|---|
-| `label-the-answers` | 25 | `labels.csv`: 30 lease desk answers labelled grounded or not, each with a critique | your labels against Dana's, reported as Cohen's kappa between two people |
-| `write-the-judge` | 20 | `grounded.md` and a `judge` command that meets the contract | the command run on the train split, three runs in replay; no dev or test text in the prompt |
-| `align-the-judge` | 25 | `judge_dev.json`: TPR, TNR and every disagreement on dev, with a change log | TPR and TNR recomputed from your judge's own outputs, both at least 0.80 |
-| `test-the-judge` | 10 | `judge_test.json`: one run on the 50 test labels | one run per prompt hash, TPR and TNR at least 0.80 |
-| `correct-the-pass-rate` | 10 | `grounded_rate.json`: raw rate, corrected rate, 95% interval | the formula recomputed within 0.01, the interval holds the estimate |
+| Step                    | Minutes | You produce                                                                        | The check reads                                                                             |
+| ----------------------- | ------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `label-the-answers`     | 25      | `labels.csv`: 30 lease desk answers labelled grounded or not, each with a critique | your labels against Dana's, reported as Cohen's kappa between two people                    |
+| `write-the-judge`       | 20      | `grounded.md` and a `judge` command that meets the contract                        | the command run on the train split, three runs in replay; no dev or test text in the prompt |
+| `align-the-judge`       | 25      | `judge_dev.json`: TPR, TNR and every disagreement on dev, with a change log        | TPR and TNR recomputed from your judge's own outputs, both at least 0.80                    |
+| `test-the-judge`        | 10      | `judge_test.json`: one run on the 50 test labels                                   | one run per prompt hash, TPR and TNR at least 0.80                                          |
+| `correct-the-pass-rate` | 10      | `grounded_rate.json`: raw rate, corrected rate, 95% interval                       | the formula recomputed within 0.01, the interval holds the estimate                         |
 
 ## Walkthrough
 

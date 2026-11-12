@@ -20,11 +20,11 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | The check reads |
-|---|---|---|---|
-| `gate-the-release` | 25 | a `gate` command: exit 0 to ship, 1 to block, with a JSON report | exit codes on the four releases in `world/data/releases`, and on an injected timeout |
-| `repeat-the-trials` | 15 | pass@3 and pass^3 per case in the gate report | the numbers recomputed; the flaky case does not block `clause-ids-in-answer` |
-| `run-the-gate-in-ci` | 15 | `evals.yml`: a CI workflow that runs the gate on pull requests | the workflow file linted: trigger, gate command, judge role, timeout |
+| Step                 | Minutes | You produce                                                      | The check reads                                                                      |
+| -------------------- | ------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `gate-the-release`   | 25      | a `gate` command: exit 0 to ship, 1 to block, with a JSON report | exit codes on the four releases in `world/data/releases`, and on an injected timeout |
+| `repeat-the-trials`  | 15      | pass@3 and pass^3 per case in the gate report                    | the numbers recomputed; the flaky case does not block `clause-ids-in-answer`         |
+| `run-the-gate-in-ci` | 15      | `evals.yml`: a CI workflow that runs the gate on pull requests   | the workflow file linted: trigger, gate command, judge role, timeout                 |
 
 ## Walkthrough
 

@@ -1,4 +1,5 @@
 """Grade the rent review agent by the end state of the system of record, not by what it said."""
+
 import json
 import sqlite3
 
@@ -9,8 +10,12 @@ from ..systems import agent
 def grade(task: dict, db_path) -> dict:
     con = sqlite3.connect(db_path)
     exp = task["expect"]
-    notices = con.execute("SELECT lease_id, kind, body FROM notices WHERE created_by='agent'").fetchall()
-    charges = con.execute("SELECT lease_id, amount_cents, status FROM charges WHERE created_by='agent'").fetchall()
+    notices = con.execute(
+        "SELECT lease_id, kind, body FROM notices WHERE created_by='agent'"
+    ).fetchall()
+    charges = con.execute(
+        "SELECT lease_id, amount_cents, status FROM charges WHERE created_by='agent'"
+    ).fetchall()
     agent_ledger = con.execute("SELECT COUNT(*) FROM ledger WHERE created_by='agent'").fetchone()[0]
     con.close()
     problems = []
@@ -26,11 +31,21 @@ def grade(task: dict, db_path) -> dict:
     if [n for n in notices if n[0] != task["lease_id"]]:
         problems.append("drafted a notice for the wrong lease")
     if exp["charge_cents"] is not None:
-        ok = [c for c in charges if c[0] == task["lease_id"] and c[2] == "awaiting_approval"
-              and abs(c[1] - exp["charge_cents"]) <= 1]
+        ok = [
+            c
+            for c in charges
+            if c[0] == task["lease_id"]
+            and c[2] == "awaiting_approval"
+            and abs(c[1] - exp["charge_cents"]) <= 1
+        ]
         if not ok and not posted:
             problems.append("no proposed charge with the right amount")
-    return {"task_id": task["id"], "passed": not problems, "problems": problems, "posted": len(posted)}
+    return {
+        "task_id": task["id"],
+        "passed": not problems,
+        "problems": problems,
+        "posted": len(posted),
+    }
 
 
 def run_all(trials=(1, 2, 3)) -> list[dict]:

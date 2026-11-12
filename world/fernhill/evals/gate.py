@@ -1,4 +1,5 @@
 """The release gate: block a release that breaks a critical case, never average it away. Fails closed."""
+
 import json
 import sys
 from collections import defaultdict
@@ -43,7 +44,12 @@ def case_results(release: str):
     for lid in sorted(gate_ids):
         cases[lid] = {f: crit[lid][f] >= SHARE for f in leases.CRITICAL}
     abstains = {q: abst[q] >= SHARE for q in abst_trials}
-    return {"cases": cases, "abstains": abstains, "accuracy": right / total if total else 0.0, "missing": missing}
+    return {
+        "cases": cases,
+        "abstains": abstains,
+        "accuracy": right / total if total else 0.0,
+        "missing": missing,
+    }
 
 
 def gate(release: str, baseline: str = "live") -> dict:
@@ -67,13 +73,21 @@ def gate(release: str, baseline: str = "live") -> dict:
         am = [x for x in ids if meta[x]["amendments"]]
         noun = "lease" if len(ids) == 1 else "leases"
         where = f"{len(ids)} amended {noun}" if len(am) == len(ids) else f"{len(ids)} {noun}"
-        reasons.append(f"{f.replace('_', ' ').replace('monthly ', '')} newly wrong on {where} (critical)")
+        reasons.append(
+            f"{f.replace('_', ' ').replace('monthly ', '')} newly wrong on {where} (critical)"
+        )
     lost = [q for q, ok in cand["abstains"].items() if base["abstains"].get(q) and not ok]
     if lost:
-        reasons.append(f"stops saying 'The lease does not say.' on {len(lost)} unanswerable question(s) (critical)")
-    return {"verdict": "block" if reasons else "ship", "reasons": reasons,
-            "accuracy": cand["accuracy"], "baseline_accuracy": base["accuracy"],
-            "cases": [{"lease_id": k, **v} for k, v in cand["cases"].items()]}
+        reasons.append(
+            f"stops saying 'The lease does not say.' on {len(lost)} unanswerable question(s) (critical)"
+        )
+    return {
+        "verdict": "block" if reasons else "ship",
+        "reasons": reasons,
+        "accuracy": cand["accuracy"],
+        "baseline_accuracy": base["accuracy"],
+        "cases": [{"lease_id": k, **v} for k, v in cand["cases"].items()],
+    }
 
 
 def average_gate(release: str, baseline: str = "live", max_drop: float = 0.02) -> dict:
@@ -86,8 +100,10 @@ def main(args: list[str]) -> int:
     rel = args[args.index("--release") + 1] if "--release" in args else "live"
     if "--average-only" in args:
         r = average_gate(rel)
-        print(f"Average gate on {rel}: {'PASS' if r['verdict'] == 'ship' else 'BLOCKED'} "
-              f"(field accuracy drops {r['drop'] * 100:.1f} points; the limit is 2.0)")
+        print(
+            f"Average gate on {rel}: {'PASS' if r['verdict'] == 'ship' else 'BLOCKED'} "
+            f"(field accuracy drops {r['drop'] * 100:.1f} points; the limit is 2.0)"
+        )
         return 0 if r["verdict"] == "ship" else 1
     r = gate(rel)
     if r["verdict"] == "ship":

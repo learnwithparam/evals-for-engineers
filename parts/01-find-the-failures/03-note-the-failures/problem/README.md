@@ -41,11 +41,11 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-|---|---|
-| `FAIL no note names a fix or a cause` | Rewrite the note as what you saw: the field, the value written, the value in the lease. |
-| `FAIL each note on a planted fault names the field that went wrong` | Use the field's own words: rent, rent step, renewal notice. |
-| `FAIL every trace marked fail has a note` | Move through every trace in the app with the right arrow key; the counter shows how many are done. |
+| What you see                                                        | Fix                                                                                                |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `FAIL no note names a fix or a cause`                               | Rewrite the note as what you saw: the field, the value written, the value in the lease.            |
+| `FAIL each note on a planted fault names the field that went wrong` | Use the field's own words: rent, rent step, renewal notice.                                        |
+| `FAIL every trace marked fail has a note`                           | Move through every trace in the app with the right arrow key; the counter shows how many are done. |
 
 ## Words you will use
 

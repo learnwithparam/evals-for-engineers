@@ -3,6 +3,7 @@
 LLM_PROVIDER=replay (the default) answers from recorded replies in world/replay/, so the course,
 its checks and CI run with no key. Any other provider calls the model live through LiteLLM.
 """
+
 import hashlib
 import json
 import os
@@ -47,19 +48,33 @@ def provider() -> str:
     return paths.config_models().provider()
 
 
-def complete(role: str, messages: list[dict], *, trial: int = 1, system: str = "", max_tokens: int = 800) -> Reply:
+def complete(
+    role: str, messages: list[dict], *, trial: int = 1, system: str = "", max_tokens: int = 800
+) -> Reply:
     """Send messages to the model for a role. trial picks one of several recorded replies in replay."""
     prov = provider()
     if prov == "replay":
         row = recorded().get(key(role, messages, trial))
         if row is None:
-            paths.log("calls", {"system": system, "role": role, "provider": prov, "ok": False, "replayed": True})
+            paths.log(
+                "calls",
+                {"system": system, "role": role, "provider": prov, "ok": False, "replayed": True},
+            )
             raise ReplayMissing(
                 "No recorded reply for this prompt. Replay only knows the prompts the finished system sends. "
                 "To run your own prompt, set LLM_PROVIDER and one key in .env (see .env.example)."
             )
-        paths.log("calls", {"system": system, "role": role, "provider": prov, "ok": True, "replayed": True,
-                            "cost_usd": 0.0})
+        paths.log(
+            "calls",
+            {
+                "system": system,
+                "role": role,
+                "provider": prov,
+                "ok": True,
+                "replayed": True,
+                "cost_usd": 0.0,
+            },
+        )
         return Reply(row["reply"], role, prov, True, 0.0)
     return _live(prov, role, messages, system, max_tokens)
 
@@ -72,13 +87,23 @@ def _live(prov: str, role: str, messages: list[dict], system: str, max_tokens: i
     import litellm  # imported late so replay never loads it
 
     litellm.suppress_debug_info = True
-    resp = litellm.completion(model=cm.model_for(role, prov), messages=messages, max_tokens=max_tokens,
-                              temperature=0)
+    resp = litellm.completion(
+        model=cm.model_for(role, prov), messages=messages, max_tokens=max_tokens, temperature=0
+    )
     text = resp.choices[0].message.content or ""
     try:
         cost = float(litellm.completion_cost(completion_response=resp))
     except Exception:
         cost = 0.0
-    paths.log("calls", {"system": system, "role": role, "provider": prov, "ok": True, "replayed": False,
-                        "cost_usd": cost})
+    paths.log(
+        "calls",
+        {
+            "system": system,
+            "role": role,
+            "provider": prov,
+            "ok": True,
+            "replayed": False,
+            "cost_usd": cost,
+        },
+    )
     return Reply(text, role, prov, False, cost)

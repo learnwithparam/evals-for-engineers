@@ -7,7 +7,8 @@ export type Ran = { code: number; out: string; err: string };
 /** The Python to use: the course's uv environment when uv is here, else python3 (CI has only Bun). */
 export function python(): string[] {
   if (process.env.PYTHON) return [process.env.PYTHON];
-  if (Bun.which("uv") && existsSync(`${ROOT}/pyproject.toml`)) return ["uv", "run", "--quiet", "python"];
+  if (Bun.which("uv") && existsSync(`${ROOT}/pyproject.toml`))
+    return ["uv", "run", "--quiet", "python"];
   return [Bun.which("python3") ?? "python"];
 }
 

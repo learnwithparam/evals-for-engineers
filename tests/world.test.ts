@@ -1,7 +1,14 @@
 import { expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { abstractorTraces, danaAbstractor, fingerprint, plantedFaults, ROOT, splits } from "../checks/lib/world";
+import {
+  abstractorTraces,
+  danaAbstractor,
+  fingerprint,
+  plantedFaults,
+  ROOT,
+  splits,
+} from "../checks/lib/world";
 
 test("every planted fault is numbered 1 to 7 and points at something real", () => {
   const traces = abstractorTraces();

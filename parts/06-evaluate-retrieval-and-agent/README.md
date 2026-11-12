@@ -20,12 +20,12 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | The check reads |
-|---|---|---|---|
-| `measure-retrieval-recall` | 20 | a `retrieve` command and `recall.json` for at least two settings | recall@1, recall@5 and MRR recomputed from your command on the 80 questions |
-| `judge-the-abstentions` | 20 | a second judge: abstains when the lease is silent | TPR and TNR on its test split, and every planted fault 5 answer caught |
-| `grade-the-agent-outcome` | 20 | `agent_checks.py` that grades the end state of the database | your grades on 20 tasks over 3 replay trials, against the planted agent faults |
-| `map-agent-failures` | 20 | `transitions.csv`: last good step against first failed step | counts recomputed from the 80 agent traces; the top cell named as the next fix |
+| Step                       | Minutes | You produce                                                      | The check reads                                                                |
+| -------------------------- | ------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| `measure-retrieval-recall` | 20      | a `retrieve` command and `recall.json` for at least two settings | recall@1, recall@5 and MRR recomputed from your command on the 80 questions    |
+| `judge-the-abstentions`    | 20      | a second judge: abstains when the lease is silent                | TPR and TNR on its test split, and every planted fault 5 answer caught         |
+| `grade-the-agent-outcome`  | 20      | `agent_checks.py` that grades the end state of the database      | your grades on 20 tasks over 3 replay trials, against the planted agent faults |
+| `map-agent-failures`       | 20      | `transitions.csv`: last good step against first failed step      | counts recomputed from the 80 agent traces; the top cell named as the next fix |
 
 ## Walkthrough
 

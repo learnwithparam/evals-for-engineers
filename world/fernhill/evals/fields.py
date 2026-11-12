@@ -1,4 +1,5 @@
 """Field checks: compare an abstract with the answer key, one field at a time, in code."""
+
 from .. import leases
 
 
@@ -12,7 +13,11 @@ def same(field: str, got, want) -> bool:
     if field == "utilities_included":
         return sorted(got or []) == sorted(want or [])
     if field == "late_fee":
-        return isinstance(got, dict) and got.get("kind") == want["kind"] and got.get("value") == want["value"]
+        return (
+            isinstance(got, dict)
+            and got.get("kind") == want["kind"]
+            and got.get("value") == want["value"]
+        )
     return got == want
 
 

@@ -1,4 +1,5 @@
 """uv run models: one tiny call per role on the chosen provider. Prints role, provider, pass or fail, cost."""
+
 import sys
 
 from . import llm, paths
@@ -23,7 +24,11 @@ def main() -> int:
         except Exception as e:  # the message never holds a key
             print(f"  {role:<6} FAIL  {str(e).splitlines()[0][:160]}")
             bad += 1
-    print("Every role answers." if not bad else f"{bad} role(s) failed. See 00-orientation/troubleshooting.md.")
+    print(
+        "Every role answers."
+        if not bad
+        else f"{bad} role(s) failed. See 00-orientation/troubleshooting.md."
+    )
     return 1 if bad else 0
 
 

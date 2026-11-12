@@ -2,6 +2,7 @@
 
 Run: uv run python count.py
 """
+
 import csv
 import json
 

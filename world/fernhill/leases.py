@@ -1,4 +1,5 @@
 """Lease documents: read a lease file and split it into clauses with stable ids."""
+
 import json
 import re
 
@@ -7,9 +8,24 @@ from . import paths
 HEAD = re.compile(r"^## ([a-z]\d\d) (.+)$")
 
 FIELDS = [
-    "unit", "tenant", "lease_type", "start_date", "end_date", "monthly_rent", "rent_steps", "deposit",
-    "renewal_option", "renewal_notice_days", "pets_allowed", "pet_fee", "late_fee", "late_fee_after_day",
-    "early_termination_fee", "utilities_included", "parking", "sublet_allowed",
+    "unit",
+    "tenant",
+    "lease_type",
+    "start_date",
+    "end_date",
+    "monthly_rent",
+    "rent_steps",
+    "deposit",
+    "renewal_option",
+    "renewal_notice_days",
+    "pets_allowed",
+    "pet_fee",
+    "late_fee",
+    "late_fee_after_day",
+    "early_termination_fee",
+    "utilities_included",
+    "parking",
+    "sublet_allowed",
 ]
 CRITICAL = ["monthly_rent", "rent_steps", "deposit", "renewal_notice_days"]
 

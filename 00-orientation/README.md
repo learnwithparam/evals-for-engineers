@@ -71,13 +71,13 @@ Expect: five `FAIL` lines, each with a `Try next:` line. Every step starts faili
 
 The report card below is what the finished system prints. Each line is a part of this course. By the end you can produce every number on it with your own code, and defend each one.
 
-| Report line | Built in |
-|---|---|
-| Abstract fields correct, rent on amended leases | Find the failures, Check with code |
-| Lease desk grounded, corrected, with judge TPR and TNR | Judge what code cannot |
-| Gate vs cheaper-model | Gate the change |
-| (new failures from production) | Watch production |
-| Retrieval recall@5, agent outcome pass^3 | Evaluate retrieval and the agent |
+| Report line                                            | Built in                           |
+| ------------------------------------------------------ | ---------------------------------- |
+| Abstract fields correct, rent on amended leases        | Find the failures, Check with code |
+| Lease desk grounded, corrected, with judge TPR and TNR | Judge what code cannot             |
+| Gate vs cheaper-model                                  | Gate the change                    |
+| (new failures from production)                         | Watch production                   |
+| Retrieval recall@5, agent outcome pass^3               | Evaluate retrieval and the agent   |
 
 ## Run it live
 

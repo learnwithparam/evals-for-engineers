@@ -3,6 +3,7 @@
 Keys: 1 pass, 2 fail, d defer, left and right arrows to move. It saves marks.csv on every key, and
 notes.csv when the folder has one (the note-the-failures step).
 """
+
 import csv
 import json
 import sys
@@ -48,9 +49,19 @@ class App:
     def state(self) -> dict:
         items = []
         for t in self.traces:
-            items.append({"trace": t, "lease": leases.text(t["lease_id"]), "mark": self.marks.get(t["trace_id"], ""),
-                          "note": self.notes.get(t["trace_id"], "")})
-        return {"folder": str(self.folder.relative_to(paths.ROOT)), "notes_mode": self.notes_mode, "items": items}
+            items.append(
+                {
+                    "trace": t,
+                    "lease": leases.text(t["lease_id"]),
+                    "mark": self.marks.get(t["trace_id"], ""),
+                    "note": self.notes.get(t["trace_id"], ""),
+                }
+            )
+        return {
+            "folder": str(self.folder.relative_to(paths.ROOT)),
+            "notes_mode": self.notes_mode,
+            "items": items,
+        }
 
     def save(self, body: dict) -> dict:
         tid = body["trace_id"]
@@ -60,7 +71,11 @@ class App:
             write_csv(self.folder / "marks.csv", "mark", ordered)
         if "note" in body and self.notes_mode:
             self.notes[tid] = body["note"].strip()
-            write_csv(self.folder / "notes.csv", "note", {t["trace_id"]: self.notes.get(t["trace_id"], "") for t in self.traces})
+            write_csv(
+                self.folder / "notes.csv",
+                "note",
+                {t["trace_id"]: self.notes.get(t["trace_id"], "") for t in self.traces},
+            )
         return {"ok": True}
 
 
@@ -93,7 +108,9 @@ def main() -> int:
             return self._send(200, app.save(json.loads(self.rfile.read(n) or b"{}")))
 
     srv = ThreadingHTTPServer(("127.0.0.1", port), H)
-    print(f"Review app for {app.folder.relative_to(paths.ROOT)}: http://127.0.0.1:{port}  (Ctrl+C to stop)")
+    print(
+        f"Review app for {app.folder.relative_to(paths.ROOT)}: http://127.0.0.1:{port}  (Ctrl+C to stop)"
+    )
     try:
         srv.serve_forever()
     except KeyboardInterrupt:

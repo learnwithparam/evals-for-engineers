@@ -49,11 +49,11 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-|---|---|
-| `uv: command not found` or `bun: command not found` | Install both, as the orientation README says, then open a new terminal. |
-| `FAIL its world line matches the world in this repo` | Run `uv run world reset` and write the report again. |
-| `No recorded reply for this prompt` | Leave `LLM_PROVIDER` unset or set to `replay` in `.env`. |
+| What you see                                         | Fix                                                                     |
+| ---------------------------------------------------- | ----------------------------------------------------------------------- |
+| `uv: command not found` or `bun: command not found`  | Install both, as the orientation README says, then open a new terminal. |
+| `FAIL its world line matches the world in this repo` | Run `uv run world reset` and write the report again.                    |
+| `No recorded reply for this prompt`                  | Leave `LLM_PROVIDER` unset or set to `replay` in `.env`.                |
 
 ## Words you will use
 

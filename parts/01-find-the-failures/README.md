@@ -22,13 +22,13 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | The check reads |
-|---|---|---|---|
-| `sample-the-traces` | 10 | `sample.py` that picks 40 traces | three runs of your sampler, against the trace file |
-| `mark-the-traces` | 15 | `marks.csv`: pass or fail per trace | your marks, the planted faults, Dana's labels |
-| `note-the-failures` | 20 | `notes.csv`: one note per fail | your notes, the planted faults |
-| `name-the-failure-modes` | 20 | `failure_modes.yaml` and `labels.csv` | your modes, labels, notes and marks |
-| `count-the-failures` | 10 | `rates.json`: rate and decision per mode | your rates, recomputed from your labels |
+| Step                     | Minutes | You produce                              | The check reads                                    |
+| ------------------------ | ------- | ---------------------------------------- | -------------------------------------------------- |
+| `sample-the-traces`      | 10      | `sample.py` that picks 40 traces         | three runs of your sampler, against the trace file |
+| `mark-the-traces`        | 15      | `marks.csv`: pass or fail per trace      | your marks, the planted faults, Dana's labels      |
+| `note-the-failures`      | 20      | `notes.csv`: one note per fail           | your notes, the planted faults                     |
+| `name-the-failure-modes` | 20      | `failure_modes.yaml` and `labels.csv`    | your modes, labels, notes and marks                |
+| `count-the-failures`     | 10      | `rates.json`: rate and decision per mode | your rates, recomputed from your labels            |
 
 Each step starts from the sample answer of the step before it, so you can start at any step.
 

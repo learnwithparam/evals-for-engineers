@@ -38,11 +38,11 @@ Expect: `Done. All 7 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-|---|---|
-| `FAIL sample.py --seed 7 runs and writes 40 traces` | Run the script yourself and read the error. `NotImplementedError` means `sample()` is still the starter. |
-| `FAIL at least 3 traces of commercial leases` | Only 10 of the 120 leases are shops. A plain random draw often misses them, so pick them as their own group. |
-| `FAIL the same seed gives the same sample` | Make one `random.Random(seed)` and use it for every pick. `random.sample()` on its own uses a new seed each run. |
+| What you see                                        | Fix                                                                                                              |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `FAIL sample.py --seed 7 runs and writes 40 traces` | Run the script yourself and read the error. `NotImplementedError` means `sample()` is still the starter.         |
+| `FAIL at least 3 traces of commercial leases`       | Only 10 of the 120 leases are shops. A plain random draw often misses them, so pick them as their own group.     |
+| `FAIL the same seed gives the same sample`          | Make one `random.Random(seed)` and use it for every pick. `random.sample()` on its own uses a new seed each run. |
 
 The sample answer is in `../solution/sample.py`. Open it after you have tried.
 

@@ -1,12 +1,14 @@
 """Keyword search over one lease's clauses (BM25, standard library only)."""
+
 import math
 import re
 from collections import Counter
 
 from .. import leases
 
-STOP = set("a an and are as at be by can do does for from has have how i if in is it its of on or the this to "
-           "what when who will with".split())
+STOP = set(
+    ["a", "an", "and", "are", "as", "at", "be", "by", "can", "do", "does", "for", "from", "has", "have", "how", "i", "if", "in", "is", "it", "its", "of", "on", "or", "the", "this", "to", "what", "when", "who", "will", "with"]
+)
 
 
 def tokens(s: str) -> list[str]:

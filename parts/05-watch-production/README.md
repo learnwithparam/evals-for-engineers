@@ -20,11 +20,11 @@ flowchart LR
 
 ## Steps
 
-| Step | Minutes | You produce | The check reads |
-|---|---|---|---|
-| `sample-production-traces` | 15 | a `monitor` command that samples each batch across buildings and judges it | its output on `world/data/traces/lease_desk_production.jsonl`, three runs in replay |
-| `report-the-batch-rate` | 15 | `batches.csv`: raw and corrected rate per batch, interval, alert | rates recomputed; the alert fires on the new template batch and on no earlier batch |
-| `feed-failures-back` | 10 | 3 or more golden cases tagged `source: production` | the cases validate, and the gate now fails `live` on them |
+| Step                       | Minutes | You produce                                                                | The check reads                                                                     |
+| -------------------------- | ------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `sample-production-traces` | 15      | a `monitor` command that samples each batch across buildings and judges it | its output on `world/data/traces/lease_desk_production.jsonl`, three runs in replay |
+| `report-the-batch-rate`    | 15      | `batches.csv`: raw and corrected rate per batch, interval, alert           | rates recomputed; the alert fires on the new template batch and on no earlier batch |
+| `feed-failures-back`       | 10      | 3 or more golden cases tagged `source: production`                         | the cases validate, and the gate now fails `live` on them                           |
 
 ## Walkthrough
 

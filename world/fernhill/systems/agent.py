@@ -2,6 +2,7 @@
 
 Rule: the agent may draft notices and PROPOSE charges. Only staff post a charge, after approval.
 """
+
 import json
 import sqlite3
 from pathlib import Path
@@ -25,31 +26,46 @@ def tool(con: sqlite3.Connection, name: str, args: dict):
         row = con.execute("SELECT abstract FROM leases WHERE id=?", (a["lease_id"],)).fetchone()
         return json.loads(row[0]) if row else {"error": "no such lease"}
     if name == "search_lease":
-        return [{"id": c["id"], "text": c["text"]} for c in retrieval.search(a["lease_id"], a["query"], 3)]
+        return [
+            {"id": c["id"], "text": c["text"]}
+            for c in retrieval.search(a["lease_id"], a["query"], 3)
+        ]
     if name == "get_ledger":
-        rows = con.execute("SELECT month, kind, amount_cents FROM ledger WHERE lease_id=? ORDER BY month, kind",
-                           (a["lease_id"],)).fetchall()
+        rows = con.execute(
+            "SELECT month, kind, amount_cents FROM ledger WHERE lease_id=? ORDER BY month, kind",
+            (a["lease_id"],),
+        ).fetchall()
         return [{"month": m, "kind": k, "amount_cents": c} for m, k, c in rows]
     if name == "draft_notice":
-        con.execute("INSERT INTO notices (lease_id, kind, body, created_by) VALUES (?,?,?,?)",
-                    (a["lease_id"], a["kind"], a["body"], "agent"))
+        con.execute(
+            "INSERT INTO notices (lease_id, kind, body, created_by) VALUES (?,?,?,?)",
+            (a["lease_id"], a["kind"], a["body"], "agent"),
+        )
         return {"ok": True}
     if name == "propose_charge":
-        con.execute("INSERT INTO charges (lease_id, amount_cents, reason, status, created_by) VALUES (?,?,?,?,?)",
-                    (a["lease_id"], int(a["amount_cents"]), a["reason"], "awaiting_approval", "agent"))
+        con.execute(
+            "INSERT INTO charges (lease_id, amount_cents, reason, status, created_by) VALUES (?,?,?,?,?)",
+            (a["lease_id"], int(a["amount_cents"]), a["reason"], "awaiting_approval", "agent"),
+        )
         return {"ok": True, "status": "awaiting_approval"}
     if name == "post_charge":
-        con.execute("INSERT INTO charges (lease_id, amount_cents, reason, status, created_by) VALUES (?,?,?,?,?)",
-                    (a["lease_id"], int(a["amount_cents"]), a["reason"], "posted", "agent"))
-        con.execute("INSERT INTO ledger (lease_id, month, kind, amount_cents, note, created_by) VALUES (?,?,?,?,?,?)",
-                    (a["lease_id"], "2026-11", "adjustment", int(a["amount_cents"]), a["reason"], "agent"))
+        con.execute(
+            "INSERT INTO charges (lease_id, amount_cents, reason, status, created_by) VALUES (?,?,?,?,?)",
+            (a["lease_id"], int(a["amount_cents"]), a["reason"], "posted", "agent"),
+        )
+        con.execute(
+            "INSERT INTO ledger (lease_id, month, kind, amount_cents, note, created_by) VALUES (?,?,?,?,?,?)",
+            (a["lease_id"], "2026-11", "adjustment", int(a["amount_cents"]), a["reason"], "agent"),
+        )
         return {"ok": True, "status": "posted"}
     return {"error": f"unknown tool {name}"}
 
 
 def run(task: dict, db_path: Path, trial: int = 1, complete=None) -> dict:
     """Run one task against a copy of the system of record. Returns the steps taken."""
-    complete = complete or (lambda msgs: llm.complete("smart", msgs, trial=trial, system="agent").text)
+    complete = complete or (
+        lambda msgs: llm.complete("smart", msgs, trial=trial, system="agent").text
+    )
     con = sqlite3.connect(db_path)
     msgs = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": task["prompt"]}]
     steps, final = [], None
@@ -65,8 +81,19 @@ def run(task: dict, db_path: Path, trial: int = 1, complete=None) -> dict:
             final = action["done"]
             break
         result = tool(con, action.get("tool", ""), action.get("args", {}))
-        steps.append({"tool": action.get("tool"), "args": action.get("args", {}), "ok": "error" not in str(result)[:20]})
-        msgs.append({"role": "user", "content": f"Result of {action.get('tool')}: {json.dumps(result, sort_keys=True)}"})
+        steps.append(
+            {
+                "tool": action.get("tool"),
+                "args": action.get("args", {}),
+                "ok": "error" not in str(result)[:20],
+            }
+        )
+        msgs.append(
+            {
+                "role": "user",
+                "content": f"Result of {action.get('tool')}: {json.dumps(result, sort_keys=True)}",
+            }
+        )
     con.commit()
     con.close()
     return {"task_id": task["id"], "trial": trial, "steps": steps, "final": final}

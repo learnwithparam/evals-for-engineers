@@ -1,4 +1,5 @@
 """Lease desk: staff ask a question about a unit's lease; it answers from retrieved clauses, with citations."""
+
 import re
 
 from .. import llm
@@ -15,8 +16,10 @@ CITE = re.compile(r"\[(L\d{3}-[a-z]\d\d)\]")
 
 def messages(question: str, clauses: list[dict]) -> list[dict]:
     ctx = "\n".join(f"[{c['id']}] {c['heading']}: {c['text']}" for c in clauses)
-    return [{"role": "system", "content": SYSTEM},
-            {"role": "user", "content": f"Question: {question}\n\nClauses:\n{ctx}"}]
+    return [
+        {"role": "system", "content": SYSTEM},
+        {"role": "user", "content": f"Question: {question}\n\nClauses:\n{ctx}"},
+    ]
 
 
 def cited(answer: str) -> list[str]:

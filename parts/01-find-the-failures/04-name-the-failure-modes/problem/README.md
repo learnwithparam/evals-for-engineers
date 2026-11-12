@@ -39,11 +39,11 @@ Expect: `Done. All 9 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-|---|---|
-| `FAIL failure_modes.yaml lists 4 to 8 modes` | One mode per trace is too many. Merge notes that name the same field and the same kind of mistake. |
-| `FAIL no mode has a generic name` | Name the field and what happened to it, such as `deposit-includes-pet-deposit`. |
-| `FAIL every failed trace has at least one mode` | A failed trace with no mode means you are missing a mode, or a definition is too narrow. |
+| What you see                                    | Fix                                                                                                |
+| ----------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `FAIL failure_modes.yaml lists 4 to 8 modes`    | One mode per trace is too many. Merge notes that name the same field and the same kind of mistake. |
+| `FAIL no mode has a generic name`               | Name the field and what happened to it, such as `deposit-includes-pet-deposit`.                    |
+| `FAIL every failed trace has at least one mode` | A failed trace with no mode means you are missing a mode, or a definition is too narrow.           |
 
 The sample answer, Dana's own list, is in `../solution/`. Compare after you have tried.
 
