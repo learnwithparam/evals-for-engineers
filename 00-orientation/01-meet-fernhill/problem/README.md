@@ -2,13 +2,22 @@
 
 ## The problem
 
-Fernhill Homes runs three LLM systems on 120 leases and the ledger behind them. Before you measure anything, you need the world on your machine, the system of record seeded, and a clear picture of the finish line: the eval report card you will build, part by part.
+Fernhill Homes runs three LLM systems on 120 leases and on the ledger, the list of charges behind them. Before you measure anything, you need three things. You need the world on your machine. You need the system of record filled with data. And you need a clear picture of the finish line: the eval report card you build, part by part.
+
+For example, the finished system already finds a real mistake. On lease L008, the signed lease sets the rent at $2,125.00. Then Amendment No. 1 raises it to $2,275.00. The abstractor misses the amendment, and `uv run fernhill demo` shows it:
+
+```text
+   field                  abstract         the signed lease
+   monthly_rent           $2,125.00        $2,275.00        WRONG
+```
+
+This course teaches you to find mistakes like this one, count them and stop them.
 
 ![The finished system's report card in the terminal](../images/expected.png)
 
 ## Your challenge
 
-Set up, meet the world, run the finished system, and save its report card in this folder. No model key is needed: everything runs on recorded replies.
+Set up the repo, meet the world, run the finished system, and save its report card in this folder. You do not need a model key: everything runs on recorded replies.
 
 ```bash
 uv sync && uv run world reset
