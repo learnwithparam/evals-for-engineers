@@ -13,12 +13,10 @@ import { readJson } from "./lib/world";
 // The learner writes both files, so every field may be missing or the wrong type.
 type RateReport = {
   n?: unknown;
-  raw_rate?: unknown;
+  [field: string]: unknown;
   tpr?: unknown;
   tnr?: unknown;
   corrected?: unknown;
-  ci_low?: unknown;
-  ci_high?: unknown;
 };
 type TestReport = { tpr?: unknown; tnr?: unknown };
 

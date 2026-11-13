@@ -19,7 +19,7 @@ type DevReport = {
   tpr?: unknown;
   tnr?: unknown;
   disagreements?: { id?: unknown }[];
-  changes?: { trace_id?: unknown; change?: unknown }[];
+  changes?: { [column: string]: unknown }[];
 };
 
 const FAULTS_THE_DRAFT_MISSES = [3, 5];
@@ -37,7 +37,8 @@ function disagreementIds(folder: string): string[] {
   const verdicts = devVerdicts(folder);
   if (!verdicts) return [];
   const dana = danaLabels();
-  return [...verdicts.keys()].filter((id) => verdicts.get(id) !== dana.get(id));
+  const ids = [...verdicts.keys()];
+  return ids.filter((id) => verdicts.get(id) !== dana.get(id));
 }
 
 /** Dev answers the first draft prompt passed and Dana failed: its missing rules. */
@@ -48,7 +49,7 @@ function draftMisses(): string[] {
   return failed.filter((id) => FAULTS_THE_DRAFT_MISSES.includes(Number(truth.get(id)?.fault)));
 }
 
-function namesARealDisagreement(folder: string): boolean {
+function namesKnownDisagreement(folder: string): boolean {
   const known = new Set([...draftMisses(), ...disagreementIds(folder)]);
   const changes = report(folder).changes ?? [];
   const described = changes.filter((change) => String(change.change ?? "").trim().length > 10);
@@ -100,7 +101,7 @@ export default [
   },
   {
     says: "the change log names a disagreement it fixes",
-    test: namesARealDisagreement,
+    test: namesKnownDisagreement,
     tryNext:
       "add a row to changes.csv: the trace_id of a disagreement and the rule you added for it",
   },

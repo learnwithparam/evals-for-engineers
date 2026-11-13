@@ -2,8 +2,5 @@
   "n": 30,
   "agreed": 28,
   "kappa": 0.867,
-  "differ": [
-    "desk-0045",
-    "desk-0050"
-  ]
+  "differ": ["desk-0045", "desk-0050"]
 }

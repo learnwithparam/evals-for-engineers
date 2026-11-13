@@ -25,7 +25,7 @@ def tpr_tnr(pairs: list[tuple[str, str]]) -> tuple[float, float]:
 
 
 def read_changes() -> list[dict]:
-    """Your change log: one row per change to grounded.md, naming the answer it fixes."""
+    """Your change log: one row per change to grounded.txt, naming the answer it fixes."""
     with open("changes.csv") as changes_file:
         return list(csv.DictReader(changes_file))
 

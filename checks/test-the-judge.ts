@@ -16,7 +16,7 @@ import { readJson } from "./lib/world";
 
 // The learner writes judge_test.json, so every field may be missing or the wrong type.
 type TestReport = {
-  prompt_sha256?: unknown;
+  [field: string]: unknown;
   tpr?: unknown;
   tnr?: unknown;
   verdicts?: Record<string, unknown>;
@@ -26,7 +26,7 @@ const report = (folder: string) => readJson<TestReport>(join(folder, "judge_test
 
 function promptHash(folder: string): string {
   const hasher = new Bun.CryptoHasher("sha256");
-  hasher.update(readFileSync(join(folder, "grounded.md")));
+  hasher.update(readFileSync(join(folder, "grounded.txt")));
   return hasher.digest("hex");
 }
 
@@ -43,7 +43,8 @@ function savedVerdicts(folder: string): Map<string, string> | undefined {
 const rerun = once((folder: string) => verdictsById(runJudge(folder, "test"), idsIn("test")));
 
 function sameVerdicts(saved: Map<string, string>, again: Map<string, string>): boolean {
-  return [...saved.keys()].every((id) => saved.get(id) === again.get(id));
+  const ids = [...saved.keys()];
+  return ids.every((id) => saved.get(id) === again.get(id));
 }
 
 const scores = (folder: string) => {
@@ -68,7 +69,7 @@ export default [
     tryNext: "run uv run python test_once.py once, after align-the-judge passes",
   },
   {
-    says: "judge_test.json was made with the prompt in grounded.md now",
+    says: "judge_test.json was made with the prompt in grounded.txt now",
     test: (folder) => report(folder).prompt_sha256 === promptHash(folder),
     tryNext:
       "the prompt changed after the test run; that test number is spent, " +

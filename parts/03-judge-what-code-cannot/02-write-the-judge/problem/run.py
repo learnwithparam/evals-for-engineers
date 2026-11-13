@@ -4,7 +4,7 @@ Run: uv run python cases.py train | uv run python run.py
 It reads one JSON answer per line on stdin and writes one JSON verdict per line on stdout:
 {"id": "desk-0009", "verdict": "pass" or "fail", "critique": "..."}
 
-The prompt is grounded.md. With no key (replay), a reply comes from recorded.jsonl in this
+The prompt is grounded.txt. With no key (replay), a reply comes from recorded.jsonl in this
 folder or from the world's recordings. With a key in .env, add --record: each live reply is
 saved in recorded.jsonl, so the checks can replay your own prompt later with no key.
 """
@@ -16,7 +16,7 @@ from pathlib import Path
 from fernhill import llm
 
 HERE = Path(__file__).parent
-PROMPT_FILE = HERE / "grounded.md"
+PROMPT_FILE = HERE / "grounded.txt"
 RECORDINGS = HERE / "recorded.jsonl"
 
 

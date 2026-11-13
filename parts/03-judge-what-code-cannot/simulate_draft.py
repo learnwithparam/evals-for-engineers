@@ -43,7 +43,7 @@ def draft_reply(case: dict, fault: int) -> str:
 def main() -> None:
     truth_rows = paths.read_jsonl(paths.LABELS / "lease_desk_truth.jsonl")
     fault_by_id = {row["trace_id"]: row["fault"] for row in truth_rows}
-    draft_prompt = (STEP / "problem" / "grounded.md").read_text().strip()
+    draft_prompt = (STEP / "problem" / "grounded.txt").read_text().strip()
     rows = []
     for case in cases("dev"):
         messages = build_messages(draft_prompt, case)

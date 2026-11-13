@@ -57,7 +57,10 @@ export default [
   },
   {
     says: 'every label is "pass" or "fail"',
-    test: (folder) => [...labelFor(folder).values()].every((label) => /^(pass|fail)$/.test(label)),
+    test: (folder) => {
+      const allLabels = [...labelFor(folder).values()];
+      return allLabels.every((label) => /^(pass|fail)$/.test(label));
+    },
     tryNext: 'write pass if the cited clauses support every claim, and fail if not; no "maybe"',
   },
   {

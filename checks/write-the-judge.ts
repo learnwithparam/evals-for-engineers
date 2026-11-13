@@ -12,7 +12,7 @@ import { once } from "./lib/run";
 // Behaviour that depends on a model is judged over three fresh runs in replay mode.
 const threeJudgeRuns = once((folder: string) => [1, 2, 3].map(() => runJudge(folder, "train")));
 const firstRun = (folder: string) => threeJudgeRuns(folder)[0];
-const prompt = (folder: string) => readFileSync(join(folder, "grounded.md"), "utf8");
+const prompt = (folder: string) => readFileSync(join(folder, "grounded.txt"), "utf8");
 
 function everyIdOnce(verdicts: Verdict[] | undefined): boolean {
   if (!verdicts) return false;
@@ -35,9 +35,9 @@ const verdictText = (verdicts: Verdict[] | undefined) =>
 
 export default [
   {
-    says: "grounded.md holds a judge prompt",
-    test: (folder) => existsSync(join(folder, "grounded.md")) && !/TODO/.test(prompt(folder)),
-    tryNext: "replace the TODO lines in grounded.md with your prompt: one criterion, pass or fail",
+    says: "grounded.txt holds a judge prompt",
+    test: (folder) => existsSync(join(folder, "grounded.txt")) && !/TODO/.test(prompt(folder)),
+    tryNext: "replace the TODO lines in grounded.txt with your prompt: one criterion, pass or fail",
   },
   {
     says: "the prompt asks for a critique before the verdict",

@@ -50,7 +50,8 @@ def bootstrap(test_pairs: list, verdicts: list[str], seed: int = 0) -> tuple[flo
     return low, high
 
 
-test_run = json.loads(open("judge_test.json").read())
+with open("judge_test.json") as test_file:
+    test_run = json.load(test_file)
 labels = dana_labels()
 saved_verdicts = test_run["verdicts"].items()
 test_pairs = [(labels[trace_id]["label"], verdict) for trace_id, verdict in saved_verdicts]

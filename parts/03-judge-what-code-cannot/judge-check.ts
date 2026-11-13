@@ -134,8 +134,10 @@ export function heldOutTextIn(prompt: string): string | undefined {
   const trainAnswers = judgeInputs("train").map((input) => input.answer);
   const trainRuns = eightWordRuns(trainAnswers.join("\n\n"));
   const promptRuns = eightWordRuns(prompt);
-  const copiedRun = (answer: string) =>
-    [...eightWordRuns(answer)].find((run) => promptRuns.has(run) && !trainRuns.has(run));
+  const copiedRun = (answer: string) => {
+    const answerRuns = [...eightWordRuns(answer)];
+    return answerRuns.find((run) => promptRuns.has(run) && !trainRuns.has(run));
+  };
   for (const input of [...judgeInputs("dev"), ...judgeInputs("test")]) {
     if (prompt.includes(input.id)) return input.id;
     const copied = copiedRun(input.answer);
