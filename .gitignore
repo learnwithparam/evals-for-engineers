@@ -9,3 +9,4 @@ world/logs/
 world/runs/
 assignment/result.json
 parts/07-do-it-with-the-tools-teams-run/**/result.json
+test-results/
