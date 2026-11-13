@@ -1,0 +1,12 @@
+{
+  "questions": 68,
+  "settings": {
+    "baseline": {
+      "recall_at_1": 0.0,
+      "recall_at_5": 0.956,
+      "mrr": 0.456,
+      "missed_at_5": ["q023", "q026", "q028"]
+    }
+  },
+  "missed_by_every_setting": ["q023", "q026", "q028"]
+}

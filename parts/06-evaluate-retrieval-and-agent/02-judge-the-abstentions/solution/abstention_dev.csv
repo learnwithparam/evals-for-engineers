@@ -1,0 +1,13 @@
+trace_id,label,critique
+desk-0002,pass,A clause answers the question and the answer gives what it says.
+desk-0047,pass,A clause answers the question and the answer gives what it says.
+desk-0202,pass,A clause answers the question and the answer gives what it says.
+desk-0274,pass,"No clause found answers this, and the answer rightly says so."
+desk-0278,fail,"No clause answers this question, yet the answer makes a claim."
+desk-0283,fail,"No clause answers this question, yet the answer makes a claim."
+desk-0286,pass,"No clause found answers this, and the answer rightly says so."
+desk-0287,fail,"No clause answers this question, yet the answer makes a claim."
+desk-0292,fail,"No clause answers this question, yet the answer makes a claim."
+desk-0296,fail,"No clause answers this question, yet the answer makes a claim."
+desk-0305,pass,"No clause found answers this, and the answer rightly says so."
+desk-0316,fail,"No clause answers this question, yet the answer makes a claim."
