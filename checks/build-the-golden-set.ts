@@ -4,9 +4,10 @@ import type { Rule } from "../scripts/verify";
 import { DATA, type JsonRecord, readJsonl, splits } from "./lib/world";
 
 // The learner writes golden.jsonl, so every field may be missing or have the wrong type.
-type GoldenRecord = { lease_id?: unknown; abstract?: unknown; critical_fields?: unknown };
-type Lease = { id: string; amendments: number; lease_type: string };
-type AnswerKey = { lease_id: string; abstract: JsonRecord };
+type GoldenRecord = { abstract?: unknown; [field: string]: unknown };
+// Keys such as lease_type come from the Python side, so they are read by name.
+type Lease = { id: string; amendments: number; [field: string]: unknown };
+type AnswerKey = { abstract: JsonRecord; [field: string]: unknown };
 
 const REQUIRED_CRITICAL_FIELDS = ["monthly_rent", "renewal_notice_days"];
 const ABSTRACT_FIELDS = [
@@ -45,7 +46,7 @@ function leasesById(): Map<string, Lease> {
 
 function approvedAbstracts(): Map<string, JsonRecord> {
   const keys = readJsonl<AnswerKey>(join(DATA, "keys.jsonl"));
-  return new Map(keys.map((key) => [key.lease_id, key.abstract]));
+  return new Map(keys.map((key) => [String(key.lease_id), key.abstract]));
 }
 
 // Two abstracts are the same when every field holds the same value, whatever the key order.

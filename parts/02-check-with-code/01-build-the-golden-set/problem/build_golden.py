@@ -25,16 +25,13 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def golden_records(data_folder: Path) -> list[dict]:
-    # keys.jsonl holds the approved abstract of every lease, one per line.
-    keys = read_jsonl(data_folder / "keys.jsonl")
-    # splits.json names the leases kept apart for the gate in Gate the change.
-    splits = json.loads((data_folder / "splits.json").read_text())
-
+    # TODO: read the approved abstracts from data_folder / "keys.jsonl" with read_jsonl().
+    # TODO: read data_folder / "splits.json". It names the 50 leases kept for the gate.
     # TODO: pick 40 leases that are not in splits["gate"].
     #       Take at least 10 amended leases and at least 3 commercial ones.
     #       Hint: splits["golden"] is a list that already meets these rules.
-    # TODO: return one record per lease:
-    #       {"lease_id": ..., "abstract": <its approved abstract>, "critical_fields": CRITICAL_FIELDS}
+    # TODO: return one record per lease, with three fields:
+    #       "lease_id", "abstract" (its approved abstract) and "critical_fields".
     raise NotImplementedError("golden_records() is still the starter")
 
 
