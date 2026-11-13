@@ -6,7 +6,7 @@ This is optional in the live session. It is expected as homework.
 
 You built a release gate by hand. Now redo its dataset, call and grader with Inspect AI, an open-source eval runner. Edit `assignment/task.py` so it has one `@task` with a dataset of the 50 gate leases, a solver and a scorer. The scorer must be the course grader, `fernhill.evals.fields`, limited to the critical fields. Write `assignment/CHOICE.md` with the runner-up, promptfoo, and when you would choose it.
 
-For example, run the finished version from `parts/07-do-it-with-the-tools-teams-run/01-port-the-gate/solution`. Without a key, the solver replays the saved answers of the cheaper model.
+For example, run the finished version from `parts/07-score-the-answers-with-inspect-ai/01-port-the-gate/solution`. Without a key, the solver replays the saved answers of the cheaper model.
 
 ## Run the check
 

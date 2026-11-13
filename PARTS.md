@@ -4,16 +4,16 @@ Every part of the course, its steps, minutes, and what each step's check reads. 
 The orientation and Find the failures are built. The rest are skeletons: a README with the problem, a
 cited reason, a diagram and the step table, and no step folders yet.
 
-| Part folder                               | Steps (minutes)                                                                                                                      | Total | State    |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----- | -------- |
-| `00-orientation`                          | `meet-fernhill` (15)                                                                                                                 | 15    | built    |
-| `parts/01-find-the-failures`              | `sample-the-traces` (10), `mark-the-traces` (15), `note-the-failures` (20), `name-the-failure-modes` (20), `count-the-failures` (10) | 75    | built    |
-| `parts/02-check-with-code`                | `build-the-golden-set` (15), `write-field-checks` (20), `check-the-ledger` (15)                                                      | 50    | skeleton |
-| `parts/03-judge-what-code-cannot`         | `label-the-answers` (25), `write-the-judge` (20), `align-the-judge` (25), `test-the-judge` (10), `correct-the-pass-rate` (10)        | 90    | skeleton |
-| `parts/04-gate-the-change`                | `gate-the-release` (25), `repeat-the-trials` (15), `run-the-gate-in-ci` (15)                                                         | 55    | skeleton |
-| `parts/05-watch-production`               | `sample-production-traces` (15), `report-the-batch-rate` (15), `feed-failures-back` (10)                                             | 40    | skeleton |
-| `parts/06-evaluate-retrieval-and-agent`   | `measure-retrieval-recall` (20), `judge-the-abstentions` (20), `grade-the-agent-outcome` (20), `map-agent-failures` (20)             | 80    | skeleton |
-| `parts/07-do-it-with-the-tools-teams-run` | `port-the-gate` (30)                                                                                                                 | 30    | built    |
+| Part folder                                  | Steps (minutes)                                                                                                                      | Total | State    |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ----- | -------- |
+| `00-orientation`                             | `meet-fernhill` (15)                                                                                                                 | 15    | built    |
+| `parts/01-find-the-failures`                 | `sample-the-traces` (10), `mark-the-traces` (15), `note-the-failures` (20), `name-the-failure-modes` (20), `count-the-failures` (10) | 75    | built    |
+| `parts/02-check-with-code`                   | `build-the-golden-set` (15), `write-field-checks` (20), `check-the-ledger` (15)                                                      | 50    | skeleton |
+| `parts/03-judge-what-code-cannot`            | `label-the-answers` (25), `write-the-judge` (20), `align-the-judge` (25), `test-the-judge` (10), `correct-the-pass-rate` (10)        | 90    | skeleton |
+| `parts/04-gate-the-change`                   | `gate-the-release` (25), `repeat-the-trials` (15), `run-the-gate-in-ci` (15)                                                         | 55    | skeleton |
+| `parts/05-watch-production`                  | `sample-production-traces` (15), `report-the-batch-rate` (15), `feed-failures-back` (10)                                             | 40    | skeleton |
+| `parts/06-evaluate-retrieval-and-agent`      | `measure-retrieval-recall` (20), `judge-the-abstentions` (20), `grade-the-agent-outcome` (20), `map-agent-failures` (20)             | 80    | skeleton |
+| `parts/07-score-the-answers-with-inspect-ai` | `port-the-gate` (30)                                                                                                                 | 30    | built    |
 
 Total: 405 minutes. `schedules.toml` maps these onto one-day, four-evenings and six-weeks.
 
