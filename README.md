@@ -82,6 +82,7 @@ A few words you will meet in the table below:
 | [Gate the change](parts/04-gate-the-change/README.md)                               | a gate that blocks critical regressions and fails closed, in CI    | 55      |
 | [Watch production](parts/05-watch-production/README.md)                             | a corrected rate per batch, an alert, new golden cases             | 40      |
 | [Evaluate retrieval and the agent](parts/06-evaluate-retrieval-and-agent/README.md) | recall@k, an abstention judge, end-state agent grades              | 80      |
+| [Do it with the tools teams run](parts/07-do-it-with-the-tools-teams-run/README.md) | your gate ported to Inspect AI, with the same failing rows         | 30      |
 
 Each step works the same way. Read `problem/README.md`, do the work in `problem/`, then run `bun run verify <step-name>`. It prints what passed, what failed and what to try next. `bun run verify part <part-name>` checks a whole part at once. `schedules.toml` shows how to fit the course into one day, four evenings or six sessions.
 

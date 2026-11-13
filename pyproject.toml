@@ -5,6 +5,7 @@ description = "Evals for engineers: the Fernhill Homes world, its three LLM syst
 requires-python = ">=3.12"
 dependencies = [
     "litellm==1.109.1",
+    "inspect-ai==0.3.289",
 ]
 
 [project.scripts]
