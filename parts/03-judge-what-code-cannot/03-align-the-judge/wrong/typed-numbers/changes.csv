@@ -1,0 +1,4 @@
+trace_id,change
+desk-0036,"Fail an answer that drops a limit such as ""not less than"" or ""with written consent""."
+desk-0283,Fail any claim that the cited clauses do not state; a matching number is not enough.
+desk-0297,"Pass an answer of exactly ""The lease does not say."", because it makes no claim."

@@ -1,0 +1,100 @@
+{
+  "prompt_sha256": "7b191254f195b26ec83c29b8fd5b34c31b21683649b69a687d7cefbc36d34807",
+  "n": 50,
+  "tpr": 0.92,
+  "tnr": 0.56,
+  "disagreements": [
+    {
+      "id": "desk-0001",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives the same number of days as the cited clause."
+    },
+    {
+      "id": "desk-0014",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives the same number of days as the cited clause."
+    },
+    {
+      "id": "desk-0036",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives the same number of days as the cited clause."
+    },
+    {
+      "id": "desk-0045",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "Every claim in the answer matches the cited clause."
+    },
+    {
+      "id": "desk-0131",
+      "dana": "pass",
+      "judge": "fail",
+      "critique": "The answer states a term that the cited clause does not say."
+    },
+    {
+      "id": "desk-0205",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "Every claim in the answer matches the cited clause."
+    },
+    {
+      "id": "desk-0225",
+      "dana": "pass",
+      "judge": "fail",
+      "critique": "The answer states a term that the cited clause does not say."
+    },
+    {
+      "id": "desk-0264",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "Every claim in the answer matches the cited clause."
+    },
+    {
+      "id": "desk-0283",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives no number that differs from the cited clause."
+    },
+    {
+      "id": "desk-0292",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives no number that differs from the cited clause."
+    },
+    {
+      "id": "desk-0293",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives no number that differs from the cited clause."
+    },
+    {
+      "id": "desk-0311",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives no number that differs from the cited clause."
+    },
+    {
+      "id": "desk-0317",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "The answer gives no number that differs from the cited clause."
+    }
+  ],
+  "changes": [
+    {
+      "trace_id": "desk-0036",
+      "change": "Fail an answer that drops a limit such as \"not less than\" or \"with written consent\"."
+    },
+    {
+      "trace_id": "desk-0283",
+      "change": "Fail any claim that the cited clauses do not state; a matching number is not enough."
+    },
+    {
+      "trace_id": "desk-0297",
+      "change": "Pass an answer of exactly \"The lease does not say.\", because it makes no claim."
+    }
+  ]
+}
