@@ -1,4 +1,4 @@
-# Do it with the tools teams run
+# Score the answers with Inspect AI
 
 ## The problem
 
@@ -45,7 +45,7 @@ Inspect AI is the pick for a Python team. Promptfoo is the runner-up.
 From the repo root, run the reference solution on the cheaper model. It replays saved answers, so you need no key:
 
 ```bash
-uv run inspect eval parts/07-do-it-with-the-tools-teams-run/01-port-the-gate/solution/task.py --model mockllm/model --log-dir world/logs/inspect
+uv run inspect eval parts/07-score-the-answers-with-inspect-ai/01-port-the-gate/solution/task.py --model mockllm/model --log-dir world/logs/inspect
 ```
 
 Expect: a score table with `monthly_rent` mean `0.720`, `rent_steps` `0.860`, `deposit` `0.960` and `renewal_notice_days` `0.860`.

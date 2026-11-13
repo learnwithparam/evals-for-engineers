@@ -8,7 +8,7 @@ function runCheck(folder: string): number {
   return finished.exitCode ?? -1;
 }
 
-const solution = join(ROOT, "parts/07-do-it-with-the-tools-teams-run/01-port-the-gate/solution");
+const solution = join(ROOT, "parts/07-score-the-answers-with-inspect-ai/01-port-the-gate/solution");
 console.log("Assignment check on the reference solution (must pass):");
 const solutionCode = runCheck(solution);
 console.log("Assignment check on the untouched starter (must fail):");
