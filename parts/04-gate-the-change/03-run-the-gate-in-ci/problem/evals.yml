@@ -1,0 +1,19 @@
+# Runs the evals in CI. Today it runs only after a merge, and it never calls the gate.
+# In your own repo, copy this file to .github/workflows/evals.yml.
+name: evals
+on:
+  push:
+    branches: [main]
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      # TODO: run on every pull request, not only after a merge.
+      # TODO: give the job a time limit.
+      # TODO: set LLM_PROVIDER, and read any key from the repo's secrets.
+      # TODO: call the gate: uv run python gate.py --release <the release to check>
+      - name: Run the tests
+        run: uv run python -c "print('no evals yet')"

@@ -2,11 +2,11 @@
 
 ## The problem
 
-A trial is one run of a case. A model can give a different answer each time you run it on the same lease. So one trial proves little. Each release in `world/data/releases/` holds 3 trials of every case, and your gate from the last step reads only trial 1.
+A trial is one run of a case. A model can answer differently each time, so one trial proves little. Each release holds 3 trials of every case. Your gate reads only trial 1.
 
-For example, look at lease L001 in the release `clause-ids-in-answer`. The rent is right in trial 1, wrong in trial 2, and right in trial 3. Live gets it right in all three. One wrong trial in three is noise, not a broken release. A gate that wants every trial right blocks a harmless change. A gate that reads one trial misses noise in the other two.
+For example, look at lease L001 in the release `clause-ids-in-answer`. The rent is right in trial 1, wrong in trial 2, and right in trial 3. Live gets it right in all three. One wrong trial in three is noise. A gate that wants every trial right blocks this harmless change.
 
-Anthropic's engineering team puts numbers on this: "If your agent has a 75% per-trial success rate and you run 3 trials, the probability of passing all three is (0.75)³ ≈ 42%" ([Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), Anthropic).
+Anthropic puts numbers on this: "If your agent has a 75% per-trial success rate and you run 3 trials, the probability of passing all three is (0.75)³ ≈ 42%" ([Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), Anthropic).
 
 ```mermaid
 flowchart LR
@@ -22,17 +22,17 @@ flowchart LR
 
 ## Your challenge
 
-Change `gate.py` so every case uses all 3 trials. A case is one critical field on one gate lease, or one question the lease cannot answer.
+Change `gate.py` so every case uses all 3 trials. A case is one critical field on one lease, or one unanswerable question.
 
 For each case, report:
 
 - `case`: the lease id or the question id, and `field`: the field name, or `abstains`.
 - `trials`: a list of 3 `true` or `false` values, in trial order.
-- `pass_at_3`: the chance that at least one of 3 trials is right, `1 - (1 - p) ** 3`, where `p` is right trials divided by 3.
+- `pass_at_3`: the chance that at least one of 3 trials is right, `1 - (1 - p) ** 3`. Here `p` is right trials / 3.
 - `pass_hat_3`: the chance that all 3 trials are right, `p ** 3`.
 - `passed`: `true` when the case is right in at least 2 of its 3 trials.
 
-Then block on cases that pass on live and fail on the release. A case with fewer than 3 trials is missing, so it blocks.
+Block on cases that pass on live and fail on the release. A case with fewer than 3 trials blocks.
 
 ```bash
 uv run python gate.py --release clause-ids-in-answer
@@ -65,7 +65,7 @@ The sample answer is in `../solution/gate.py`. Open it after you have tried.
 
 ## Words you will use
 
-- **Trial**: one run of one case. The same case can pass in one trial and fail in the next.
+- **Trial**: one run of one case.
 - **pass@3**: the chance that at least one of 3 trials is right.
 - **pass^3**: the chance that all 3 trials are right. It falls fast: 75% per trial gives about 42%.
 - **Flaky case**: a case that is right in some trials and wrong in others.

@@ -2,9 +2,9 @@
 
 ## The problem
 
-Someone wants to move the abstractor to a cheaper model. A release is one version of the system that you might ship. Each release in `world/data/releases/` holds the outputs of one version on the same leases.
+Someone wants to move the abstractor to a cheaper model. A release is one version of the system that you might ship. Its outputs are in `world/data/releases/`.
 
-The team gate today looks only at the average. It adds up every field on the 50 gate leases and blocks when accuracy drops by more than 2 points. For example, run the starter on the cheaper model:
+The gate today looks only at the average field accuracy on the 50 gate leases. It blocks when accuracy drops by more than 2 points. For example, run the starter on the cheaper model:
 
 ```bash
 uv run python gate.py --release cheaper-model
@@ -12,7 +12,7 @@ uv run python gate.py --release cheaper-model
 
 Expect: `"verdict": "ship"` and the reason `field accuracy drops 1.3 points; the limit is 2.0`.
 
-So the average says ship. But the cheaper model gets the rent wrong on 9 amended leases, such as L040, where it misses Amendment No. 1. Owners would get wrong rent letters.
+But the cheaper model gets the rent wrong on 9 amended leases, such as L040. Owners would get wrong rent letters.
 
 ```mermaid
 flowchart LR
@@ -29,13 +29,13 @@ flowchart LR
 
 Rewrite `gate()` in `gate.py` so it blocks a release for any of three reasons:
 
-1. A critical field is newly wrong. The critical fields are in `leases.CRITICAL`: rent, rent steps, deposit and renewal notice days. Newly wrong means live gets it right on that lease, and the release gets it wrong.
-2. An abstention is lost. Live says "The lease does not say." to a question the lease cannot answer, and the release says something else.
+1. A critical field is newly wrong. The critical fields are in `leases.CRITICAL`: rent, rent steps, deposit and renewal notice days. Newly wrong means live gets it right and the release does not.
+2. An abstention is lost: live says "The lease does not say." to a question, and the release does not.
 3. A case has no result. A row with `"output": null` timed out, or a gate lease has no row at all. When you cannot score a case, block. This is called failing closed.
 
-Each reason names the field, so a person knows what broke. For now, read trial 1 of each case only. The next step uses all three trials.
+Each reason names the field. Read trial 1 only; the next step uses all three.
 
-The starter uses the world's own field checks from `fernhill.evals.fields`. You can swap in your checks from Check with code.
+The starter uses the field checks in `fernhill.evals.fields`. You can swap in your own from Check with code.
 
 When you finish, the same command prints this:
 
