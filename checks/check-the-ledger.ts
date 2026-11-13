@@ -67,7 +67,7 @@ export default [
     test: (folder) => found(folder) !== null,
     tryNext:
       "run uv run python ledger_check.py and read the error; " +
-      "NotImplementedError means a function is still the starter",
+      "a NotImplementedError says the starter code is still there",
   },
   {
     says: "every problem names the lease, month, kind, the amount charged and what the lease says",

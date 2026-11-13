@@ -27,13 +27,25 @@ Take the truth from the signed lease: `leases.jsonl` for the original rent and t
 For example, lease L002 says the rent rises by 4% on 2026-01-01, from $2,375.00 to $2,470.00. But the ledger row for that month says:
 
 ```json
-{"amount_cents": 237500, "kind": "rent", "lease_id": "L002", "month": "2026-01", "note": "monthly rent"}
+{
+  "amount_cents": 237500,
+  "kind": "rent",
+  "lease_id": "L002",
+  "month": "2026-01",
+  "note": "monthly rent"
+}
 ```
 
 So your check writes this problem, and one more for each later month:
 
 ```json
-{"charged": 237500, "lease_id": "L002", "lease_says": 247000, "month": "2026-01", "problem": "rent_not_as_lease"}
+{
+  "charged": 237500,
+  "lease_id": "L002",
+  "lease_says": 247000,
+  "month": "2026-01",
+  "problem": "rent_not_as_lease"
+}
 ```
 
 ```bash
@@ -60,11 +72,11 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                                  | Fix                                                                                                         |
-| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `FAIL no false alarm on a clean lease`                        | You used the amended rent for every month. Before the amendment's effective month, the original rent is right. |
-| `FAIL finds every lease whose rent step was never charged`    | Read the steps from `keys.jsonl`. The system of record dropped them, so it agrees with the wrong ledger.     |
-| `FAIL ledger_check.py runs and writes its problems`           | Run the script and read the error. `NotImplementedError` means a function is still the starter.             |
+| What you see                                               | Fix                                                                                                            |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `FAIL no false alarm on a clean lease`                     | You used the amended rent for every month. Before the amendment's effective month, the original rent is right. |
+| `FAIL finds every lease whose rent step was never charged` | Read the steps from `keys.jsonl`. The system of record dropped them, so it agrees with the wrong ledger.       |
+| `FAIL ledger_check.py runs and writes its problems`        | Run the script and read the error. `NotImplementedError` means a function is still the starter.                |
 
 The sample answer is in `../solution/ledger_check.py`. Open it after you have tried.
 

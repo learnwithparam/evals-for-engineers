@@ -2,9 +2,9 @@
 
 ## The problem
 
-You have 40 approved abstracts. Now you need code that says, for one field, whether the abstractor wrote the right value. It sounds like `got == want`. It is not.
+You have 40 approved abstracts. Now you need code that says if one field is right. It sounds like `got == want`. It is not.
 
-The same rent can be written as `282500` (cents), `"$2,825.00"` or `"2825"`. The same date can be `2026-03-01` or `"1st day of March, 2026"`. A rent step can be a table row, or a sentence such as "the rent shall increase by 4% on each anniversary". A check that compares raw text calls all of these wrong. Then nobody trusts it.
+The same rent can be written as `282500` (cents), `"$2,825.00"` or `"2825"`. The same date can be `2026-03-01` or `"1st day of March, 2026"`. A rent step can be a table row, or a sentence such as "the rent shall increase by 4% on each anniversary". A check that compares raw text calls these wrong.
 
 ```mermaid
 flowchart LR
@@ -23,15 +23,15 @@ Finish the checks in `checks.py`. Each one takes `got` and `want` and returns tw
 - `check_money`, `check_date`, `check_days`, `check_yes_no` and `check_text`.
 - `expand_prose_steps`: turn a rent step sentence into one dated step per anniversary inside the term.
 
-You get `to_cents()` and `to_date()` ready to use. Reading money and dates is fiddly, and it is not the lesson. Comparing the right things is.
+`to_cents()` and `to_date()` are ready to use. Reading money and dates is fiddly, and it is not the lesson.
 
 For example, lease L002 starts on 2025-01-01, ends on 2026-12-31, and starts at $2,375.00. Its rent step is written in prose: "increase by 4% on each anniversary". There is one anniversary inside the term, so `expand_prose_steps` returns this:
 
 ```json
-[{"effective": "2026-01-01", "monthly_rent": 247000}]
+[{ "effective": "2026-01-01", "monthly_rent": 247000 }]
 ```
 
-That is 237500 times 1.04, in cents. Now it compares with the approved steps.
+That is 237500 times 1.04, in cents.
 
 Then score the live abstractor on your golden set:
 
@@ -62,13 +62,13 @@ Expect: `Done. All 8 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                          | Fix                                                                                                    |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `FAIL zero wrong verdicts on money`                   | Compare `to_cents(got)` with `to_cents(want)`. Never compare dollars as floats: `0.30 * 100` is not 30. |
-| `FAIL zero wrong verdicts on dates`                   | Compare `to_date(got)` with `to_date(want)`, never the two strings.                                    |
+| What you see                                           | Fix                                                                                                        |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `FAIL zero wrong verdicts on money`                    | Compare `to_cents(got)` with `to_cents(want)`. Never compare dollars as floats: `0.30 * 100` is not 30.    |
+| `FAIL zero wrong verdicts on dates`                    | Compare `to_date(got)` with `to_date(want)`, never the two strings.                                        |
 | `FAIL prose rent steps are expanded before comparison` | Read the percent, then add a step on each anniversary up to the end date. Round each new rent to the cent. |
 
-The verifier sends about 60 known pairs that you do not see. Try your own pairs first: write a few lines to `pairs.jsonl` and run `uv run python checks.py --pairs pairs.jsonl`. Each line looks like `{"id": "a", "field": "monthly_rent", "got": "$2,825.00", "want": 282500}`.
+The verifier sends about 60 known pairs you do not see. Test your own first with `--pairs`. Each line looks like `{"id": "a", "field": "monthly_rent", "got": "$2,825.00", "want": 282500}`.
 
 ## Words you will use
 

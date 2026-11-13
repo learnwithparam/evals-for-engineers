@@ -56,11 +56,11 @@ Expect: `Done. All 7 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                                   | Fix                                                                                         |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `FAIL no lease comes from the gate set`                        | The first 40 leases include gate leases such as L001. Use the list in `splits["golden"]`.   |
-| `FAIL every abstract is the approved one from the answer keys` | You copied what the abstractor wrote. Take each abstract from `keys.jsonl` instead.         |
-| `FAIL critical_fields names real fields, ...`                  | Spell the field names as the abstract does, such as `monthly_rent`, not `rent`.             |
+| What you see                                                   | Fix                                                                                       |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `FAIL no lease comes from the gate set`                        | The first 40 leases include gate leases such as L001. Use the list in `splits["golden"]`. |
+| `FAIL every abstract is the approved one from the answer keys` | You copied what the abstractor wrote. Take each abstract from `keys.jsonl` instead.       |
+| `FAIL critical_fields names real fields, ...`                  | Spell the field names as the abstract does, such as `monthly_rent`, not `rent`.           |
 
 The sample answer is in `../solution/build_golden.py`. Open it after you have tried.
 
