@@ -10,7 +10,7 @@ A rate over all traces can also hide a problem. The known templates already run 
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/05-watch-production/02-report-the-batch-rate/problem`.
+First, from the repo root: `cd parts/05-watch-production/02-report-the-batch-rate/problem`.
 
 Finish two functions in `report.py`:
 
@@ -22,6 +22,7 @@ Finish two functions in `report.py`:
 For example, batch 5 has 16 new-template traces, and the judge passes 8 of them. The raw rate is 8 / 16 = 0.50. The corrected rate is (0.50 + 0.88 - 1) / (0.92 + 0.88 - 1) = 0.38 / 0.80 = 0.475. That is below 0.75, so the row alerts:
 
 ```
+batch,slice,n,raw_rate,corrected_rate,ci_low,ci_high,alert
 5,new-template,16,0.5,0.475,0.133,0.807,yes
 ```
 

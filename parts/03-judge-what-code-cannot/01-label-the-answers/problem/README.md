@@ -8,7 +8,7 @@ The lease desk answers staff questions and cites the lease clauses it used. An a
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/03-judge-what-code-cannot/01-label-the-answers/problem`.
+First, from the repo root: `cd parts/03-judge-what-code-cannot/01-label-the-answers/problem`.
 
 Read the 30 answers in `answers.jsonl`. Each line has the staff question, the answer, and the text of every clause it cites. For each answer, decide `pass` (the clauses support every claim) or `fail` (they do not). Write one row per answer in `labels.csv`: `trace_id,label,critique`. The critique is one sentence that says why.
 

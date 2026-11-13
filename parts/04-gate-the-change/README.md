@@ -107,7 +107,7 @@ You can show two lines side by side. The average gate passes `cheaper-model`. Yo
 
 ## Assignment
 
-**The problem.** The cheaper model saves money on every lease. On average it loses only 1.3 points. But it gets the rent wrong on amended leases, the leases owners complain about. Prove that your gate catches this, and that it does not cry wolf.
+**The problem.** The cheaper model saves money on every lease. On average it loses only 1.3 points. But it gets the rent wrong on amended leases, the leases owners complain about. Prove that your gate catches this, and that it does not block a safe release.
 
 **What you hand in**, in your own repo:
 

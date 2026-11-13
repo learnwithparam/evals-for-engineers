@@ -15,7 +15,7 @@ flowchart LR
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/01-find-the-failures/05-count-the-failures/problem`.
+First, from the repo root: `cd parts/01-find-the-failures/05-count-the-failures/problem`.
 
 From `labels.csv`, compute three things: the count of each failure mode, its rate, and the mode that happens most. Give each mode one decision: `fix the prompt`, `code check`, `judge` or `monitor`. A code check is a test in code that compares the output with the right answer. A judge is a model that grades the output. Write it all to `rates.json`. The starter `count.py` already reads the labels for you.
 

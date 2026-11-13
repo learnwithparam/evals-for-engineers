@@ -17,7 +17,7 @@ flowchart LR
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/05-watch-production/01-sample-production-traces/problem`.
+First, from the repo root: `cd parts/05-watch-production/01-sample-production-traces/problem`.
 
 Finish two functions in `monitor.py`:
 

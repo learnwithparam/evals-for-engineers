@@ -20,7 +20,7 @@ Expect: `World ready: 1,840 units in 31 buildings, 120 leases in the eval corpus
 uv run fernhill report
 ```
 
-Expect: `Fernhill eval report, release: live` and five lines, the last `Gate vs cheaper-model .............. BLOCKED: rent newly wrong on 9 amended leases (critical)`.
+Expect: `Fernhill eval report, release: live` and five report lines, the last `Gate vs cheaper-model .............. BLOCKED: rent newly wrong on 9 amended leases (critical)`. A last `World:` line names the copy of the world you run.
 
 ![The finished system's report card](images/finished-system.png)
 

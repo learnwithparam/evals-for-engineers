@@ -18,7 +18,7 @@ flowchart LR
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/06-evaluate-retrieval-and-agent/04-map-agent-failures/problem`.
+First, from the repo root: `cd parts/06-evaluate-retrieval-and-agent/04-map-agent-failures/problem`.
 
 Finish `first_failure()` in `map_failures.py`. `PLAN` names the steps a good run takes for each kind of task. These are the state names everyone uses, so your map compares with anyone else's. Walk the plan and the run's steps side by side. A step is right when:
 

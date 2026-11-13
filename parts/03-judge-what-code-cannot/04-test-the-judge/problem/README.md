@@ -15,7 +15,7 @@ flowchart LR
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/03-judge-what-code-cannot/04-test-the-judge/problem`.
+First, from the repo root: `cd parts/03-judge-what-code-cannot/04-test-the-judge/problem`.
 
 `test_once.py` runs the judge on the test split and writes `judge_test.json`. It saves a hash of `grounded.txt` with the result. A hash is a short fingerprint of a file: change one letter and the hash changes. Finish `already_tested()` so the script refuses a second run on the same prompt. Then run it once:
 

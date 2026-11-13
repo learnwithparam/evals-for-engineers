@@ -18,14 +18,14 @@ flowchart LR
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/02-check-with-code/02-write-field-checks/problem`.
+First, from the repo root: `cd parts/02-check-with-code/02-write-field-checks/problem`.
 
 Finish the checks in `checks.py`. Each one takes `got` and `want` and returns two things: `True` or `False`, and a reason a person can read.
 
 - `check_money`, `check_date`, `check_days`, `check_yes_no` and `check_text`.
 - `expand_prose_steps`: turn a rent step sentence into one dated step per anniversary inside the term.
 
-`to_cents()` and `to_date()` are ready to use. Reading money and dates is fiddly, and it is not the lesson.
+`to_cents()` and `to_date()` are ready to use, so you can focus on the checks.
 
 For example, lease L002 starts on 2025-01-01, ends on 2026-12-31, and starts at $2,375.00. Its rent step is written in prose: "increase by 4% on each anniversary". There is one anniversary inside the term, so `expand_prose_steps` returns this:
 
@@ -35,7 +35,7 @@ For example, lease L002 starts on 2025-01-01, ends on 2026-12-31, and starts at 
 
 That is 237500 times 1.04, in cents.
 
-Then score the live abstractor on your golden set:
+Then score the live abstractor:
 
 ```bash
 uv run python checks.py --golden golden.jsonl

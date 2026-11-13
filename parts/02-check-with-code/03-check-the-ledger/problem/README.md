@@ -17,7 +17,7 @@ flowchart LR
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/02-check-with-code/03-check-the-ledger/problem`.
+First, from the repo root: `cd parts/02-check-with-code/03-check-the-ledger/problem`.
 
 Finish two functions in `ledger_check.py`.
 

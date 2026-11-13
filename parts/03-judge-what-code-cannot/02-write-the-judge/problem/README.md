@@ -15,7 +15,7 @@ flowchart LR
 
 ## Your challenge
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/03-judge-what-code-cannot/02-write-the-judge/problem`.
+First, from the repo root: `cd parts/03-judge-what-code-cannot/02-write-the-judge/problem`.
 
 Write the judge prompt in the plain text file `grounded.txt`, in four parts:
 

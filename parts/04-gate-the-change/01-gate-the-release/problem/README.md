@@ -6,7 +6,7 @@ Someone wants to move the abstractor to a cheaper model. A release is one versio
 
 The gate today looks only at the average field accuracy on the 50 gate leases. It blocks when accuracy drops by more than 2 points.
 
-Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/04-gate-the-change/01-gate-the-release/problem`.
+First, from the repo root: `cd parts/04-gate-the-change/01-gate-the-release/problem`.
 
 For example, run the starter on the cheaper model:
 
