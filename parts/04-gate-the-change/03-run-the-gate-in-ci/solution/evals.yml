@@ -21,5 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
+      # This course names one release here. In your own repo, read the release name
+      # from the pull request, for example from a file it changes, so each pull request gates its own.
       - name: Gate the release this pull request proposes
         run: uv run python gate.py --release cheaper-model

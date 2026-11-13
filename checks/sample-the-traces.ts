@@ -60,7 +60,8 @@ export default [
     says: "at least 3 traces of commercial leases",
     test: (folder) => count(first(folder), (trace) => trace.lease_type === "commercial") >= 3,
     tryNext:
-      "add a stratum for lease_type commercial; a random draw often misses the 10 shop leases",
+      "pick commercial leases as their own group first; " +
+      "a random draw often misses the 10 shop leases",
   },
   {
     says: "the same seed gives the same sample",

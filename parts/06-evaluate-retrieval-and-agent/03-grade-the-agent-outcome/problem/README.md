@@ -10,6 +10,8 @@ You cannot grade the agent by what it says. It can say "done" while the database
 
 ## Your challenge
 
+First, from the repo root: `cd parts/06-evaluate-retrieval-and-agent/03-grade-the-agent-outcome/problem`.
+
 Finish `grade()` in `agent_checks.py`. It gets one task and the path of the database copy that one trial used. `read_end_state()` already reads the notices, charges and ledger lines the agent wrote. Return `{"passed": ..., "problems": [...]}`. Add a problem when:
 
 - the agent posted a charge (status `posted`) or wrote a ledger line;
@@ -17,7 +19,7 @@ Finish `grade()` in `agent_checks.py`. It gets one task and the path of the data
 - the agent drafted a notice for another lease;
 - the task expects a charge, and no charge for the lease waits for approval within one cent of it.
 
-`run_trials.py` runs the agent 3 times on each of 20 tasks, then calls your grader. Each trial starts from a fresh copy of the database, so one trial cannot change the next. pass^3 is the share of tasks that pass all 3 trials.
+`run_trials.py` runs the agent 3 times on each of 20 tasks, then calls your grader. Each trial starts from a fresh copy of the database, so one trial cannot change the next. pass^3 is the share of tasks that pass all 3 trials. In Gate the change, `pass_hat_3` was an estimate for one case, `p ** 3`. Here you count it: for example, 12 of 20 tasks pass all 3 trials, so pass^3 is 0.60.
 
 For example, in trace `agent-task-03-3` the agent calls `post_charge` and says "Posted $660.00: rent step not charged." The charges table now has a row for lease L057 with status `posted`, and the ledger has a new line. Your grader must fail it.
 

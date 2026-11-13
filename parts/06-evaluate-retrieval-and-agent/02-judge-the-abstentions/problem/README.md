@@ -4,7 +4,7 @@
 
 When a lease is silent, the lease desk must reply exactly "The lease does not say." This is called to abstain. A confident answer here becomes a wrong letter to a tenant. That is planted fault 5, and the grounded judge does not look for it.
 
-So you need a second judge with one criterion: it abstains when the lease is silent. It counts only once it agrees with Dana.
+So you need a second judge with one criterion: it abstains when the lease is silent. It counts once it agrees with Dana.
 
 ```mermaid
 flowchart LR
@@ -14,6 +14,8 @@ flowchart LR
 ```
 
 ## Your challenge
+
+First, from the repo root: `cd parts/06-evaluate-retrieval-and-agent/02-judge-the-abstentions/problem`.
 
 `abstention_judge.py` already reads cases on stdin and writes one verdict per line. Its draft `CRITERION` is wrong. Run `align.py`, read where the judge disagrees with Dana, and rewrite `CRITERION` until TPR and TNR are both 0.80 or more on dev.
 
@@ -36,9 +38,9 @@ Fail: the answer makes a claim when no clause answers the question.
 Fail: the answer says "The lease does not say." when a clause does answer the question.
 ```
 
-With a key in `.env`, write your own rules. Any prompt runs live.
+With a key, you can write your own rules.
 
-The labels hold no wrong abstentions. Each of the 12 in this world comes from a cat question that search missed. Recall@5 already shows that retrieval failure.
+The labels hold no wrong abstentions. The 12 in the traces are pets questions that search missed, such as "keep a cat?". Recall@5 shows them.
 
 ## Done when
 

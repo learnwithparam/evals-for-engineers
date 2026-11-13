@@ -16,6 +16,8 @@ flowchart LR
 
 ## Your challenge
 
+First, from the repo root: `cd parts/02-check-with-code/01-build-the-golden-set/problem`.
+
 Finish `golden_records()` in `build_golden.py`. It writes `golden.jsonl`: one line per lease, with three fields.
 
 - `lease_id`: the lease, such as `L041`.

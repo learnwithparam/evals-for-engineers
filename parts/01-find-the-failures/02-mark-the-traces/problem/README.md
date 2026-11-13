@@ -8,7 +8,7 @@ You have 40 traces. Before anyone writes an eval, a person has to look at each o
 
 ## Your challenge
 
-Open each trace in the review app. Read the lease on the left, including any amendment at the bottom. Read the abstract on the right. Press `1` if every field matches the signed lease. Press `2` if any field is wrong. Press `d` to come back to a trace later. The app saves `marks.csv` in this folder after every key you press.
+Open each trace in the review app. Read the lease on the left, including any amendment at the bottom. Read the abstract on the right. Press `1` if every field matches the lease, with its amendments. Press `2` if any field is wrong. Press `d` to come back to a trace later. The app saves `marks.csv` in this folder after every key you press.
 
 ```bash
 uv run review mark-the-traces

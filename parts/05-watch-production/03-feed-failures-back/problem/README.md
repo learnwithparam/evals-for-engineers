@@ -14,6 +14,8 @@ flowchart LR
 
 ## Your challenge
 
+First, from the repo root: `cd parts/05-watch-production/03-feed-failures-back/problem`.
+
 Add at least 3 cases to `golden_desk.jsonl`, one JSON object per line. Take each from a production trace that failed. Tag it `"source": "production"`. At least one must be on the new template, FH-RES-2026.
 
 For each case, read the trace and the lease. Then fill in:
@@ -30,7 +32,7 @@ For example, trace `prod-5-12` asks for the rent of unit 1C at Rowan Steps. Live
 
 Pick `must_say` with care. For trace `prod-5-03`, the lease says "at least 60 days" and live says "Exactly 60 days". If `must_say` is only "60 days", the wrong answer passes. Use "at least 60 days".
 
-Then score live on the golden set:
+Then score live:
 
 ```bash
 uv run python score_live.py

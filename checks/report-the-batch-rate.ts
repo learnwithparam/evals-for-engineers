@@ -146,7 +146,7 @@ export default [
       return batches.includes(NEW_BATCH) && batches.every((batch) => batch >= NEW_BATCH);
     },
     tryNext:
-      "the known templates sit near 0.75 too; " +
-      "alert on the new-template slice, which CI cannot test",
+      "the all rows dip below 0.75 in batches 1 and 4, before any new template; " +
+      "alert only on the new-template slice, which CI cannot test",
   },
 ] satisfies Rule[];

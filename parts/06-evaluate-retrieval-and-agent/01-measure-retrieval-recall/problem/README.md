@@ -10,6 +10,8 @@ Recall@k is the share of questions whose right clause is in the top k results. M
 
 ## Your challenge
 
+First, from the repo root: `cd parts/06-evaluate-retrieval-and-agent/01-measure-retrieval-recall/problem`.
+
 1. In `retrieve.py`, finish `clean_query()` for the `clean-query` setting. The `baseline` setting is the finished keyword search. Leave it as it is.
 2. In `recall.py`, finish `metrics()`: recall@1, recall@5 and MRR for one setting, and the questions it misses.
 

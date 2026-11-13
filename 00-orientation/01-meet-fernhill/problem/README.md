@@ -11,6 +11,8 @@ For example, the finished system already finds a real mistake. On lease L008, th
    monthly_rent           $2,125.00        $2,275.00        WRONG
 ```
 
+The column `the signed lease` reads the lease together with its amendments. That is why it shows $2,275.00, not $2,125.00.
+
 This course teaches you to find mistakes like this one, count them and stop them.
 
 ![The finished system's report card in the terminal](../images/expected.png)
@@ -41,7 +43,7 @@ Expect: `Fernhill demo: lease L008` and a `monthly_rent` row marked `WRONG`: the
 uv run fernhill report --out 00-orientation/01-meet-fernhill/problem/report.txt
 ```
 
-Expect: `Fernhill eval report, release: live` and five lines, ending `Wrote 00-orientation/01-meet-fernhill/problem/report.txt`.
+Expect: `Fernhill eval report, release: live`, five report lines and a `World:` line, ending `Wrote 00-orientation/01-meet-fernhill/problem/report.txt`.
 
 ## Done when
 

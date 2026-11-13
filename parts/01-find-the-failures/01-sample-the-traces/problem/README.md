@@ -16,6 +16,8 @@ flowchart LR
 
 ## Your challenge
 
+First, from the repo root: `cd parts/01-find-the-failures/01-sample-the-traces/problem`.
+
 Finish `sample()` in `sample.py` so it picks 40 traces for review. Pick the risky kinds first: at least 8 traces of amended leases and at least 3 of commercial leases. Then fill the rest at random. The same seed must always give the same 40, so a colleague can review the same set.
 
 Each line of `world/data/traces/abstractor.jsonl` is one trace. You need three fields: `trace_id`, `lease_type` (`residential` or `commercial`) and `amendments` (a count).

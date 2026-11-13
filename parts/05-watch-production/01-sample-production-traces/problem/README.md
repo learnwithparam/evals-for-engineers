@@ -17,6 +17,8 @@ flowchart LR
 
 ## Your challenge
 
+First, from the repo root: `cd parts/05-watch-production/01-sample-production-traces/problem`.
+
 Finish two functions in `monitor.py`:
 
 1. `sample_batch()` picks at least 30 traces from one batch. First take every trace on a template the golden set lacks. Then add one trace from each building that has none yet. Then fill the rest at random.

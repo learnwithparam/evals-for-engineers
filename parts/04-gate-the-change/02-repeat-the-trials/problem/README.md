@@ -22,6 +22,8 @@ flowchart LR
 
 ## Your challenge
 
+First, from the repo root: `cd parts/04-gate-the-change/02-repeat-the-trials/problem`.
+
 Change `gate.py` so every case uses all 3 trials. A case is one critical field on one lease, or one unanswerable question.
 
 For each case, report:

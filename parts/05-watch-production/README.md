@@ -66,7 +66,7 @@ Add 3 production cases to `03-feed-failures-back/problem/golden_desk.jsonl`, the
 cd parts/05-watch-production/03-feed-failures-back/problem && uv run python score_live.py; cd -
 ```
 
-Expect: `live fails 0 of 7 review cases` and `live fails 3 of 3 production cases`.
+Expect: `live fails 0 of 7 review cases`, then `live fails 3 of 3 production cases`, or as many as you added. The sample answer adds 4.
 
 ```bash
 bun run verify part watch-production

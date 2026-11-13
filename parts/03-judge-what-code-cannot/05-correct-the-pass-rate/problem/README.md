@@ -15,13 +15,15 @@ flowchart LR
 
 ## Your challenge
 
+First, from the repo root: `cd parts/03-judge-what-code-cannot/05-correct-the-pass-rate/problem`.
+
 Finish `corrected()` in `rate.py`. It takes the raw rate, TPR and TNR, and returns the true pass rate:
 
 ```
 corrected = (raw + TNR - 1) / (TPR + TNR - 1)
 ```
 
-Keep the result between 0 and 1. Then run the script:
+This is the Rogan-Gladen estimator, first made for medical tests that are sometimes wrong ([Rogan and Gladen, 1978](https://doi.org/10.1093/oxfordjournals.aje.a112510)). Keep the result between 0 and 1. Then run the script:
 
 ```bash
 uv run python rate.py

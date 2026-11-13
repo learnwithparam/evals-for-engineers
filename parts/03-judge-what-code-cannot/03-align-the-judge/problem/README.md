@@ -8,6 +8,8 @@ A judge that disagrees with Dana is worse than no judge, because the team will t
 
 ## Your challenge
 
+First, from the repo root: `cd parts/03-judge-what-code-cannot/03-align-the-judge/problem`.
+
 Use two numbers to measure the judge against Dana on the 50 dev answers:
 
 - **TPR**: of the answers Dana passes, the share the judge passes too.
@@ -31,7 +33,7 @@ The answer says "180 days' notice". The clause says "not less than one hundred a
 
 Now fix `grounded.txt`. Add the rule each kind of disagreement breaks. Then write one row per change in `changes.csv`: `trace_id,change`. Name the answer that showed you the problem. Run `align.py` again until TPR and TNR are both at least 0.80.
 
-Tune on dev only. Never look at the test split here. You use it once, in the next step.
+Tune on dev only. You use the test split once, in the next step.
 
 **Without a key.** Replay knows the draft and Dana's finished prompt in `../solution/grounded.txt`. Read the disagreements, write your fix, then compare it with the sample and use the sample. **With a key**, record your own prompt on dev:
 
