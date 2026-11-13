@@ -2,9 +2,9 @@
 
 ## The problem
 
-When a lease is silent, the lease desk must reply exactly "The lease does not say." To abstain means to give no answer on purpose. A confident answer to a question the lease does not answer becomes a wrong letter to a tenant. That is planted fault 5, and the grounded judge from Judge what code cannot does not look for it.
+When a lease is silent, the lease desk must reply exactly "The lease does not say." This is called to abstain. A confident answer here becomes a wrong letter to a tenant. That is planted fault 5, and the grounded judge does not look for it.
 
-So you need a second judge with one criterion: it abstains when the lease is silent. As before, the judge only counts once it agrees with Dana.
+So you need a second judge with one criterion: it abstains when the lease is silent. It counts only once it agrees with Dana.
 
 ```mermaid
 flowchart LR
@@ -38,7 +38,7 @@ Fail: the answer says "The lease does not say." when a clause does answer the qu
 
 With a key in `.env`, write your own rules. Any prompt runs live.
 
-You might expect wrong abstentions in the labels too. In this world, each of the 12 wrong abstentions comes from a cat question that search missed. That is a retrieval failure, which recall@5 already shows. So they are not in this judge's labels.
+The labels hold no wrong abstentions. Each of the 12 in this world comes from a cat question that search missed. Recall@5 already shows that retrieval failure.
 
 ## Done when
 
