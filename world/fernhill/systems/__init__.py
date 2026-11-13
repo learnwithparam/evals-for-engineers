@@ -1,1 +1,1 @@
-"""The three LLM systems Fernhill runs: the lease abstractor, the lease desk and the rent review agent."""
+"""Fernhill's three LLM systems: the lease abstractor, the lease desk and the rent review agent."""

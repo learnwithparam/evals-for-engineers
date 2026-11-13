@@ -1,19 +1,23 @@
 """uv run fernhill [demo|report|gate]: the finished system."""
+
 import sys
 
 
 def main() -> int:
-    cmd = sys.argv[1] if len(sys.argv) > 1 else "help"
-    args = sys.argv[2:]
-    if cmd == "demo":
+    command = sys.argv[1] if len(sys.argv) > 1 else "help"
+    arguments = sys.argv[2:]
+    if command == "demo":
         from .evals.report import demo
-        return demo(args)
-    if cmd == "report":
+
+        return demo(arguments)
+    if command == "report":
         from .evals.report import report
-        return report(args)
-    if cmd == "gate":
+
+        return report(arguments)
+    if command == "gate":
         from .evals.gate import main as gate
-        return gate(args)
+
+        return gate(arguments)
     print("Use: uv run fernhill demo | report | gate --release <name>")
     return 1
 

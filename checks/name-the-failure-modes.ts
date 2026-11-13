@@ -4,73 +4,149 @@ import type { Rule } from "../scripts/verify";
 import { csvHeader, plantedIn, readCsv, readYaml } from "./lib/world";
 
 type Mode = { name: string; definition: string; examples: string[] };
-const modes = (d: string): Mode[] => {
-  const y = readYaml(join(d, "failure_modes.yaml"));
-  return Array.isArray(y?.modes) ? y.modes : [];
+
+const modes = (folder: string): Mode[] => {
+  const failureModes = readYaml<{ modes?: unknown } | undefined>(
+    join(folder, "failure_modes.yaml"),
+  );
+  return Array.isArray(failureModes?.modes) ? failureModes.modes : [];
 };
-const marks = (d: string) => new Map(readCsv(join(d, "marks.csv")).map((r) => [r.trace_id, r.mark]));
-const notes = (d: string) => new Map(readCsv(join(d, "notes.csv")).map((r) => [r.trace_id, r.note]));
-const labels = (d: string) => readCsv(join(d, "labels.csv"));
-const GENERIC = /^(hallucinations?|accuracy|inaccurac(y|ies)|inaccurate|errors?|wrong|bad|quality|format(ting)?|other|misc|general|incorrect|issues?|problems?)$/;
-const sentences = (s: string) => s.trim().split(/[.!?](\s|$)/).filter((x) => x && x.trim()).length;
+const marks = (folder: string) => {
+  const rows = readCsv(join(folder, "marks.csv"));
+  return new Map(rows.map((row) => [row.trace_id, row.mark]));
+};
+const notes = (folder: string) => {
+  const rows = readCsv(join(folder, "notes.csv"));
+  return new Map(rows.map((row) => [row.trace_id, row.note]));
+};
+const labels = (folder: string) => readCsv(join(folder, "labels.csv"));
+const labelOf = (folder: string, traceId: string, mode: string) =>
+  labels(folder).find((row) => row.trace_id === traceId)?.[mode];
+
+// Names that say something went wrong but not what. A mode name says which field and how.
+const GENERIC_NAMES = [
+  "hallucinations?",
+  "accuracy",
+  "inaccurac(y|ies)",
+  "inaccurate",
+  "errors?",
+  "wrong",
+  "bad",
+  "quality",
+  "format(ting)?",
+  "other",
+  "misc",
+  "general",
+  "incorrect",
+  "issues?",
+  "problems?",
+];
+const GENERIC = new RegExp(`^(${GENERIC_NAMES.join("|")})$`);
+
+const sentences = (text: string) => {
+  const pieces = text.trim().split(/[.!?](\s|$)/);
+  return pieces.filter((piece) => piece?.trim()).length;
+};
+
+const isOneShortSentence = (definition: unknown) => {
+  const text = String(definition);
+  return sentences(text) === 1 && text.split(/\s+/).length <= 25;
+};
+
+const hasWellFormedName = (mode: Mode) =>
+  /^[a-z0-9]+(-[a-z0-9]+)*$/.test(mode.name ?? "") &&
+  !!mode.definition &&
+  (mode.examples ?? []).length > 0;
+
+function labelsMatchModes(folder: string): boolean {
+  if (!existsSync(join(folder, "labels.csv"))) return false;
+  const header = csvHeader(join(folder, "labels.csv"));
+  const names = modes(folder).map((mode) => mode.name);
+  const rows = labels(folder);
+  const isBinary = (cell: string) => cell === "0" || cell === "1";
+  return (
+    header[0] === "trace_id" &&
+    names.every((name) => header.includes(name)) &&
+    rows.length === marks(folder).size &&
+    rows.every(
+      (row) => marks(folder).has(row.trace_id) && names.every((name) => isBinary(row[name])),
+    )
+  );
+}
+
+function modesMatchMark(folder: string, row: Record<string, string>): boolean {
+  const modeCount = modes(folder).filter((mode) => row[mode.name] === "1").length;
+  return marks(folder).get(row.trace_id) === "fail" ? modeCount > 0 : modeCount === 0;
+}
+
+function oneModeCoversAmendments(folder: string): boolean {
+  const planted = plantedIn([...marks(folder).keys()]);
+  const amended = planted.filter((trace) => trace.mode === "amended-rent-missed");
+  const amendedIds = amended.map((trace) => trace.id);
+  return modes(folder).some((mode) =>
+    amendedIds.every((id) => labelOf(folder, id, mode.name) === "1"),
+  );
+}
 
 export default [
   {
     says: "failure_modes.yaml lists 4 to 8 modes",
-    test: (d) => existsSync(join(d, "failure_modes.yaml")) && modes(d).length >= 4 && modes(d).length <= 8,
-    tryNext: "group your notes: merge modes that share a cause in the data, split one that hides two behaviours",
+    test: (folder) =>
+      existsSync(join(folder, "failure_modes.yaml")) &&
+      modes(folder).length >= 4 &&
+      modes(folder).length <= 8,
+    tryNext:
+      "group your notes: merge modes that share a cause in the data, " +
+      "split one that hides two behaviours",
   },
   {
     says: "every mode has a name in lower-case-with-dashes, a definition and at least one example",
-    test: (d) => modes(d).every((m) => /^[a-z0-9]+(-[a-z0-9]+)*$/.test(m.name ?? "") && !!m.definition && (m.examples ?? []).length > 0),
+    test: (folder) => modes(folder).every(hasWellFormedName),
     tryNext: "copy the block shape from the comment at the top of failure_modes.yaml",
   },
   {
     says: "no mode has a generic name like hallucination, formatting or other",
-    test: (d) => modes(d).every((m) => !GENERIC.test(m.name ?? "")),
+    test: (folder) => modes(folder).every((mode) => !GENERIC.test(mode.name ?? "")),
     tryNext: "name what happened to which field, for example amended-rent-missed",
   },
   {
     says: "every definition is one sentence of 25 words or fewer",
-    test: (d) => modes(d).every((m) => sentences(String(m.definition)) === 1 && String(m.definition).split(/\s+/).length <= 25),
+    test: (folder) => modes(folder).every((mode) => isOneShortSentence(mode.definition)),
     tryNext: "write each definition so a colleague could apply it to a new trace in one read",
   },
   {
     says: "every example is a trace you marked fail and wrote a note on",
-    test: (d) => modes(d).every((m) => (m.examples ?? []).every((i) => marks(d).get(i) === "fail" && !!notes(d).get(i))),
+    test: (folder) =>
+      modes(folder).every((mode) =>
+        (mode.examples ?? []).every(
+          (id) => marks(folder).get(id) === "fail" && !!notes(folder).get(id),
+        ),
+      ),
     tryNext: "use trace ids from notes.csv as examples",
   },
   {
-    says: "labels.csv has a column per mode and a row per reviewed trace, with 0 or 1 in every cell",
-    test: (d) => {
-      if (!existsSync(join(d, "labels.csv"))) return false;
-      const head = csvHeader(join(d, "labels.csv"));
-      const names = modes(d).map((m) => m.name);
-      const rows = labels(d);
-      return head[0] === "trace_id" && names.every((n) => head.includes(n)) && rows.length === marks(d).size
-        && rows.every((r) => marks(d).has(r.trace_id) && names.every((n) => r[n] === "0" || r[n] === "1"));
-    },
+    says:
+      "labels.csv has a column per mode and a row per reviewed trace, " +
+      "with 0 or 1 in every cell",
+    test: labelsMatchModes,
     tryNext: "give every trace in marks.csv one row, and put 0 or 1 under every mode",
   },
   {
     says: "every failed trace has at least one mode, and every passed trace has none",
-    test: (d) => labels(d).every((r) => {
-      const n = modes(d).filter((m) => r[m.name] === "1").length;
-      return marks(d).get(r.trace_id) === "fail" ? n > 0 : n === 0;
-    }),
+    test: (folder) => labels(folder).every((row) => modesMatchMark(folder, row)),
     tryNext: "a failed trace with no mode means a mode is missing; add one or widen a definition",
   },
   {
     says: "the examples of each mode carry a 1 in that mode's column",
-    test: (d) => modes(d).every((m) => (m.examples ?? []).every((i) => labels(d).find((r) => r.trace_id === i)?.[m.name] === "1")),
+    test: (folder) =>
+      modes(folder).every((mode) =>
+        (mode.examples ?? []).every((id) => labelOf(folder, id, mode.name) === "1"),
+      ),
     tryNext: "label the examples you named in failure_modes.yaml with 1 in labels.csv",
   },
   {
     says: "one mode covers every amendment failure in the sample",
-    test: (d) => {
-      const am = plantedIn([...marks(d).keys()]).filter((p) => p.mode === "amended-rent-missed").map((p) => p.id);
-      return modes(d).some((m) => am.every((i) => labels(d).find((r) => r.trace_id === i)?.[m.name] === "1"));
-    },
+    test: oneModeCoversAmendments,
     tryNext: "the traces where rent misses Amendment No. 1 are one behaviour; give them one mode",
   },
 ] satisfies Rule[];

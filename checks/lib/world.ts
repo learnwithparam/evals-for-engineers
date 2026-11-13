@@ -1,90 +1,185 @@
-// Reads the Fernhill world: its data, Dana's labels, the planted faults, the system of record and its logs.
+// Reads the Fernhill world: its data, Dana's labels, the planted faults,
+// the system of record and its logs.
 // A check reads these and the learner's files. It never reads a model's reply to judge it.
+
+import { Database } from "bun:sqlite";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { Database } from "bun:sqlite";
 
 export const ROOT = join(import.meta.dir, "..", "..");
 export const DATA = join(ROOT, "world", "data");
 export const LOGS = join(ROOT, "world", "logs");
 export const DB = join(ROOT, "world", "fernhill.db");
 
-export const readJsonl = <T = any>(p: string): T[] =>
-  readFileSync(p, "utf8").split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
+/** One parsed line of JSON. Its keys come from the Python side, so they are snake_case. */
+export type JsonRecord = { [field: string]: unknown };
 
-/** A small CSV reader: a header row, commas, and double quotes around fields that hold commas. */
-export function readCsv(p: string): Record<string, string>[] {
-  const rows: string[][] = [];
-  let row: string[] = [], cell = "", quoted = false;
-  const text = readFileSync(p, "utf8").replace(/^﻿/, "");
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (quoted) {
-      if (c === '"' && text[i + 1] === '"') { cell += '"'; i++; }
-      else if (c === '"') quoted = false;
-      else cell += c;
-    } else if (c === '"') quoted = true;
-    else if (c === ",") { row.push(cell); cell = ""; }
-    else if (c === "\n" || c === "\r") {
-      if (c === "\r" && text[i + 1] === "\n") i++;
-      row.push(cell); cell = "";
-      if (row.some((x) => x.trim() !== "")) rows.push(row);
-      row = [];
-    } else cell += c;
-  }
-  row.push(cell);
-  if (row.some((x) => x.trim() !== "")) rows.push(row);
-  if (rows.length === 0) return [];
-  const head = rows[0].map((h) => h.trim());
-  return rows.slice(1).map((r) => Object.fromEntries(head.map((h, i) => [h, (r[i] ?? "").trim()])));
-}
+/** A recorded abstractor run. Fields like trace_id and lease_type are read by name. */
+export type Trace = { amendments: number; [field: string]: unknown };
 
-export const csvHeader = (p: string): string[] =>
-  (readFileSync(p, "utf8").replace(/^﻿/, "").split(/\r?\n/)[0] ?? "").split(",").map((h) => h.trim());
+export type PlantedFault = { fault: number; system: string; ref: string; [field: string]: unknown };
 
-export const readYaml = (p: string): any => Bun.YAML.parse(readFileSync(p, "utf8"));
-export const readJson = (p: string): any => JSON.parse(readFileSync(p, "utf8"));
+export type Splits = { golden: string[]; gate: string[] };
 
-let _traces: Map<string, any> | undefined;
-/** The 300 recorded abstractor runs, by trace id. */
-export function abstractorTraces(): Map<string, any> {
-  _traces ??= new Map(readJsonl(join(DATA, "traces", "abstractor.jsonl")).map((t) => [t.trace_id, t]));
-  return _traces;
-}
+// Some editors save a byte order mark at the start of a CSV; it is not part of the first header.
+const BYTE_ORDER_MARK = /^﻿/;
 
-/** Dana Mensah's label for every abstractor trace: her verdict and the failure modes she saw. */
-export function danaAbstractor(): Map<string, { verdict: string; modes: string[] }> {
-  const out = new Map();
-  for (const r of readCsv(join(DATA, "labels", "abstractor.csv"))) {
-    const modes = Object.keys(r).filter((k) => k !== "trace_id" && k !== "verdict" && r[k] === "1");
-    out.set(r.trace_id, { verdict: r.verdict, modes });
-  }
-  return out;
-}
-
-/** The three planted abstractor faults, as the mode Dana gives each. */
-export const PLANTED_MODES: Record<string, { fault: number; words: RegExp; what: string }> = {
-  "amended-rent-missed": { fault: 1, words: /rent|amend/i, what: "the rent misses Amendment No. 1" },
-  "rent-step-dropped": { fault: 2, words: /step|increase|rise|raise|anniversar|escalat/i, what: "a rent step in prose is dropped" },
-  "notice-days-wrong-clause": { fault: 3, words: /notice|renew|days/i, what: "renewal notice days come from another clause" },
+export const readJsonl = <Shape = JsonRecord>(path: string): Shape[] => {
+  const lines = readFileSync(path, "utf8").split("\n");
+  const filled = lines.filter((line) => line.trim());
+  return filled.map((line) => JSON.parse(line));
 };
 
-/** Trace ids in a list that carry a planted fault, with the mode for each. */
-export function plantedIn(ids: string[]): { id: string; mode: string }[] {
-  const dana = danaAbstractor();
-  const out: { id: string; mode: string }[] = [];
-  for (const id of ids) for (const m of dana.get(id)?.modes ?? []) if (m in PLANTED_MODES) out.push({ id, mode: m });
-  return out;
+type CsvReader = { rows: string[][]; row: string[]; cell: string; quoted: boolean };
+
+function endCell(reader: CsvReader) {
+  reader.row.push(reader.cell);
+  reader.cell = "";
 }
 
-export const plantedFaults = () => readJsonl(join(DATA, "planted_faults.jsonl"));
-export const splits = () => readJson(join(DATA, "splits.json"));
+// A row of only blank cells is a blank line, so it is dropped.
+function endRow(reader: CsvReader) {
+  endCell(reader);
+  if (reader.row.some((cell) => cell.trim() !== "")) reader.rows.push(reader.row);
+  reader.row = [];
+}
 
-/** Same as fingerprint() in world/fernhill/evals/report.py: changes when the world's data changes. */
+/** Reads one character inside double quotes. Returns how many characters it used. */
+function readQuoted(reader: CsvReader, text: string, i: number): number {
+  const character = text[i];
+  if (character === '"' && text[i + 1] === '"') {
+    reader.cell += '"';
+    return 2;
+  }
+  if (character === '"') reader.quoted = false;
+  else reader.cell += character;
+  return 1;
+}
+
+/** Reads one character outside quotes. Returns how many characters it used. */
+function readPlain(reader: CsvReader, text: string, i: number): number {
+  const character = text[i];
+  if (character === '"') reader.quoted = true;
+  else if (character === ",") endCell(reader);
+  else if (character === "\n" || character === "\r") {
+    endRow(reader);
+    // Windows ends a line with \r\n; treat the pair as one line break.
+    if (character === "\r" && text[i + 1] === "\n") return 2;
+  } else reader.cell += character;
+  return 1;
+}
+
+function csvRows(text: string): string[][] {
+  const reader: CsvReader = { rows: [], row: [], cell: "", quoted: false };
+  let i = 0;
+  while (i < text.length) {
+    if (reader.quoted) i += readQuoted(reader, text, i);
+    else i += readPlain(reader, text, i);
+  }
+  endRow(reader);
+  return reader.rows;
+}
+
+/** A small CSV reader: a header row, commas, and double quotes around fields that hold commas. */
+export function readCsv(path: string): Record<string, string>[] {
+  const text = readFileSync(path, "utf8").replace(BYTE_ORDER_MARK, "");
+  const rows = csvRows(text);
+  if (rows.length === 0) return [];
+  const header = rows[0].map((name) => name.trim());
+  return rows.slice(1).map((row) => {
+    const cells = header.map((name, i) => [name, (row[i] ?? "").trim()]);
+    return Object.fromEntries(cells);
+  });
+}
+
+export const csvHeader = (path: string): string[] => {
+  const text = readFileSync(path, "utf8").replace(BYTE_ORDER_MARK, "");
+  const firstLine = text.split(/\r?\n/)[0] ?? "";
+  return firstLine.split(",").map((name) => name.trim());
+};
+
+/** Parses a YAML file. The caller names the shape it expects, since the learner wrote the file. */
+export const readYaml = <Shape = JsonRecord>(path: string): Shape =>
+  Bun.YAML.parse(readFileSync(path, "utf8")) as Shape;
+
+/** Parses a JSON file. The caller names the shape it expects. */
+export const readJson = <Shape = JsonRecord>(path: string): Shape =>
+  JSON.parse(readFileSync(path, "utf8"));
+
+// Read once per process: every rule of every check looks traces up here.
+let cachedTraces: Map<string, Trace> | undefined;
+
+/** The 300 recorded abstractor runs, by trace id. */
+export function abstractorTraces(): Map<string, Trace> {
+  if (cachedTraces === undefined) {
+    const traces = readJsonl<Trace>(join(DATA, "traces", "abstractor.jsonl"));
+    cachedTraces = new Map(traces.map((trace) => [trace.trace_id as string, trace]));
+  }
+  return cachedTraces;
+}
+
+export type DanaLabel = { verdict: string; modes: string[] };
+
+/** Dana Mensah's label for every abstractor trace: her verdict and the failure modes she saw. */
+export function danaAbstractor(): Map<string, DanaLabel> {
+  const labels = new Map<string, DanaLabel>();
+  for (const row of readCsv(join(DATA, "labels", "abstractor.csv"))) {
+    const columns = Object.keys(row);
+    const modes = columns.filter(
+      (column) => column !== "trace_id" && column !== "verdict" && row[column] === "1",
+    );
+    labels.set(row.trace_id, { verdict: row.verdict, modes });
+  }
+  return labels;
+}
+
+export type PlantedMode = { fault: number; words: RegExp; what: string };
+
+/** The three planted abstractor faults, as the mode Dana gives each. */
+export const PLANTED_MODES: Record<string, PlantedMode> = {
+  "amended-rent-missed": {
+    fault: 1,
+    words: /rent|amend/i,
+    what: "the rent misses Amendment No. 1",
+  },
+  "rent-step-dropped": {
+    fault: 2,
+    words: /step|increase|rise|raise|anniversar|escalat/i,
+    what: "a rent step in prose is dropped",
+  },
+  "notice-days-wrong-clause": {
+    fault: 3,
+    words: /notice|renew|days/i,
+    what: "renewal notice days come from another clause",
+  },
+};
+
+export type PlantedTrace = { id: string; mode: string };
+
+/** Trace ids in a list that carry a planted fault, with the mode for each. */
+export function plantedIn(ids: string[]): PlantedTrace[] {
+  const dana = danaAbstractor();
+  const found: PlantedTrace[] = [];
+  for (const id of ids) {
+    const modes = dana.get(id)?.modes ?? [];
+    for (const mode of modes) if (mode in PLANTED_MODES) found.push({ id, mode });
+  }
+  return found;
+}
+
+export const plantedFaults = () => readJsonl<PlantedFault>(join(DATA, "planted_faults.jsonl"));
+export const splits = () => readJson<Splits>(join(DATA, "splits.json"));
+
+/**
+ * Same as fingerprint() in world/fernhill/evals/report.py. It changes when the world's data does,
+ * so a report made from another copy of the world is caught.
+ */
 export function fingerprint(): string {
-  const h = new Bun.CryptoHasher("sha256");
-  for (const f of ["keys.jsonl", "planted_faults.jsonl"]) h.update(readFileSync(join(DATA, f)));
-  return h.digest("hex").slice(0, 12);
+  const hasher = new Bun.CryptoHasher("sha256");
+  for (const file of ["keys.jsonl", "planted_faults.jsonl"]) {
+    hasher.update(readFileSync(join(DATA, file)));
+  }
+  return hasher.digest("hex").slice(0, 12);
 }
 
 /** Read-only access to the system of record, or undefined when `uv run world reset` has not run. */
@@ -93,4 +188,7 @@ export function db(): Database | undefined {
 }
 
 /** Lines from world/logs/<name>.jsonl, written by the finished system and the learner's runs. */
-export const log = (name: string): any[] => (existsSync(join(LOGS, `${name}.jsonl`)) ? readJsonl(join(LOGS, `${name}.jsonl`)) : []);
+export const log = (name: string): JsonRecord[] => {
+  const path = join(LOGS, `${name}.jsonl`);
+  return existsSync(path) ? readJsonl(path) : [];
+};

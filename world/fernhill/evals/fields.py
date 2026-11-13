@@ -1,9 +1,13 @@
 """Field checks: compare an abstract with the answer key, one field at a time, in code."""
+
 from .. import leases
 
 
-def _steps(v):
-    return sorted((s.get("effective"), int(s.get("monthly_rent") or 0)) for s in (v or []))
+def _steps(rent_steps):
+    """Rent steps as sorted (effective date, monthly rent) pairs, so their order does not matter."""
+    return sorted(
+        (step.get("effective"), int(step.get("monthly_rent") or 0)) for step in (rent_steps or [])
+    )
 
 
 def same(field: str, got, want) -> bool:
@@ -12,9 +16,13 @@ def same(field: str, got, want) -> bool:
     if field == "utilities_included":
         return sorted(got or []) == sorted(want or [])
     if field == "late_fee":
-        return isinstance(got, dict) and got.get("kind") == want["kind"] and got.get("value") == want["value"]
+        return (
+            isinstance(got, dict)
+            and got.get("kind") == want["kind"]
+            and got.get("value") == want["value"]
+        )
     return got == want
 
 
 def score(abstract: dict, key: dict) -> dict[str, bool]:
-    return {f: same(f, abstract.get(f), key.get(f)) for f in leases.FIELDS}
+    return {field: same(field, abstract.get(field), key.get(field)) for field in leases.FIELDS}

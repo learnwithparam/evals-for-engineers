@@ -2,7 +2,7 @@
 
 ## The problem
 
-A fail mark says something went wrong, not what. Without a note, the 16 failed traces are 16 identical red rows, and the next step has nothing to group. A note that guesses the cause ("the prompt is too short") is worse: it sends the team to fix something before anyone knows what happened.
+A fail mark says that something went wrong, but not what. Without a note, the 16 failed traces are 16 identical red rows. The next step then has nothing to group. A note that guesses the cause ("the prompt is too short") is worse. It sends the team to fix something before anyone knows what happened.
 
 ```mermaid
 flowchart LR
@@ -14,9 +14,9 @@ flowchart LR
 
 ## Your challenge
 
-For every trace you marked `fail`, write one note that describes what the abstract did. Name the field, what the abstract says, and what the lease says. Describe the behaviour, do not diagnose it. When two fields are wrong, start with the first thing that went wrong.
+For every trace you marked `fail`, write one note that describes what the abstract did. Name the field, what the abstract says, and what the lease says. Describe the behaviour; do not diagnose it. When two fields are wrong, start with the first thing that went wrong.
 
-The review app shows only the failed traces in this step and saves `notes.csv` as you type.
+In this step the review app shows only the failed traces. It saves `notes.csv` as you type.
 
 ```bash
 uv run review note-the-failures
@@ -24,7 +24,11 @@ uv run review note-the-failures
 
 Expect: `Review app for parts/01-find-the-failures/03-note-the-failures/problem: http://127.0.0.1:8765`.
 
-A good note: `Rent in the abstract is $2,650.00, the amount before the amendment; Amendment No. 1 sets it to $2,825.00.` A note that diagnoses: `The prompt should tell the model to read amendments.`
+For example, here are two notes on trace `abs-0026`, where the rent is wrong.
+
+A good note, because it says only what you can see: `Rent in the abstract is $2,650.00, the amount before the amendment; Amendment No. 1 sets it to $2,825.00.`
+
+A note that diagnoses, because it guesses a cause and a fix: `The prompt should tell the model to read amendments.`
 
 ## Done when
 
@@ -41,11 +45,11 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-|---|---|
-| `FAIL no note names a fix or a cause` | Rewrite the note as what you saw: the field, the value written, the value in the lease. |
-| `FAIL each note on a planted fault names the field that went wrong` | Use the field's own words: rent, rent step, renewal notice. |
-| `FAIL every trace marked fail has a note` | Move through every trace in the app with the right arrow key; the counter shows how many are done. |
+| What you see                                                        | Fix                                                                                                |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `FAIL no note names a fix or a cause`                               | Rewrite the note as what you saw: the field, the value written, the value in the lease.            |
+| `FAIL each note on a planted fault names the field that went wrong` | Use the field's own words: rent, rent step, renewal notice.                                        |
+| `FAIL every trace marked fail has a note`                           | Move through every trace in the app with the right arrow key; the counter shows how many are done. |
 
 ## Words you will use
 
