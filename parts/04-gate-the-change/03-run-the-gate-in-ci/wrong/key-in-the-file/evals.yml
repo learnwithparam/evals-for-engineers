@@ -1,0 +1,25 @@
+# Runs the release gate on every pull request. A blocked release turns the check red.
+# In your own repo, copy this file to .github/workflows/evals.yml.
+name: evals
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    # A gate that hangs must not hang the pull request. When time runs out, the check fails.
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: parts/04-gate-the-change/03-run-the-gate-in-ci/problem
+    env:
+      # replay needs no key. Set the repo variable LLM_PROVIDER to judge with a live model.
+      LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'replay' }}
+      # Pasted here so the job can find it.
+      ANTHROPIC_API_KEY: paste-your-real-key-here
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Gate the release this pull request proposes
+        run: uv run python gate.py --release cheaper-model
