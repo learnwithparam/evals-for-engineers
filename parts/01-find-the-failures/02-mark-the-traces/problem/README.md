@@ -55,5 +55,6 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 ## Words you will use
 
 - **Mark**: your pass or fail verdict on one trace, before you say why.
+- **Lease abstractor**: the AI system that reads a signed lease and writes its abstract, the 18 fields you see on the review page.
 - **Planted fault**: a mistake built into the Fernhill world on purpose, so the checks know it is there.
 - **Amendment**: a later signed change to a lease. It wins over the clause it changes.
