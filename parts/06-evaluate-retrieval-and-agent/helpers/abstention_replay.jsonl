@@ -1,0 +1,72 @@
+{"key": "dc260c59ef105511fbe81ed787f078e7", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "9060399f00a4b90a4dc80bcfd5c7d142", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "59b475bcdb132d23f0b53705a4ec852c", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "96e09c26655e67c328500c7230104a99", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "ddc22ba3c186765e73a0b72df4e73a65", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "cebbc09e34fe0ba15e54c6f25a9584d1", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "78fb13841d70471b1def6778b008d347", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "ace21dd9ad5bc90115dbddb5fb82ce3d", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "16012afe850c64a6b4707cc034efaf3e", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "a64a12009a942880d51f66151617af35", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "dd03ff866dec1e0ae5cae826802ef93c", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "889c31e88055a54ddd1b6afc5ef24d59", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "9581fe732309197bd57b9031655e4881", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "8e064afc4e626518ed3649a1f676a0dc", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "056e6a9856be20519019594671058c76", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "ee25d17ecdf099e83960886835ca4849", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "5e5d9e92ce92e9d0ccf9d40bc5f0b89f", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "8efc7f06309d184fcc6254d1eca3a2bf", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "d99849d1db923e5b0999fb485e6feb8d", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "b0aba87731cdeea73ba8622ca9366479", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "69d91afed49546696e560a7c123db629", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "110f78fd489e6ef59b1d7565cd3a2309", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "30f11ec249ff9083af7eb38959c91f84", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "e7cf9f6f9191b054027f4c3fafb8161b", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "723ec9bcacde49bd56a7666cbc791a4c", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "b4cf5be996cdac3119117c833f0b3bb6", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "8bbe5ca89a8faa7668666dec2da28e40", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "ba14d631a10f76d52dfea3e79567413e", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "276b9a0e4e7649a177472c95636e6126", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "8d76937a0c93c84cc3b8fb713110e8f0", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "1b89e4add4bab6c0ad2661dd728d7cc8", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "c5f9bed08e862b6531514d760d84770f", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "09fa861b116c9323f41dee365979526c", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "1f55514a253328c6ef70fe8dc66c8a85", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "728185e203cf761bfbc6edb575c28812", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "a3733d86eb12d6ec2ee5cdd40c1b331f", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "64f7471c5a6e52b594babb2202d703ba", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "ccb5231576ef035eb05fb8ff2eb56f44", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "ebcae0b59d9f5be6921660f7c2ff6f81", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "30f61376b9e27eb5669518e9f33f8823", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "a329449da9b8e0ee518055a201fd9872", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "003510017dba34149ca950090b74c826", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "eb33eb36da93877d1b3761b53e2cc1ea", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "4d5e48cee2118b57f14054dc6cb1931b", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "cf81619da531d1aaf1a47f28c1ce789c", "reply": "{\"critique\": \"A clause answers the question and the answer gives what it says.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "f4d4c09ad2eb0464bdfaec5674580c27", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "093e2f80d88d225498c60000a763a1b8", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "bb67297ef4c20f5415a09985b07eeb81", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "c325f7b7fcf054b2735f35d8fdab92be", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "22493148501e5f9b685cf99ec934b5ed", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "0c7e5eed7b870c0ae5257905497c85b5", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "619ea0755f2a9b70eaabaabf2cc47350", "reply": "{\"critique\": \"The answer does not seem to fit the question.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "9a487b4d51971a72762cff4629c9934f", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "40f34d1fedc7bcece6bf126d76a69779", "reply": "{\"critique\": \"No clause found answers this, and the answer rightly says so.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "d99849d1db923e5b0999fb485e6feb8d", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "b0aba87731cdeea73ba8622ca9366479", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "69d91afed49546696e560a7c123db629", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "723ec9bcacde49bd56a7666cbc791a4c", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "b4cf5be996cdac3119117c833f0b3bb6", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "8bbe5ca89a8faa7668666dec2da28e40", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "6f8e676771f59f50327923ddd0ad91a4", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "55ca2d3e4c773708e482b5371bafd146", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "447910eead5f1dd1f17d77bb6c891bbc", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "99bf6b1b93270e420d8e2111ad8cfc6f", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "918801bb0d1088c7318fbde864fea805", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "488cd11d03930dca39b8831fb285654d", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "06117c1781131ee52cce8ee647277c5d", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "bf45a2560d4c7fc1a85ca019f95b8db8", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "59f108458c82b9e41b49c413eef98a71", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
+{"key": "da2c4f12691dcd4024fe3bd5cac74c85", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "cf769c6e35b58008685b27684d82c8d0", "reply": "{\"critique\": \"The answer looks fine to me.\", \"verdict\": \"pass\"}", "role": "judge"}
+{"key": "d4e2d1791e076536a93dca62e0edbfd4", "reply": "{\"critique\": \"No clause answers this question, yet the answer makes a claim.\", \"verdict\": \"fail\"}", "role": "judge"}
