@@ -1,0 +1,8 @@
+{
+  "amended-rent-missed": "The abstract keeps the rent from the original lease and ignores a later amendment.",
+  "rent-step-dropped": "The abstract has no rent steps although the lease raises the rent during the term.",
+  "notice-days-wrong-clause": "The renewal notice days come from another clause, not the renewal clause.",
+  "utilities-incomplete": "The abstract leaves out a utility that the landlord pays for.",
+  "late-fee-percent-as-dollars": "A late fee written as a percent is recorded as a flat dollar amount.",
+  "deposit-includes-pet-deposit": "The security deposit adds in the separate one-time pet deposit."
+}

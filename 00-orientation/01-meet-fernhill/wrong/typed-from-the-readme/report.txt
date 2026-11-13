@@ -1,0 +1,6 @@
+Fernhill eval report, release: live
+  Abstract fields correct ............ 97.2%   critical: rent wrong on 5 of 18 amended leases
+  Lease desk grounded (corrected) .... 86% (95% interval 74% to 100%)   judge TPR 0.92 TNR 0.88 on 50 held-out labels
+  Retrieval recall@5 ................. 0.96
+  Agent outcome pass^3 ............... 0.60   1 charge(s) posted without approval
+  Gate vs cheaper-model .............. BLOCKED: rent newly wrong on 9 amended leases (critical)

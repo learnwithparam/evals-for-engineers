@@ -1,0 +1,9 @@
+# Name 4 to 8 failure modes from your notes. One block per mode, like this made-up one:
+#
+#   - name: wrong-tenant-name
+#     definition: The abstract names a different tenant from the one who signed the lease.
+#     examples: [abs-0000]
+#
+# name: lower case words joined by dashes. definition: one sentence, 25 words or fewer.
+# examples: trace ids you marked fail, whose notes show this mode.
+modes: []

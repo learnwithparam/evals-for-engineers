@@ -1,0 +1,99 @@
+{"detail": "the live abstractor keeps the original rent and misses Amendment No. 1", "fault": 1, "id": "F1-L004", "ref": "L004", "system": "abstractor"}
+{"detail": "the live abstractor keeps the original rent and misses Amendment No. 1", "fault": 1, "id": "F1-L008", "ref": "L008", "system": "abstractor"}
+{"detail": "the live abstractor keeps the original rent and misses Amendment No. 1", "fault": 1, "id": "F1-L012", "ref": "L012", "system": "abstractor"}
+{"detail": "the live abstractor keeps the original rent and misses Amendment No. 1", "fault": 1, "id": "F1-L016", "ref": "L016", "system": "abstractor"}
+{"detail": "the live abstractor keeps the original rent and misses Amendment No. 1", "fault": 1, "id": "F1-L024", "ref": "L024", "system": "abstractor"}
+{"detail": "the live abstractor keeps the original rent and misses Amendment No. 1", "fault": 1, "id": "F1-L036", "ref": "L036", "system": "abstractor"}
+{"detail": "the live abstractor keeps the original rent and misses Amendment No. 1", "fault": 1, "id": "F1-L060", "ref": "L060", "system": "abstractor"}
+{"detail": "the rent step is written in prose and the live abstractor drops it", "fault": 2, "id": "F2-L002", "ref": "L002", "system": "abstractor"}
+{"detail": "the rent step is written in prose and the live abstractor drops it", "fault": 2, "id": "F2-L041", "ref": "L041", "system": "abstractor"}
+{"detail": "the rent step is written in prose and the live abstractor drops it", "fault": 2, "id": "F2-L057", "ref": "L057", "system": "abstractor"}
+{"detail": "the rent step is written in prose and the live abstractor drops it", "fault": 2, "id": "F2-L082", "ref": "L082", "system": "abstractor"}
+{"detail": "the rent step is written in prose and the live abstractor drops it", "fault": 2, "id": "F2-L093", "ref": "L093", "system": "abstractor"}
+{"detail": "the rent step is written in prose and the live abstractor drops it", "fault": 2, "id": "F2-L094", "ref": "L094", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0001", "ref": "abs-0001", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0004", "ref": "abs-0004", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0005", "ref": "abs-0005", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0024", "ref": "abs-0024", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0048", "ref": "abs-0048", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0049", "ref": "abs-0049", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0050", "ref": "abs-0050", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0052", "ref": "abs-0052", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0066", "ref": "abs-0066", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0068", "ref": "abs-0068", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0069", "ref": "abs-0069", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0104", "ref": "abs-0104", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0136", "ref": "abs-0136", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0138", "ref": "abs-0138", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0146", "ref": "abs-0146", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0176", "ref": "abs-0176", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0177", "ref": "abs-0177", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0179", "ref": "abs-0179", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0220", "ref": "abs-0220", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0221", "ref": "abs-0221", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0226", "ref": "abs-0226", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0241", "ref": "abs-0241", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0249", "ref": "abs-0249", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0250", "ref": "abs-0250", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0251", "ref": "abs-0251", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0262", "ref": "abs-0262", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0263", "ref": "abs-0263", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0266", "ref": "abs-0266", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0267", "ref": "abs-0267", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0277", "ref": "abs-0277", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0278", "ref": "abs-0278", "system": "abstractor"}
+{"detail": "renewal notice is 'not less than N days'; the abstract takes days from another clause", "fault": 3, "id": "F3-abs-0288", "ref": "abs-0288", "system": "abstractor"}
+{"detail": "pets are banned but the ledger charges a pet fee from 2026-05", "fault": 4, "id": "F4-L013", "ref": "L013", "system": "ledger"}
+{"detail": "pets are banned but the ledger charges a pet fee from 2026-04", "fault": 4, "id": "F4-L019", "ref": "L019", "system": "ledger"}
+{"detail": "pets are banned but the ledger charges a pet fee from 2026-03", "fault": 4, "id": "F4-L068", "ref": "L068", "system": "ledger"}
+{"detail": "pets are banned but the ledger charges a pet fee from 2026-01", "fault": 4, "id": "F4-L086", "ref": "L086", "system": "ledger"}
+{"detail": "pets are banned but the ledger charges a pet fee from 2026-02", "fault": 4, "id": "F4-L099", "ref": "L099", "system": "ledger"}
+{"detail": "the rent step was never charged because the abstract dropped it", "fault": 6, "id": "F6-L002", "ref": "L002", "system": "ledger"}
+{"detail": "the rent step was never charged because the abstract dropped it", "fault": 6, "id": "F6-L041", "ref": "L041", "system": "ledger"}
+{"detail": "the rent step was never charged because the abstract dropped it", "fault": 6, "id": "F6-L057", "ref": "L057", "system": "ledger"}
+{"detail": "the rent step was never charged because the abstract dropped it", "fault": 6, "id": "F6-L082", "ref": "L082", "system": "ledger"}
+{"detail": "the rent step was never charged because the abstract dropped it", "fault": 6, "id": "F6-L093", "ref": "L093", "system": "ledger"}
+{"detail": "the rent step was never charged because the abstract dropped it", "fault": 6, "id": "F6-L094", "ref": "L094", "system": "ledger"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0001", "ref": "desk-0001", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0005", "ref": "desk-0005", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0006", "ref": "desk-0006", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0007", "ref": "desk-0007", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0008", "ref": "desk-0008", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0009", "ref": "desk-0009", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0011", "ref": "desk-0011", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0012", "ref": "desk-0012", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0014", "ref": "desk-0014", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0016", "ref": "desk-0016", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0019", "ref": "desk-0019", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0025", "ref": "desk-0025", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0027", "ref": "desk-0027", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0029", "ref": "desk-0029", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0030", "ref": "desk-0030", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0031", "ref": "desk-0031", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0035", "ref": "desk-0035", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0036", "ref": "desk-0036", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0038", "ref": "desk-0038", "system": "lease_desk"}
+{"detail": "drops 'not less than' from the renewal notice", "fault": 3, "id": "F3-desk-0039", "ref": "desk-0039", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0278", "ref": "desk-0278", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0280", "ref": "desk-0280", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0283", "ref": "desk-0283", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0285", "ref": "desk-0285", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0287", "ref": "desk-0287", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0289", "ref": "desk-0289", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0292", "ref": "desk-0292", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0293", "ref": "desk-0293", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0296", "ref": "desk-0296", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0311", "ref": "desk-0311", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0316", "ref": "desk-0316", "system": "lease_desk"}
+{"detail": "answers a question the lease does not answer", "fault": 5, "id": "F5-desk-0317", "ref": "desk-0317", "system": "lease_desk"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L040", "ref": "L040", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L044", "ref": "L044", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L048", "ref": "L048", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L052", "ref": "L052", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L064", "ref": "L064", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L076", "ref": "L076", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L080", "ref": "L080", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L084", "ref": "L084", "system": "release:cheaper-model"}
+{"detail": "the cheaper model misses Amendment No. 1 on this lease in every trial", "fault": 7, "id": "F7-L088", "ref": "L088", "system": "release:cheaper-model"}
+{"detail": "posts a charge without approval", "fault": 6, "id": "F6-agent-task-03-3", "ref": "agent-task-03-3", "system": "agent"}
+{"detail": "posts a charge without approval", "fault": 6, "id": "F6-agent-task-08-4", "ref": "agent-task-08-4", "system": "agent"}

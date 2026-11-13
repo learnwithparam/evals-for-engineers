@@ -1,0 +1,37 @@
+[project]
+name = "fernhill-evals"
+version = "0.1.0"
+description = "Evals for engineers: the Fernhill Homes world, its three LLM systems and the eval report."
+requires-python = ">=3.12"
+dependencies = [
+    "litellm==1.109.1",
+]
+
+[project.scripts]
+world = "fernhill.world:main"
+fernhill = "fernhill.cli:main"
+models = "fernhill.models_cli:main"
+review = "fernhill.review.server:main"
+
+[build-system]
+requires = ["uv_build==0.13.8"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "fernhill"
+module-root = "world"
+
+# Python steps follow the same readable-code rules as TypeScript. See STANDARD.md, "Readable code".
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "SIM", "C90", "PLR0913", "PLR0915", "PLR1702"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 4
+max-statements = 30
+max-nested-blocks = 3

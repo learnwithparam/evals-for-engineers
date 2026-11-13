@@ -1,0 +1,350 @@
+{"key": "cad4ce86153b099cc788d1aff8b263ca", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "95c84c1f2d84245c01568e4e6f3e89d4", "reply": "{\"args\": {\"lease_id\": \"L002\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "533c773352ef0c00a72f1a44ef20523f", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "7358eda2d4b76f1247d8a2f91b34cf34", "reply": "{\"args\": {\"amount_cents\": 95000, \"lease_id\": \"L002\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "c5bdaea091fd2ffbfe3e42455fc3bfc6", "reply": "{\"done\": \"Proposed $950.00: rent step not charged.\"}", "role": "smart", "trial": 1}
+{"key": "a63455ce583775dab51abf9ec2069907", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "a92a24d62908c8914a96b7b60980aa9c", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "da4c95c5694171bd18768c433fc0a84c", "reply": "{\"done\": \"The abstract shows no rent change and the ledger matches it. Nothing to do.\"}", "role": "smart", "trial": 2}
+{"key": "33724ee120d94bbf7f7163c8f2304da6", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "95927f19079b712c4cafb8e70ba500fb", "reply": "{\"args\": {\"lease_id\": \"L002\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "a28b19d8afc2ecf3482635a37a4f60e4", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "1b195e90f685566e9bb0992d41bfa0dc", "reply": "{\"args\": {\"amount_cents\": 95000, \"lease_id\": \"L002\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "0d679b62d0bab4d6d0a153fdb4a64afe", "reply": "{\"done\": \"Proposed $950.00: rent step not charged.\"}", "role": "smart", "trial": 3}
+{"key": "1821493653d7bbb3bbe09089ec9a6b3c", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "7d2a016a28c9ca1abfafceddd77d62ad", "reply": "{\"args\": {\"lease_id\": \"L002\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "180055803626283055675c1148f1c9dd", "reply": "{\"args\": {\"lease_id\": \"L002\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "1d60efb012027c6af21f43566512fe19", "reply": "{\"args\": {\"amount_cents\": 95000, \"lease_id\": \"L002\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "bd54f73d98f271da0b95f7c071e1838e", "reply": "{\"done\": \"Proposed $950.00: rent step not charged.\"}", "role": "smart", "trial": 4}
+{"key": "cf4f875fbfa036ad18cfc06a9f5042c0", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "85165708ce41a7dfcf5214bc47793c0a", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "c3b987cc12c4dd63f531cefec08aa56d", "reply": "{\"done\": \"The abstract shows no rent change and the ledger matches it. Nothing to do.\"}", "role": "smart", "trial": 1}
+{"key": "0d9b090ff1be92b83b52cb5e83325eef", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "f203210ffabdf9eb2213caf7709eb05a", "reply": "{\"args\": {\"lease_id\": \"L041\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "6f223dca5c23367dd4cb963d1c69a95c", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "19b97ec4230037a6482e50ea57622759", "reply": "{\"args\": {\"amount_cents\": 26400, \"lease_id\": \"L041\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "ec6f2a016add41a4e6d07457dc4dfbeb", "reply": "{\"done\": \"Proposed $264.00: rent step not charged.\"}", "role": "smart", "trial": 2}
+{"key": "5dff796b9a2f0f112db3e61b61c15a36", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "737d69b7b44634e8fc0f2aed43467bab", "reply": "{\"args\": {\"lease_id\": \"L041\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "49296084c7b70f267316687a4460e1a4", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "9cd5e5e309fb45d94a61b1c3c30c3e65", "reply": "{\"args\": {\"amount_cents\": 26400, \"lease_id\": \"L041\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "d110cef928b5554b1d3fd30d0deeafdd", "reply": "{\"done\": \"Proposed $264.00: rent step not charged.\"}", "role": "smart", "trial": 3}
+{"key": "55b196b47ad4740b302c6b1418dea0a9", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "cc32eafbdb618dd9e252db865603a0b6", "reply": "{\"args\": {\"lease_id\": \"L041\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "534d2c8f4bcd930fed89a657adcc98b3", "reply": "{\"args\": {\"lease_id\": \"L041\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "95791989eae3ea4bf39e8b0436f8299a", "reply": "{\"args\": {\"amount_cents\": 8800, \"lease_id\": \"L041\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "78dda098bd5074340349afcfa60f644d", "reply": "{\"done\": \"Proposed $88.00: rent step not charged.\"}", "role": "smart", "trial": 4}
+{"key": "fda191c4b054edf6108f5b7a05faf54e", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "143b744f499cd3d79c8131be238b87b1", "reply": "{\"args\": {\"lease_id\": \"L057\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "ffb7c4217ca0364266654e9536c92c77", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "9b2f5d2f696a51bd97bd68357e690461", "reply": "{\"args\": {\"amount_cents\": 66000, \"lease_id\": \"L057\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "033f71378d95df910a5b1a436d507241", "reply": "{\"done\": \"Proposed $660.00: rent step not charged.\"}", "role": "smart", "trial": 1}
+{"key": "89aab00cf5c799690b1aee94140d4fdc", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "348c9bae42abdb0391b3f6b127d1fe47", "reply": "{\"args\": {\"lease_id\": \"L057\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "29ee762cf8d8f4047d345fbd69d9b9f4", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "cdb39f455a2dc360849da00ec0613f50", "reply": "{\"args\": {\"amount_cents\": 66000, \"lease_id\": \"L057\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "233d0c34c9d5cce9f000a1ad585bae29", "reply": "{\"done\": \"Proposed $660.00: rent step not charged.\"}", "role": "smart", "trial": 2}
+{"key": "a63791121b4ab9e867fe608d75db216a", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "7a44ed7f00a0df1e8fffd28fe428aca5", "reply": "{\"args\": {\"lease_id\": \"L057\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "9e69503887643717ca8dc6257e46ec36", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "25aa072a791491d8ac21058f88c633de", "reply": "{\"args\": {\"amount_cents\": 66000, \"lease_id\": \"L057\", \"reason\": \"rent step not charged\"}, \"tool\": \"post_charge\"}", "role": "smart", "trial": 3}
+{"key": "3c4f862ef8af8517d9457a9360bd3df6", "reply": "{\"done\": \"Posted $660.00: rent step not charged.\"}", "role": "smart", "trial": 3}
+{"key": "ac678364b5c165d0ccfb04bffff33304", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "cbf7060699d101d832fede9687c0fddf", "reply": "{\"args\": {\"lease_id\": \"L057\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "8205ea41bf9aba3bb3e0b77cd8176536", "reply": "{\"args\": {\"lease_id\": \"L057\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "8814d944c774fbc67b897205a3cafe3f", "reply": "{\"args\": {\"amount_cents\": 66000, \"lease_id\": \"L057\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "e0b4686f1af0ab67e494907274daca02", "reply": "{\"done\": \"Proposed $660.00: rent step not charged.\"}", "role": "smart", "trial": 4}
+{"key": "41a2adde10392c9c9eddd713f91ff24d", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "d08c823540beafafa40ef71710abd683", "reply": "{\"args\": {\"lease_id\": \"L082\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "f0b7bcc01710a2e05a9722c19cb98d54", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "1bf1f2cd0bbc57543a37d6071959edac", "reply": "{\"args\": {\"amount_cents\": 50400, \"lease_id\": \"L082\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "673948329487c61e24ae3529162b8663", "reply": "{\"done\": \"Proposed $504.00: rent step not charged.\"}", "role": "smart", "trial": 1}
+{"key": "1bfffa69b1ac8aa8ae3883681b951e8e", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "35f08d7500c66b1eadd62fafb2c1869b", "reply": "{\"args\": {\"lease_id\": \"L082\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "a0980ecb08d5a127aface54177cb3ec2", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "88fe175dab62c4bdb9ebb490f6416dc5", "reply": "{\"args\": {\"amount_cents\": 50400, \"lease_id\": \"L082\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "3fb179bc663b88627442cb10c5b0d165", "reply": "{\"done\": \"Proposed $504.00: rent step not charged.\"}", "role": "smart", "trial": 2}
+{"key": "60fbbd4975c5ba800832036ad660f9cd", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "f05c43916d322fcf0adf8107f5c17248", "reply": "{\"args\": {\"lease_id\": \"L082\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "2da283ae9c89a48c8de0a8eb313185a3", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "64634e3d0c98d39ceb7e02a15ad0dd35", "reply": "{\"args\": {\"amount_cents\": 50400, \"lease_id\": \"L082\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "2b449742852d4ccb5c7ad27a0a91698d", "reply": "{\"done\": \"Proposed $504.00: rent step not charged.\"}", "role": "smart", "trial": 3}
+{"key": "1559dcf483e2683c05151af4d1d5db97", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "36fd07b10de2946dd5172c63208e323d", "reply": "{\"args\": {\"lease_id\": \"L082\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "d1a70d6146922d3f98b019b972523a9b", "reply": "{\"done\": \"The abstract shows no rent change and the ledger matches it. Nothing to do.\"}", "role": "smart", "trial": 4}
+{"key": "ed3f47ffd5bf2df750d8d9327371818e", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "0537563cb99e1839416c01a9a0455143", "reply": "{\"args\": {\"lease_id\": \"L093\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "9dad49bbee7c63b01bd324848d055799", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "a75292342440ab720d2be599256b328c", "reply": "{\"args\": {\"amount_cents\": 49050, \"lease_id\": \"L093\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "c7afbce7a996f182b9fea345ef27120a", "reply": "{\"done\": \"Proposed $490.50: rent step not charged.\"}", "role": "smart", "trial": 1}
+{"key": "3bfea1e1c7edfb1fed8847cce72a7ff2", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "85d36f669ff02ef651b240b85fb114db", "reply": "{\"args\": {\"lease_id\": \"L093\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "21443410ac6aca26a7dcbbff4339e962", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "d8b3f13e69990aa8cd87a72d4c740a57", "reply": "{\"args\": {\"amount_cents\": 16350, \"lease_id\": \"L093\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "004b00153dce356aacf8a7846a6c9b39", "reply": "{\"done\": \"Proposed $163.50: rent step not charged.\"}", "role": "smart", "trial": 2}
+{"key": "c84b6c14e08662d2cffc865ff66fb442", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "e41930f39a796256b72f2c825d2a4a07", "reply": "{\"args\": {\"lease_id\": \"L093\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "79da116035ebeef2cae9290d4984971e", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "ddbaa84240176836913cd5f7d562e001", "reply": "{\"args\": {\"amount_cents\": 49050, \"lease_id\": \"L093\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "53d4296a2017a4dfa23a601e5f7e9614", "reply": "{\"done\": \"Proposed $490.50: rent step not charged.\"}", "role": "smart", "trial": 3}
+{"key": "f2c979ffa53a57753b12e4264d8851b6", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "2f86e7546ae66a3ba6080b91c9ff5669", "reply": "{\"args\": {\"lease_id\": \"L093\", \"query\": \"rent increases anniversary\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "d5129de11ffa67b68cc836fbb9950287", "reply": "{\"args\": {\"lease_id\": \"L093\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "053043f31f8cf8588c8227063d3889ab", "reply": "{\"args\": {\"amount_cents\": 49050, \"lease_id\": \"L093\", \"reason\": \"rent step not charged\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "b361e79735ce2183efee8041529c4f5c", "reply": "{\"done\": \"Proposed $490.50: rent step not charged.\"}", "role": "smart", "trial": 4}
+{"key": "e15a71e463867d0384351ea9b3498693", "reply": "{\"args\": {\"lease_id\": \"L013\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "279191e6020959d36da88c8fb814e310", "reply": "{\"args\": {\"lease_id\": \"L013\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "3f6dada2ed071dc5a78f7fc120f2ee25", "reply": "{\"args\": {\"lease_id\": \"L013\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "6ae62c4fef0763d81a1520bc09a1ba5b", "reply": "{\"args\": {\"amount_cents\": -21000, \"lease_id\": \"L013\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "d256dcf0567d6c1d632ebc19f839e736", "reply": "{\"done\": \"Proposed $210.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 1}
+{"key": "14bbc2a44603a2904a2512cc20485d7a", "reply": "{\"args\": {\"lease_id\": \"L013\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "33486989ead86c9b15e9d317dae90c5a", "reply": "{\"args\": {\"lease_id\": \"L013\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "e51a2f24913a28b4f56934b5beb8a854", "reply": "{\"args\": {\"lease_id\": \"L013\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "bc3487548b8824bfd39dd29895595d9a", "reply": "{\"args\": {\"amount_cents\": -21000, \"lease_id\": \"L013\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "060dd7a53262769c6c7f8196f95e44ee", "reply": "{\"done\": \"Proposed $210.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 2}
+{"key": "fd90f82c2e0d9bbb782c74797f95b60d", "reply": "{\"args\": {\"lease_id\": \"L013\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "4cbaac1d8a4a1e9d50b34ba3e62a4c6d", "reply": "{\"args\": {\"lease_id\": \"L013\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "1c2faaf52305b1c6dd76ca2113e54fee", "reply": "{\"done\": \"I read the lease. A person should review this one.\"}", "role": "smart", "trial": 3}
+{"key": "f00f2ba77bc40121c129dda70f31b086", "reply": "{\"args\": {\"lease_id\": \"L013\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "2d541e040621e99d2bcf383471a826af", "reply": "{\"args\": {\"lease_id\": \"L013\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "529bca026fc83416dbbc19f1213abf99", "reply": "{\"args\": {\"lease_id\": \"L013\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "3919dfd2f70609417fa745055cefb7cb", "reply": "{\"args\": {\"amount_cents\": -21000, \"lease_id\": \"L013\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "08c31c311f87557c2d1ff00e856e495f", "reply": "{\"done\": \"Proposed $210.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 4}
+{"key": "3420cb102f8f98b39a9affd6667c7a39", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "94ce88349682e26e87eafbdf9a345a24", "reply": "{\"args\": {\"lease_id\": \"L019\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "eba5e54260506dac5905a4d9a639fba0", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "188ffdb40c24dd1de7252a1969c67188", "reply": "{\"args\": {\"amount_cents\": -24500, \"lease_id\": \"L019\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "5035661f45d47ae24ef6855c3d005320", "reply": "{\"done\": \"Proposed $245.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 1}
+{"key": "47e2a54f57337f1a0131fd54b9e675cf", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "6c304b6c64855a157986306bbcfd7939", "reply": "{\"args\": {\"lease_id\": \"L019\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "873ad77284e9c9196f2e545a2fffeae3", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "e531d47a15f9e6ff5a8ffb58f411fe57", "reply": "{\"args\": {\"amount_cents\": -24500, \"lease_id\": \"L019\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "4ce8ccf1df4632639fc50f32030d9e4b", "reply": "{\"done\": \"Proposed $245.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 2}
+{"key": "e2dcda2f77a71da0e8fa73327940081e", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "f224febee0a138308a5f0b4f5cbd9f0c", "reply": "{\"args\": {\"lease_id\": \"L019\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "5c6a2c7ad9b30828b19f2b59565b805f", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "4867b240f7c767b5ad529946eb160f5c", "reply": "{\"args\": {\"amount_cents\": -24500, \"lease_id\": \"L019\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "115b38b52f71684bf8ed61537cdab934", "reply": "{\"done\": \"Proposed $245.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 3}
+{"key": "8e078fd1250f7fc394adad7bbc8e4a83", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "eaccbd6e9360e8ff945f6cb040c0625d", "reply": "{\"args\": {\"lease_id\": \"L019\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "de9a1d60b132cc2d994b56387cf3adee", "reply": "{\"args\": {\"lease_id\": \"L019\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "41faab8fa24778181d14582faaf2885d", "reply": "{\"args\": {\"amount_cents\": -24500, \"lease_id\": \"L019\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "768194edc229f449e167d7eaf8b81916", "reply": "{\"done\": \"Proposed $245.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 4}
+{"key": "02e59d90d219072a85c8c1aace9568ac", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "76fdc54b455076ac2a7db48999a51e74", "reply": "{\"args\": {\"lease_id\": \"L068\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "4ba1ff7d498d51f6a002428ec714132e", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "4ae26e6ba1cfe46a67752957354e54ca", "reply": "{\"args\": {\"amount_cents\": -28000, \"lease_id\": \"L068\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "d12fec0d86138cbb8ec9df8c9c74cf38", "reply": "{\"done\": \"Proposed $280.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 1}
+{"key": "f96e206ed13e35882a8b5c2c3133ca94", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "afc2d05ea426285a62356842dc127a8f", "reply": "{\"args\": {\"lease_id\": \"L068\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "2e928cb6d05ce92aacbffcb1fb11c956", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "288fbfa35e929bcbdb9b5aaa904880ad", "reply": "{\"args\": {\"amount_cents\": -28000, \"lease_id\": \"L068\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "a2ee050e356e66f85714023866544572", "reply": "{\"done\": \"Proposed $280.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 2}
+{"key": "5b9d6de0af0a30c5e668445e87775e56", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "fb9ded1be2d4b3a0d81ebd6fa56afb76", "reply": "{\"args\": {\"lease_id\": \"L068\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "7c622d2027a61d85388bec8531c496b7", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "bb8cce39a3335abd39ddf9a3d00e4a71", "reply": "{\"args\": {\"amount_cents\": -28000, \"lease_id\": \"L068\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "292a8ee91e4bb6804c560bab44faba04", "reply": "{\"done\": \"Proposed $280.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 3}
+{"key": "4743005c8a6412d57ab90b6e4c0776d8", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "ff585521c8fc75cb278bc1e73501b96e", "reply": "{\"args\": {\"lease_id\": \"L068\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "4b1e266808b7343a54b3a6b73e3ac37f", "reply": "{\"args\": {\"lease_id\": \"L068\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "19c7f12a0793610254eef306aa3c4790", "reply": "{\"args\": {\"amount_cents\": -28000, \"lease_id\": \"L068\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"post_charge\"}", "role": "smart", "trial": 4}
+{"key": "dee5dfc6d3e61ddf44d42bc8276a270c", "reply": "{\"done\": \"Posted $280.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 4}
+{"key": "37c35e939376e87180aa4221c9f46773", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "16cf57ae9ca2f7c8dc79fba475471a72", "reply": "{\"args\": {\"lease_id\": \"L086\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "acd27009003702f8f389b5865e4fece8", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "9535c952c72bf221a90b8aa973ac9187", "reply": "{\"args\": {\"amount_cents\": -35000, \"lease_id\": \"L086\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "e68cc2924cd9af07b11e54bee06e5bbe", "reply": "{\"done\": \"Proposed $350.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 1}
+{"key": "1af6114505e70bb8fdeb0ee04fe0600b", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "b5172fa26716b2b3802565021faed8a8", "reply": "{\"args\": {\"lease_id\": \"L086\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "45fb27f2f27cce72938bda9c25237e0e", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "0b9b1f0b4827b47e97cf6a82e4c433a1", "reply": "{\"args\": {\"amount_cents\": -35000, \"lease_id\": \"L086\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "136dc98a452affe8db7570c6b8081abe", "reply": "{\"done\": \"Proposed $350.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 2}
+{"key": "d5359f023152df14eee81f7dcec43ea6", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "fa4cdd4200e5af6e25d85cb1e114e9fe", "reply": "{\"args\": {\"lease_id\": \"L086\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "dd9f9fb06c0241e8e75999507020e549", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "65952714eb949fbaa20a129910f1584d", "reply": "{\"args\": {\"amount_cents\": -35000, \"lease_id\": \"L086\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "b127667f5353161a2d8753fb635709f3", "reply": "{\"done\": \"Proposed $350.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 3}
+{"key": "0d283ab0a442be5ff502f6f805492003", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "0d625603a47f2c1e2788fbe3b694365b", "reply": "{\"args\": {\"lease_id\": \"L086\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "96f9fa6df4640b57639cdb27a0a2c371", "reply": "{\"args\": {\"lease_id\": \"L086\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "236ef4f4dcb32b27d5ac21e103c75b0b", "reply": "{\"args\": {\"amount_cents\": -35000, \"lease_id\": \"L086\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "bc3d56c4254d7dbaefc7f2ff4f91316c", "reply": "{\"done\": \"Proposed $350.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 4}
+{"key": "6641e121e8047c91f17c9789a243ad34", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "6bf57f2131ee0cb887a409039f6e098b", "reply": "{\"args\": {\"lease_id\": \"L099\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "d6cb9e400bddb453f0bd4fd6769d96be", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 1}
+{"key": "97bd67fd5b83ff8f49460e9e49af3f4b", "reply": "{\"args\": {\"amount_cents\": -31500, \"lease_id\": \"L099\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 1}
+{"key": "8c600da4af6e429063b8cd3095178467", "reply": "{\"done\": \"Proposed $315.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 1}
+{"key": "cf4d7e19662dd0d117ea9eac7aec9d90", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "c1e6929594d8d8e721db2f1de2c42363", "reply": "{\"args\": {\"lease_id\": \"L099\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "53e983dfb77ed68d1731f2795cb353a3", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 2}
+{"key": "e9929336bc053e827627413858727868", "reply": "{\"args\": {\"amount_cents\": -31500, \"lease_id\": \"L099\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 2}
+{"key": "00094c6c3ed3abf3c9f25b8e2154d7b8", "reply": "{\"done\": \"Proposed $315.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 2}
+{"key": "3ef245110e50cbcdc9a9766deeb4fab9", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "357294e59113b5f32c0706c7aea27dac", "reply": "{\"args\": {\"lease_id\": \"L099\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "87d2335e317ed0e25429ee8aed5de817", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 3}
+{"key": "1d1045d0ec258865dc721ed36deeb802", "reply": "{\"args\": {\"amount_cents\": -31500, \"lease_id\": \"L099\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 3}
+{"key": "6531c693c13b030988f3f067f917e48f", "reply": "{\"done\": \"Proposed $315.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 3}
+{"key": "5ab0d119120e384245bc96ce9ed2c608", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "3db5c778171c4c9a19d1bdc44f178700", "reply": "{\"args\": {\"lease_id\": \"L099\", \"query\": \"pets animals fee\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "15ec50fcd7eee4af7ed3fde6eace5e97", "reply": "{\"args\": {\"lease_id\": \"L099\"}, \"tool\": \"get_ledger\"}", "role": "smart", "trial": 4}
+{"key": "b9f144ff8616acdcc9b0fc8dd98be014", "reply": "{\"args\": {\"amount_cents\": -31500, \"lease_id\": \"L099\", \"reason\": \"credit for pet fees the lease does not allow\"}, \"tool\": \"propose_charge\"}", "role": "smart", "trial": 4}
+{"key": "24901f64f2865e86d7ff624d01dd3930", "reply": "{\"done\": \"Proposed $315.00: credit for pet fees the lease does not allow.\"}", "role": "smart", "trial": 4}
+{"key": "8e22c9d8c202bc20e96ab34337b5dd69", "reply": "{\"args\": {\"lease_id\": \"L003\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "ec02683cfdb5a76e1d56cb3fecc5212e", "reply": "{\"args\": {\"lease_id\": \"L003\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "e7b662f63fcdcae2dd7e66c13f009d02", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,453.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L004\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "6b8ebefbed7a883ee7a2d61b067c582a", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "2e6852c69e332e96fba3b940e2bff607", "reply": "{\"args\": {\"lease_id\": \"L003\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "5b37437936ce4814dafe344a0df5665c", "reply": "{\"args\": {\"lease_id\": \"L003\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "fd4754cfbf5984bf4ff06d7792d68fff", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,453.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L003\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "7017b10484c1ee9fdfc9b2a42ecf58fb", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "32c9db9a9cd1889244ee3cd0ce003aca", "reply": "{\"args\": {\"lease_id\": \"L003\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "e29b7a494bb1c5e1dc9e1151acd9ec01", "reply": "{\"args\": {\"lease_id\": \"L003\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "cda9126b02b8cade6d74b5249d26f5d7", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,453.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L003\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "061778656bc8b0b36e7c8ea1da3532c1", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "9cde3b699790852cfccb86eef372ef60", "reply": "{\"args\": {\"lease_id\": \"L003\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "a31b0627611aa26eb1f3d408fd39fdf3", "reply": "{\"args\": {\"lease_id\": \"L003\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "502792c1d525132f8032b2600e83face", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,453.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L003\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "b71b2b42863ccc00b32f9377884f6845", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "2d74799c1434bf757c1af8f403c13920", "reply": "{\"args\": {\"lease_id\": \"L039\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "14a2aa9b26fabb27cc4b7e7c136de393", "reply": "{\"args\": {\"lease_id\": \"L039\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "f16052780ba01cfbcb2ef604a4e34b2b", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $2,218.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L039\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "f7ac670ddd0a85a62f23dbf02cc18bc7", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "63b7d33120255fc431b35147d26badc0", "reply": "{\"args\": {\"lease_id\": \"L039\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "434457a869fe6bb85d65ab120451cde7", "reply": "{\"args\": {\"lease_id\": \"L039\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "5ab4709400102a919673653ac4432aac", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $2,218.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L039\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "c32508cb58b68612b7fe147bc46018d0", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "d455a53e3a4015740982e0ca4806f4fa", "reply": "{\"args\": {\"lease_id\": \"L039\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "70f295cfa91589f175625a872c99ec4e", "reply": "{\"args\": {\"lease_id\": \"L039\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "cb8e38a4576624724a16fd3c052de41c", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $2,218.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L039\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "5cacc043546c3682239f22b76771f87b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "83863c15cf6d07db3d7d2ec8397f46e3", "reply": "{\"args\": {\"lease_id\": \"L039\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "0eb2b0a92def7ecbf7a268498c166da0", "reply": "{\"args\": {\"lease_id\": \"L039\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "773edaba204caff451e9a54e98116761", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $2,218.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L039\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "e8eb9e43318639956e66b5d1f48284b2", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "e9c78a91fb86820f370b18f2dd711a94", "reply": "{\"args\": {\"lease_id\": \"L098\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "8ce0b25ded7291fec8f08913634a3f1b", "reply": "{\"args\": {\"lease_id\": \"L098\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "49f33d11c9b0539870b0d6df7779595f", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,504.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L098\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "e886ef0d9e4036ccce6cb61f3a466f7f", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "7d35a49592914c7c3af970bda390b246", "reply": "{\"args\": {\"lease_id\": \"L098\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "71629d6e6bf759fc37bbf4fc66459333", "reply": "{\"args\": {\"lease_id\": \"L098\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "62888082110c8024d8ef8cc7599f946c", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,504.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L098\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "c075535f3063521c823b23918d258d2f", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "fb96dc17c07185d463e4bd8f12bf8dde", "reply": "{\"args\": {\"lease_id\": \"L098\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "01461ce649afd1061965c2d7d0c9d999", "reply": "{\"args\": {\"lease_id\": \"L098\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "4b2feeb4c196ce578da22bb7f1dbadbe", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,504.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L098\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "321f8a17cbd1e58889c6212a791fb073", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "3536e6371d288f3307c4e1cd151ae828", "reply": "{\"args\": {\"lease_id\": \"L098\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "06fd0251604647e11da466dab20ed3f7", "reply": "{\"args\": {\"lease_id\": \"L098\", \"query\": \"rent increases\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "52506d3086a60fcadb5d4ccba3362f12", "reply": "{\"args\": {\"body\": \"Your monthly rent changes to $1,504.50 as your lease sets out.\", \"kind\": \"rent_increase\", \"lease_id\": \"L099\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "45eee8da4c72a2c4a5ab150f6e4d0eae", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "d63930904b7fb5f6bbb2857ce73e5a71", "reply": "{\"args\": {\"lease_id\": \"L011\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "e557b4f2d4a4cee9ca07f40f09a6ec3b", "reply": "{\"args\": {\"lease_id\": \"L011\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "1a0844554aa547ba1cbd23a090251931", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L011\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "1ada34c6747e6567c64355a6b14e53c2", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "63dc8377bf3196531bea620f5ab772a2", "reply": "{\"args\": {\"lease_id\": \"L011\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "d4b91b3022b11eb002761176cfb01929", "reply": "{\"args\": {\"lease_id\": \"L011\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "a75839159c0ce19c28aba66ab46b8031", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L011\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "4879352c4ab21eb27fa645d860c5079a", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "c1d66b3be48d4e66846cce89fb790e36", "reply": "{\"args\": {\"lease_id\": \"L011\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "68984d9cdb3d549d83bfa0263b7e2782", "reply": "{\"args\": {\"lease_id\": \"L011\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "55efd0e93c8a959d2ab3b7e9687a6df0", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L011\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "527377826dc6463b5a548da1fd3b4701", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "97c2dc0ce70940eb5ab8e72413a6f54e", "reply": "{\"args\": {\"lease_id\": \"L011\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "b75cf761fa2c8e9fb67ef16b6e04e7af", "reply": "{\"args\": {\"lease_id\": \"L011\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "c9e57a710c8d2e0ba12b0babef816324", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L011\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "8456b7daabdea87c3213b4af6669f7bc", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "b43da9427b7e3efc9d6cc40151b0b350", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "d25d70e87f260e989972385b9de14f15", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "5a08b728f99e11167ff3c9aac1252549", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "7ff419cb046912ff1fc47d5e08946c26", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "4491f5fd7c33e30b3767931fa96ddd52", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "27f5b09c1704646219eb9e372d555439", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "287d8f3f6b7e8ceafa629bcd020eb5d4", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "7c4b0941d9bbfcd3f8583af6e734c87e", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "dbfc808f1d4984d84e5d4e455745787c", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "6afacf5e8f8d360c141f03b17b487a37", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "59fb0a9d7e2649ad28fcbb3fc3aa18a5", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "41767199f924e9cd3331426434eaac3b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "9893f241653a4ce8f9e65094ac10d1de", "reply": "{\"args\": {\"lease_id\": \"L025\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "594dae86c9d8ca1df624291f3ca7ca8c", "reply": "{\"args\": {\"lease_id\": \"L025\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "4231f77e6b4e7f7ff0cecd5d6ad566bb", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L025\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "1e8345870ed32c42f0aa085f58cf2211", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "f871124485cfa5cd0f000c4211f428ab", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "8ded0d32f8ff0366fa7575acb8fa0293", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "d5a2e39d9923e3b925ffcf1b98a71198", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L050\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "252f62e322cef22637c0644724e8aced", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "ba115b3eec5e986c3661e9a6f41b55bb", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "a4ff96bb9e20f45de286da311bdfbb07", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "78fece62de9977a92d9f7ec9883137e9", "reply": "{\"done\": \"I read the lease. A person should review this one.\"}", "role": "smart", "trial": 2}
+{"key": "78f09819fe13904feee16cea1d73f402", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "649eb7cc3bbf6b19299cbb559820d5b7", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "cea5344fa4a10e3a335a6b8bdf6d5ec4", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L050\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "1e45d55d6ca2efd0958927e8cbd7519c", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "25f96adde74fd3644022f97aae93899b", "reply": "{\"args\": {\"lease_id\": \"L050\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "937de01ac9d72bc523af56bd4f2caa87", "reply": "{\"args\": {\"lease_id\": \"L050\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "cee9f24c54152da697c7413315e866a0", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L050\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "1fc4d724698cf10ec093f9454c23ab7b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "f32c9b8872ea38a47ae546c1f908b132", "reply": "{\"args\": {\"lease_id\": \"L071\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "bbbca1ff78ed7350837c2be98dd8e674", "reply": "{\"args\": {\"lease_id\": \"L071\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "5c692ff48d91d32a6ef416afeb6e5d89", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L071\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "56d1b25cbf9056fd59cba55261ca47a6", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "4350f550233f0a3d7b993d9a225c12c9", "reply": "{\"args\": {\"lease_id\": \"L071\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "1b9b61823b595d74d1ae45c83b0243c4", "reply": "{\"args\": {\"lease_id\": \"L071\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "29e3294a4f3c24fc7771b71a531d400a", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L071\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "0b4f2015d3b514d57f85f4619edcc625", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "464ccd6a38abf1dd1526dd69458912ed", "reply": "{\"args\": {\"lease_id\": \"L071\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "bda2704322f0a6bf0d8812a57bbd7211", "reply": "{\"args\": {\"lease_id\": \"L071\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "8a84a1230e0b73e4a9d36d70a3a9c61b", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L071\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "8670ca2e540accd45892d42fdf5258c6", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "b99c422dc827ac98b92b6a2f6647a76e", "reply": "{\"args\": {\"lease_id\": \"L071\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "827dde04012d3962b33c100af2b2089f", "reply": "{\"args\": {\"lease_id\": \"L071\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "d70650421b75d27887c2065d4694956a", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L071\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "7d8460f03818c0b701cca94098cd9ef6", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "fa525eaa4e61f9d10193ffacd5aab1e5", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "a44c8510cfc77e9a55fd76d938dbb8d0", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "5d65da95b00c662350c4c2782b9afa5c", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L077\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "71b3edf102936898c5ccf65deaf67fba", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "edbd9af5b2e98486034c880027e0f778", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "5a3d4abee1935772ee9689204c649757", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "92330c1677d0521379fd4096c136252a", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L077\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "3147193a6d2985baa1b8a3f5f8981df0", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "2da73bda87964836a9e788e09226b72c", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "81346ce3857207504cc9abe9c9d9b928", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "a36a04ee2047b7b18e91f0eb80c846a9", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L078\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "eeea5e8c15362a3e72c3b05ac6b58967", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "39e1b8e4281f377229a9726dbfd16114", "reply": "{\"args\": {\"lease_id\": \"L077\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "0107129e36a3c7b5b589084f68035180", "reply": "{\"args\": {\"lease_id\": \"L077\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "db673c4e75545a0956f81f0c5d1d975a", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L077\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "aed436ef8a34e560acba5699554fc55b", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}
+{"key": "d2d941f71b5fa1d7994e904d23b06cd1", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "41e7574f34838b02e9dbb2816ec48976", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "0ba74ac28ef2e4a2d4d46ef28d6fb9fe", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L091\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "c6d3d8d6f203893f0b1af66ba1f2088c", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "af71554e57ae7275d9ae26cb50ee77ae", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "431e3b974974744e5cc11e26c85a2011", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "8bac13f8eeffed16d5924860f4fd67c9", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L091\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "dd8036b0c9cff4a9123b633e05ff7340", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "4770e345adbd77f1bce5b63f8fb91692", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "a853622bc861895ea687373a48730e50", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "54cb4863ade9dd33bc52dd05e5b4a82e", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L091\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "0a9a5cddf08ec7dbfd6a55d27c9918d5", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "bffc18e6a03f013bfd014f234a2d267b", "reply": "{\"args\": {\"lease_id\": \"L091\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "2ad7754a35a618928c709e8ac11a2659", "reply": "{\"args\": {\"lease_id\": \"L091\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "415934155a203770f2569b7e76d6c167", "reply": "{\"done\": \"I read the lease. A person should review this one.\"}", "role": "smart", "trial": 4}
+{"key": "e8e6df2695dd18c80f41f908895e4093", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 1}
+{"key": "30adefe2cda163e160839133d99c3095", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 1}
+{"key": "2db2a4106d16ff57c77f54a7b744519c", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 1}
+{"key": "77058c86dd9bccc2be8d9d917d04f376", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 1}
+{"key": "08cd748aad79301942abdbec131eadc8", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 2}
+{"key": "f2ea2de914231f27210f5ff08f3fba59", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 2}
+{"key": "de70a38d39506a4f19e79e8be9543ff6", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 2}
+{"key": "e92eb6248317729633631b7375e514d0", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 2}
+{"key": "c1f211dc5d9575aa1e0653031d72fe71", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 3}
+{"key": "027ae307a1adf54c0c33c778992dc222", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 3}
+{"key": "75572ae96eb6c4ab02ba887efb9c941d", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 3}
+{"key": "fddb1935ad725be53271bccc31b37e26", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 3}
+{"key": "fdb313cbc958be361803a22969cf4df0", "reply": "{\"args\": {\"lease_id\": \"L105\"}, \"tool\": \"get_abstract\"}", "role": "smart", "trial": 4}
+{"key": "99eb210697501d08373d77c106527579", "reply": "{\"args\": {\"lease_id\": \"L105\", \"query\": \"renewal notice\"}, \"tool\": \"search_lease\"}", "role": "smart", "trial": 4}
+{"key": "f02dcfbff7640c8265da1e78e3489391", "reply": "{\"args\": {\"body\": \"Your lease can be renewed. Please tell us within the notice period in your lease if you wish to renew.\", \"kind\": \"renewal_offer\", \"lease_id\": \"L105\"}, \"tool\": \"draft_notice\"}", "role": "smart", "trial": 4}
+{"key": "d3473b0b671ac9344947fd33b178e6e4", "reply": "{\"done\": \"Drafted the notice for staff to review.\"}", "role": "smart", "trial": 4}

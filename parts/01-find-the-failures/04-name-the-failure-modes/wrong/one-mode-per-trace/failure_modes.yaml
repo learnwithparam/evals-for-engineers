@@ -1,0 +1,49 @@
+modes:
+  - name: problem-in-abs-0024
+    definition: What went wrong in trace abs-0024.
+    examples: [abs-0024]
+  - name: problem-in-abs-0026
+    definition: What went wrong in trace abs-0026.
+    examples: [abs-0026]
+  - name: problem-in-abs-0027
+    definition: What went wrong in trace abs-0027.
+    examples: [abs-0027]
+  - name: problem-in-abs-0028
+    definition: What went wrong in trace abs-0028.
+    examples: [abs-0028]
+  - name: problem-in-abs-0037
+    definition: What went wrong in trace abs-0037.
+    examples: [abs-0037]
+  - name: problem-in-abs-0039
+    definition: What went wrong in trace abs-0039.
+    examples: [abs-0039]
+  - name: problem-in-abs-0051
+    definition: What went wrong in trace abs-0051.
+    examples: [abs-0051]
+  - name: problem-in-abs-0057
+    definition: What went wrong in trace abs-0057.
+    examples: [abs-0057]
+  - name: problem-in-abs-0068
+    definition: What went wrong in trace abs-0068.
+    examples: [abs-0068]
+  - name: problem-in-abs-0073
+    definition: What went wrong in trace abs-0073.
+    examples: [abs-0073]
+  - name: problem-in-abs-0102
+    definition: What went wrong in trace abs-0102.
+    examples: [abs-0102]
+  - name: problem-in-abs-0226
+    definition: What went wrong in trace abs-0226.
+    examples: [abs-0226]
+  - name: problem-in-abs-0276
+    definition: What went wrong in trace abs-0276.
+    examples: [abs-0276]
+  - name: problem-in-abs-0290
+    definition: What went wrong in trace abs-0290.
+    examples: [abs-0290]
+  - name: problem-in-abs-0296
+    definition: What went wrong in trace abs-0296.
+    examples: [abs-0296]
+  - name: problem-in-abs-0300
+    definition: What went wrong in trace abs-0300.
+    examples: [abs-0300]
