@@ -8,5 +8,5 @@ world/fernhill.db
 world/logs/
 world/runs/
 assignment/result.json
-parts/07-do-it-with-the-tools-teams-run/**/result.json
+parts/07-score-the-answers-with-inspect-ai/**/result.json
 test-results/

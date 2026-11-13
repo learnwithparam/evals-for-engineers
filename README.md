@@ -73,16 +73,16 @@ A few words you will meet in the table below:
 
 ## Parts
 
-| Part                                                                                | You produce                                                        | Minutes |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- |
-| [Start here](00-orientation/README.md)                                              | the world on your machine and the finished report card             | 15      |
-| [Find the failures](parts/01-find-the-failures/README.md)                           | failure modes and rates from 40 traces you read yourself           | 75      |
-| [Check with code](parts/02-check-with-code/README.md)                               | a golden set, field checks and a ledger cross-check                | 50      |
-| [Judge what code cannot](parts/03-judge-what-code-cannot/README.md)                 | a judge with TPR and TNR on held-out labels, a corrected pass rate | 90      |
-| [Gate the change](parts/04-gate-the-change/README.md)                               | a gate that blocks critical regressions and fails closed, in CI    | 55      |
-| [Watch production](parts/05-watch-production/README.md)                             | a corrected rate per batch, an alert, new golden cases             | 40      |
-| [Evaluate retrieval and the agent](parts/06-evaluate-retrieval-and-agent/README.md) | recall@k, an abstention judge, end-state agent grades              | 80      |
-| [Do it with the tools teams run](parts/07-do-it-with-the-tools-teams-run/README.md) | your gate ported to Inspect AI, with the same failing rows         | 30      |
+| Part                                                                                      | You produce                                                        | Minutes |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- |
+| [Start here](00-orientation/README.md)                                                    | the world on your machine and the finished report card             | 15      |
+| [Find the failures](parts/01-find-the-failures/README.md)                                 | failure modes and rates from 40 traces you read yourself           | 75      |
+| [Check with code](parts/02-check-with-code/README.md)                                     | a golden set, field checks and a ledger cross-check                | 50      |
+| [Judge what code cannot](parts/03-judge-what-code-cannot/README.md)                       | a judge with TPR and TNR on held-out labels, a corrected pass rate | 90      |
+| [Gate the change](parts/04-gate-the-change/README.md)                                     | a gate that blocks critical regressions and fails closed, in CI    | 55      |
+| [Watch production](parts/05-watch-production/README.md)                                   | a corrected rate per batch, an alert, new golden cases             | 40      |
+| [Evaluate retrieval and the agent](parts/06-evaluate-retrieval-and-agent/README.md)       | recall@k, an abstention judge, end-state agent grades              | 80      |
+| [Score the answers with Inspect AI](parts/07-score-the-answers-with-inspect-ai/README.md) | your gate ported to Inspect AI, with the same failing rows         | 30      |
 
 Each step works the same way. Read `problem/README.md`, do the work in `problem/`, then run `bun run verify <step-name>`. It prints what passed, what failed and what to try next. `bun run verify part <part-name>` checks a whole part at once. `schedules.toml` shows how to fit the course into one day, four evenings or six sessions.
 
