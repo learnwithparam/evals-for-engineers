@@ -22,6 +22,12 @@ const SHOTS: TerminalShot[] = [
     shown: "uv run python recall.py",
     file: `${PART}/01-measure-retrieval-recall/images/expected.png`,
   },
+  {
+    folder: `${PART}/03-grade-the-agent-outcome/solution`,
+    command: ["uv", "run", "--quiet", "python", "run_trials.py"],
+    shown: "uv run python run_trials.py",
+    file: `${PART}/03-grade-the-agent-outcome/images/expected.png`,
+  },
 ];
 
 function shell(command: string[], folder: string): string {
