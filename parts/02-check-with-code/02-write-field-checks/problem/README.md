@@ -18,6 +18,8 @@ flowchart LR
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/02-check-with-code/02-write-field-checks/problem`.
+
 Finish the checks in `checks.py`. Each one takes `got` and `want` and returns two things: `True` or `False`, and a reason a person can read.
 
 - `check_money`, `check_date`, `check_days`, `check_yes_no` and `check_text`.

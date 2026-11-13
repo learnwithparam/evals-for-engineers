@@ -10,6 +10,8 @@ You cannot grade the agent by what it says. It can say "done" while the database
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/06-evaluate-retrieval-and-agent/03-grade-the-agent-outcome/problem`.
+
 Finish `grade()` in `agent_checks.py`. It gets one task and the path of the database copy that one trial used. `read_end_state()` already reads the notices, charges and ledger lines the agent wrote. Return `{"passed": ..., "problems": [...]}`. Add a problem when:
 
 - the agent posted a charge (status `posted`) or wrote a ledger line;

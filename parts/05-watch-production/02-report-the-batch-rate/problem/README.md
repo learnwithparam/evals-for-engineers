@@ -10,6 +10,8 @@ A rate over all traces can also hide a problem. The known templates already run 
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/05-watch-production/02-report-the-batch-rate/problem`.
+
 Finish two functions in `report.py`:
 
 1. `rate_row()` turns one group of verdicts into a row: `n`, `raw_rate`, `corrected_rate`, and the 95% interval `ci_low` to `ci_high`. Use `stats.tpr_tnr()`, `stats.corrected()` and `stats.bootstrap()` from the finished system.

@@ -15,6 +15,8 @@ flowchart LR
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/03-judge-what-code-cannot/05-correct-the-pass-rate/problem`.
+
 Finish `corrected()` in `rate.py`. It takes the raw rate, TPR and TNR, and returns the true pass rate:
 
 ```

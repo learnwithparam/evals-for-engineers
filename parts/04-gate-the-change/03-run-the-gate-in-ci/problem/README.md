@@ -19,6 +19,8 @@ This step has no screenshot. A real check run needs a GitHub repo of your own, a
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/04-gate-the-change/03-run-the-gate-in-ci/problem`.
+
 Finish `evals.yml` in this folder. It is a GitHub Actions workflow. Make it:
 
 1. Run on every pull request (`on: pull_request`), not only after a merge.

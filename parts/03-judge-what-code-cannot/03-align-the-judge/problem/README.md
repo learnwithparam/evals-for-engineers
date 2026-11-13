@@ -8,6 +8,8 @@ A judge that disagrees with Dana is worse than no judge, because the team will t
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/03-judge-what-code-cannot/03-align-the-judge/problem`.
+
 Use two numbers to measure the judge against Dana on the 50 dev answers:
 
 - **TPR**: of the answers Dana passes, the share the judge passes too.

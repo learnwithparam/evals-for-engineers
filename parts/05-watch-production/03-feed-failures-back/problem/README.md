@@ -14,6 +14,8 @@ flowchart LR
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/05-watch-production/03-feed-failures-back/problem`.
+
 Add at least 3 cases to `golden_desk.jsonl`, one JSON object per line. Take each from a production trace that failed. Tag it `"source": "production"`. At least one must be on the new template, FH-RES-2026.
 
 For each case, read the trace and the lease. Then fill in:

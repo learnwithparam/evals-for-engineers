@@ -15,6 +15,8 @@ flowchart LR
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/03-judge-what-code-cannot/02-write-the-judge/problem`.
+
 Write the judge prompt in the plain text file `grounded.txt`, in four parts:
 
 1. What it grades: one lease desk answer, on one criterion, grounded.

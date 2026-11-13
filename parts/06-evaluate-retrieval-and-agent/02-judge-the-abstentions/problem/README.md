@@ -15,6 +15,8 @@ flowchart LR
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/06-evaluate-retrieval-and-agent/02-judge-the-abstentions/problem`.
+
 `abstention_judge.py` already reads cases on stdin and writes one verdict per line. Its draft `CRITERION` is wrong. Run `align.py`, read where the judge disagrees with Dana, and rewrite `CRITERION` until TPR and TNR are both 0.80 or more on dev.
 
 ```bash

@@ -17,6 +17,8 @@ flowchart LR
 
 ## Your challenge
 
+Work in this step's `problem/` folder. From the repo root, go there first with `cd parts/02-check-with-code/03-check-the-ledger/problem`.
+
 Finish two functions in `ledger_check.py`.
 
 - `rent_due()`: the rent the signed lease sets for one month. Start from the original rent. An amendment changes it from its own effective month. Each rent step changes it from its date.
