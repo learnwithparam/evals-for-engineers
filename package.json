@@ -9,7 +9,7 @@
     "plain-english": "bun scripts/plain-english.ts",
     "format": "biome check --write .",
     "verify": "bun scripts/verify.ts",
-    "audit": "if [ -z \"$CHROMIUM_PATH\" ]; then playwright install chromium; fi && playwright test -c e2e/playwright.config.ts --trace off",
+    "audit": "bun install --frozen-lockfile && if [ -z \"$CHROMIUM_PATH\" ]; then node_modules/.bin/playwright install chromium; fi && node_modules/.bin/playwright test -c e2e/playwright.config.ts --trace off",
     "shots": "bun images/shoot.ts",
     "test": "bun test"
   },
