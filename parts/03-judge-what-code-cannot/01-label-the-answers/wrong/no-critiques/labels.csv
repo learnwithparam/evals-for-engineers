@@ -1,0 +1,31 @@
+trace_id,label,critique
+desk-0001,fail,ok
+desk-0009,fail,ok
+desk-0010,pass,matches the clause
+desk-0013,pass,matches the clause
+desk-0014,fail,matches the clause
+desk-0017,pass,matches the clause
+desk-0029,fail,matches the clause
+desk-0032,pass,matches the clause
+desk-0035,fail,ok
+desk-0036,fail,ok
+desk-0037,pass,ok
+desk-0041,pass,ok
+desk-0042,fail,ok
+desk-0045,pass,ok
+desk-0046,pass,ok
+desk-0050,pass,ok
+desk-0082,fail,ok
+desk-0094,pass,ok
+desk-0105,pass,ok
+desk-0129,fail,ok
+desk-0157,pass,ok
+desk-0161,fail,ok
+desk-0178,fail,ok
+desk-0207,pass,ok
+desk-0210,fail,ok
+desk-0237,pass,ok
+desk-0296,fail,ok
+desk-0297,pass,ok
+desk-0305,pass,ok
+desk-0309,pass,No claim is made so the answer cannot be unsupported.

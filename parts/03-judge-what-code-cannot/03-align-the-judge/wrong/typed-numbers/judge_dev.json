@@ -1,0 +1,52 @@
+{
+  "prompt_sha256": "961540d7b9ccf27df5f3c5aa545525532680a48e14d43dfb18eda27382fde550",
+  "n": 50,
+  "tpr": 0.92,
+  "tnr": 0.88,
+  "disagreements": [
+    {
+      "id": "desk-0045",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "Every claim in the answer matches the cited clause."
+    },
+    {
+      "id": "desk-0131",
+      "dana": "pass",
+      "judge": "fail",
+      "critique": "The answer states a term that the cited clause does not say."
+    },
+    {
+      "id": "desk-0205",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "Every claim in the answer matches the cited clause."
+    },
+    {
+      "id": "desk-0225",
+      "dana": "pass",
+      "judge": "fail",
+      "critique": "The answer states a term that the cited clause does not say."
+    },
+    {
+      "id": "desk-0264",
+      "dana": "fail",
+      "judge": "pass",
+      "critique": "Every claim in the answer matches the cited clause."
+    }
+  ],
+  "changes": [
+    {
+      "trace_id": "desk-0036",
+      "change": "Fail an answer that drops a limit such as \"not less than\" or \"with written consent\"."
+    },
+    {
+      "trace_id": "desk-0283",
+      "change": "Fail any claim that the cited clauses do not state; a matching number is not enough."
+    },
+    {
+      "trace_id": "desk-0297",
+      "change": "Pass an answer of exactly \"The lease does not say.\", because it makes no claim."
+    }
+  ]
+}

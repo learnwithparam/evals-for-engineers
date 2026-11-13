@@ -1,0 +1,31 @@
+trace_id,label,critique
+desk-0001,fail,"The clause says not less than 30 days, but the answer says exactly 30 days."
+desk-0009,fail,"The answer says exactly 30 days and drops the words not less than."
+desk-0010,pass,The answer keeps not less than 30 days as the clause says.
+desk-0013,pass,The answer matches the renewal clause and keeps the limit.
+desk-0014,fail,"Exactly 30 days is not what the clause says, it says not less than."
+desk-0017,pass,The answer gives not less than 60 days like clause c12.
+desk-0029,fail,The answer turns not less than 30 days into exactly 30 days.
+desk-0032,pass,Every word of the answer is in the renewal clause.
+desk-0035,fail,The answer says 180 days but leaves out not less than.
+desk-0036,fail,The answer drops the limit not less than from 180 days.
+desk-0037,pass,The answer keeps not less than 90 days from the clause.
+desk-0041,pass,The rent of $5197.50 is the rent set by Amendment No. 1.
+desk-0042,fail,The answer gives the old rent and cites the clause the amendment changed.
+desk-0045,pass,The answer matches clause c04 word for word.
+desk-0046,pass,The rent of $2800.00 is the amended rent and it cites the amendment.
+desk-0050,pass,The rent and the due date match clause c04 exactly.
+desk-0082,fail,"The clause charges a pet fee of $35.00, but the answer says no fee."
+desk-0094,pass,Two pets and a fee of $25.00 match the pet clause.
+desk-0105,pass,Two pets and a fee of $50.00 match the pet clause.
+desk-0129,fail,"The clause says the 5th of the month, not the 10th."
+desk-0157,pass,The clause says the tenant may not sublet any part.
+desk-0161,fail,The cited clause only names the unit and says nothing about this.
+desk-0178,fail,The cited clause names the unit and does not support the yes.
+desk-0207,pass,The clause says one parking space is included.
+desk-0210,fail,The answer says yes but the cited clause is only the address.
+desk-0237,pass,The clause says the tenant has no right to end early.
+desk-0296,fail,The cited clause names the unit and says nothing about business use.
+desk-0297,pass,The answer makes no claim so nothing is unsupported.
+desk-0305,pass,The answer says the lease does not say and makes no claim.
+desk-0309,pass,No claim is made so the answer cannot be unsupported.

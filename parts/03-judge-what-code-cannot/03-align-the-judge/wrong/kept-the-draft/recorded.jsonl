@@ -1,0 +1,50 @@
+{"key": "1e70233219af40f8d3e4b353d959be6f", "reply": "{\"critique\": \"The answer gives the same number of days as the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "3febb084069da2168e87c5355b6a2b38", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "ff5b88beb1255cea4b91f7ce6fb98fc3", "reply": "{\"critique\": \"The answer gives the same number of days as the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "e2e8f13c55a5203e10b775a92eecc627", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "8f9b3e42d6b2d16e860b42c5c34c4f57", "reply": "{\"critique\": \"The answer gives the same number of days as the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "1391d884276815c64a1a1dd5cab0f20d", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "fa46b1729ad317e79e0e2a666c64d5b2", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "ff0bbc4ce07571e4fe0d3bf91b54670d", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "3555e8bcce5f70b878fc0009934d9ef8", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "bb1664b74d12bd053253e50cbb661c14", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "9a4265bd67d2f51b899af8eb13158e66", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "cc7729c8562c904c16aeb018fa67d403", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "354b86a155772d8cf0fd4977187bdcc7", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "2fa9eb05847455806f2efb821327eb11", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "8ead3ba966616635aecc2841a6067206", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "6383440dc7c9105d760055186b0783aa", "reply": "{\"critique\": \"The answer makes no claim, so nothing is unsupported.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "5d45ccf36d98ce89948f99d39c1e26cc", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "cfc5cf61f69f3da0ccf09a29733e9d0e", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "4de8f801470eb12a35ef73680fe55570", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "172804bd73ae3a006b9001fb3fb74a3d", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "2775c089f8f53e4a59fa7cfd72426da4", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "40f7b0987a43d1a0605f4c1a51ce13e4", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "e2d83153993172e54181a4ff0b7ceae6", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "20c347183643d96251917f66725ea9c3", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "94d96691c0cc6f94b4409278d15631b5", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "4bc48816f4ae9d3581aac5cd62b37504", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "f1555c29fcdd3d56c91557f90ba0aa37", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "d393c55708d075bfab88391d95fc9db8", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "9bf370a5e5e2edad0dacf2ed70acb53c", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "afc9810d76c7da621281ae681a9042ec", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "29e4bda78a2f0a51df29630608384a56", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "5cb535b51b3cb1c488a93b2328fdb570", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "9b6c3d4321dd4acda3271fd83d45a125", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "27d0481975caa363d9c8a59471bda905", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "0d017b33faa2df57b9fb11383dcdbba7", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "939bd1d17c6c22f51d6682f9910098e5", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "eeff256df635c42ec050f09d5821c4b6", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "64633b476ebe44ebab5292c556dbe158", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "15fa0f89a2fa16883e8fce3b6861dd2b", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "ad0dab6eaaebfd2ef1f2e25e93c90d14", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "f803405872400f6e9b60325e2e597948", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "a19126209f513602c8c52a98050f994f", "reply": "{\"critique\": \"The answer states a term that the cited clause does not say.\", \"verdict\": \"fail\"}", "role": "judge", "trial": 1}
+{"key": "6fbfa6791f7aca9a2cb8266ce772977e", "reply": "{\"critique\": \"Every claim in the answer matches the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "7734c85faeae12d3e5b1c515fa17355a", "reply": "{\"critique\": \"The answer gives no number that differs from the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "95ae62622c6e03b34d95f2d6065c6af8", "reply": "{\"critique\": \"The answer makes no claim, so nothing is unsupported.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "f281e9a18f3ae0035d7ee6667fd04784", "reply": "{\"critique\": \"The answer gives no number that differs from the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "881ab166c16291daab780f32eb85d86f", "reply": "{\"critique\": \"The answer gives no number that differs from the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "b9ecf96511b9abb1eaa1c8d1ebee8f62", "reply": "{\"critique\": \"The answer gives no number that differs from the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "73b7a3ae6927a6e77dd2199322d2ad1b", "reply": "{\"critique\": \"The answer gives no number that differs from the cited clause.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
+{"key": "249361d16fff9a2e15a89b6ec64b1bc6", "reply": "{\"critique\": \"The answer makes no claim, so nothing is unsupported.\", \"verdict\": \"pass\"}", "role": "judge", "trial": 1}
