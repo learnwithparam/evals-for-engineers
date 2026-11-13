@@ -25,12 +25,15 @@ def sample(traces: list[dict], how_many: int, seed: int) -> list[dict]:
     random_generator = random.Random(seed)
 
     # Amended leases and shop leases are where mistakes cost most, so pick them first.
+    # A shop lease with an amendment is already in the amended group,
+    # so the commercial group keeps only shop leases with no amendment.
     amended = [trace for trace in traces if trace["amendments"] > 0]
     commercial = [
         trace
         for trace in traces
         if trace["lease_type"] == "commercial" and trace["amendments"] == 0
     ]
+    # Take a few more than the minimum of 8 and 3, so each risky group is well covered.
     picked_amended = random_generator.sample(amended, 10)
     picked_commercial = random_generator.sample(commercial, 4)
     picked = picked_amended + picked_commercial

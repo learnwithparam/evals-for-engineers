@@ -33,11 +33,11 @@ def tpr_tnr(pairs: list[tuple[str, str]]) -> tuple[float, float]:
 
 def bootstrap(test_pairs: list, verdicts: list[str], seed: int = 0) -> tuple[float, float]:
     """A 95% interval: resample the test pairs and the verdicts many times, and correct each."""
-    draws = random.Random(seed)
+    random_generator = random.Random(seed)
     estimates = []
     for _ in range(ROUNDS):
-        pairs_sample = [draws.choice(test_pairs) for _ in test_pairs]
-        verdicts_sample = [draws.choice(verdicts) for _ in verdicts]
+        pairs_sample = [random_generator.choice(test_pairs) for _ in test_pairs]
+        verdicts_sample = [random_generator.choice(verdicts) for _ in verdicts]
         tpr, tnr = tpr_tnr(pairs_sample)
         if tpr + tnr <= 1:
             continue
