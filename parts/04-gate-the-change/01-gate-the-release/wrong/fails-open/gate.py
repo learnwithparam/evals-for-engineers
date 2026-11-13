@@ -80,9 +80,10 @@ def field_reasons(broken: dict[str, list[str]]) -> list[str]:
             continue
         field_name = field.replace("monthly_", "").replace("_", " ")
         amended = [lease_id for lease_id in lease_ids if lease_id in amended_ids]
-        where = f"{len(lease_ids)} leases"
+        noun = "lease" if len(lease_ids) == 1 else "leases"
+        where = f"{len(lease_ids)} {noun}"
         if len(amended) == len(lease_ids):
-            where = f"{len(lease_ids)} amended leases"
+            where = f"{len(lease_ids)} amended {noun}"
         reasons.append(f"{field_name} newly wrong on {where} (critical)")
     return reasons
 
