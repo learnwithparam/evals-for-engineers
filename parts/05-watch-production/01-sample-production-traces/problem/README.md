@@ -52,12 +52,12 @@ Expect: `Done. All 8 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see | Fix |
-| --- | --- |
-| `FAIL monitor.py --seed 7 runs and grades at least 30 traces ...` | Run the script and read the error. `NotImplementedError` means a function is still the starter. |
-| `FAIL every trace on a template the golden set lacks is in the ...` | A plain random draw leaves some new-template traces out. Take all of them first. |
-| `FAIL every building in a batch has at least one trace ...` | Batch 1 has 23 buildings. Add one trace for each building the sample lacks. |
-| `FAIL every verdict is the aligned grounded judge's verdict` | Call `judge.judge()`. A quick rule such as "it cites a clause, so it passes" passes every trace. |
+| What you see                                                        | Fix                                                                                              |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `FAIL monitor.py --seed 7 runs and grades at least 30 traces ...`   | Run the script and read the error. `NotImplementedError` means a function is still the starter.  |
+| `FAIL every trace on a template the golden set lacks is in the ...` | A plain random draw leaves some new-template traces out. Take all of them first.                 |
+| `FAIL every building in a batch has at least one trace ...`         | Batch 1 has 23 buildings. Add one trace for each building the sample lacks.                      |
+| `FAIL every verdict is the aligned grounded judge's verdict`        | Call `judge.judge()`. A quick rule such as "it cites a clause, so it passes" passes every trace. |
 
 The sample answer is in `../solution/monitor.py`. Open it after you have tried.
 
