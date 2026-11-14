@@ -1,0 +1,12 @@
+{"id": "syn-01", "source": "synthetic", "topic": "late", "tone": "formal", "lease_type": "residential", "question": "How much notice does the tenant in unit 8D at Juniper Hall need to give to renew?", "reviewed": true}
+{"id": "syn-02", "source": "synthetic", "topic": "late", "tone": "rushed", "lease_type": "commercial", "question": "How much notice does the tenant in unit 5F at Damson House need to give to renew?", "reviewed": true}
+{"id": "syn-03", "source": "synthetic", "topic": "late", "tone": "vague", "lease_type": "residential", "question": "How much notice does the tenant in unit 8E at Larch Gardens need to give to renew?", "reviewed": true}
+{"id": "syn-04", "source": "synthetic", "topic": "pets", "tone": "formal", "lease_type": "residential", "question": "How much notice does the tenant in unit 4D at Cobble Yard need to give to renew?", "reviewed": true}
+{"id": "syn-05", "source": "synthetic", "topic": "pets", "tone": "rushed", "lease_type": "residential", "question": "How much notice does the tenant in unit 7D at Larch Gardens need to give to renew?", "reviewed": true}
+{"id": "syn-06", "source": "synthetic", "topic": "pets", "tone": "vague", "lease_type": "commercial", "question": "How much notice does the tenant in unit 9E at Juniper Hall need to give to renew?", "reviewed": true}
+{"id": "syn-07", "source": "synthetic", "topic": "renewal", "tone": "formal", "lease_type": "commercial", "question": "How much notice does the tenant in unit 10B at Teasel Row need to give to renew?", "reviewed": true}
+{"id": "syn-08", "source": "synthetic", "topic": "renewal", "tone": "rushed", "lease_type": "residential", "question": "How much notice does the tenant in unit 8B at Clover Mill need to give to renew?", "reviewed": true}
+{"id": "syn-09", "source": "synthetic", "topic": "renewal", "tone": "vague", "lease_type": "residential", "question": "How much notice does the tenant in unit G2 at Clover Mill need to give to renew?", "reviewed": true}
+{"id": "syn-10", "source": "synthetic", "topic": "rent", "tone": "formal", "lease_type": "commercial", "question": "What is the late fee for unit 3B and when does it start?", "reviewed": true}
+{"id": "syn-11", "source": "synthetic", "topic": "rent", "tone": "rushed", "lease_type": "residential", "question": "Can the tenant in unit 5F keep a dog, and is there a fee?", "reviewed": true}
+{"id": "syn-12", "source": "synthetic", "topic": "rent", "tone": "vague", "lease_type": "commercial", "question": "How much notice does the tenant need to give to renew?", "reviewed": true}
