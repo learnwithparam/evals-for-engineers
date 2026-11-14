@@ -3,15 +3,7 @@ import { join } from "node:path";
 import type { Rule } from "../scripts/verify";
 import { DATA, readJsonl } from "./lib/world";
 
-type Synthetic = {
-  id?: unknown;
-  source?: unknown;
-  topic?: unknown;
-  tone?: unknown;
-  lease_type?: unknown;
-  question?: unknown;
-  reviewed?: unknown;
-};
+type Synthetic = { [field: string]: unknown };
 
 const TOPICS = ["late", "pets", "renewal", "rent"];
 const TONES = ["formal", "rushed", "vague"];
@@ -49,7 +41,8 @@ export default [
       const tagged = rows.every((row) => row.source === "synthetic" && row.reviewed === true);
       return rows.length > 0 && tagged && ids.size === rows.length;
     },
-    tryNext: 'give every case "source": "synthetic", "reviewed": true after you read it, and a new id',
+    tryNext:
+      'give every case "source": "synthetic", "reviewed": true after you read it, and a new id',
   },
   {
     says: "every case names a topic, a tone and a lease type from the lists",
@@ -64,14 +57,17 @@ export default [
     tryNext: "topic is late, pets, renewal or rent; tone is formal, rushed or vague",
   },
   {
-    says: "every topic, tone and lease type is used at least once",
+    says: "every topic, tone and lease type appears at least once",
     test: (folder) => {
       const rows = cases(folder);
-      const used = (field: "topic" | "tone" | "lease_type", values: string[]) =>
+      const usesAll = (field: "topic" | "tone" | "lease_type", values: string[]) =>
         values.every((value) => rows.some((row) => row[field] === value));
-      return used("topic", TOPICS) && used("tone", TONES) && used("lease_type", LEASE_TYPES);
+      return (
+        usesAll("topic", TOPICS) && usesAll("tone", TONES) && usesAll("lease_type", LEASE_TYPES)
+      );
     },
-    tryNext: "a set with one tone or one topic only tests one slice; cover every value in each list",
+    tryNext:
+      "a set with one tone or one topic only tests one slice; cover every value in each list",
   },
   {
     says: "the cases cover at least 8 different topic, tone and lease type mixes",
@@ -90,6 +86,7 @@ export default [
       const fresh = questions.every((text) => !known.has(text));
       return questions.length > 0 && long && fresh && new Set(questions).size === questions.length;
     },
-    tryNext: "write each question yourself from its dimensions; do not copy a seed or a staff question",
+    tryNext:
+      "write each question yourself from its dimensions; do not copy a seed or a staff question",
   },
 ] satisfies Rule[];

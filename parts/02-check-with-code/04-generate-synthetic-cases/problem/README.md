@@ -31,7 +31,15 @@ Each case has these fields:
 For example, a rushed tenant on a commercial lease asks about the late fee:
 
 ```json
-{"id": "syn-02", "source": "synthetic", "topic": "late", "tone": "rushed", "lease_type": "commercial", "question": "late fee on the shop unit? when does it kick in", "reviewed": true}
+{
+  "id": "syn-02",
+  "source": "synthetic",
+  "topic": "late",
+  "tone": "rushed",
+  "lease_type": "commercial",
+  "question": "late fee on the shop unit? when does it kick in",
+  "reviewed": true
+}
 ```
 
 Use every topic, every tone and both lease types. Change two dimensions at once for at least 8 different mixes. Do not copy a seed or a staff question from `world/data/questions.jsonl`.
@@ -51,11 +59,11 @@ Expect: `Done. All 6 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                              | Fix                                                                  |
-| --------------------------------------------------------- | -------------------------------------------------------------------- |
-| `FAIL every topic, tone and lease type is used...`        | One value is missing. Add a case for it.                             |
-| `FAIL the cases cover at least 8 different ... mixes`     | Many cases share one mix. Change the tone and the lease type.        |
-| `FAIL every question is new, with at least 5 words ...`   | Rewrite the short or copied ones in your own words.                  |
+| What you see                                            | Fix                                                           |
+| ------------------------------------------------------- | ------------------------------------------------------------- |
+| `FAIL every topic, tone and lease type is used...`      | One value is missing. Add a case for it.                      |
+| `FAIL the cases cover at least 8 different ... mixes`   | Many cases share one mix. Change the tone and the lease type. |
+| `FAIL every question is new, with at least 5 words ...` | Rewrite the short or copied ones in your own words.           |
 
 The sample answer is in `../solution/synthetic.jsonl`. Open it after you have tried.
 

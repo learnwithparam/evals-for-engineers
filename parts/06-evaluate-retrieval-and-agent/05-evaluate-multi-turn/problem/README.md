@@ -20,7 +20,7 @@ Open `conversations.jsonl`. Each line is one chat. `turns` has one `true` or `fa
 For example, chat `c02` has one bad reply and still met its goal, so the desk recovered:
 
 ```json
-{"id": "c02", "turns": [true, false, true], "goal_met": true}
+{ "id": "c02", "turns": [true, false, true], "goal_met": true }
 ```
 
 Finish `summarise()` in `multi_turn.py`. Its docstring lists the five values to return.
@@ -47,11 +47,11 @@ Expect: `Done. All 6 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                                  | Fix                                                                 |
-| ------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `FAIL goal_rate is the share of conversations that met...`    | Count `goal_met` per chat. Do not average the replies.              |
-| `FAIL first_fail_turns counts conversations by the turn...`   | Count turns from 1, use string keys, and skip chats with no failure. |
-| `NotImplementedError`                                         | Replace the `raise` line with your code.                            |
+| What you see                                                | Fix                                                                  |
+| ----------------------------------------------------------- | -------------------------------------------------------------------- |
+| `FAIL goal_rate is the share of conversations that met...`  | Count `goal_met` per chat. Do not average the replies.               |
+| `FAIL first_fail_turns counts conversations by the turn...` | Count turns from 1, use string keys, and skip chats with no failure. |
+| `NotImplementedError`                                       | Replace the `raise` line with your code.                             |
 
 The sample answer is in `../solution/multi_turn.py`. Open it after you have tried.
 

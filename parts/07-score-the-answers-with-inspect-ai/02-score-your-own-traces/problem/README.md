@@ -19,7 +19,7 @@ First, from the repo root: `cd parts/07-score-the-answers-with-inspect-ai/02-sco
 
 1. Replace the two example rows in `my_traces.jsonl` with at least 10 real traces from your system. Each line has `id`, `input` and `output`. Use traces you can share, and remove names and secrets.
 2. In `judge.txt`, write one criterion on the first line, starting with `Criterion:`. Below it, give the rules the judge checks against and ask for `pass` or `fail` on the first line of its reply.
-3. Finish `my_task.py`. Load the traces with `json_dataset`, read `judge.txt` into a `system_message`, call `generate()`, and write a scorer that gives a pass when the reply starts with `pass`.
+3. Finish `my_task.py`. Load the traces with `json_dataset`. Read `judge.txt` into a `system_message`. Call `generate()`. Then write a scorer that gives a pass when the reply starts with `pass`.
 4. Run it, then write one line per trace in `my_scores.jsonl`: `id`, `verdict` and a one sentence `reason`. Read each fail yourself.
 
 ```bash
@@ -31,7 +31,11 @@ Expect: a score table with an accuracy. With the mock model every reply is the s
 For example, one line in `my_scores.jsonl` looks like this:
 
 ```json
-{"id": "t03", "verdict": "fail", "reason": "The answer promises something the shop policy does not say."}
+{
+  "id": "t03",
+  "verdict": "fail",
+  "reason": "The answer promises something the shop policy does not say."
+}
 ```
 
 ## Done when
@@ -49,11 +53,11 @@ Expect: `Done. All 6 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                      | Fix                                                                         |
-| ------------------------------------------------- | --------------------------------------------------------------------------- |
-| `FAIL the traces are yours, not the course world` | Remove lease ids and Fernhill text. Use traces from your own system.        |
-| `FAIL judge.txt names one criterion ...`          | The first line must start with `Criterion:`. Remove every `TODO`.           |
-| `FAIL the verdicts include both a pass and a fail` | Read the fails by hand. A judge that passes all of them is not working.     |
+| What you see                                       | Fix                                                                     |
+| -------------------------------------------------- | ----------------------------------------------------------------------- |
+| `FAIL the traces are yours, not the course world`  | Remove lease ids and Fernhill text. Use traces from your own system.    |
+| `FAIL judge.txt names one criterion ...`           | The first line must start with `Criterion:`. Remove every `TODO`.       |
+| `FAIL the verdicts include both a pass and a fail` | Read the fails by hand. A judge that passes all of them is not working. |
 
 The sample answer is in `../solution`. It uses a shop's returns bot, not Fernhill. Open it after you have tried.
 

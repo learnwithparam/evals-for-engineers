@@ -3,9 +3,16 @@ import { join } from "node:path";
 import type { Rule } from "../scripts/verify";
 import { type JsonRecord, readJsonl } from "./lib/world";
 
-type Conversation = { id: string; turns: boolean[]; goal_met: boolean };
+type Conversation = { id: string; turns: boolean[]; [field: string]: unknown };
 
 const RATE_TOLERANCE = 0.005;
+
+// Two lists hold the same ids when they match once both are sorted.
+function sameIds(left: unknown[], right: unknown[]): boolean {
+  const sortedLeft = [...left].sort();
+  const sortedRight = [...right].sort();
+  return JSON.stringify(sortedLeft) === JSON.stringify(sortedRight);
+}
 
 const conversations = (folder: string) =>
   readJsonl<Conversation>(join(folder, "conversations.jsonl"));
@@ -45,7 +52,7 @@ export default [
     says: "goal_rate is the share of conversations that met the goal",
     test: (folder) => {
       const rows = conversations(folder);
-      const met = rows.filter((row) => row.goal_met).length;
+      const met = rows.filter((row) => row.goal_met === true).length;
       return near(summary(folder).goal_rate, share(met, rows.length));
     },
     tryNext: "count conversations with goal_met true, not turns; divide by all conversations",
@@ -80,10 +87,10 @@ export default [
     test: (folder) => {
       const written = summary(folder).recovered;
       const wanted = conversations(folder)
-        .filter((row) => row.goal_met && hasMiss(row))
+        .filter((row) => row.goal_met === true && hasMiss(row))
         .map((row) => row.id)
         .sort();
-      return Array.isArray(written) && JSON.stringify([...written].sort()) === JSON.stringify(wanted);
+      return Array.isArray(written) && sameIds(written, wanted);
     },
     tryNext: "keep a conversation when goal_met is true and at least one turn is false",
   },

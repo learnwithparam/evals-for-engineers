@@ -27,9 +27,11 @@ flowchart LR
 
 ## Steps
 
-| Step            | Minutes | You produce                                           | The check reads                                            |
-| --------------- | ------- | ----------------------------------------------------- | ---------------------------------------------------------- |
-| `port-the-gate` | 30      | `assignment/task.py`: your gate as an Inspect AI task | the Inspect AI version, the eval log, and the failing rows |
+| Step                    | Minutes | You produce                                                                             | The check reads                                                                    |
+| ----------------------- | ------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `port-the-gate`         | 30      | `assignment/task.py`: your gate as an Inspect AI task                                   | the Inspect AI version, the eval log, and the failing rows                         |
+| `score-your-own-traces` | 25      | `my_traces.jsonl`, `judge.txt`, `my_task.py` and `my_scores.jsonl` from your own system | the traces are yours, the judge names one criterion, and every trace has a verdict |
+| `check-your-own-work`   | 30      | `my-eval.json` with your failure modes, golden set, judge numbers and gate              | the file and the evidence files it points to, never the course world               |
 
 This part is optional in the live session and expected as homework. The `assignment/` folder holds the starter and its own README.
 
@@ -75,6 +77,18 @@ uv run checks/assignment.py
 ```
 
 Expect: `FAIL` lines on the untouched starter, and `PASS` on all three lines once your task is ported.
+
+```bash
+bun run verify score-your-own-traces
+```
+
+Expect: `Done. All 6 rules pass.`, once your own traces, judge and scores are in the folder.
+
+```bash
+bun run verify check-your-own-work
+```
+
+Expect: `Done. All 8 rules pass.`, once `my-eval.json` has no `TODO` left.
 
 ## What you can show
 

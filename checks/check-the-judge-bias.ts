@@ -3,9 +3,16 @@ import { join } from "node:path";
 import type { Rule } from "../scripts/verify";
 import { type JsonRecord, readJsonl } from "./lib/world";
 
-type Run = { pair: string; picked_original: string; picked_swapped: string; longer: string };
+type Run = { pair: string; [field: string]: unknown };
 
 const RATE_TOLERANCE = 0.005;
+
+// Two lists hold the same ids when they match once both are sorted.
+function sameIds(left: unknown[], right: unknown[]): boolean {
+  const sortedLeft = [...left].sort();
+  const sortedRight = [...right].sort();
+  return JSON.stringify(sortedLeft) === JSON.stringify(sortedRight);
+}
 
 const runs = (folder: string) => readJsonl<Run>(join(folder, "judge_runs.jsonl"));
 
@@ -55,7 +62,7 @@ export default [
     test: (folder) => {
       const written = report(folder).flipped_pairs;
       if (!Array.isArray(written)) return false;
-      return JSON.stringify([...written].sort()) === JSON.stringify([...flipped(folder)].sort());
+      return sameIds(written, flipped(folder));
     },
     tryNext: "list the pair ids where picked_original and picked_swapped are not the same answer",
   },

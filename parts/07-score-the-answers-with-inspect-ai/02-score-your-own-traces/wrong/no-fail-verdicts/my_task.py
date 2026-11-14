@@ -8,7 +8,7 @@ Run: uv run inspect eval my_task.py --model mockllm/model --log-dir logs
 from pathlib import Path
 
 from inspect_ai import Task, task
-from inspect_ai.dataset import json_dataset, Sample
+from inspect_ai.dataset import Sample, json_dataset
 from inspect_ai.scorer import CORRECT, INCORRECT, Score, accuracy, scorer
 from inspect_ai.solver import generate, system_message
 

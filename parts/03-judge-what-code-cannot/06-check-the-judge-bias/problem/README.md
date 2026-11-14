@@ -23,7 +23,7 @@ Open `judge_runs.jsonl`. Each line is one pair. `picked_original` and `picked_sw
 For example, this pair flipped, because the judge chose `a` in one order and `b` in the other:
 
 ```json
-{"pair": "pair-03", "picked_original": "a", "picked_swapped": "b", "longer": "a"}
+{ "pair": "pair-03", "picked_original": "a", "picked_swapped": "b", "longer": "a" }
 ```
 
 Finish the three functions in `bias_report.py`. Then write one sentence in `FIX` that says what you will do about it.
@@ -49,11 +49,11 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                            | Fix                                                                         |
-| ------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `FAIL flip_rate is the share of pairs where swapping...` | You counted pairs that agree. Count the pairs where the two picks differ.   |
-| `FAIL fix says to swap the order and ask twice`         | Name the swap and say you judge both orders.                                |
-| `NotImplementedError`                                   | Replace the `raise` line in each of the three functions with your code.     |
+| What you see                                             | Fix                                                                       |
+| -------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `FAIL flip_rate is the share of pairs where swapping...` | You counted pairs that agree. Count the pairs where the two picks differ. |
+| `FAIL fix says to swap the order and ask twice`          | Name the swap and say you judge both orders.                              |
+| `NotImplementedError`                                    | Replace the `raise` line in each of the three functions with your code.   |
 
 The sample answer is in `../solution/bias_report.py`. Open it after you have tried.
 

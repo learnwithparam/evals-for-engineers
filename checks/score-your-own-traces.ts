@@ -8,6 +8,13 @@ type TraceRow = { id?: unknown; input?: unknown; output?: unknown };
 type ScoreRow = { id?: unknown; verdict?: unknown; reason?: unknown };
 
 const MINIMUM_TRACES = 10;
+
+// Two lists hold the same ids when they match once both are sorted.
+function sameIds(left: unknown[], right: unknown[]): boolean {
+  const sortedLeft = [...left].sort();
+  const sortedRight = [...right].sort();
+  return JSON.stringify(sortedLeft) === JSON.stringify(sortedRight);
+}
 const COURSE_WORLD = /fernhill|dana mensah|\bL\d{3}(-c\d+)?\b|\bdesk-\d{4}\b/i;
 
 const read = (folder: string, name: string) => {
@@ -48,7 +55,8 @@ export default [
       );
       return found.length > 0 && own;
     },
-    tryNext: "export traces from your own system; the Fernhill traces and lease ids are for practice",
+    tryNext:
+      "export traces from your own system; the Fernhill traces and lease ids are for practice",
   },
   {
     says: "judge.txt names one criterion and asks for pass or fail",
@@ -59,7 +67,8 @@ export default [
       const answers = /\bpass\b/i.test(judge) && /\bfail\b/i.test(judge);
       return named && answers && !judge.includes("TODO");
     },
-    tryNext: "start the first line with Criterion: and write one thing to check, then ask for pass or fail",
+    tryNext:
+      "start the first line with Criterion:, write one thing to check, then ask for pass or fail",
   },
   {
     says: "my_task.py loads your traces, uses judge.txt and scores the verdict",
@@ -75,7 +84,8 @@ export default [
       ];
       return needs.every((part) => task.includes(part)) && !task.includes("TODO");
     },
-    tryNext: "fill in my_task.py: json_dataset, system_message with judge.txt, generate() and a @scorer",
+    tryNext:
+      "fill in my_task.py: json_dataset, system_message with judge.txt, generate() and a @scorer",
   },
   {
     says: "my_scores.jsonl has one pass or fail verdict and a reason for every trace",
@@ -86,8 +96,7 @@ export default [
       const valid = found.every(
         (row) => ["pass", "fail"].includes(text(row.verdict)) && text(row.reason),
       );
-      const same = JSON.stringify([...ids].sort()) === JSON.stringify([...scored].sort());
-      return found.length > 0 && valid && same;
+      return found.length > 0 && valid && sameIds(ids, scored);
     },
     tryNext: "write one line per trace id: id, verdict (pass or fail) and a one sentence reason",
   },
@@ -97,6 +106,7 @@ export default [
       const verdicts = new Set(scores(folder).map((row) => text(row.verdict)));
       return verdicts.has("pass") && verdicts.has("fail");
     },
-    tryNext: "a judge that passes everything tells you nothing; read the fails and check the prompt",
+    tryNext:
+      "a judge that passes everything tells you nothing; read the fails and check the prompt",
   },
 ] satisfies Rule[];

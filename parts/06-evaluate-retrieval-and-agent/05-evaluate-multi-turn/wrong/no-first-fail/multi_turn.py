@@ -27,7 +27,7 @@ def summarise(conversations: list[dict]) -> dict:
     goal = [conversation for conversation in conversations if conversation["goal_met"]]
     every_turn = [ok for conversation in conversations for ok in conversation["turns"]]
     first_fails = Counter(
-        conversation["turns"].index(False) + 1
+        len(conversation["turns"])
         for conversation in conversations
         if not all(conversation["turns"])
     )
@@ -40,7 +40,7 @@ def summarise(conversations: list[dict]) -> dict:
         "goal_rate": round(len(goal) / len(conversations), 3),
         "all_turns_rate": round(len(all_turns) / len(conversations), 3),
         "per_turn_rate": round(sum(every_turn) / len(every_turn), 3),
-        "first_fail_turns": {},
+        "first_fail_turns": {str(turn): count for turn, count in sorted(first_fails.items())},
         "recovered": recovered,
     }
 
@@ -49,7 +49,8 @@ def main() -> None:
     summary = summarise(read_jsonl(HERE / "conversations.jsonl"))
     (HERE / "multi_turn.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(f"Goal met in {summary['goal_rate']} of conversations.")
-    print(f"Every turn right in {summary['all_turns_rate']}. Single turns right: {summary['per_turn_rate']}.")
+    every_turn = summary["all_turns_rate"]
+    print(f"Every turn right in {every_turn}. Single turns right: {summary['per_turn_rate']}.")
     print("Wrote multi_turn.json")
 
 

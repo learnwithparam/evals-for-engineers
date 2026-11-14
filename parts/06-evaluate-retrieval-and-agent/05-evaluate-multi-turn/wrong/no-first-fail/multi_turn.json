@@ -2,9 +2,9 @@
   "goal_rate": 0.5,
   "all_turns_rate": 0.4,
   "per_turn_rate": 0.794,
-  "first_fail_turns": {},
-  "recovered": [
-    "c02",
-    "c09"
-  ]
+  "first_fail_turns": {
+    "3": 4,
+    "4": 2
+  },
+  "recovered": ["c02", "c09"]
 }

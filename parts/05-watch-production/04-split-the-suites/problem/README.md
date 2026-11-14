@@ -20,7 +20,7 @@ Open `cases.jsonl`. Each line is one case. `history` holds its last five runs, n
 For example, this case passed every run and is on an old template. It goes in regression, and in refresh as well:
 
 ```json
-{"id": "case-02", "history": "PPPPP", "template": "FH-RES-2019"}
+{ "id": "case-02", "history": "PPPPP", "template": "FH-RES-2019" }
 ```
 
 Finish `split()` in `split_suites.py`. Put each case in the right list:
@@ -52,11 +52,11 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                            | Fix                                                                |
-| ------------------------------------------------------- | ------------------------------------------------------------------ |
-| `FAIL regression holds only the cases that passed all 5 runs` | Test the whole history string, not just the last letter.     |
+| What you see                                                  | Fix                                                               |
+| ------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `FAIL regression holds only the cases that passed all 5 runs` | Test the whole history string, not just the last letter.          |
 | `FAIL refresh holds every case not on the current template`   | Compare the template, not the history, and include passing cases. |
-| `NotImplementedError`                                   | Replace the `raise` line with your code.                           |
+| `NotImplementedError`                                         | Replace the `raise` line with your code.                          |
 
 The sample answer is in `../solution/split_suites.py`. Open it after you have tried.
 

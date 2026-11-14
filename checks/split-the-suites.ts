@@ -29,7 +29,8 @@ function listIs(folder: string, name: string, keep: (row: Case) => boolean): boo
 export default [
   {
     says: "suites.json has regression, capability and refresh lists",
-    test: (folder) => ["regression", "capability", "refresh"].every((name) => name in suites(folder)),
+    test: (folder) =>
+      ["regression", "capability", "refresh"].every((name) => name in suites(folder)),
     tryNext: "run uv run python split_suites.py; it writes suites.json for you",
   },
   {
@@ -39,8 +40,7 @@ export default [
   },
   {
     says: "capability holds the cases that failed at least 3 of 5 runs",
-    test: (folder) =>
-      listIs(folder, "capability", (row) => row.history.split("F").length - 1 >= 3),
+    test: (folder) => listIs(folder, "capability", (row) => row.history.split("F").length - 1 >= 3),
     tryNext: "count the F letters in each history; 3 or more means the system cannot do it yet",
   },
   {

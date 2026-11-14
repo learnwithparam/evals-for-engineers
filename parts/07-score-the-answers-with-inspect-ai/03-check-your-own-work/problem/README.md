@@ -34,7 +34,12 @@ Then fill in `my-eval.json`. Replace every `TODO`. The pieces:
 For example, one failure mode looks like this:
 
 ```json
-{"name": "wrong-refund-window", "definition": "The bot states a refund window that is not in the policy.", "count": 5, "example_trace_id": "s01"}
+{
+  "name": "wrong-refund-window",
+  "definition": "The bot states a refund window that is not in the policy.",
+  "count": 5,
+  "example_trace_id": "s01"
+}
 ```
 
 The check proves the shape and that the evidence exists. It cannot tell if the numbers are wise. Show the file to a colleague and ask them to open one example trace.
@@ -54,11 +59,11 @@ Expect: `Done. All 8 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
-| What you see                                              | Fix                                                                  |
-| --------------------------------------------------------- | -------------------------------------------------------------------- |
-| `FAIL traces_path points to at least 20 traces ...`       | Save the traces first, then set `trace_count` to the line count.     |
-| `FAIL 3 to 8 failure modes, each with ... a real example` | The example id must be an `id` that appears in your traces file.     |
-| `FAIL nothing comes from the course world`                | Remove Fernhill, lease ids and desk trace ids from your files.       |
+| What you see                                              | Fix                                                              |
+| --------------------------------------------------------- | ---------------------------------------------------------------- |
+| `FAIL traces_path points to at least 20 traces ...`       | Save the traces first, then set `trace_count` to the line count. |
+| `FAIL 3 to 8 failure modes, each with ... a real example` | The example id must be an `id` that appears in your traces file. |
+| `FAIL nothing comes from the course world`                | Remove Fernhill, lease ids and desk trace ids from your files.   |
 
 The sample answer is in `../solution`. It tests an invented shop helper. Open it after you have tried.
 

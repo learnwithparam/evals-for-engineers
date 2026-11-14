@@ -49,7 +49,8 @@ def main() -> None:
     summary = summarise(read_jsonl(HERE / "conversations.jsonl"))
     (HERE / "multi_turn.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(f"Goal met in {summary['goal_rate']} of conversations.")
-    print(f"Every turn right in {summary['all_turns_rate']}. Single turns right: {summary['per_turn_rate']}.")
+    every_turn = summary["all_turns_rate"]
+    print(f"Every turn right in {every_turn}. Single turns right: {summary['per_turn_rate']}.")
     print("Wrote multi_turn.json")
 
 

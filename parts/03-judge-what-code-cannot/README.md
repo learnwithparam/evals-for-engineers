@@ -46,6 +46,7 @@ flowchart LR
 | `align-the-judge`       | 25      | `judge_dev.json`: TPR, TNR and every disagreement on dev, with a change log        | TPR and TNR recomputed from your judge's own outputs, both at least 0.80                    |
 | `test-the-judge`        | 10      | `judge_test.json`: one run on the 50 test labels                                   | one run per prompt hash, TPR and TNR at least 0.80                                          |
 | `correct-the-pass-rate` | 10      | `grounded_rate.json`: raw rate, corrected rate, 95% interval                       | the formula recomputed within 0.01, the interval holds the estimate                         |
+| `check-the-judge-bias`  | 15      | `bias_report.json`: the flip rate and the longer-answer rate of a judge            | both rates and the flipped pairs recomputed from `judge_runs.jsonl`                         |
 
 Each step starts from the sample answer of the step before it. So you can start at any step.
 
@@ -125,6 +126,18 @@ cd parts/03-judge-what-code-cannot/05-correct-the-pass-rate/problem && uv run py
 ```
 
 Expect: `Corrected with TPR 0.92 and TNR 0.88: 86%` and `95% interval: 74% to 100%`.
+
+```bash
+cd parts/03-judge-what-code-cannot/06-check-the-judge-bias/problem && uv run python bias_report.py && cd -
+```
+
+Expect: `Flip rate 0.3: 6 of 20 pairs.`, once the three functions are written.
+
+```bash
+bun run verify check-the-judge-bias
+```
+
+Expect: `Done. All 5 rules pass.`
 
 ```bash
 bun run verify part judge-what-code-cannot
