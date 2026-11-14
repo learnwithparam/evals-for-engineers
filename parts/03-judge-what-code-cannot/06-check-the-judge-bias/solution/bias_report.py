@@ -14,8 +14,13 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 
+# The judge shows length bias when it picks the longer answer in at least this share of pairs.
+LENGTH_BIAS_AT = 0.7
+
 # What you will do about the bias, in one sentence.
 FIX = "Judge every pair twice with the order swapped, and count a pair only when both orders agree."
+# What you will do about length bias, in one sentence.
+LENGTH_FIX = "Match answer lengths before judging, or tell the judge to ignore length."
 
 
 def read_jsonl(path: Path) -> list[dict]:
@@ -39,11 +44,19 @@ def longer_pick_rate(rows: list[dict]) -> float:
     return round(len(picked_longer) / len(rows), 3)
 
 
+def length_bias(rate: float) -> str:
+    """Return "present" when the longer pick rate is LENGTH_BIAS_AT or more, else "absent"."""
+    return "present" if rate >= LENGTH_BIAS_AT else "absent"
+
+
 def main() -> None:
     rows = read_jsonl(HERE / "judge_runs.jsonl")
+    longer_rate = longer_pick_rate(rows)
     report = {
         "flip_rate": flip_rate(rows),
-        "longer_pick_rate": longer_pick_rate(rows),
+        "longer_pick_rate": longer_rate,
+        "length_bias": length_bias(longer_rate),
+        "length_fix": LENGTH_FIX,
         "flipped_pairs": flipped_pairs(rows),
         "fix": FIX,
     }

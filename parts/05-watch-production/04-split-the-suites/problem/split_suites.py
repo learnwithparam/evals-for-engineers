@@ -14,7 +14,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 
 # Cases on any other template are old, because production has moved on.
-CURRENT_TEMPLATE = "FH-RES-2026"
+CURRENT_TEMPLATE = "FH-RES-V3"
 
 
 def read_jsonl(path: Path) -> list[dict]:

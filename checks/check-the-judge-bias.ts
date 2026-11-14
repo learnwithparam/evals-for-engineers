@@ -6,6 +6,8 @@ import { type JsonRecord, readJsonl } from "./lib/world";
 type Run = { pair: string; [field: string]: unknown };
 
 const RATE_TOLERANCE = 0.005;
+// The judge shows length bias when it picks the longer answer in this share of pairs or more.
+const LENGTH_BIAS_AT = 0.7;
 
 // Two lists hold the same ids when they match once both are sorted.
 function sameIds(left: unknown[], right: unknown[]): boolean {
@@ -32,12 +34,17 @@ function near(written: unknown, wanted: number): boolean {
 
 export default [
   {
-    says: "bias_report.json exists with the four fields",
+    says: "bias_report.json exists with the six fields",
     test: (folder) => {
       const written = report(folder);
-      return ["flip_rate", "longer_pick_rate", "flipped_pairs", "fix"].every(
-        (field) => field in written,
-      );
+      return [
+        "flip_rate",
+        "longer_pick_rate",
+        "length_bias",
+        "length_fix",
+        "flipped_pairs",
+        "fix",
+      ].every((field) => field in written);
     },
     tryNext: "run uv run python bias_report.py; it writes bias_report.json for you",
   },
@@ -56,6 +63,24 @@ export default [
       return near(report(folder).longer_pick_rate, longerWins / rows.length);
     },
     tryNext: "compare picked_original with longer on every pair, then divide by all the pairs",
+  },
+  {
+    says: "length_bias says present when the judge picked the longer answer often enough",
+    test: (folder) => {
+      const rows = runs(folder);
+      const longerWins = rows.filter((run) => run.picked_original === run.longer).length;
+      const wanted = longerWins / rows.length >= LENGTH_BIAS_AT ? "present" : "absent";
+      return report(folder).length_bias === wanted;
+    },
+    tryNext: "length_bias is present when the longer pick rate is 0.7 or more, otherwise absent",
+  },
+  {
+    says: "length_fix says what you will do about length",
+    test: (folder) => {
+      const fix = String(report(folder).length_fix ?? "").toLowerCase();
+      return fix.includes("length") && /same|equal|ignore|trim|shorten/.test(fix);
+    },
+    tryNext: "one sentence such as: match answer lengths, or tell the judge to ignore length",
   },
   {
     says: "flipped_pairs names every pair that flipped, and no other",

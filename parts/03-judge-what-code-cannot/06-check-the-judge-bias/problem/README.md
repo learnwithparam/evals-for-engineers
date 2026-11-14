@@ -26,7 +26,7 @@ For example, this pair flipped, because the judge chose `a` in one order and `b`
 { "pair": "pair-03", "picked_original": "a", "picked_swapped": "b", "longer": "a" }
 ```
 
-Finish the three functions in `bias_report.py`. Then write one sentence in `FIX` that says what you will do about it.
+Finish the four functions in `bias_report.py`. Then write one sentence in `FIX` for position bias and one in `LENGTH_FIX` for length bias.
 
 ```bash
 uv run python bias_report.py
@@ -39,13 +39,15 @@ Expect: `Flip rate 0.3: 6 of 20 pairs.` and `Wrote bias_report.json`.
 - `flip_rate` is the share of pairs where the winner changed.
 - `longer_pick_rate` is the share of pairs where the judge chose the longer answer.
 - `flipped_pairs` lists each flipped pair and no other.
+- `length_bias` says `present` when the judge picked the longer answer in at least seven of ten pairs, and `absent` if not.
+- `length_fix` says what you will do about length.
 - `fix` says to swap the order and judge twice.
 
 ```bash
 bun run verify check-the-judge-bias
 ```
 
-Expect: `Done. All 5 rules pass.` and a `Progress:` line.
+Expect: `Done. All 7 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 
@@ -53,7 +55,7 @@ Expect: `Done. All 5 rules pass.` and a `Progress:` line.
 | -------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `FAIL flip_rate is the share of pairs where swapping...` | You counted pairs that agree. Count the pairs where the two picks differ. |
 | `FAIL fix says to swap the order and ask twice`          | Name the swap and say you judge both orders.                              |
-| `NotImplementedError`                                    | Replace the `raise` line in each of the three functions with your code.   |
+| `NotImplementedError`                                    | Replace the `raise` line in each of the four functions with your code.    |
 
 The sample answer is in `../solution/bias_report.py`. Open it after you have tried.
 

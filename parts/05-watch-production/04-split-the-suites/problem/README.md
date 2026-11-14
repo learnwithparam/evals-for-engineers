@@ -15,12 +15,12 @@ flowchart LR
 
 First, from the repo root: `cd parts/05-watch-production/04-split-the-suites/problem`.
 
-Open `cases.jsonl`. Each line is one case. `history` holds its last five runs, newest last, with `P` for pass and `F` for fail. `template` is the lease template the case was written on. Production now uses `FH-RES-2026`.
+Open `cases.jsonl`. Each line is one case. `history` holds its last five runs, newest last, with `P` for pass and `F` for fail. `template` is the lease template the case was written on. Production now uses `FH-RES-V3`.
 
 For example, this case passed every run and is on an old template. It goes in regression, and in refresh as well:
 
 ```json
-{ "id": "case-02", "history": "PPPPP", "template": "FH-RES-2019" }
+{ "id": "case-02", "history": "PPPPP", "template": "FH-RES-V1" }
 ```
 
 Finish `split()` in `split_suites.py`. Put each case in the right list:
@@ -36,6 +36,10 @@ uv run python split_suites.py
 ```
 
 Expect: `regression   6 cases`, `capability   5 cases`, `refresh      4 cases` and `Wrote suites.json`.
+
+## Go further
+
+This step finds the stale cases. It does not fix them. The next move is to write a new case on the current template for each one in `refresh`. Run it five times. Once it has a history, move it into a suite.
 
 ## Done when
 

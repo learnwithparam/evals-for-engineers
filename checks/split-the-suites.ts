@@ -5,7 +5,7 @@ import { type JsonRecord, readJsonl } from "./lib/world";
 
 type Case = { id: string; history: string; template: string };
 
-const CURRENT_TEMPLATE = "FH-RES-2026";
+const CURRENT_TEMPLATE = "FH-RES-V3";
 
 const cases = (folder: string) => readJsonl<Case>(join(folder, "cases.jsonl"));
 

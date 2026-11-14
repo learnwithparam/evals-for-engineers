@@ -39,6 +39,14 @@ function firstFailCounts(folder: string): Record<string, number> {
   return counts;
 }
 
+// Key order does not matter: two count tables are equal when every key has the same value.
+function sameCounts(written: unknown, wanted: Record<string, number>): boolean {
+  if (typeof written !== "object" || written === null || Array.isArray(written)) return false;
+  const pairs = Object.entries(written);
+  const sameSize = pairs.length === Object.keys(wanted).length;
+  return sameSize && pairs.every(([turn, count]) => wanted[turn] === count);
+}
+
 export default [
   {
     says: "multi_turn.json has the five fields",
@@ -78,7 +86,7 @@ export default [
     says: "first_fail_turns counts conversations by the turn where they first broke",
     test: (folder) => {
       const written = summary(folder).first_fail_turns;
-      return JSON.stringify(written) === JSON.stringify(firstFailCounts(folder));
+      return sameCounts(written, firstFailCounts(folder));
     },
     tryNext: 'count from 1; the keys are strings such as "2", and only failing chats are counted',
   },
