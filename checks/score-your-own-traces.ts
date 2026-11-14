@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Rule } from "../scripts/verify";
-import { DATA, readJsonl } from "./lib/world";
+import { DATA, ROOT, readJsonl } from "./lib/world";
 
 // The learner writes every file here, so each field may be missing or the wrong type.
 type TraceRow = { id?: unknown; input?: unknown; output?: unknown };
@@ -25,6 +25,25 @@ const read = (folder: string, name: string) => {
 function rows<Shape>(folder: string, name: string): Shape[] {
   const path = join(folder, name);
   return existsSync(path) ? readJsonl<Shape>(path) : [];
+}
+
+type Logged = { [id: string]: { verdict: string; input: string } };
+const logCache = new Map<string, Logged>();
+
+// The Inspect log is the proof that a judge ran; read it once per folder.
+function logged(folder: string): Logged {
+  const known = logCache.get(folder);
+  if (known) return known;
+  const command = ["uv", "run", "--quiet", "checks/read_inspect_log.py", folder];
+  const run = Bun.spawnSync(command, {
+    cwd: ROOT,
+    stdout: "pipe",
+    stderr: "pipe",
+    timeout: 120_000,
+  });
+  const found = run.exitCode === 0 ? JSON.parse(run.stdout.toString()).samples : {};
+  logCache.set(folder, found);
+  return found;
 }
 
 const traces = (folder: string) => rows<TraceRow>(folder, "my_traces.jsonl");
@@ -88,17 +107,37 @@ export default [
       "fill in my_task.py: json_dataset, system_message with judge.txt, generate() and a @scorer",
   },
   {
-    says: "my_scores.jsonl has one pass or fail verdict and a reason for every trace",
+    says: "an Inspect log in logs/ has one sample for each of your traces",
+    test: (folder) => {
+      const samples = logged(folder);
+      const found = traces(folder);
+      const everyAnswerRan = found.every((row) =>
+        samples[text(row.id)]?.input.includes(text(row.output)),
+      );
+      return (
+        found.length > 0 &&
+        everyAnswerRan &&
+        sameIds(
+          found.map((row) => text(row.id)),
+          Object.keys(samples),
+        )
+      );
+    },
+    tryNext: "run inspect eval with a real model so logs/ holds one sample for each trace",
+  },
+  {
+    says: "my_scores.jsonl copies the judge verdicts from that log, with a reason for every trace",
     test: (folder) => {
       const found = scores(folder);
       const ids = traces(folder).map((row) => text(row.id));
       const scored = found.map((row) => text(row.id));
+      const samples = logged(folder);
       const valid = found.every(
-        (row) => ["pass", "fail"].includes(text(row.verdict)) && text(row.reason),
+        (row) => text(row.reason) && samples[text(row.id)]?.verdict === text(row.verdict),
       );
       return found.length > 0 && valid && sameIds(ids, scored);
     },
-    tryNext: "write one line per trace id: id, verdict (pass or fail) and a one sentence reason",
+    tryNext: "one line per trace: id, the verdict the log shows for it, and a short reason",
   },
   {
     says: "the verdicts include both a pass and a fail",

@@ -20,7 +20,7 @@ First, from the repo root: `cd parts/07-score-the-answers-with-inspect-ai/02-sco
 1. Replace the two example rows in `my_traces.jsonl` with at least 10 real traces from your system. Each line has `id`, `input` and `output`. Use traces you can share, and remove names and secrets.
 2. In `judge.txt`, write one criterion on the first line, starting with `Criterion:`. Below it, give the rules the judge checks against and ask for `pass` or `fail` on the first line of its reply.
 3. Finish `my_task.py`. Load the traces with `json_dataset`. Read `judge.txt` into a `system_message`. Call `generate()`. Then write a scorer that gives a pass when the reply starts with `pass`.
-4. Run it, then write one line per trace in `my_scores.jsonl`: `id`, `verdict` and a one sentence `reason`. Read each fail yourself.
+4. Run it with a real model. Then write one line per trace in `my_scores.jsonl`: the `id`, the `verdict` the log shows for that trace, and a one sentence `reason`. Read each fail yourself.
 
 ```bash
 uv run inspect eval my_task.py --model mockllm/model --log-dir logs
@@ -43,13 +43,14 @@ For example, one line in `my_scores.jsonl` looks like this:
 - `my_traces.jsonl` has at least 10 of your own traces, not the course world.
 - `judge.txt` names one criterion and asks for pass or fail.
 - `my_task.py` loads the traces, uses `judge.txt` and scores the verdict.
-- `my_scores.jsonl` has a verdict and a reason for every trace, with at least one pass and one fail.
+- `logs/` holds the Inspect log of your run, with one sample for each trace.
+- `my_scores.jsonl` copies the verdict from that log and adds a reason for every trace, with at least one pass and one fail.
 
 ```bash
 bun run verify score-your-own-traces
 ```
 
-Expect: `Done. All 6 rules pass.` and a `Progress:` line.
+Expect: `Done. All 7 rules pass.` and a `Progress:` line.
 
 ## If you get stuck
 

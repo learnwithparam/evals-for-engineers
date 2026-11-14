@@ -18,7 +18,8 @@
     "prompt_path": "judge.txt",
     "test_size": 0,
     "tpr": 0.0,
-    "tnr": 0.0
+    "tnr": 0.0,
+    "labels_path": "judge_labels.jsonl"
   },
   "gate": {
     "command": "TODO the command that blocks a bad change",

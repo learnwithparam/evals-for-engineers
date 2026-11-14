@@ -1,11 +1,11 @@
 {
-  "system": "the Fernhill lease desk",
+  "system": "a returns and orders helper for a small online shop",
   "trace_count": 24,
   "traces_path": "traces.jsonl",
   "failure_modes": [
     {
       "name": "wrong-refund-window",
-      "definition": "The abstract misses the rent step in lease L041.",
+      "definition": "The bot states a refund window that is not in the policy.",
       "count": 5,
       "example_trace_id": "s01"
     },
@@ -30,7 +30,8 @@
     "prompt_path": "judge.txt",
     "test_size": 20,
     "tpr": 0.9,
-    "tnr": 0.85
+    "tnr": 0.8,
+    "labels_path": "judge_labels.jsonl"
   },
   "gate": {
     "command": "bun run verify-gate",

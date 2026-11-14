@@ -4,7 +4,7 @@
   "type": "module",
   "packageManager": "bun@1.4.4",
   "scripts": {
-    "check": "bun scripts/readable.ts && bun scripts/plain-english.ts && bun scripts/check.ts && bun scripts/verify.ts --all && bun scripts/assignment.ts && bun scripts/text-audit.ts",
+    "check": "bun scripts/readable.ts && bun scripts/plain-english.ts && bun scripts/check.ts && bun scripts/verify.ts --all && bun scripts/assignment.ts && bun scripts/capstone.ts && bun scripts/text-audit.ts",
     "readable": "bun scripts/readable.ts",
     "plain-english": "bun scripts/plain-english.ts",
     "format": "biome check --write .",
@@ -18,5 +18,9 @@
     "@biomejs/biome": "2.6.5",
     "@playwright/test": "1.65.0",
     "playwright": "1.65.0"
-  }
+  },
+  "plainEnglish": {
+    "grade": 6
+  },
+  "capstone": true
 }

@@ -89,6 +89,7 @@ function visibleElements(selector) {
 }
 
 function textOf(element) {
+  // biome-ignore lint/performance/useDomNodeTextContent: innerText skips hidden text
   return (element.innerText || "").replace(/\s+/g, " ").trim();
 }
 
@@ -102,6 +103,7 @@ function nameOf(element) {
 }
 
 function sentenceCount(text) {
+  // biome-ignore lint/complexity/useOptionalChain: kept as is
   return text.split(/[.!?]+(\s|$)/).filter((part) => part && part.trim()).length;
 }
 
@@ -189,6 +191,7 @@ function emptyStatesGuide() {
 }
 
 function brokenValues() {
+  // biome-ignore lint/performance/useDomNodeTextContent: innerText skips hidden text
   const lines = document.body.innerText.split("\n");
   return lines
     .filter((line) => BROKEN_VALUES.test(line))
@@ -213,6 +216,7 @@ function noRawCodes() {
 
 function noOperatorDetail() {
   if (document.body.dataset.audience === "staff") return [];
+  // biome-ignore lint/performance/useDomNodeTextContent: innerText skips hidden text
   const text = document.body.innerText;
   const patterns = [MODEL_NAMES, TOKEN_COUNT, RUN_COST, HOST_NAME];
   const hits = patterns.map((pattern) => text.match(pattern)).filter(Boolean);
