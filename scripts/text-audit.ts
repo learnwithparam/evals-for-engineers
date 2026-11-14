@@ -12,6 +12,9 @@ if (!existsSync(routesFile)) {
   process.exit(0);
 }
 
+// The audit needs Playwright from node_modules, which a fresh checkout does not have yet.
+Bun.spawnSync(["bun", "install", "--frozen-lockfile"], { cwd: ROOT });
+
 const configFile = join(ROOT, "e2e", "playwright.config.ts");
 // A Chromium you already have (CHROMIUM_PATH) needs no download.
 const ownBrowser = Boolean(process.env.CHROMIUM_PATH);
