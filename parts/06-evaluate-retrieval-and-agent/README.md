@@ -26,12 +26,13 @@ flowchart LR
 
 ## Steps
 
-| Step                       | Minutes | You produce                                                   | The check reads                                                                              |
-| -------------------------- | ------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `measure-retrieval-recall` | 20      | `retrieve.py` with two settings, and `recall.json`            | recall@1, recall@5 and MRR recomputed from your command on the 68 answerable questions       |
-| `judge-the-abstentions`    | 20      | a second judge: abstains when the lease is silent             | three replay runs of your judge; TPR and TNR on its test split; every planted fault 5 caught |
-| `grade-the-agent-outcome`  | 20      | `agent_checks.py`, which grades the end state of the database | your grades on 20 tasks by 3 replay trials, against the finished grader                      |
-| `map-agent-failures`       | 20      | `transitions.csv` and `next_fix.txt`                          | counts recomputed from the 80 agent runs; the top cell named as the next fix                 |
+| Step                       | Minutes | You produce                                                            | The check reads                                                                              |
+| -------------------------- | ------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `measure-retrieval-recall` | 20      | `retrieve.py` with two settings, and `recall.json`                     | recall@1, recall@5 and MRR recomputed from your command on the 68 answerable questions       |
+| `judge-the-abstentions`    | 20      | a second judge: abstains when the lease is silent                      | three replay runs of your judge; TPR and TNR on its test split; every planted fault 5 caught |
+| `grade-the-agent-outcome`  | 20      | `agent_checks.py`, which grades the end state of the database          | your grades on 20 tasks by 3 replay trials, against the finished grader                      |
+| `map-agent-failures`       | 20      | `transitions.csv` and `next_fix.txt`                                   | counts recomputed from the 80 agent runs; the top cell named as the next fix                 |
+| `evaluate-multi-turn`      | 20      | `multi_turn.json`: goal rate, per-turn rate and the first failing turn | every number recomputed from `conversations.jsonl`                                           |
 
 The steps do not depend on each other's files. You can start at any step.
 
@@ -80,6 +81,18 @@ cd parts/06-evaluate-retrieval-and-agent/04-map-agent-failures/problem && uv run
 ```
 
 Expect: `Next fix: search_lease -> draft_notice: 5 of 13 failed runs.`, once `first_failure()` is written.
+
+```bash
+cd parts/06-evaluate-retrieval-and-agent/05-evaluate-multi-turn/problem && uv run python multi_turn.py && cd -
+```
+
+Expect: `Goal met in 0.5 of conversations.`, once `summarise()` is written.
+
+```bash
+bun run verify evaluate-multi-turn
+```
+
+Expect: `Done. All 6 rules pass.`
 
 ```bash
 bun run verify part evaluate-retrieval-and-agent

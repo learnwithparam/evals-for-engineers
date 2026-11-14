@@ -29,6 +29,7 @@ flowchart LR
 | `sample-production-traces` | 15      | `monitor.py`: a sample of each batch, graded by the aligned judge          | three runs of your monitor in replay, against the production traces                        |
 | `report-the-batch-rate`    | 15      | `batches.csv`: raw and corrected rate per batch and slice, interval, alert | rates recomputed from `verdicts.jsonl`; the alert fires on batch 5 and on no earlier batch |
 | `feed-failures-back`       | 10      | 3 or more golden cases tagged `source: production`                         | the cases match real failed traces and the lease, and live fails them                      |
+| `split-the-suites`         | 15      | `suites.json`: regression, capability and refresh lists                    | the three lists recomputed from `cases.jsonl`                                              |
 
 Each step starts from the sample answer of the step before it. So you can start at any step.
 
@@ -67,6 +68,18 @@ cd parts/05-watch-production/03-feed-failures-back/problem && uv run python scor
 ```
 
 Expect: `live fails 0 of 7 review cases`, then `live fails 3 of 3 production cases`, or as many as you added. The sample answer adds 4.
+
+```bash
+cd parts/05-watch-production/04-split-the-suites/problem && uv run python split_suites.py && cd -
+```
+
+Expect: `Wrote suites.json`, once `split()` is written.
+
+```bash
+bun run verify split-the-suites
+```
+
+Expect: `Done. All 5 rules pass.`
 
 ```bash
 bun run verify part watch-production

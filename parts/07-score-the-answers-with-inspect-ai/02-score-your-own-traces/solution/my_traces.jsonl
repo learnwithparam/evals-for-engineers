@@ -1,0 +1,12 @@
+{"id": "t01", "input": "Can I return a lamp I bought last week?", "output": "Yes. Returns are free within 30 days, with the receipt."}
+{"id": "t02", "input": "Where is my order 4412?", "output": "Order 4412 left the depot yesterday and arrives on Friday."}
+{"id": "t03", "input": "Do you refund the postage?", "output": "We always refund postage on every order."}
+{"id": "t04", "input": "Can I return a worn jacket?", "output": "Yes, we take back worn items for a full refund."}
+{"id": "t05", "input": "How do I change my address?", "output": "Open Account, then Addresses, and edit the one you want."}
+{"id": "t06", "input": "Is the blue chair in stock?", "output": "Yes, the blue chair is in stock in all three sizes."}
+{"id": "t07", "input": "Can I swap a gift for a size up?", "output": "Yes. Bring the gift receipt and we swap it free within 60 days."}
+{"id": "t08", "input": "What is your phone number?", "output": "You can reach us on the number at the bottom of any page."}
+{"id": "t09", "input": "Can I cancel an order after it ships?", "output": "Yes, cancel it any time before it arrives and we refund you in full."}
+{"id": "t10", "input": "Do you ship to Ireland?", "output": "Yes, we ship to Ireland. Delivery takes about a week."}
+{"id": "t11", "input": "My mug arrived broken. What now?", "output": "Sorry about that. Send a photo and we will post a new mug."}
+{"id": "t12", "input": "Can I pay by invoice?", "output": "Yes, anyone can pay by invoice at checkout."}

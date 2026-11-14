@@ -1,0 +1,8 @@
+{
+  "flip_rate": 0.7,
+  "longer_pick_rate": 0.7,
+  "length_bias": "present",
+  "length_fix": "Match answer lengths before judging, or tell the judge to ignore length.",
+  "flipped_pairs": ["pair-03", "pair-05", "pair-08", "pair-11", "pair-14", "pair-17"],
+  "fix": "Judge every pair twice with the order swapped, and count a pair only when both orders agree."
+}

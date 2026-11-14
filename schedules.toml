@@ -1,32 +1,29 @@
-# Parts mapped onto formats. Minutes per part come from the step.toml files; parts still being built
-# are listed with the minutes their PARTS.md row plans. Time words live only in this file.
-#   orientation 15, find-the-failures 75, check-with-code 50, judge-what-code-cannot 90,
-#   gate-the-change 55, watch-production 40, evaluate-retrieval-and-agent 80,
-#   score-the-answers-with-inspect-ai 30. Total 435.
+# Parts mapped onto formats. Each session's minutes is the sum of the step.toml minutes of its
+# parts, nothing added. tests/schedules.test.ts pins that, so there is one number and one source.
 
 [one-day]
-# 325 minutes of steps in the room, about 6.5 hours with breaks. The last part is take-home.
+# A long day with breaks. The last two parts are take-home.
 sessions = [
-  { name = "morning", parts = ["orientation", "find-the-failures", "check-with-code"], minutes = 150 },
-  { name = "afternoon", parts = ["judge-what-code-cannot", "gate-the-change", "watch-production"], minutes = 195 },
-  { name = "take-home", parts = ["evaluate-retrieval-and-agent", "score-the-answers-with-inspect-ai"], minutes = 120 },
+  { name = "morning", parts = ["orientation", "find-the-failures", "check-with-code"], minutes = 155 },
+  { name = "afternoon", parts = ["judge-what-code-cannot", "gate-the-change", "watch-production"], minutes = 215 },
+  { name = "take-home", parts = ["evaluate-retrieval-and-agent", "score-the-answers-with-inspect-ai"], minutes = 155 },
 ]
 
 [four-evenings]
 sessions = [
-  { name = "evening 1", parts = ["orientation", "find-the-failures"], minutes = 100 },
-  { name = "evening 2", parts = ["check-with-code", "judge-what-code-cannot"], minutes = 150 },
-  { name = "evening 3", parts = ["gate-the-change", "watch-production"], minutes = 105 },
-  { name = "evening 4", parts = ["evaluate-retrieval-and-agent", "score-the-answers-with-inspect-ai"], minutes = 120 },
+  { name = "evening 1", parts = ["orientation", "find-the-failures"], minutes = 90 },
+  { name = "evening 2", parts = ["check-with-code", "judge-what-code-cannot"], minutes = 170 },
+  { name = "evening 3", parts = ["gate-the-change", "watch-production"], minutes = 110 },
+  { name = "evening 4", parts = ["evaluate-retrieval-and-agent", "score-the-answers-with-inspect-ai"], minutes = 155 },
 ]
 
 [six-weeks]
-# One part a session, plus a review slot.
+# One part a session.
 sessions = [
-  { name = "week 1", parts = ["orientation", "find-the-failures"], minutes = 120 },
-  { name = "week 2", parts = ["check-with-code"], minutes = 90 },
-  { name = "week 3", parts = ["judge-what-code-cannot"], minutes = 120 },
-  { name = "week 4", parts = ["gate-the-change"], minutes = 90 },
-  { name = "week 5", parts = ["watch-production"], minutes = 90 },
-  { name = "week 6", parts = ["evaluate-retrieval-and-agent", "score-the-answers-with-inspect-ai"], minutes = 120 },
+  { name = "week 1", parts = ["orientation", "find-the-failures"], minutes = 90 },
+  { name = "week 2", parts = ["check-with-code"], minutes = 65 },
+  { name = "week 3", parts = ["judge-what-code-cannot"], minutes = 105 },
+  { name = "week 4", parts = ["gate-the-change"], minutes = 55 },
+  { name = "week 5", parts = ["watch-production"], minutes = 55 },
+  { name = "week 6", parts = ["evaluate-retrieval-and-agent", "score-the-answers-with-inspect-ai"], minutes = 155 },
 ]

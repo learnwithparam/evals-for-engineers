@@ -27,11 +27,12 @@ flowchart LR
 
 ## Steps
 
-| Step                   | Minutes | You produce                                                             | The check reads                                                                 |
-| ---------------------- | ------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `build-the-golden-set` | 15      | `golden.jsonl`: 40 approved abstracts with a `critical_fields` list     | the file, against `world/data/keys.jsonl` and `splits.json` (no gate lease)     |
-| `write-field-checks`   | 20      | `checks.py`: one check per field type, with a pass or fail and a reason | a hidden table of known pass and fail pairs run through your checks, three runs |
-| `check-the-ledger`     | 15      | `ledger_check.py`: lease rent schedule against twelve months of charges | its output, against planted faults 4 and 6 and the clean leases                 |
+| Step                       | Minutes | You produce                                                               | The check reads                                                                 |
+| -------------------------- | ------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `build-the-golden-set`     | 15      | `golden.jsonl`: 40 approved abstracts with a `critical_fields` list       | the file, against `world/data/keys.jsonl` and `splits.json` (no gate lease)     |
+| `write-field-checks`       | 20      | `checks.py`: one check per field type, with a pass or fail and a reason   | a hidden table of known pass and fail pairs run through your checks, three runs |
+| `check-the-ledger`         | 15      | `ledger_check.py`: lease rent schedule against twelve months of charges   | its output, against planted faults 4 and 6 and the clean leases                 |
+| `generate-synthetic-cases` | 15      | `synthetic.jsonl`: 12 or more new cases across topic, tone and lease type | the dimensions are all covered and no question is copied                        |
 
 ## Walkthrough
 
@@ -72,6 +73,12 @@ bun run verify check-the-ledger
 ```
 
 Expect: `Done. All 5 rules pass.`
+
+```bash
+bun run verify generate-synthetic-cases
+```
+
+Expect: `Done. All 6 rules pass.`
 
 ```bash
 bun run verify part check-with-code
