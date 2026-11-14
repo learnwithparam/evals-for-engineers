@@ -1,0 +1,10 @@
+{
+  "goal_rate": 0.5,
+  "all_turns_rate": 0.4,
+  "per_turn_rate": 0.794,
+  "first_fail_turns": {},
+  "recovered": [
+    "c02",
+    "c09"
+  ]
+}
