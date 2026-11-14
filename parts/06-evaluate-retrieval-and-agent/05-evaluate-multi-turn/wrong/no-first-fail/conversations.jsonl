@@ -1,0 +1,10 @@
+{"id": "c01", "turns": [true, true, true], "goal_met": true}
+{"id": "c02", "turns": [true, false, true], "goal_met": true}
+{"id": "c03", "turns": [true, true, false], "goal_met": false}
+{"id": "c04", "turns": [true, true, true, true], "goal_met": true}
+{"id": "c05", "turns": [false, true, true], "goal_met": false}
+{"id": "c06", "turns": [true, true, true], "goal_met": false}
+{"id": "c07", "turns": [true, false, false], "goal_met": false}
+{"id": "c08", "turns": [true, true, true, true], "goal_met": true}
+{"id": "c09", "turns": [true, false, true, true], "goal_met": true}
+{"id": "c10", "turns": [true, true, false, true], "goal_met": false}

@@ -1,0 +1,12 @@
+{"id": "syn-01", "source": "synthetic", "topic": "late", "tone": "formal", "lease_type": "residential", "question": "Please state the late fee and the day it applies for the tenant in unit 3B.", "reviewed": true}
+{"id": "syn-02", "source": "synthetic", "topic": "late", "tone": "rushed", "lease_type": "commercial", "question": "late fee on the shop unit? when does it kick in", "reviewed": true}
+{"id": "syn-03", "source": "synthetic", "topic": "late", "tone": "vague", "lease_type": "residential", "question": "What happens if the tenant pays a bit after the due date?", "reviewed": true}
+{"id": "syn-04", "source": "synthetic", "topic": "pets", "tone": "formal", "lease_type": "residential", "question": "Is the tenant in unit 5F permitted to keep a cat, and what deposit applies?", "reviewed": true}
+{"id": "syn-05", "source": "synthetic", "topic": "pets", "tone": "rushed", "lease_type": "residential", "question": "tenant has a dog now. allowed or not?", "reviewed": true}
+{"id": "syn-06", "source": "synthetic", "topic": "pets", "tone": "vague", "lease_type": "commercial", "question": "Can a business tenant have an animal in the unit?", "reviewed": true}
+{"id": "syn-07", "source": "synthetic", "topic": "renewal", "tone": "formal", "lease_type": "commercial", "question": "How many days before the lease ends must the tenant give written notice to renew?", "reviewed": true}
+{"id": "syn-08", "source": "synthetic", "topic": "renewal", "tone": "rushed", "lease_type": "residential", "question": "need renewal notice days for 8D, quick", "reviewed": true}
+{"id": "syn-09", "source": "synthetic", "topic": "renewal", "tone": "vague", "lease_type": "residential", "question": "When do I have to tell them we want to stay?", "reviewed": true}
+{"id": "syn-10", "source": "synthetic", "topic": "rent", "tone": "formal", "lease_type": "commercial", "question": "What monthly rent applies to the tenant after the second rent step?", "reviewed": true}
+{"id": "syn-11", "source": "synthetic", "topic": "rent", "tone": "rushed", "lease_type": "residential", "question": "rent for 1C right now?", "reviewed": true}
+{"id": "syn-12", "source": "synthetic", "topic": "rent", "tone": "vague", "lease_type": "commercial", "question": "Does the rent go up at some point?", "reviewed": true}

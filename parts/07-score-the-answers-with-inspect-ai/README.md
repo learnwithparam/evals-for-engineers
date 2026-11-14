@@ -27,11 +27,12 @@ flowchart LR
 
 ## Steps
 
-| Step            | Minutes | You produce                                           | The check reads                                            |
-| --------------- | ------- | ----------------------------------------------------- | ---------------------------------------------------------- |
-| `port-the-gate` | 30      | `assignment/task.py`: your gate as an Inspect AI task | the Inspect AI version, the eval log, and the failing rows |
+| Step                    | Minutes | You produce                                                                             | The check reads                                                                    |
+| ----------------------- | ------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `port-the-gate`         | 30      | `assignment/task.py`: your gate as an Inspect AI task                                   | the Inspect AI version, the eval log, and the failing rows                         |
+| `score-your-own-traces` | 25      | `my_traces.jsonl`, `judge.txt`, `my_task.py` and `my_scores.jsonl` from your own system | the traces are yours, the judge names one criterion, and every trace has a verdict |
 
-This part is optional in the live session and expected as homework. The `assignment/` folder holds the starter and its own README.
+This part is optional in the live session and expected as homework. The `assignment/` folder holds the starter and its own README. The capstone is in `capstone/`: the same pieces, run on your own folder.
 
 ## Options
 
@@ -75,6 +76,18 @@ uv run checks/assignment.py
 ```
 
 Expect: `FAIL` lines on the untouched starter, and `PASS` on all three lines once your task is ported.
+
+```bash
+bun run verify score-your-own-traces
+```
+
+Expect: `Done. All 7 rules pass.`, once your own traces, judge and scores are in the folder.
+
+```bash
+bun capstone/check.ts my-eval
+```
+
+Expect: `Done. All 9 rules pass.`, once your own folder is filled in. See `capstone/README.md`.
 
 ## What you can show
 

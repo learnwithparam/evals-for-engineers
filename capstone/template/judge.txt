@@ -1,0 +1,2 @@
+TODO Criterion: one thing the judge checks.
+TODO Reply pass or fail on the first line, then one sentence of reason.
