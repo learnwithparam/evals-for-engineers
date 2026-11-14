@@ -1,0 +1,12 @@
+{"id": "t01", "verdict": "pass", "reason": "The answer matches the shop policy."}
+{"id": "t02", "verdict": "pass", "reason": "The answer matches the shop policy."}
+{"id": "t03", "verdict": "fail", "reason": "The answer promises something the shop policy does not say."}
+{"id": "t04", "verdict": "fail", "reason": "The answer promises something the shop policy does not say."}
+{"id": "t05", "verdict": "pass", "reason": "The answer matches the shop policy."}
+{"id": "t06", "verdict": "fail", "reason": "The answer promises something the shop policy does not say."}
+{"id": "t07", "verdict": "pass", "reason": "The answer matches the shop policy."}
+{"id": "t08", "verdict": "pass", "reason": "The answer matches the shop policy."}
+{"id": "t09", "verdict": "fail", "reason": "The answer promises something the shop policy does not say."}
+{"id": "t10", "verdict": "pass", "reason": "The answer matches the shop policy."}
+{"id": "t11", "verdict": "pass", "reason": "The answer matches the shop policy."}
+{"id": "t12", "verdict": "fail", "reason": "The answer promises something the shop policy does not say."}

@@ -1,0 +1,39 @@
+{
+  "system": "a returns and orders helper for a small online shop",
+  "trace_count": 24,
+  "traces_path": "traces.jsonl",
+  "failure_modes": [
+    {
+      "name": "wrong-refund-window",
+      "definition": "The bot states a refund window that is not in the policy.",
+      "count": 5,
+      "example_trace_id": "s01"
+    },
+    {
+      "name": "ignores-order-number",
+      "definition": "The bot answers without using the order number the customer gave.",
+      "count": 4,
+      "example_trace_id": "s06"
+    },
+    {
+      "name": "invents-stock",
+      "definition": "The bot says an item is in stock without a stock lookup.",
+      "count": 3,
+      "example_trace_id": "s10"
+    }
+  ],
+  "golden_set": {
+    "path": "golden.jsonl",
+    "size": 20
+  },
+  "judge": {
+    "prompt_path": "judge.txt",
+    "test_size": 20,
+    "tpr": 0.9,
+    "tnr": 0.85
+  },
+  "gate": {
+    "command": "bun run verify-gate",
+    "blocks_on": "any golden case that fails, or a judge pass rate below the last release"
+  }
+}

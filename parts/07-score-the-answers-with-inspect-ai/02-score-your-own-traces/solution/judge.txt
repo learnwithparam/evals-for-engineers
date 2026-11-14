@@ -1,0 +1,5 @@
+Criterion: the answer makes no promise that the shop policy does not state.
+
+You are given a customer question and the answer a returns helper gave.
+The shop policy: returns are free within 30 days with a receipt, gifts can be swapped within 60 days, worn items are not taken back, and postage is not refunded.
+Reply with the word pass or fail on the first line, then one sentence of reason.

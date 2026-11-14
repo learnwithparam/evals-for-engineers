@@ -1,0 +1,27 @@
+{
+  "system": "TODO name your system in a few words",
+  "trace_count": 0,
+  "traces_path": "traces.jsonl",
+  "failure_modes": [
+    {
+      "name": "TODO",
+      "definition": "TODO one sentence that says what this failure is",
+      "count": 0,
+      "example_trace_id": "TODO"
+    }
+  ],
+  "golden_set": {
+    "path": "golden.jsonl",
+    "size": 0
+  },
+  "judge": {
+    "prompt_path": "judge.txt",
+    "test_size": 0,
+    "tpr": 0.0,
+    "tnr": 0.0
+  },
+  "gate": {
+    "command": "TODO the command that blocks a bad change",
+    "blocks_on": "TODO what makes it fail"
+  }
+}

@@ -1,0 +1,4 @@
+Criterion: TODO write one thing the judge checks, in one sentence.
+
+TODO say what the judge reads and the rules it checks against.
+Reply with the word pass or fail on the first line, then one sentence of reason.
