@@ -4,7 +4,7 @@
 
 A gate is a check that decides if a release may ship. Someone wants to move the abstractor to a cheaper model. Its average field accuracy drops by only 1.3 points, so a gate on the average lets it through. But it gets the rent wrong on 9 more amended leases. Those are the leases owners complain about.
 
-For example, here are two gates on the same release. The average gate prints `Average gate on cheaper-model: PASS (field accuracy drops 1.3 points; the limit is 2.0)`. The gate you build prints `Gate on cheaper-model: BLOCKED`, with the reason `rent newly wrong on 9 amended leases (critical)`. One of those leases is L040. There, the cheaper model misses the amendment in every trial.
+For example, here are two gates on the same release. The average gate prints `Average gate on cheaper-model: PASS (field accuracy drops 1.3 points; the limit is 2.0)`. The gate you build prints `Gate on cheaper-model: BLOCKED`, with the reason `rent newly wrong on 9 amended leases (critical)`. One of those leases is L040, and there the cheaper model misses Amendment No. 1 in every trial.
 
 ## Why it matters
 

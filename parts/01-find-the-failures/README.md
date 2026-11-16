@@ -6,7 +6,7 @@ Dana Mensah is head of lease administration at Fernhill Homes. She says owners g
 
 In this part you read the abstractor's traces yourself. A trace is the record of one run: what went in, what came out, and each step between. You mark each one pass or fail, write what went wrong, and group those notes into named failure modes. Then you count them.
 
-For example, trace `abs-0026` is for lease L012. Its abstract says the monthly rent is $2,650.00. But the amendment to that lease says: "From 1 February 2026, clause c04 is changed: the monthly rent is $2,825.00."
+For example, trace `abs-0026` is for lease L012. Its abstract says the monthly rent is $2,650.00. But Amendment No. 1 of that lease says: "From 1 February 2026, clause c04 is changed: the monthly rent is $2,825.00."
 
 You mark the trace `fail` and note what you saw. Later it joins the failure mode `amended-rent-missed`. That mode covers 4 of the 40 traces you review, a rate of 0.1.
 

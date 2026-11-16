@@ -6,7 +6,7 @@ When the lease desk is wrong, there are two possible causes. The search may have
 
 For example, take question `q001` in `world/data/questions.jsonl`. The right clause for it is `L100-c12`. For trace `desk-0001`, the search returned `["L100-c02", "L100-c12", "L100-c14", "L100-c13", "L100-c08"]`. The right clause is second, not first.
 
-So it counts as a hit for recall@5, because the right clause is in the top 5. It is a miss for recall@1.
+So the search counts as a hit for recall@5, because the right clause is in the top 5. It is a miss for recall@1.
 
 For the agent, take trace `agent-task-03-3` in `world/data/traces/agent.jsonl`. The agent should propose a charge for staff to approve. Instead, it called the `post_charge` tool and said "Posted $660.00: rent step not charged."
 
