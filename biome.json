@@ -5,7 +5,6 @@
       "**",
       "!**/node_modules",
       "!**/.venv",
-      "!scripts/learner-clarity.mjs",
       "!**/world/recordings",
       "!**/world/data",
       "!**/world/replay",
