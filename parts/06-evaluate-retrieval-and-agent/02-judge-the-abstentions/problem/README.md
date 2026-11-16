@@ -25,7 +25,11 @@ uv run python align.py
 
 Expect: with the draft, `Dev: TPR 0.50 on 6 passes, TNR 0.00 on 6 fails` and a list of disagreements.
 
-For example, trace `desk-0316` asks about lease L092: "Can the tenant in unit 10A at Aspen Close paint the walls?" No clause says anything about paint. The lease desk still answers: "Yes, with written consent from Fernhill [L092-c02]." Dana says fail: "No clause answers this question, yet the answer makes a claim." The draft says pass, because the answer cites a clause.
+For example, trace `desk-0316` asks about lease L092: "Can the tenant in unit 10A at Aspen Close paint the walls?"
+
+No clause says anything about paint. The lease desk still answers: "Yes, with written consent from Fernhill [L092-c02]."
+
+Dana says fail: "No clause answers this question, yet the answer makes a claim." The draft says pass, because the answer cites a clause.
 
 The draft also fails every "The lease does not say.", even when it is right. Your rules must cover both sides.
 

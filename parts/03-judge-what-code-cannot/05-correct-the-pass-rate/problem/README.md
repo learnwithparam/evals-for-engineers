@@ -2,7 +2,9 @@
 
 ## The problem
 
-Fernhill wants one number for the report card: how many lease desk answers are grounded? The judge can grade the 200 answers Dana never labelled. But the judge makes mistakes, and you know how often. It passes 92% of good answers (TPR 0.92) and fails 88% of bad ones (TNR 0.88). So it lets 12% of bad answers through, and it fails 8% of good ones. Its raw pass rate is not the true rate.
+Fernhill wants one number for the report card: how many lease desk answers are grounded? The judge can grade the 200 answers Dana never labelled. But the judge makes mistakes, and you know how often.
+
+It passes 92% of good answers (TPR 0.92) and fails 88% of bad ones (TNR 0.88). So it lets 12% of bad answers through, and it fails 8% of good ones. Its raw pass rate is not the true rate.
 
 ```mermaid
 flowchart LR
@@ -31,9 +33,13 @@ uv run python rate.py
 
 Expect: `Judge passes 162 of 200 answers: raw rate 81%`, then `Corrected with TPR 0.92 and TNR 0.88: 86%`, a `95% interval:` line and `Wrote grounded_rate.json`.
 
-For example, take the sample numbers. The raw rate is 162 / 200 = 0.81. The top line is 0.81 + 0.88 - 1 = 0.69. The bottom line is 0.92 + 0.88 - 1 = 0.80. So the corrected rate is 0.69 / 0.80 = 0.8625, about 86%. The judge's mistakes hid about 5 points of grounded answers.
+For example, take the sample numbers. The raw rate is 162 / 200 = 0.81. The top line is 0.81 + 0.88 - 1 = 0.69. The bottom line is 0.92 + 0.88 - 1 = 0.80.
 
-The script also gives a 95% interval, from a bootstrap. A bootstrap draws the test labels and the verdicts again many times, with repeats allowed. It corrects each draw and keeps the middle 95% of the results. With only 50 test labels the interval is wide: 74% to 100%. That width is part of the answer. It tells Dana how sure the number is.
+So the corrected rate is 0.69 / 0.80 = 0.8625, about 86%. The judge's mistakes hid about 5 points of grounded answers.
+
+The script also gives a 95% interval, from a bootstrap. A bootstrap draws the test labels and the verdicts again many times, with repeats allowed. It corrects each draw and keeps the middle 95% of the results.
+
+With only 50 test labels the interval is wide: 74% to 100%. That width is part of the answer. It tells Dana how sure the number is.
 
 ## Done when
 

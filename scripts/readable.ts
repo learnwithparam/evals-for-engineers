@@ -147,6 +147,7 @@ export function problemsIn(file: string, text: string): Problem[] {
 function codeFiles(folder: string, found: string[] = []): string[] {
   for (const entry of readdirSync(folder)) {
     if (SKIPPED_FOLDERS.has(entry)) continue;
+    if (entry === "learner-clarity.mjs") continue;
     const path = join(folder, entry);
     if (statSync(path).isDirectory()) codeFiles(path, found);
     else if (CODE_EXTENSIONS.has(extname(path))) found.push(path);

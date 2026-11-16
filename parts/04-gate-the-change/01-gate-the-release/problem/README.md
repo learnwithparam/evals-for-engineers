@@ -37,7 +37,7 @@ Rewrite `gate()` in `gate.py` so it blocks a release for any of three reasons:
 2. An abstention is lost: live says "The lease does not say." to a question, and the release does not.
 3. A case has no result. A row with `"output": null` timed out, or a gate lease has no row at all. When you cannot score a case, block. This is called failing closed.
 
-Each reason names the field. Read trial 1 only; the next step uses all three.
+Each reason names the field. Read trial 1 only. The next step uses all three.
 
 The starter uses the field checks in `fernhill.evals.fields`. You can swap in your own from Check with code.
 

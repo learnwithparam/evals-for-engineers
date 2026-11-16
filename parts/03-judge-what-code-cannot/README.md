@@ -4,7 +4,7 @@
 
 Some questions have no exact right answer for code to compare. Here is one: "Is this lease desk answer supported by the clause it cites?" Dana can tell at a glance. An answer that its cited clause supports is called grounded.
 
-For example, staff asked a question about lease L100: "How much notice does the tenant in unit 8D at Juniper Hall need to give to renew?"
+For example, staff asked about lease L100: "How much notice does the tenant in unit 8D at Juniper Hall need to give to renew?"
 
 Clause c12 of the lease says "not less than thirty (30) days". Here are two real answers from `world/data/traces/lease_desk.jsonl`:
 

@@ -2,9 +2,16 @@
 
 ## The problem
 
-The golden set covers the leases Fernhill had when you built it. Then 10 renewed leases arrive on a new template, FH-RES-2026. A template is the standard text a lease starts from. Staff start to ask the lease desk about these new leases. The CI gate cannot test a document it was never given. Only production traces, the records of real use, show what happens.
+The golden set covers the leases Fernhill had when you built it. Then 10 renewed leases arrive on a new template, FH-RES-2026. A template is the standard text a lease starts from.
 
-For example, look at trace `prod-5-12` in `world/data/traces/lease_desk_production.jsonl`. It is about lease L126, one of the new leases. Staff asked: "What is the monthly rent for unit 1C at Rowan Steps now?" The lease desk answered: "No, the lease forbids it [L126-c02]." The answer does not fit the question, and the clause it cites does not support it. Your golden set has no lease like L126, so no test there could catch this.
+Staff start to ask the lease desk about these new leases. The CI gate cannot test a document it was never given. Only production traces, the records of real use, show what happens.
+
+For example, look at trace `prod-5-12` in `world/data/traces/lease_desk_production.jsonl`. It is about lease L126, one of the new leases.
+
+- Staff asked: "What is the monthly rent for unit 1C at Rowan Steps now?"
+- The lease desk answered: "No, the lease forbids it [L126-c02]."
+
+The answer does not fit the question, and the clause it cites does not support it. Your golden set has no lease like L126, so no test there could catch this.
 
 ## Why it matters
 

@@ -2,7 +2,9 @@
 
 ## The problem
 
-The lease desk answers staff questions and cites the lease clauses it used. An answer is grounded when the cited clauses say everything the answer says. Dana can tell a grounded answer at a glance. Before you ask a model to do her job, you need to know how hard the job is. Two careful people do not always agree. So first, you label some answers yourself and compare your labels with Dana's.
+The lease desk answers staff questions and cites the lease clauses it used. An answer is grounded when the cited clauses say everything the answer says. Dana can tell a grounded answer at a glance.
+
+Before you ask a model to do her job, you need to know how hard the job is. Two careful people do not always agree. So first, you label some answers yourself and compare your labels with Dana's.
 
 ![kappa.py comparing the sample labels with Dana's](../images/expected.png)
 
@@ -32,7 +34,9 @@ The clause says "not less than", and the answer says "exactly". So the row is `d
 
 Cohen's kappa counts how often you and Dana agree, minus the agreement that chance alone would give. A kappa of 1 means you always agree. A kappa of 0 means you agree no more than coin flips would. Any value passes this step. The point is to see where two people differ.
 
-The sample labels agree with Dana on 28 of 30 answers, a kappa of 0.867. They differ on `desk-0045` and `desk-0050`. Each one quotes clause c04 word for word, but an amendment has changed that rent. Dana fails an answer that cites a clause an amendment replaced. Her rule only became clear once two people disagreed. Your judge prompt will need the same rule.
+The sample labels agree with Dana on 28 of 30 answers, a kappa of 0.867. They differ on `desk-0045` and `desk-0050`. Each one quotes clause c04 word for word, but an amendment has changed that rent.
+
+Dana fails an answer that cites a clause an amendment replaced. Her rule only became clear once two people disagreed. Your judge prompt will need the same rule.
 
 ## Done when
 

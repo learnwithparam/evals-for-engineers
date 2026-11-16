@@ -17,7 +17,9 @@ First, from the repo root: `cd parts/06-evaluate-retrieval-and-agent/01-measure-
 
 `retrieve.py` follows a contract, so the check can call it. It reads one JSON object per line, `{"lease_id", "query", "k"}`. It prints `{"clause_ids": [...]}`, best clause first.
 
-For example, question `q001` asks: "How much notice does the tenant in unit 8D at Juniper Hall need to give to renew?" Its right clause is `L100-c12`. The baseline returns `L100-c02` first. That is the Premises clause, which names unit 8D at Juniper Hall, as the question does. The right clause comes second, so `q001` is a hit for recall@5 and a miss for recall@1.
+For example, question `q001` has the right clause `L100-c12`. It asks: "How much notice does the tenant in unit 8D at Juniper Hall need to give to renew?"
+
+The baseline returns `L100-c02` first. That is the Premises clause, which names unit 8D at Juniper Hall, as the question does. The right clause comes second, so `q001` is a hit for recall@5 and a miss for recall@1.
 
 ```bash
 echo '{"lease_id": "L100", "query": "How much notice does the tenant in unit 8D at Juniper Hall need to give to renew?", "k": 5}' | uv run python retrieve.py

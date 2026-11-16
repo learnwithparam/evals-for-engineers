@@ -14,7 +14,7 @@ flowchart LR
 
 ## Your challenge
 
-For every trace you marked `fail`, write one note that describes what the abstract did. Name the field, what the abstract says, and what the lease says. Describe the behaviour; do not diagnose it. When two fields are wrong, start with the first thing that went wrong.
+For every trace you marked `fail`, write one note that describes what the abstract did. Name the field, what the abstract says, and what the lease says. Describe the behaviour. Do not diagnose it. When two fields are wrong, start with the first thing that went wrong.
 
 In this step the review app shows only the failed traces. It saves `notes.csv` as you type.
 

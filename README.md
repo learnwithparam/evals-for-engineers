@@ -88,7 +88,9 @@ Each step works the same way. Read `problem/README.md`, do the work in `problem/
 
 ## Models
 
-Every model call goes through one file, `config/models.py`. It picks a model by role: `fast`, `smart` or `judge`. The default is `LLM_PROVIDER=replay`. Replay answers each call from a saved reply, so you need no key and get the same result every time. To call a real model, copy `.env.example` to `.env`. Set `LLM_PROVIDER` to `anthropic`, `openrouter` or `openai`, and add that one key. Then `uv run models` makes one tiny call per role and prints pass or fail and the cost.
+Every model call goes through one file, `config/models.py`. It picks a model by role: `fast`, `smart` or `judge`. The default is `LLM_PROVIDER=replay`. Replay answers each call from a saved reply, so you need no key and get the same result every time.
+
+To call a real model, copy `.env.example` to `.env`. Set `LLM_PROVIDER` to `anthropic`, `openrouter` or `openai`, and add that one key. Then `uv run models` makes one tiny call per role and prints pass or fail and the cost.
 
 ## The project
 

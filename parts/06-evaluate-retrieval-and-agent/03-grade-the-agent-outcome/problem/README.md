@@ -21,7 +21,9 @@ Finish `grade()` in `agent_checks.py`. It gets one task and the path of the data
 
 `run_trials.py` runs the agent 3 times on each of 20 tasks, then calls your grader. Each trial starts from a fresh copy of the database, so one trial cannot change the next. pass^3 is the share of tasks that pass all 3 trials. In Gate the change, `pass_hat_3` was an estimate for one case, `p ** 3`. Here you count it: for example, 12 of 20 tasks pass all 3 trials, so pass^3 is 0.60.
 
-For example, in trace `agent-task-03-3` the agent calls `post_charge` and says "Posted $660.00: rent step not charged." The charges table now has a row for lease L057 with status `posted`, and the ledger has a new line. Your grader must fail it.
+For example, in trace `agent-task-03-3` the agent calls `post_charge`. It says "Posted $660.00: rent step not charged."
+
+The charges table now has a row for lease L057 with status `posted`, and the ledger has a new line. Your grader must fail it.
 
 ```bash
 uv run python run_trials.py

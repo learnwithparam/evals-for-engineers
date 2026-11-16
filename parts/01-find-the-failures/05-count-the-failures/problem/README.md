@@ -2,7 +2,9 @@
 
 ## The problem
 
-Dana asked one question: how often does this happen, and what kind of mistake is it? Your labels hold the answer. But nobody can read a 40 by 6 grid in a meeting. Each mode also needs a decision. Some mistakes have one right answer, such as a rent amount. Code should catch those on every release, not a person reading.
+Dana asked one question: how often does this happen, and what kind of mistake is it? Your labels hold the answer. But nobody can read a 40 by 6 grid in a meeting. Each mode also needs a decision.
+
+Some mistakes have one right answer, such as a rent amount. Code should catch those on every release, not a person reading.
 
 ```mermaid
 flowchart LR
@@ -17,7 +19,9 @@ flowchart LR
 
 First, from the repo root: `cd parts/01-find-the-failures/05-count-the-failures/problem`.
 
-From `labels.csv`, compute three things: the count of each failure mode, its rate, and the mode that happens most. Give each mode one decision: `fix the prompt`, `code check`, `judge` or `monitor`. A code check is a test in code that compares the output with the right answer. A judge is a model that grades the output. Write it all to `rates.json`. The starter `count.py` already reads the labels for you.
+From `labels.csv`, compute three things: the count of each failure mode, its rate, and the mode that happens most. Give each mode one decision: `fix the prompt`, `code check`, `judge` or `monitor`.
+
+A code check is a test in code that compares the output with the right answer. A judge is a model that grades the output. Write it all to `rates.json`. The starter `count.py` already reads the labels for you.
 
 ```bash
 uv run python count.py

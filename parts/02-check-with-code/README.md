@@ -2,7 +2,9 @@
 
 ## The problem
 
-In Find the failures, you saw two common mistakes. The abstractor misses amendments, and it drops rent steps. A rent step is a rent rise that the lease plans for a later date. Both mistakes have one right answer in the signed lease. You could pay a model to judge them, but it would be slower, cost more and give less steady results. Comparing two values in code is enough.
+In Find the failures, you saw two common mistakes. The abstractor misses amendments, and it drops rent steps. A rent step is a rent rise that the lease plans for a later date.
+
+Both mistakes have one right answer in the signed lease. You could pay a model to judge them, but it would be slower, cost more and give less steady results. Comparing two values in code is enough.
 
 For example, the answer key for lease L008 in `world/data/keys.jsonl` says `"monthly_rent": 227500` (in cents). The live abstractor wrote `"monthly_rent": 212500`, the rent from before Amendment No. 1. One line of code can see that these two numbers differ.
 

@@ -1,6 +1,6 @@
 # Start here
 
-In this part you set up the repo and meet Fernhill Homes. Then you run the finished system and see the goal. It takes about 15 minutes. You do not need a model key.
+In this part you set up the repo and meet Fernhill Homes. Then you run the finished system and see the goal. You do not need a model key.
 
 ## What you need
 
@@ -97,6 +97,8 @@ It says that 86% of lease desk answers are grounded: the cited clause really sup
 
 ## Run it live
 
-Replay is the default. In replay mode, every model call gets a reply that was recorded earlier, so nothing here costs money. To call a real model, copy `.env.example` to `.env`. Set `LLM_PROVIDER` to `anthropic`, `openrouter` or `openai`, and fill in that one key. Then `uv run models` makes one tiny call per role and prints pass or fail and the cost. The checks always run in replay mode.
+Replay is the default. In replay mode, every model call gets a reply that was recorded earlier, so nothing here costs money.
+
+To call a real model, copy `.env.example` to `.env`. Set `LLM_PROVIDER` to `anthropic`, `openrouter` or `openai`, and fill in that one key. Then `uv run models` makes one tiny call per role and prints pass or fail and the cost. The checks always run in replay mode.
 
 When a command prints something you do not expect, look up its first line in [troubleshooting.md](troubleshooting.md).

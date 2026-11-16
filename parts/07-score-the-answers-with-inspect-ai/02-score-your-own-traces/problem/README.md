@@ -2,7 +2,9 @@
 
 ## The problem
 
-So far the traces came from the course. The point of an eval is your own system. This step takes a handful of real traces from it, through to a judge that gives each one pass or fail. A shop's returns bot, for example, told a customer "we always refund postage". The policy says it does not. One judge line catches that answer, and Inspect AI runs it over every trace.
+So far the traces came from the course. The point of an eval is your own system. This step takes a handful of real traces from it, through to a judge that gives each one pass or fail.
+
+A shop's returns bot, for example, told a customer "we always refund postage". The policy says it does not. One judge line catches that answer, and Inspect AI runs it over every trace.
 
 ```mermaid
 flowchart LR

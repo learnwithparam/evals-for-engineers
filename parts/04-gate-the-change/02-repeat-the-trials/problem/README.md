@@ -6,7 +6,7 @@ A trial is one run of a case. A model can answer differently each time, so one t
 
 For example, look at lease L001 in the release `clause-ids-in-answer`. The rent is right in trial 1, wrong in trial 2, and right in trial 3. Live gets it right in all three. One wrong trial in three is noise. A gate that wants every trial right blocks this harmless change.
 
-Anthropic puts numbers on this: "If your agent has a 75% per-trial success rate and you run 3 trials, the probability of passing all three is (0.75)³ ≈ 42%" ([Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), Anthropic).
+Anthropic puts numbers on this. "If your agent has a 75% per-trial success rate and you run 3 trials, the probability of passing all three is (0.75)³ ≈ 42%". The source is [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), from Anthropic.
 
 ```mermaid
 flowchart LR

@@ -2,7 +2,9 @@
 
 ## The problem
 
-A failure mode is one named kind of mistake that you can count across traces. Sixteen notes are still sixteen separate stories. Dana cannot act on them, and you cannot count them. You need a short list of named failure modes. Define each one well enough that a colleague would put the same trace in the same mode. Generic names such as "hallucination" or "formatting" hide the one mistake that costs money.
+A failure mode is one named kind of mistake that you can count across traces. Sixteen notes are still sixteen separate stories. Dana cannot act on them, and you cannot count them. You need a short list of named failure modes.
+
+Define each one well enough that a colleague would put the same trace in the same mode. Generic names such as "hallucination" or "formatting" hide the one mistake that costs money.
 
 ```mermaid
 flowchart LR

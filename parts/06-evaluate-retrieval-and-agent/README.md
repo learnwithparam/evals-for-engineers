@@ -4,13 +4,23 @@
 
 When the lease desk is wrong, there are two possible causes. The search may have missed the right clause, or the model may have misread it. When the rent review agent fails, you want to know which step broke first. You also want to know if it posted a charge that only staff may post. A single pass rate cannot tell you any of this.
 
-For example, take question `q001` in `world/data/questions.jsonl`. The right clause for it is `L100-c12`. For trace `desk-0001`, the search returned `["L100-c02", "L100-c12", "L100-c14", "L100-c13", "L100-c08"]`. The right clause is second, not first. So it counts as a hit for recall@5, because the right clause is in the top 5. It is a miss for recall@1.
+For example, take question `q001` in `world/data/questions.jsonl`. The right clause for it is `L100-c12`. For trace `desk-0001`, the search returned `["L100-c02", "L100-c12", "L100-c14", "L100-c13", "L100-c08"]`. The right clause is second, not first.
 
-For the agent, take trace `agent-task-03-3` in `world/data/traces/agent.jsonl`. The agent should propose a charge for staff to approve. Instead, it called the `post_charge` tool and said "Posted $660.00: rent step not charged." The charge is now in the database, and no person approved it.
+So it counts as a hit for recall@5, because the right clause is in the top 5. It is a miss for recall@1.
+
+For the agent, take trace `agent-task-03-3` in `world/data/traces/agent.jsonl`. The agent should propose a charge for staff to approve. Instead, it called the `post_charge` tool and said "Posted $660.00: rent step not charged."
+
+The charge is now in the database, and no person approved it.
 
 ## Why it matters
 
-Anthropic's engineering team defines the outcome of an agent run: "The outcome is the final state in the environment at the end of the trial." It gives an example: "A flight-booking agent might say 'Your flight has been booked'". The outcome is whether the booking really exists. So "it's often better to grade what the agent produced, not the path it took." It also gives a number for repeated trials. An agent that passes 75% of single trials passes all 3 of 3 trials only about 42% of the time, since 0.75 × 0.75 × 0.75 ≈ 0.42. The source is [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), from Anthropic.
+Anthropic's engineering team defines the outcome of an agent run:
+
+> "The outcome is the final state in the environment at the end of the trial."
+
+It gives an example: "A flight-booking agent might say 'Your flight has been booked'". The outcome is whether the booking really exists. So "it's often better to grade what the agent produced, not the path it took."
+
+It also gives a number for repeated trials. An agent that passes 75% of single trials passes all 3 of 3 trials only about 42% of the time. That is 0.75 × 0.75 × 0.75 ≈ 0.42. The source is [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), from Anthropic.
 
 A trial is one run of a task. In this part, pass^3 means that all 3 trials of a task pass.
 
@@ -113,7 +123,9 @@ For example, the baseline search puts the Premises clause first on every questio
 
 ## Finished
 
-You can now say why a system fails, not only how often. Search is measured apart from the answer. Each judge has one criterion and agrees with Dana. The agent is graded by the rows it leaves, and the map points at the first step to fix. This is the last part of the course. Your eval report now has a line for every system at Fernhill.
+You can now say why a system fails, not only how often. Search is measured apart from the answer. Each judge has one criterion and agrees with Dana. The agent is graded by the rows it leaves, and the map points at the first step to fix.
+
+This is the last part of the course. Your eval report now has a line for every system at Fernhill.
 
 ## Assignment
 
